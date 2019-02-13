@@ -1,36 +1,104 @@
 import React from "react"
 import anime from "animejs"
+import Splitting from "splitting"
 
 import typographySettings from "./../../utils/typography"
-import introStyles from "./intro.module.css"
+import introStyles from "./intro.module.scss"
 
-import Headline from "./../headline"
-import Sword from "./sword"
+import Headline from "../headline/headline"
+import Copy from "../copy/copy"
+import ExternalLink from "./../externalLink/externalLink"
+import Portrait from "./../../images/me.jpg"
+import Image from "../Image/image";
+import ContactList from "../contactList/contactList";
 
 export default class Intro extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            canvasSize: {w: null, h: null}
-        }
+
+        this.headline = React.createRef();
+        this.main = React.createRef();
+        this.subline = React.createRef();
+        this.side = React.createRef();
     }
 
-    canvasSize(w, h) {
-        this.setState({
-            canvasSize: { w, h }
+    componentDidMount() {
+         
+        const splittedHeadline = Splitting({
+            target: this.headline.current
         })
+
+        const tl = anime.timeline()
+
+        tl
+            .add(
+                {
+                    targets: splittedHeadline[0].chars,
+                    rotate: [20, 0],
+                    translateY: ["100%", 0],
+                    opacity: [0,1],
+                    duration: 2700,
+                    delay: anime.stagger(10, { }),
+                    easing: 'easeInOutExpo'
+                }
+            )
+            .add(
+                {
+                    targets: this.main.current,
+                    translateX: [window.innerWidth / 2 - 640, 0],
+                    easing: 'easeOutQuad'
+                },
+                "+=700"
+            )
+            .add(
+                {
+                    targets: this.subline.current,
+                    opacity: [0,1],
+                    translateX: [20, 0],
+                    duration: 1200,
+                    easing: 'easeOutQuad'
+                },
+                "-=300"
+            )
+            .add(
+                {
+                    targets: this.side.current,
+                    opacity: [0,1],
+                    translateX: [60, 0],
+                    duration: 1200,
+                    easing: 'easeOutQuad'
+                },
+                "-=1000"
+            )
+        ;
+
+        tl.play();
     }
 
     render() {
         return <div className={ introStyles.intro }>
-            <Headline
-                getClientSize={ this.canvasSize.bind(this) }
-            >
-            Thomas Rutzer is a creative developer, who feels most comfortable where
-            sophisticated design meets well structured code.
-            </Headline>
-            <Sword
-            />
+            <div ref={ this.main }
+                 className={ introStyles.main }>
+                <Headline
+                    ref={ this.headline }
+                >
+                    Hay! I am Thomas Rutzer – a creative developer who feels most comfortable where
+                    sophisticated design meets well structured code.  
+                </Headline>
+                <div ref={ this.subline }
+                     className={ introStyles.subline }>
+                    <Copy>
+                        I currently work at <ExternalLink link={ "https://artcom.de" }>art+com</ExternalLink>, a studio for media installations and spaces.
+                    </Copy>
+                </div>
+            </div>
+            <div ref={ this.side }
+                 className={ introStyles.side }>
+                <Image 
+                    alt={ "Portrait thomas Rutzer"}
+                    src={ Portrait } />
+                <ContactList />
+            </div>
         </div>
     }
 }

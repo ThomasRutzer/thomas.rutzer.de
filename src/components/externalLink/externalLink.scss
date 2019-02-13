@@ -1,0 +1,40 @@
+@import './../../style-vars.scss';
+
+.externalLink {
+    position: relative;
+    color: $seconday-highlight-color;
+    text-decoration: none;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: -4px;
+        bottom: -4px;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        background-color: rgba($seconday-highlight-color, 0.1);
+        opacity: 0;
+        transition: opacity 400ms ease-out;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &:focus {
+        outline: 0;
+
+        &:after {
+            opacity: 1;
+        }
+    }
+}
+
+.externalLinkIcon {
+    margin-left: 0.25em;
+    display: inline-block;
+    transform: translateY(-2px)
+}
+

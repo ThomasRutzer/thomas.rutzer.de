@@ -1,0 +1,12 @@
+@import './../../style-vars.scss';
+
+.copy {
+    color: $font-color;    
+    font-size: $font-size-subline-small;
+    line-height: 1.4;
+    font-weight: 400;
+
+    @media (min-width: $breakpoint) {
+        font-size: $font-size-subline-large;
+    }
+}

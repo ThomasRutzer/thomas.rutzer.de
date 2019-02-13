@@ -6,5 +6,4 @@ import LayoutWrapper from "../components/layoutWrapper/layoutWrapper"
 export default () => 
     <LayoutWrapper>
         <Intro />      
-        
     </LayoutWrapper>

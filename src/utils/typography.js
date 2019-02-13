@@ -6,7 +6,7 @@ const typography = new Typography({
     googleFonts: [
         {
             name: 'IBM Plex Mono',
-            styles: ['400', '700'],
+            styles: ['400', '500', '700'],
         }
     ],
     headerFontFamily: [
@@ -17,7 +17,7 @@ const typography = new Typography({
         "IBM Plex Mono",
         "monospace"
     ],
-    scaleRatio: 2
+    scaleRatio: 3
 })
 
 export default typography

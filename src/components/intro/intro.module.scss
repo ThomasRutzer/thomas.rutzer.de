@@ -1,0 +1,31 @@
+@import './../../style-vars.scss';
+
+.intro {
+    position: relative;
+
+    @media (min-width: $breakpoint) {
+        display: grid;
+        grid-template-areas: 
+            "a a a b b";
+    }
+}
+
+.main {
+    margin-bottom: 48px;
+
+    @media (min-width: $breakpoint) {
+        position: relative;
+        transform: translateX(0);
+        grid-area: a;
+        margin: 0 96px 0 0;
+    }
+}
+
+.subline {
+    opacity: 0;
+}
+
+.side {
+    grid-area: b;
+    opacity: 0;
+}
