@@ -1,0 +1,26 @@
+@import './../../style-vars.scss';
+
+.headline {
+    margin: 0;
+    transform: translate(0, 0);
+    color: $font-color;
+    font-size: $font-size-headline-small;
+    font-family: $font-family-headline;
+    line-height: 1.4;
+    font-weight: 400;
+    opacity: 0;
+
+    @media (min-width: $breakpoint) {
+        font-size: $font-size-headline-large;
+    }
+
+    .word {
+        overflow: hidden;
+        display: inline-block;
+        transform-origin: left top;
+    }
+
+    .char {
+        display: inline-block;
+    }
+}
