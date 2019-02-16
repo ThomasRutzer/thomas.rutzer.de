@@ -1,6 +1,6 @@
 @import './../../style-vars.scss';
 
-.externalLink {
+.link {
     position: relative;
     color: $seconday-highlight-color;
     text-decoration: none;
@@ -28,11 +28,12 @@
 
         &:after {
             opacity: 1;
+            border: 1px dashed $seconday-highlight-color;
         }
     }
 }
 
-.externalLinkIcon {
+.icon {
     margin-left: 0.25em;
     display: inline-block;
     transform: translateY(-2px)

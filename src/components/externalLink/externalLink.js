@@ -1,9 +1,9 @@
-import React from "react"
-import externalLinkStyles from "./externalLink.scss"
+import React from 'react'
+import externalLinkStyles from './externalLink.module.scss'
 
-export default props =>
-    <a className="externalLink"
-       href={ props.link } target="blank">
-        { props.children } 
-        <span className="externalLinkIcon">↗</span>
-    </a>
+export default props => (
+  <a className={ externalLinkStyles.link } href={props.link} target="blank">
+    {props.children}
+    <span className={ externalLinkStyles.icon }>↗</span>
+  </a>
+)
