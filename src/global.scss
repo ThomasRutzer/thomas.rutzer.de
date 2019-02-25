@@ -4,4 +4,16 @@ body {
     background-color: #2e2d2d;
     color: $font-color;
     font-family: $font-family-copy;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+::-moz-selection {
+  color: $font-color;
+  background: $seconday-highlight-color;
+}
+
+::selection {
+  color: $font-color;
+  background: $seconday-highlight-color;
 }

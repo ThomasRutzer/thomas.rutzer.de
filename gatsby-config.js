@@ -1,10 +1,12 @@
 module.exports = {
-    pathPrefix: "/thomas.rutzer.de",
+    pathPrefix: "/contact",
     siteMetadata: {
-        title: 'E-Card of creative developer Thomas Rutzer'
+        title: "contact card of creative developer Thomas Rutzer",
+        description: "Hay! I am Thomas Rutzer – a creative developer who feels most comfortable where sophisticated design meets well structured code."
     },
     plugins: [
         `gatsby-plugin-sass`,
+        `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-google-fonts`,
             options: {
@@ -22,13 +24,13 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: "E-Card of creative developer Thomas Rutzer",
-                short_name: "E-Card of creative developer Thomas Rutzer",
-                start_url: "/",
+                name: "contact card of creative developer Thomas Rutzer",
+                short_name: "contact card of creative developer Thomas Rutzer",
+                start_url: "/contact",
                 background_color: "#ad57ff",
                 theme_color: "#ad57ff",
                 display: "standalone",
-                icon: "src/images/icon.png", // This path is relative to the root of the site.
+                icon: "src/images/icon.png"
             }
         },
         'gatsby-plugin-offline'

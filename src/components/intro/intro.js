@@ -1,5 +1,6 @@
 import React from 'react'
 import anime from 'animejs'
+import Splitting from 'splitting'
 
 import introStyles from './intro.module.scss'
 
@@ -21,9 +22,6 @@ export default class Intro extends React.Component {
   }
 
   async componentDidMount() {
-    const SplittingModule = await import('splitting')
-    const Splitting = SplittingModule.default   
-
     const splittedHeadline = Splitting({
       target: this.headline.current,
     })
@@ -51,7 +49,7 @@ export default class Intro extends React.Component {
           translateX: [20, 0],
           duration: 1200,
           easing: 'easeOutQuad',
-        },'+=300')
+        },'-=300')
       .add({
           targets: this.side.current,
           opacity: [0, 1],
@@ -68,7 +66,7 @@ export default class Intro extends React.Component {
       <div className={introStyles.intro}>
         <div ref={this.main} className={introStyles.main}>
           <Headline ref={this.headline}>
-            Hay! I am Thomas Rutzer – a creative developer who feels most
+            Hay! I am Thomas Rutzer — a creative developer who feels most
             comfortable where sophisticated design meets well structured code.
           </Headline>
           <div ref={this.subline} className={introStyles.subline}>
