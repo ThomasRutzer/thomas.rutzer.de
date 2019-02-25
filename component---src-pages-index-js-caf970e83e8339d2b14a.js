@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{139:function(e,a,n){"use strict";n.r(a);var r=n(0),t=n.n(r),p=n(140),u=n.n(p),o=function(e){var a=e.children;return t.a.createElement("div",{className:u.a.layoutWrapper},a)};a.default=function(){return t.a.createElement(o,null)}},140:function(e,a,n){e.exports={layoutWrapper:"layoutWrapper-module--layoutWrapper--1_p_B"}}}]);
-//# sourceMappingURL=component---src-pages-index-js-caf970e83e8339d2b14a.js.map
