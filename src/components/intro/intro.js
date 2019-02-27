@@ -26,6 +26,7 @@ export default class Intro extends React.Component {
       target: this.headline.current,
     })
 
+    const animateionBreak = 800
     const tl = anime.timeline()
 
     tl
@@ -44,19 +45,19 @@ export default class Intro extends React.Component {
         easing: 'easeInOutExpo',
       })
       .add({
-          targets: this.subline.current,
-          opacity: [0, 1],
-          translateX: [20, 0],
-          duration: 1200,
-          easing: 'easeOutQuad',
-        },'-=300')
+        targets: this.subline.current,
+        opacity: [0, 1],
+         [window.innerWidth > animateionBreak ? "translateX" : "translateY"]: [20, 0],
+        duration: 1200,
+        easing: 'easeOutQuad',
+      },'-=300')
       .add({
-          targets: this.side.current,
-          opacity: [0, 1],
-          translateX: [60, 0],
-          duration: 1200,
-          easing: 'easeOutQuad',
-        }, '-=1000')
+        targets: this.side.current,
+        opacity: [0, 1],
+        [window.innerWidth > animateionBreak ? "translateX" : "translateY"]: [60, 0],
+        duration: 1200,
+        easing: 'easeOutQuad',
+      }, '-=1000')
 
     tl.play()
   }
