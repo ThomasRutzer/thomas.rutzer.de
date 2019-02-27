@@ -2,7 +2,7 @@ module.exports = {
     pathPrefix: "/contact",
     siteMetadata: {
         title: "contact card of creative developer Thomas Rutzer",
-        description: "Hay! I am Thomas Rutzer – a creative developer who feels most comfortable where sophisticated design meets well structured code."
+        description: "Hay! I am thomas — a creative developer and foo/bar"
     },
     plugins: [
         `gatsby-plugin-sass`,
