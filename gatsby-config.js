@@ -5,6 +5,14 @@ module.exports = {
         description: "Hay! I am thomas — a creative developer and foo/bar"
     },
     plugins: [
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+            path: `${__dirname}/content/`,
+            name: "markdown-pages",
+            },
+        },
+        `gatsby-transformer-remark`,
         `gatsby-plugin-sass`,
         `gatsby-plugin-react-helmet`,
         {
