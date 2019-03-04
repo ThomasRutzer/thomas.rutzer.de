@@ -16,6 +16,7 @@
 .footerLink {
     position: relative;
     color: $font-color;
+    text-decoration: none;
 
     &:after {
         content: '';
@@ -40,6 +41,6 @@
     }
 
     &.footerLinkActive {
-        color: $seconday-highlight-color;
+        text-decoration: underline;
     }
 }

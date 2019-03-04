@@ -16,6 +16,7 @@
 .headerLink {
     position: relative;
     color: $font-color;
+    text-decoration: none;
 
     &:after {
         content: '';
@@ -40,6 +41,6 @@
     }
 
     &.headerLinkActive {
-        color: $seconday-highlight-color;
+        text-decoration: underline;
     }
 }

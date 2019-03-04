@@ -4,7 +4,7 @@ import Splitting from 'splitting'
 
 import introStyles from './intro.module.scss'
 
-import Headline from '../headline/headline'
+import Title from './title'
 import Copy from '../copy/copy'
 import ExternalLink from './../externalLink/externalLink'
 import Portrait from './../../images/me.jpg'
@@ -66,10 +66,10 @@ export default class Intro extends React.Component {
     return (
       <div className={introStyles.intro}>
         <div ref={this.main} className={introStyles.main}>
-          <Headline ref={this.headline}>
+          <Title ref={this.headline}>
             Hay! I am Thomas Rutzer — a creative developer who feels most
             comfortable where sophisticated design meets well structured code.
-          </Headline>
+          </Title>
           <div ref={this.subline} className={introStyles.subline}>
             <Copy>
               I currently work at <ExternalLink link={'https://artcom.de'}>art+com</ExternalLink>, a
