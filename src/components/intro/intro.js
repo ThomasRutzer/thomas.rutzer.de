@@ -78,7 +78,7 @@ export default class Intro extends React.Component {
           </div>
         </div>
         <div ref={this.side} className={introStyles.side}>
-          <Image alt={'Portrait thomas Rutzer'} src={Portrait} />
+          <Image alt={'Portrait Thomas Rutzer'} src={Portrait} />
           <ContactList />
         </div>
       </div>
