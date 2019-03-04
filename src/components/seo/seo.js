@@ -44,10 +44,7 @@ const Seo = ({
 
 Seo.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  pathname: PropTypes.string,
-  article: PropTypes.bool,
+  description: PropTypes.string
 };
 
 export default Seo;
