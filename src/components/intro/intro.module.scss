@@ -2,11 +2,16 @@
 
 .intro {
     position: relative;
+    min-height: calc(100vh - 96px);
+    padding: 48px 0;
+    box-sizing: border-box;
 
     @media (min-width: $breakpoint) {
         display: grid;
         grid-template-areas: 
             "a a a b b";
+        min-height: calc(100vh - #{$footer-height});
+        padding: 96px 0;
     }
 }
 

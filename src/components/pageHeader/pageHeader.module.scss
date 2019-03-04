@@ -1,0 +1,9 @@
+@import './../../style-vars.scss';
+
+.pageHeader {
+    padding: 48px 0;
+
+    @media (min-width: $breakpoint) {
+        padding: 96px 0;
+    }
+}
