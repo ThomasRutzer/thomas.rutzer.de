@@ -14,8 +14,7 @@ export default function Template({
         <PageHeader
           title={ frontmatter.title }
         />
-        <div className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
+        <div dangerouslySetInnerHTML={{ __html: html }}
         />
     </LayoutWrapper>
   )
