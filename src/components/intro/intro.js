@@ -7,9 +7,10 @@ import introStyles from './intro.module.scss'
 import Title from './title'
 import Copy from '../copy/copy'
 import ExternalLink from './../externalLink/externalLink'
-import Portrait from './../../images/me.jpg'
+import portraitImagePath from './../../images/me.jpg'
 import Image from '../Image/image'
 import ContactList from '../contactList/contactList'
+import networkAnalyzer from "../networkAnalyzer/networkAnalyzer"
 
 export default class Intro extends React.Component {
   constructor(props) {
@@ -63,6 +64,10 @@ export default class Intro extends React.Component {
   }
 
   render() {
+    const Portrait = typeof navigator !== "undefined" 
+      ? networkAnalyzer({ src: portraitImagePath, alt: "Portrait of Thomas Rutzer" })(Image)
+      : null
+
     return (
       <div className={introStyles.intro}>
         <div ref={this.main} className={introStyles.main}>
@@ -78,7 +83,7 @@ export default class Intro extends React.Component {
           </div>
         </div>
         <div ref={this.side} className={introStyles.side}>
-          <Image alt={'Portrait Thomas Rutzer'} src={Portrait} />
+          { Portrait  && <Portrait />}        
           <ContactList />
         </div>
       </div>
