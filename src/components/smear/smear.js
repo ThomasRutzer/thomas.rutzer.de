@@ -68,18 +68,18 @@ export default class Smear extends React.PureComponent {
     this.app.start() 
   }
   
+  update() {
+    this.app.renderer.render(this.app.stage, this.renderTextures[2 - this.current])
+    this.bg.texture = this.renderTextures[2 - this.current]
+    this.current = 2 - this.current
+  }
+
   onPointerMove(event) {
     this.displacementFilter.scale.x = Math.atan(event.data.global.x - this.brush.x)*7
     this.displacementFilter.scale.y = Math.atan(event.data.global.y - this.brush.y)*7
   
     this.brush.position.copyFrom(event.data.global)
-    this.snap(event)
-}
-
-  snap() {
-    this.app.renderer.render(this.app.stage, this.renderTextures[2 - this.current])
-    this.bg.texture = this.renderTextures[2 - this.current]
-    this.current = 2 - this.current
+    this.update(event)
   }
 
   render() {
