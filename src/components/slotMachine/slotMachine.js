@@ -15,42 +15,56 @@ export default class SlotMachine extends React.Component {
 
     this.slots = [
         {
-          symbols: ['4'],
+          symbols: [this.getRandomSymbol(), '4', this.getRandomSymbol()],
           evaluation: null
         },
         {
-          symbols: ['0'],
+          symbols: [this.getRandomSymbol(), '0', this.getRandomSymbol()],
           evaluation: null
         },
         {
-          symbols: ['4'],
+          symbols: [this.getRandomSymbol(), '4', this.getRandomSymbol()],
           evaluation: null
         }
     ]
 
     this.resetTimeout = null
-
-    this.prepare()
+    this.prepare(true)
   }
 
   spin() {
-    this.setState({ isSpinning: true })
+    if (!this.state.isSpinning) {  
+      this.setState({ isSpinning: true })
+    }
   }
 
-  evaluate(slotIndex, symbol) {
+  storeResult(slotIndex, symbol) {
     this.slots[slotIndex].evaluation = symbol
 
     return this.slots.filter(slot => slot.evaluation === null).length === 0
-      ? (this.setState({ jackpot: true }), this.resetTimeout(setTimeout(() => this.reset(), 500)))
+      ? (this.setState({ jackpot: this.evaluateJackpot() }), this.reset())
       : null
   }
 
-  prepare() {
-    this.slots = this.slots.map(slot => 
-        ({ ...slot, symbols: [this.getRandomSymbol(), ...slot.symbols, ...this.fillUpSlot(20)] })
-    ) 
+  evaluateJackpot() {
+    return this.slots.every(slot => slot.evaluation === this.slots[0].evaluation)
+  }
 
-    this.evaluate(0)
+  prepare(initital) {
+    this.slots = this.slots.map(slot => {
+        const symbols = initital 
+          ? [
+              ...slot.symbols,
+              ...this.fillUpSlot(19)
+          ] 
+          : [
+            ...slot.symbols.slice(slot.symbols.length  - 3, slot.symbols.length),           
+            ...this.fillUpSlot(19)
+          ] 
+
+        return ({ ...slot, evaluation: null,  symbols })
+      }
+    ) 
   }
 
   fillUpSlot(count) {
@@ -67,6 +81,8 @@ export default class SlotMachine extends React.Component {
       isSpinning: false
     })
 
+    this.prepare(false)
+
     if (this.resetTimeout) {
       clearTimeout(this.resetTimeout)
     }
@@ -74,20 +90,22 @@ export default class SlotMachine extends React.Component {
 
   render() {
     return (
-      <div className={ slotMachineStyles.slotMachine 
-      }>
-        {
-          this.slots.map((slot, index) => 
-            <Slot 
-              key={ index } 
-              slotIndex={ index }
-              spin={ this.state.isSpinning }
-              evaluate={ this.evaluate }
-              symbols={ slot.symbols } 
-            />
-          )
-        }
-      </div>
+      <>
+        <div className={ slotMachineStyles.slotMachine }>
+          {
+            this.slots.map((slot, index) => 
+              <Slot 
+                key={ index } 
+                slotIndex={ index }
+                spin={ this.state.isSpinning }
+                evaluate={ this.storeResult.bind(this) }
+                symbols={ slot.symbols } 
+              />
+            )
+          }
+        </div>
+        <button onClick={ this.spin.bind(this) } />
+      </>
     )
   }
 }
