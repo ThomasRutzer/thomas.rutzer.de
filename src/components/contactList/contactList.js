@@ -15,7 +15,7 @@ export default () => (
       </ExternalLink>
     </li>
     <li className={contactListStyles.item}>
-      <ExternalLink link={'thomas(at)rutzer.de'}>mail me</ExternalLink>
+      <ExternalLink link={'mailto:thomas@rutzer.de'}>mail me</ExternalLink>
     </li>
   </ul>
 )
