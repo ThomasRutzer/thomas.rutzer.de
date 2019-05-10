@@ -10,7 +10,7 @@
         display: grid;
         grid-template-areas: 
             "a a a b b";
-        min-height: calc(100vh - #{$footer-height});
+        min-height: calc(100vh - (#{$footer-height} + #{$header-height}));
         padding: 96px 0;
     }
 }
