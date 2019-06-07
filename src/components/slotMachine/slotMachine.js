@@ -28,7 +28,6 @@ export default class SlotMachine extends React.Component {
         }
     ]
 
-    this.resetTimeout = null
     this.prepare(true)
   }
 
@@ -82,10 +81,6 @@ export default class SlotMachine extends React.Component {
     })
 
     this.prepare(false)
-
-    if (this.resetTimeout) {
-      clearTimeout(this.resetTimeout)
-    }
   }
 
   render() {
@@ -104,7 +99,7 @@ export default class SlotMachine extends React.Component {
             )
           }
         </div>
-        <button onClick={ this.spin.bind(this) } />
+        <button onClick={ !this.state.isSpinning ? this.spin.bind(this) : null} />
       </>
     )
   }

@@ -12,12 +12,9 @@ export default class Slot extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.spin) {
-      this.startSpinning()
-    }
-
-    if(prevProps.symbols !== this.props.symbols) {
+    if (!prevProps.spin && this.props.spin) {
       this.reset()
+      this.startSpinning()
     }
   }
 
@@ -32,11 +29,12 @@ export default class Slot extends React.Component {
   startSpinning() {
     anime({
       targets: this.$symbols.current,
-      translateY: `${((this.props.symbols.length - 2) / this.props.symbols.length) * 100 * -1}%`,
+      translateY: `${-684}px`,
       duration: 2000,
       easing: 'easeInOutQuad',
-      delay: this.props.slotIndex * 100,
+      delay: this.props.slotIndex * 500,
       complete: () => {
+        console.log("complete")
         this.props.evaluate(
           this.props.slotIndex, 
           this.props.symbols[this.props.symbols.length - 1]
