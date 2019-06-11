@@ -29,15 +29,14 @@ export default class Slot extends React.Component {
   startSpinning() {
     anime({
       targets: this.$symbols.current,
-      translateY: `${-684}px`,
+      translateY: `-${(this.$symbols.current.offsetHeight / 3) * (this.props.symbols.length  - 3)}px`,
       duration: 2000,
       easing: 'easeInOutQuad',
       delay: this.props.slotIndex * 500,
       complete: () => {
-        console.log("complete")
         this.props.evaluate(
           this.props.slotIndex, 
-          this.props.symbols[this.props.symbols.length - 1]
+          this.props.symbols[this.props.symbols.length - 2]
         )
       }
     })

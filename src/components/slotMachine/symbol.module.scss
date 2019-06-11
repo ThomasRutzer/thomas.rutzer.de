@@ -2,4 +2,16 @@
 
 .symbol {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 33.333%;
+  width: 100%;
+  font-size: calc(32px + (128 - 32) * ((100vw - 300px) / (1280 - 300)));
+
+  @media (min-width: $breakpoint) {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $font-color;
+    color: transparent;
+  }
 }

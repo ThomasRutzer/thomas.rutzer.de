@@ -3,6 +3,7 @@ import Slot from './slot'
 import slotMachineStyles from './slotMachine.module.scss'
 
 const symbols = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+const fillUpAmount = 19
 
 export default class SlotMachine extends React.Component {
   constructor(props) {
@@ -31,6 +32,10 @@ export default class SlotMachine extends React.Component {
     this.prepare(true)
   }
 
+  componentDidMount() {
+    this.spin()
+  }
+
   spin() {
     if (!this.state.isSpinning) {  
       this.setState({ isSpinning: true })
@@ -51,15 +56,15 @@ export default class SlotMachine extends React.Component {
 
   prepare(initital) {
     this.slots = this.slots.map(slot => {
-        const symbols = initital 
-          ? [
-              ...slot.symbols,
-              ...this.fillUpSlot(19)
-          ] 
-          : [
+        const symbols = !initital 
+        ? [
             ...slot.symbols.slice(slot.symbols.length  - 3, slot.symbols.length),           
-            ...this.fillUpSlot(19)
+            ...this.fillUpSlot(fillUpAmount)
           ] 
+        : [
+          ...this.fillUpSlot(fillUpAmount),
+          ...slot.symbols.slice(slot.symbols.length  - 3, slot.symbols.length),           
+        ] 
 
         return ({ ...slot, evaluation: null,  symbols })
       }
@@ -94,6 +99,7 @@ export default class SlotMachine extends React.Component {
                 slotIndex={ index }
                 spin={ this.state.isSpinning }
                 evaluate={ this.storeResult.bind(this) }
+                jackpot={ this.state.jackpot }
                 symbols={ slot.symbols } 
               />
             )
