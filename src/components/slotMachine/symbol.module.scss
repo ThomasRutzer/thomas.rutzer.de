@@ -7,11 +7,13 @@
   justify-content: center;
   height: 33.333%;
   width: 100%;
-  font-size: calc(32px + (128 - 32) * ((100vw - 300px) / (1280 - 300)));
+  font-size: calc(64px + (128 - 64) * ((100vw - 300px) / (1280 - 300)));
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $font-color;
+  color: transparent;
+  transition: color 700ms ease-out;
+}
 
-  @media (min-width: $breakpoint) {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: $font-color;
-    color: transparent;
-  }
+.evaluated {
+  color: $font-color;
 }
