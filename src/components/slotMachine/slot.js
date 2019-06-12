@@ -9,6 +9,10 @@ export default class Slot extends React.Component {
     super(props)
 
     this.$symbols = React.createRef()
+    
+    this.state = {
+      complete: null
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -19,6 +23,7 @@ export default class Slot extends React.Component {
   }
 
   reset() {
+    this.setState({ complete: false })
     anime({
       targets: this.$symbols.current,
       translateY: 0,
@@ -34,19 +39,23 @@ export default class Slot extends React.Component {
       easing: 'easeInOutQuad',
       delay: this.props.slotIndex * 500,
       complete: () => {
-        this.props.evaluate(
+        this.setState({
+          complete: true
+        }, this.props.evaluate(
           this.props.slotIndex, 
           this.props.symbols[this.props.symbols.length - 2]
-        )
+        ))
       }
     })
   }
 
   render() {
     return(
-      <div  ref={ this.$symbols }  className={ slotStyles.slot }>
+      <div  ref={ this.$symbols } className={ slotStyles.slot }>
         { this.props.symbols.map((symbol, index) => 
-          <Symbol key={ index } symbol={ symbol } />) 
+          <Symbol key={ index }
+                  evaluated={ this.state.complete && index === this.props.symbols.length - 2} 
+                  symbol={ symbol } />) 
         }
       </div>
     )
