@@ -1,8 +1,9 @@
 import React from 'react'
+import anime from 'animejs'
 import Slot from './slot'
 import slotMachineStyles from './slotMachine.module.scss'
 
-const symbols = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+const symbols = ['0']
 const fillUpAmount = 19
 
 export default class SlotMachine extends React.Component {
@@ -38,7 +39,7 @@ export default class SlotMachine extends React.Component {
 
   spin() {
     if (!this.state.isSpinning) {  
-      this.setState({ isSpinning: true })
+      this.setState({ isSpinning: true, jackpot: false })
     }
   }
 
@@ -46,12 +47,30 @@ export default class SlotMachine extends React.Component {
     this.slots[slotIndex].evaluation = symbol
 
     return this.slots.filter(slot => slot.evaluation === null).length === 0
-      ? (this.setState({ jackpot: this.evaluateJackpot() }), this.reset())
+      ? (this.setState({ isSpinning: false, jackpot: this.evaluateJackpot() }), this.prepare(false))
       : null
   }
 
   evaluateJackpot() {
-    return this.slots.every(slot => slot.evaluation === this.slots[0].evaluation)
+    if (this.slots.every(slot => slot.evaluation === this.slots[0].evaluation)) {
+      anime({
+        targets: document.body,
+        duration: 1200,
+        keyframes: [
+          {filter: "invert(100%)", backgroundColor: "#f8f8f8"},
+          {filter: "invert(0%)", backgroundColor: "#2e2d2d"},
+          {filter: "invert(100%)", backgroundColor: "#f8f8f8"},
+          {filter: "invert(0%)", backgroundColor: "#2e2d2d"}
+        ],
+        easing: 'easeInOutQuad',
+        complete() {
+          document.body.removeAttribute("style")
+        }
+      })
+      return true
+    } else{
+      return false
+    }
   }
 
   prepare(initital) {
@@ -77,15 +96,6 @@ export default class SlotMachine extends React.Component {
 
   getRandomSymbol() {
     return symbols[Math.floor(Math.random()*symbols.length)]
-  }
-
-  reset() {
-    this.setState({
-      jackpot: false,
-      isSpinning: false
-    })
-
-    this.prepare(false)
   }
 
   render() {
