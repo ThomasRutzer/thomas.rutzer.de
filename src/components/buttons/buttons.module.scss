@@ -1,0 +1,49 @@
+@import './../../style-vars.scss';
+
+.primary {
+  position: relative;
+  padding: 5px;
+  background-color: $seconday-highlight-color;
+  border: none;
+  border: 0;
+  cursor: pointer;
+  min-width: 250px;
+  min-height: 56px;
+  font-size: $font-size-body;
+  color: $font-color;
+  transition: background-color 400ms ease-in-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    bottom: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    background-color: rgba($seconday-highlight-color, 0.1);
+    opacity: 0;
+    transition: opacity 400ms ease-out;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: rgba($seconday-highlight-color, 0.1);
+    cursor: not-allowed;
+    color: rgba($font-color, 0.5);
+  }
+
+  &:hover {
+    &:after {
+        opacity: 1;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+
+    &:after {
+        opacity: 1;
+        border: 1px dashed $seconday-highlight-color;
+    }
+  }
+}
