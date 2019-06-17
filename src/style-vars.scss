@@ -1,4 +1,9 @@
-$font-color: #f8f8f8;
+$highlight-color: #00ffcc;
+$seconday-highlight-color: #ad57ff; 
+$black-color: #2e2d2d;
+$white-color: #f8f8f8;
+
+$font-color: $white-color;
 $font-family-headline: 'IBM Plex Mono';
 $font-size-headline-small: 32px;
 $font-size-headline-large: 48px;
@@ -10,10 +15,6 @@ $font-size-small: 11px;
 $font-size-body: 18px;
 
 $font-family-copy: 'IBM Plex Mono';
-
-$highlight-color: #00ffcc;
-$seconday-highlight-color: #ad57ff; 
-$black-color: #2e2d2d;
 
 $breakpoint: 800px;
 $footer-height: 70px;
