@@ -2,8 +2,9 @@ import React from 'react'
 import anime from 'animejs'
 import Slot from './slot'
 import slotMachineStyles from './slotMachine.module.scss'
+import PrimaryButton from './../buttons/secondary-button'
 
-const symbols = ['0']
+const symbols = ['0', '1']
 const fillUpAmount = 19
 
 export default class SlotMachine extends React.Component {
@@ -100,7 +101,7 @@ export default class SlotMachine extends React.Component {
 
   render() {
     return (
-      <>
+      <div className={ slotMachineStyles.wrapper} aria-hidden={ true }>
         <div className={ slotMachineStyles.slotMachine }>
           {
             this.slots.map((slot, index) => 
@@ -114,9 +115,16 @@ export default class SlotMachine extends React.Component {
               />
             )
           }
+
         </div>
-        <button onClick={ !this.state.isSpinning ? this.spin.bind(this) : null} />
-      </>
+        <div className={ slotMachineStyles.cta }>
+          <PrimaryButton 
+            disabled={ this.state.isSpinning }
+            onClick={ !this.state.isSpinning ? this.spin.bind(this) : null} 
+            label={ "Spin to win!"}
+          />
+        </div>
+      </div>
     )
   }
 }

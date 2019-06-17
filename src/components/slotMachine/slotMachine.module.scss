@@ -1,6 +1,24 @@
 @import './../../style-vars.scss';
 
-.slotMachine {
+.wrapper {
   display: flex;
-  overflow: hidden;
+  flex-direction: column;
 }
+
+.slotMachine {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+}
+
+.cta {
+  margin: 16px 0 0 0;
+  display: flex;
+  justify-content: center;
+
+  
+  @media (min-width: $breakpoint) {
+    margin: 48px 0 0 0;
+  }
+} 

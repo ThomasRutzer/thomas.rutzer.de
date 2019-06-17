@@ -1,10 +1,19 @@
 import React from 'react'
 import { SlotMachine } from '../components/slotMachine/index'
+import Copy from "../components/copy/copy"
 import LayoutWrapper from '../components/layout/layoutWrapper'
+
+const wrapperStyle = {
+  display: "flex",
+  flexDirection: "column",
+  height: "calc(100vh - 140px)"
+}
 
 export default () => (
   <LayoutWrapper>
-    <SlotMachine />
-    <p>Too bad. Unfortunately, I couldn't find where you were looking. But maybe happiness is on your side.</p> 
+    <div style={ wrapperStyle }>
+      <SlotMachine />
+      <Copy>Too bad — I couldn't find what you were looking for. But maybe luck is on your side.</Copy> 
+    </div>
   </LayoutWrapper>
 )
