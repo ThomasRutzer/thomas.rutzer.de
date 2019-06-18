@@ -3,11 +3,12 @@
 .secondary {
   position: relative;
   padding: 5px;
-  border: 1px solid $white-color;
+  border: 2px solid $white-color;
   cursor: pointer;
   min-width: 250px;
   min-height: 56px;
   font-size: $font-size-body;
+  font-family: $font-family-copy;
   color: $font-color;
   background-color: transparent;
   transition: background-color 400ms ease-in-out, color 400ms ease-out;
@@ -27,7 +28,7 @@
     pointer-events: none;
     cursor: not-allowed;
     color: rgba($font-color, 0.5);
-    border: 1px solid rgba($white-color, 0.2);
+    border-color: rgba($white-color, 0.2);
   }
 
   &:hover {
