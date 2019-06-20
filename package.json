@@ -1,7 +1,7 @@
 {
-  "name": "thomas.rutzer.de",
+  "name": "github-user-page",
   "private": true,
-  "description": "E-card of creative developer Thomas Rutzer",
+  "description": "Hello! I am creative developer Thomas Rutzer",
   "version": "0.1.0",
   "author": "Thomas Rutzer <thomas@rutzer.de>",
   "dependencies": {

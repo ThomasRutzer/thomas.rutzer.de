@@ -1,8 +1,8 @@
 module.exports = {
-    pathPrefix: "/contact",
+    pathPrefix: "/",
     siteMetadata: {
-        title: "contact card of creative developer Thomas Rutzer",
-        description: "Hay! I am thomas — a creative developer and foo/bar"
+        title: "Hay! I am thomas — a creative developer and foo/bar",
+        description: "default github.io user page of Thomas Rutzer"
     },
     plugins: [
         {
@@ -32,9 +32,9 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: "contact card of creative developer Thomas Rutzer",
-                short_name: "contact card of creative developer Thomas Rutzer",
-                start_url: "/contact",
+                name: "Hay! I am thomas — a creative developer and foo/bar",
+                short_name: "Hay! I am thomas — a creative developer and foo/bar",
+                start_url: "/",
                 background_color: "#ad57ff",
                 theme_color: "#ad57ff",
                 display: "standalone",

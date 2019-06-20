@@ -1,4 +1,5 @@
 import React from 'react'
+import Seo from '../components/seo/seo'
 import { SlotMachine } from '../components/slotMachine/index'
 import Copy from '../components/copy/copy'
 import LayoutWrapper from '../components/layout/layoutWrapper'
@@ -19,16 +20,19 @@ const horizontalRuleStyle = {
 }
 
 export default () => (
-  <LayoutWrapper>
-    <div style={heightWrapperStyle}>
-      <ContentWrapper size={'small'}>
-        <Copy center={true}>
-          Too bad <br /> — I couldn't find what you were looking for. Go{' '}
-          <InternalLink to={'/'} label={'home'} /> or try your luck.
-        </Copy>
-        <hr style={horizontalRuleStyle} />
-      </ContentWrapper>
-      <SlotMachine />
-    </div>
-  </LayoutWrapper>
+  <>
+    <Seo title={ "404 — Too bad" } />
+    <LayoutWrapper>
+      <div style={heightWrapperStyle}>
+        <ContentWrapper size={'small'}>
+          <Copy center={true}>
+            Too bad <br /> — I couldn't find what you were looking for. Go{' '}
+            <InternalLink to={'/'} label={'home'} /> or try your luck.
+          </Copy>
+          <hr style={horizontalRuleStyle} />
+        </ContentWrapper>
+        <SlotMachine />
+      </div>
+    </LayoutWrapper>
+  </>
 )

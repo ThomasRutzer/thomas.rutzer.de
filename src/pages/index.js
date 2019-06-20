@@ -1,9 +1,13 @@
 import React from 'react'
-import { SlotMachine } from '../components/slotMachine/index'
+import Intro from '../components/intro/intro'
 import LayoutWrapper from '../components/layout/layoutWrapper'
+import Seo from "../components/seo/seo"
 
 export default () => (
-  <LayoutWrapper>
-    <SlotMachine />
-  </LayoutWrapper>
+  <>
+    <Seo />
+    <LayoutWrapper>
+      <Intro />
+    </LayoutWrapper>
+  </>
 )
