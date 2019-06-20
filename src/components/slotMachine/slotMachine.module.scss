@@ -1,0 +1,29 @@
+@import './../../style-vars.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  
+  @media (min-width: $breakpoint) {
+    margin: 48px 0 0 0;
+  }
+}
+
+.slotMachine {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+}
+
+.cta {
+  margin: 16px 0 0 0;
+  display: flex;
+  justify-content: center;
+
+  
+  @media (min-width: $breakpoint) {
+    margin: 48px 0 0 0;
+  }
+} 

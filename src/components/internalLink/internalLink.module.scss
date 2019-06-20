@@ -1,0 +1,31 @@
+@import './../../style-vars.scss';
+
+.link {
+    position: relative;
+    color: $font-color;
+    text-decoration: underline;
+    display: inline-block;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: -4px;
+        bottom: -4px;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        background-color: rgba($font-color, 0.1);
+        opacity: 0;
+        transition: opacity 400ms ease-out;
+    }
+
+
+     &:focus {
+        outline: 0;
+
+        &:after {
+            opacity: 1;
+            border: 1px dashed $font-color;
+        }
+    }
+}
+

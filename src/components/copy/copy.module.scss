@@ -9,4 +9,8 @@
     @media (min-width: $breakpoint) {
         font-size: $font-size-subline-large;
     }
+
+    &.center {
+        text-align: center;
+    }
 }
