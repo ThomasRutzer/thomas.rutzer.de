@@ -1,5 +1,3 @@
-import SlotMachine from "./slotMachine"
+import SlotMachine from './slotMachine'
 
-export {
-    SlotMachine
-}
+export { SlotMachine }
