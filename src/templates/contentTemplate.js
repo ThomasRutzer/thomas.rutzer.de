@@ -1,26 +1,19 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import LayoutWrapper from "./../components/layout/layoutWrapper"
-import PageHeader from "./../components/pageHeader/pageHeader"
-import Seo from "../components/seo/seo"
+import LayoutWrapper from './../components/layout/layoutWrapper'
+import PageHeader from './../components/pageHeader/pageHeader'
+import Seo from '../components/seo/seo'
 
-export default function Template({
-  data, 
-}) {
+export default function Template({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <>
-      <Seo
-        title={ frontmatter.title }
-      />
+      <Seo title={frontmatter.title} />
       <LayoutWrapper>
-          <PageHeader
-            title={ frontmatter.title }
-          />
-          <div dangerouslySetInnerHTML={{ __html: html }}
-          />
+        <PageHeader title={frontmatter.title} />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </LayoutWrapper>
     </>
   )

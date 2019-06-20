@@ -1,12 +1,9 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 
-const Seo = ({
-  title = null,
-  description = null
-}) => (
+const Seo = ({ title = null, description = null }) => (
   <StaticQuery
     query={graphql`
       query SEOQuery {
@@ -20,16 +17,13 @@ const Seo = ({
     `}
     render={({
       site: {
-        siteMetadata: {
-          defaultTitle,
-          defaultDescription,
-        },
+        siteMetadata: { defaultTitle, defaultDescription },
       },
     }) => {
       const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-      };
+      }
 
       return (
         <>
@@ -37,14 +31,14 @@ const Seo = ({
             <meta name="description" content={seo.description} />
           </Helmet>
         </>
-      );
+      )
     }}
   />
-);
+)
 
 Seo.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string
-};
+  description: PropTypes.string,
+}
 
-export default Seo;
+export default Seo

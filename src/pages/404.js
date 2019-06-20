@@ -21,7 +21,7 @@ const horizontalRuleStyle = {
 
 export default () => (
   <>
-    <Seo title={ "404 — Too bad" } />
+    <Seo title={'404 — Too bad'} />
     <LayoutWrapper>
       <div style={heightWrapperStyle}>
         <ContentWrapper size={'small'}>

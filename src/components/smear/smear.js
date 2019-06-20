@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import * as PIXI from 'pixi.js'
 import displacementMap from './../../images/displacement.png'
 
@@ -20,9 +20,13 @@ export default class Smear extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.app = new PIXI.Application(this.props.initSize[0], this.props.initSize[1], {
-      view: this.canvas.current
-    })
+    this.app = new PIXI.Application(
+      this.props.initSize[0],
+      this.props.initSize[1],
+      {
+        view: this.canvas.current,
+      }
+    )
 
     this.preload()
   }
@@ -44,48 +48,50 @@ export default class Smear extends React.PureComponent {
       PIXI.RenderTexture.create(this.app.screen.width, this.app.screen.height),
       PIXI.RenderTexture.create(this.app.screen.width, this.app.screen.height)
     )
-    
+
     const initBg = new PIXI.Sprite(this.bgTexture)
     initBg.width = this.app.screen.width
-    initBg.height = this.app.screen.height 
-  
+    initBg.height = this.app.screen.height
+
     this.app.renderer.render(initBg, this.renderTextures[0])
     this.bg = new PIXI.Sprite(this.renderTextures[0])
-  
+
     this.brush = new PIXI.Sprite(this.brushTexture)
     this.brush.anchor.set(0.5)
     this.displacementFilter = new PIXI.filters.DisplacementFilter(this.brush)
     this.app.stage.filters = [this.displacementFilter]
     this.displacementFilter.scale.x = 10
     this.displacementFilter.scale.y = 10
-  
+
     this.app.stage.addChild(this.bg, this.brush)
-  
+
     this.app.stage.interactive = true
 
     this.app.stage.on('pointermove', this.onPointerMove.bind(this))
-  
-    this.app.start() 
+
+    this.app.start()
   }
-  
+
   update() {
-    this.app.renderer.render(this.app.stage, this.renderTextures[2 - this.current])
+    this.app.renderer.render(
+      this.app.stage,
+      this.renderTextures[2 - this.current]
+    )
     this.bg.texture = this.renderTextures[2 - this.current]
     this.current = 2 - this.current
   }
 
   onPointerMove(event) {
-    this.displacementFilter.scale.x = Math.atan(event.data.global.x - this.brush.x)*7
-    this.displacementFilter.scale.y = Math.atan(event.data.global.y - this.brush.y)*7
-  
+    this.displacementFilter.scale.x =
+      Math.atan(event.data.global.x - this.brush.x) * 7
+    this.displacementFilter.scale.y =
+      Math.atan(event.data.global.y - this.brush.y) * 7
+
     this.brush.position.copyFrom(event.data.global)
     this.update(event)
   }
 
   render() {
-    return (
-      <canvas style={{ width: "100%" }} ref={ this.canvas }></canvas>
-    )
+    return <canvas style={{ width: '100%' }} ref={this.canvas} />
   }
 }
-
