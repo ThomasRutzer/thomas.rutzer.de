@@ -42,6 +42,11 @@
 
   &:focus {
     outline: 0;
+    
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
 
     &:after {
         opacity: 1;
