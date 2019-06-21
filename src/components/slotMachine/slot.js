@@ -13,6 +13,8 @@ export default class Slot extends React.Component {
     this.state = {
       complete: null,
     }
+
+    window.addEventListener("resize", this.reset.bind(this))
   }
 
   componentDidUpdate(prevProps) {
@@ -20,6 +22,10 @@ export default class Slot extends React.Component {
       this.reset()
       this.startSpinning()
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.reset.bind(this))
   }
 
   reset() {
