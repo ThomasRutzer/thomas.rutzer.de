@@ -13,7 +13,9 @@ export default class Slot extends React.Component {
     this.state = {
       complete: null,
     }
+  }
 
+  componentDidMount() {
     window.addEventListener("resize", this.reset.bind(this))
   }
 
