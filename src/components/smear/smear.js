@@ -20,15 +20,11 @@ export default class Smear extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.app = new PIXI.Application(
-     
-      
-      {
-        width:  this.props.initSize[0],
-        height: this.props.initSize[1],
-        view: this.canvas.current
-      }
-    )
+    this.app = new PIXI.Application({
+      width: this.props.initSize[0],
+      height: this.props.initSize[1],
+      view: this.canvas.current,
+    })
 
     this.preload()
   }

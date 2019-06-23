@@ -16,7 +16,7 @@ export default class Slot extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.reset.bind(this))
+    window.addEventListener('resize', this.reset.bind(this))
   }
 
   componentDidUpdate(prevProps) {
@@ -27,7 +27,7 @@ export default class Slot extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.reset.bind(this))
+    window.removeEventListener('resize', this.reset.bind(this))
   }
 
   reset() {
