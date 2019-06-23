@@ -19,7 +19,7 @@
     "gatsby-transformer-remark": "^2.3.0",
     "gatsby-transformer-sharp": "^2.1.8",
     "node-sass": "^4.11.0",
-    "pixi.js": "^5.0.0-rc.2",
+    "pixi.js": "^5.0.4",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
