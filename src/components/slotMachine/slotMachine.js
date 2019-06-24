@@ -43,7 +43,7 @@ export default class SlotMachine extends React.Component {
       easing: 'easeInOutQuad',
       complete: () => {
         this.spin()
-      }
+      },
     })
   }
 
@@ -115,7 +115,11 @@ export default class SlotMachine extends React.Component {
 
   render() {
     return (
-      <div ref={this.slotMachineRef} className={slotMachineStyles.wrapper} aria-hidden={true}>
+      <div
+        ref={this.slotMachineRef}
+        className={slotMachineStyles.wrapper}
+        aria-hidden={true}
+      >
         <div className={slotMachineStyles.slotMachine}>
           {this.slots.map((slot, index) => (
             <Slot

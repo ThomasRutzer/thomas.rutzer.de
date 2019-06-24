@@ -26,7 +26,7 @@ export default () => (
     <LayoutWrapper>
       <div style={heightWrapperStyle}>
         <ContentWrapper size={'small'}>
-          <Headline priority={ 1 } center={true}>
+          <Headline priority={1} center={true}>
             Too bad
           </Headline>
           <Copy center={true}>

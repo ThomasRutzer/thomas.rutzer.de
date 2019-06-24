@@ -6,7 +6,9 @@ export default ({ priority, center, children }) => {
 
   return (
     <Tag
-      className={`${headlineStyles[`h${priority}`]} ${center ? headlineStyles.center : null}`}
+      className={`${headlineStyles[`h${priority}`]} ${
+        center ? headlineStyles.center : null
+      }`}
     >
       {children}
     </Tag>
