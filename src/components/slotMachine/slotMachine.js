@@ -32,10 +32,19 @@ export default class SlotMachine extends React.Component {
     ]
 
     this.prepare(true)
+    this.slotMachineRef = React.createRef()
   }
 
   componentDidMount() {
-    this.spin()
+    anime({
+      targets: this.slotMachineRef.current,
+      duration: 1200,
+      opacity: 1,
+      easing: 'easeInOutQuad',
+      complete: () => {
+        this.spin()
+      }
+    })
   }
 
   spin() {
@@ -106,7 +115,7 @@ export default class SlotMachine extends React.Component {
 
   render() {
     return (
-      <div className={slotMachineStyles.wrapper} aria-hidden={true}>
+      <div ref={this.slotMachineRef} className={slotMachineStyles.wrapper} aria-hidden={true}>
         <div className={slotMachineStyles.slotMachine}>
           {this.slots.map((slot, index) => (
             <Slot
