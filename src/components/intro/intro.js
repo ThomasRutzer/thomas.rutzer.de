@@ -5,7 +5,7 @@ import Splitting from 'splitting'
 import introStyles from './intro.module.scss'
 
 import Title from './title'
-import Copy from '../copy/copy'
+import SubTitle from './subTitle'
 import ExternalLink from './../externalLink/externalLink'
 import portraitImagePath from './../../images/me.jpg'
 import Image from '../Image/image'
@@ -91,11 +91,11 @@ export default class Intro extends React.Component {
             comfortable where sophisticated design meets well structured code.
           </Title>
           <div ref={this.subline} className={introStyles.subline}>
-            <Copy>
+            <SubTitle>
               I currently work at{' '}
               <ExternalLink link={'https://artcom.de'}>art+com</ExternalLink>, a
               studio for media installations and spaces.
-            </Copy>
+            </SubTitle>
           </div>
         </div>
         <div ref={this.side} className={introStyles.side}>
