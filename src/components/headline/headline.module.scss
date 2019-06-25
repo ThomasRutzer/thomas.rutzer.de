@@ -22,5 +22,21 @@ h2 {
 }
 
 .center {
-  text-align: center
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.noSpacing {
+  margin: 0;
+}
+
+.spacing {
+  margin: 16px 0;
+  
+  @media (min-width: $breakpoint) {
+    margin: 32px 0;
+  }
 }
