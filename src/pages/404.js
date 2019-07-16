@@ -30,7 +30,7 @@ export default () => (
             Too bad
           </Headline>
           <Copy center={true}>
-            — I couldn't find what you were looking for. <br></br>Go
+            — I couldn't find what you were looking for. <br></br>Go&nbsp;
             <InternalLink to={'/'} label={'home'} /> or try your luck.
           </Copy>
           <hr style={horizontalRuleStyle} />
