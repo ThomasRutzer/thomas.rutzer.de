@@ -27,49 +27,37 @@ export default class Intro extends React.Component {
       target: this.headline.current,
     })
 
-    const animateionBreak = 800
     const tl = anime.timeline()
 
-    tl.add({
+    tl
+    .add({
       targets: this.headline.current,
       opacity: [0, 1],
       duration: 0,
     })
-      .add({
-        targets: splittedHeadline[0].chars,
-        rotate: [20, 0],
-        translateY: ['100%', 0],
+    .add({
+      targets: splittedHeadline[0].chars,
+      rotate: [20, 0],
+      translateY: ['100%', 0],
+      opacity: [0, 1],
+      duration: 2700,
+      delay: anime.stagger(10, {}),
+      easing: 'easeInOutExpo',
+    })
+    .add({
+        targets: this.subline.current,
         opacity: [0, 1],
-        duration: 2700,
-        delay: anime.stagger(10, {}),
-        easing: 'easeInOutExpo',
-      })
-      .add(
-        {
-          targets: this.subline.current,
-          opacity: [0, 1],
-          [window.innerWidth > animateionBreak ? 'translateX' : 'translateY']: [
-            20,
-            0,
-          ],
-          duration: 1200,
-          easing: 'easeOutQuad',
-        },
-        '-=300'
-      )
-      .add(
-        {
-          targets: this.side.current,
-          opacity: [0, 1],
-          [window.innerWidth > animateionBreak ? 'translateX' : 'translateY']: [
-            60,
-            0,
-          ],
-          duration: 1200,
-          easing: 'easeOutQuad',
-        },
-        '-=1000'
-      )
+        'translateY': [20, 0 ],
+        duration: 1200,
+        easing: 'easeOutQuad',
+    }, '-=300')
+    .add({
+        targets: this.side.current,
+        opacity: [0, 1],
+        'translateY': [60, 0 ],
+        duration: 1200,
+        easing: 'easeOutQuad'
+    },'-=1000')
 
     tl.play()
   }
