@@ -5,7 +5,7 @@ export default ({ children, size }) => (
   <div
     className={`${contentWrapperStyles.container} ${
       size ? contentWrapperStyles[size] : null
-    }`}
+      }`}
   >
     {children}
   </div>

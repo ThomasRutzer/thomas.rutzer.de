@@ -1,0 +1,45 @@
+@import './../style-vars.scss';
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 140px);
+} 
+
+.intro {
+  margin-bottom: 16px;
+  
+  @media (min-width: $breakpoint) {
+    margin-bottom: 32px;
+  }
+}
+
+.divider {
+  width: 400px;
+  max-width: 100%;
+  margin: 32px auto 0 auto;
+  opacity: 0.2;
+}
+
+.symbol {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $font-color;
+  color: transparent;
+  transition: color 700ms ease-out;
+}
+
+.evaluated {
+  color: $font-color;
+}
+
+
+.cta {
+  margin: 16px 0 0 0;
+  display: flex;
+  justify-content: center;
+
+  
+  @media (min-width: $breakpoint) {
+    margin: 48px 0 0 0;
+  }
+} 
