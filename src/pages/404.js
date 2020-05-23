@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import anime from 'animejs'
 import Seo from '../components/seo/seo'
-import SlotMachine from 'slot-machine'
+import SlotMachine from 'react-slot-machine'
 import Copy from '../components/copy/copy'
 import Headline from '../components/headline/headline'
 import LayoutWrapper from '../components/layout/layoutWrapper'
