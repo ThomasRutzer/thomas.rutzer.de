@@ -1,14 +1,15 @@
-@import './style-vars.scss';
+@import "./style-vars.scss";
+@tailwind base;
 
 body {
-    background-color: $black-color;
-    color: $font-color;
-    font-family: $font-family-copy;
-    font-size: $font-size-body;
-    line-height: 2;
-    overflow-x: hidden;
-    width: 100%;
-    margin: 0;
+  background-color: $black-color;
+  color: $font-color;
+  font-family: $font-family-copy;
+  font-size: $font-size-body;
+  line-height: 2;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
 }
 
 ::-moz-selection {
@@ -21,24 +22,27 @@ body {
   background: $seconday-highlight-color;
 }
 
-h1 {
-    font-size: $font-size-headline-small;
-    font-family: $font-family-headline;
-    line-height: 1.4;
-    font-weight: 400;
+h1, .h1 {
+  font-size: $font-size-h1-small;
+  font-family: $font-family-headline;
+  line-height: 1.2;
+  font-weight: 400;
 
-    @media (min-width: $breakpoint) {
-        font-size: $font-size-headline-large;
-    }
+  @media (min-width: $breakpoint) {
+    font-size: $font-size-h1-large;
+  }
 }
 
-h2 {
-    font-size: $font-size-subline-small;
-    font-family: $font-family-headline;
-    line-height: 1.4;
-    font-weight: 400;
+h2, .h2 {
+  font-size: $font-size-h2-small;
+  font-family: $font-family-headline;
+  line-height: 1.8;
+  font-weight: 400;
 
-    @media (min-width: $breakpoint) {
-        font-size: $font-size-subline-large;
-    }
+  @media (min-width: $breakpoint) {
+    font-size: $font-size-h2-large;
+  }
 }
+
+@tailwind components;
+@tailwind utilities;
