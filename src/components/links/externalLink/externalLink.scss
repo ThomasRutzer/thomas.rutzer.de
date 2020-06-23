@@ -1,0 +1,49 @@
+.externalLink {
+  position: relative;
+  text-decoration: none;
+  transition: all 400ms ease-out;
+
+  &.externalLink--primary:hover {
+    box-shadow: 8px 0 0 theme("colors.secondary.lighter"), -8px 0 0 theme("colors.secondary.lighter");
+    box-decoration-break: clone;
+    background: theme("colors.secondary.lighter");
+  }
+
+  &:not(.externalLink--primary):hover {
+    box-shadow: 8px 0 0 theme("colors.grey.darker"), -8px 0 0 theme("colors.grey.darker");
+    box-decoration-break: clone;
+    background: theme("colors.grey.darker");
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.externalLink--primary:focus {
+    color: theme("colors.white");
+    box-shadow: 8px 0 0 theme("colors.secondary.default"), -8px 0 0 theme("colors.secondary.default");
+    box-decoration-break: clone;
+    background: theme("colors.secondary.default");
+  }
+
+  &:not(.externalLink--primary):focus {
+    color: theme("colors.secondary.default");
+    box-shadow: 8px 0 0 theme("colors.white"), -8px 0 0 theme("colors.white");
+    box-decoration-break: clone;
+    background: theme("colors.white");
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+
+  &.externalLink--primary:active {
+    text-underline-position: under;
+  }
+}
+
+.externalLink__icon {
+  margin-left: 0.25em;
+  display: inline-block;
+  stroke: currentColor;
+}
