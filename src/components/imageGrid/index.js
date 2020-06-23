@@ -1,30 +1,20 @@
 import React from "react"
 
-import ContentWrapper from "./../layout/contentWrapper"
+import Image from "./image"
 
 const ImageGrid = ({ }) => {
   return (
-    <ContentWrapper variant="large">
-
+    <div className="relative">
       <div className="absolute w-full h-full flex items-center justify-center flex-col">
         <h2 className="h1">Futurium</h2>
         <h3>Permanent Exhibition</h3>
       </div>
       <div className="grid grid-cols-6 grid-rows-3 gap-5 h-screen">
-        <div  className="row-start-2 col-span-2 row-span-2 overflow-hidden flex items-center">
-        <img className="w-full h-full object-cover"
-          src="https://images.unsplash.com/photo-1567653418876-5bb0e566e1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80" />
-        </div>
-        <div  className="row-start-1 col-start-4 col-span-2 row-span-1 overflow-hidden flex items-center">
-        <img className="w-full h-full object-cover"
-          src="https://images.unsplash.com/photo-1567653418876-5bb0e566e1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80" />
-        </div>
-        <div  className="row-start-2 col-start-6 col-span-1 overflow-hidden flex items-center">
-        <img className="w-full h-full object-cover"
-          src="https://images.unsplash.com/photo-1567653418876-5bb0e566e1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80" />
-        </div>
+        <Image tiles={[[1, 2], [2, 4]]} />
+        <Image tiles={[[4, 2], [1, 1]]} />
+        <Image tiles={[[6, 1], [2, 1]]} />
       </div>
-    </ContentWrapper>
+    </div>
   )
 }
 
