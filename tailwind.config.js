@@ -6,16 +6,15 @@ module.exports = {
     colors: {
       white: "#fff",
       black: "#2e2d2d",
-      highlight: {
-        default: "#6CEEAA",
-        secondary: "#ad57ff"
-      }
+      grey: {darker: "#414142", default: "#E1E2E1", lighter: "#F5F5F6"},
+      secondary: {lighter: "#ff8c86", default: "#fa5959", darker: "#c02030"},
+      highlight: {lighter: '#df5bfa', default: "#ab20c8", darker: "#760094"}
     },
     fill: theme => ({
       "highlight": theme("colors.highlight"),
     }),
     fontFamily: {
-      serif: 'IBM Plex Mono'
+      sans: 'IBM Plex Mono'
     },
     spacing: {
       0: "0px",
