@@ -1,9 +1,13 @@
-@import "./../../style-vars.scss";
-
 .title {
   margin: 0;
   transform: translate(0, 0);
-  color: $highlight-color;
+  line-height: 1.2;
+  font-weight: 400;
+  font-size: 5rem;
+
+  @screen md {
+    font-size: 120px;
+  }
 
   .word {
     overflow: hidden;

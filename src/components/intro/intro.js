@@ -26,10 +26,17 @@ export default class Intro extends React.Component {
 
     tl
       .add({
+        targets: this.bg.current,
+        opacity: [0, 1],
+        duration: 1200,
+        delay: 700,
+        easing: 'easeOutQuad'
+      })
+      .add({
         targets: this.headline.current,
         opacity: [0, 1],
         duration: 0,
-      })
+      }, "-=300")
       .add({
         targets: splittedHeadline[0].chars,
         rotate: [20, 0],
@@ -45,21 +52,15 @@ export default class Intro extends React.Component {
         'translateY': [20, 0],
         duration: 1200,
         easing: 'easeOutQuad',
-      }, '-=300')
-      .add({
-        targets: this.bg.current,
-        opacity: [0, 1],
-        duration: 1200,
-        delay: 700,
-        easing: 'easeOutQuad'
-      }, '-=1000')
+      }, '-=1200')
+
 
     tl.play()
   }
 
   render() {
     return (
-      <div className="relative py-5 md:min-h-screen flex items-center overflow-hidden">
+      <div className="relative py-5 min-h-screen flex items-center overflow-hidden">
         <div aria-hidden="true" ref={this.bg} className={introStyles.bg}>
           <Portrait />
         </div>
@@ -68,9 +69,9 @@ export default class Intro extends React.Component {
             <div ref={this.main} className="col-start-1 col-span-2">
               <Title ref={this.headline}>
                 hay, I'm thomas
-            </Title>
+              </Title>
               <div ref={this.subline}>
-                <h2>
+                <h2 className="md:text-4xl">
                   creative developer who feels most comfortable where sophisticated design meets well structured code.
                 </h2>
               </div>
