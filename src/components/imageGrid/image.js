@@ -1,12 +1,14 @@
 import React, { useMemo } from "react"
 import classnames from "classnames"
 
-const Image = ({ src, tiles }) => {
+const Image = ({ src, mobileRow, tiles, index }) => {
   const createTilesClasses = useMemo(() => classnames({
-    [`col-start-${tiles[0][0]}`]: true,
-    [`col-span-${tiles[0][1]}`]: true,
-    [`row-start-${tiles[1][0]}`]: true,
-    [`row-span-${tiles[1][1]}`]: true,
+    [`col-start-${index + 1} col-span-1`]: true,
+    [`row-start-${mobileRow} row-span-1`]: true,
+    [`md:col-start-${tiles[0][0]}`]: true,
+    [`md:col-span-${tiles[0][1]}`]: true,
+    [`md:row-start-${tiles[1][0]}`]: true,
+    [`md:row-span-${tiles[1][1]}`]: true
   }), [tiles[0][0], tiles[0][1], tiles[1][0], tiles[1][1]])
   
   return (
