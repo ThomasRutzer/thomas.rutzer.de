@@ -1,0 +1,15 @@
+.internalLink {
+  &:hover:not(:focus), &--active {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+
+  &:focus {
+    text-decoration-style: dashed;
+    outline: 1px dashed currentColor;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}

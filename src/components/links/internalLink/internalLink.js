@@ -1,9 +1,12 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import internalLinkStyles from './internalLink.module.scss'
+import React from "react"
+import { Link } from "gatsby"
 
-export default props => (
-  <Link className={internalLinkStyles.link} to={props.to}>
-    {props.label}
+import "./internalLink.scss"
+
+const InternalLink = ({ children, link }) => (
+  <Link className="internalLink" to={link} activeClassName="internalLink--active">
+    {children}
   </Link>
 )
+
+export default InternalLink

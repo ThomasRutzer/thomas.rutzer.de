@@ -4,9 +4,12 @@ import classnames from "classnames"
 import "./externalLink.scss"
 
 export default ({ children, link, appearace, size }) => {
-  const createSizeClass = useMemo(() => classnames({ "h2": size === "large" }), [size])
+  const createSizeClass = useMemo(() => classnames({ 
+    "externalLink--large text-3xl md:text-5xl": size === "large",
+    "externalLink--small text-sm": size === "small"  
+  }), [size])
   const createAppearanceClass = useMemo(
-    () => classnames({ "externalLink--primary text-secondary": appearace === "primary" }), 
+    () => classnames({ "externalLink--primary text-highlight": appearace === "primary" }), 
     [appearace]
   )
 
