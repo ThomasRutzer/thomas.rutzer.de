@@ -1,19 +1,17 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import footerStyles from './footer.module.scss'
+import ContentWrapper from '../layout/contentWrapper'
+import InternalLink from "./../../components/links/internalLink/internalLink"
 
-export default props => (
-  <footer className={footerStyles.footer}>
-    <ul className={footerStyles.footerList}>
-      <li>
-        <Link
-          className={footerStyles.footerLink}
-          to="/legal/"
-          activeClassName={footerStyles.footerLinkActive}
-        >
-          Legal notice
-        </Link>
-      </li>
-    </ul>
+export default () => (
+  <footer>
+    <ContentWrapper variant="large">
+      <ul>
+        <li className="text-sm">
+          <InternalLink link="/legal/">
+            Legal notice
+          </InternalLink>
+        </li>
+      </ul>
+    </ContentWrapper>
   </footer>
 )
