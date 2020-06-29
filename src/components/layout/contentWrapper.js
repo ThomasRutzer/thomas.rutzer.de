@@ -16,7 +16,7 @@ function ContentWrapper({ children, className = "", variant, verticalSpacing = t
 
     return classnames(
       "relative", "container", "mx-auto", "px-4", "md:px-5",
-      { ["py-7"]: verticalSpacing }, 
+      { ["py-4 md:py-7"]: verticalSpacing }, 
       { [`${ widthClass}`]: true },
     ) 
   }
