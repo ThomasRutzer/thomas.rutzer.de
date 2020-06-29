@@ -1,20 +1,16 @@
-@import './../../style-vars.scss';
-
 .secondary {
   position: relative;
   padding: 5px;
-  border: 2px solid $white-color;
+  border: 2px solid theme("colors.white");
   cursor: pointer;
   min-width: 250px;
   min-height: 56px;
-  font-size: $font-size-body;
-  font-family: $font-family-copy;
-  color: $font-color;
+  color: theme("colors.white");
   background-color: transparent;
   transition: background-color 400ms ease-in-out, color 400ms ease-out;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     left: -5px;
     bottom: -5px;
@@ -25,32 +21,31 @@
   }
 
   &:disabled {
-    pointer-events: none;
-    cursor: not-allowed;
-    color: rgba($font-color, 0.5);
-    border-color: rgba($white-color, 0.2);
+    // pointer-events: none;
+    // cursor: not-allowed;
+    // color: rgba(theme("colors.white"), 0.5);
+    // border-color: rgba(theme("colors.white"), 0.2);
   }
 
   &:hover {
-    background-color: $white-color;
-    color: $black-color;
+    background-color: theme("colors.white");
+    color: theme("colors.black");
 
     &:after {
-        opacity: 1;
+      opacity: 1;
     }
   }
 
   &:focus {
     outline: 0;
-    
 
     &::-moz-focus-inner {
       border: 0;
     }
 
     &:after {
-        opacity: 1;
-        border: 1px dashed $white-color;
+      opacity: 1;
+      border: 1px dashed theme("colors.white");
     }
   }
 }

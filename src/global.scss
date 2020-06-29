@@ -1,11 +1,8 @@
-@import "./style-vars.scss";
 @tailwind base;
 
 body {
-  background-color: $black-color;
-  color: $font-color;
-  font-family: $font-family-copy;
-  font-size: $font-size-body;
+  background-color: theme("colors.black");
+  color: theme("colors.white");
   line-height: 2;
   overflow-x: hidden;
   width: 100%;
@@ -13,35 +10,13 @@ body {
 }
 
 ::-moz-selection {
-  color: $font-color;
-  background: $seconday-highlight-color;
+  color: theme("colors.white");
+  background: theme("colors.secondary");
 }
 
 ::selection {
-  color: $font-color;
-  background: $seconday-highlight-color;
-}
-
-h1, .h1 {
-  font-size: $font-size-h1-small;
-  font-family: $font-family-headline;
-  line-height: 1.2;
-  font-weight: 400;
-
-  @media (min-width: $breakpoint) {
-    font-size: $font-size-h1-large;
-  }
-}
-
-h2, .h2 {
-  font-size: $font-size-h2-small;
-  font-family: $font-family-headline;
-  line-height: 1.8;
-  font-weight: 400;
-
-  @media (min-width: $breakpoint) {
-    font-size: $font-size-h2-large;
-  }
+  color: theme("colors.white");
+  background: theme("colors.secondary");
 }
 
 @tailwind components;
