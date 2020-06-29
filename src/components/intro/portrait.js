@@ -5,7 +5,7 @@ import portraitImagePath from './../../images/me.jpg'
 const Smear = React.lazy(() => import(`../smear/smear`))
 
 const Portrait = () => {
-  const sufficientConnection = false
+  const sufficientConnection = networkAnalyzer() && !isMobileDevice()
 
   return (
     <>
