@@ -1,5 +1,22 @@
 const path = require("path")
 
+exports.onCreateNode = ({ node, actions }) => {
+  // destructures the needed action
+  const { createNodeField } = actions
+
+  //
+  // checks the gatsby node type
+  // in this case we are looking for the json content that exists and transformed by the gatsby-transformer-json plugin
+  if (node.internal.type === "WorksJson") {
+    // extends the existing gatsby node with a new field, later accessible via the fields graphql node.
+    createNodeField({
+      node, // the current node
+      name: `workImageAssets`, // defines a name for the new element being added.
+      value: node.images.map(image => `./../src/images/works/${node.id}/${image.src}`)
+    })
+  }
+}
+
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
     actions.setWebpackConfig({

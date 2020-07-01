@@ -1,3 +1,5 @@
+const path = require(`path`)
+
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
@@ -8,11 +10,21 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content/`,
         name: "markdown-pages",
       },
     },
-    `gatsby-transformer-remark`,
+    "gatsby-transformer-json",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-remark",
     {
       resolve: `gatsby-plugin-sass`,
       options: {
