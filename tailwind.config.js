@@ -6,7 +6,7 @@ module.exports = {
     colors: {
       white: "#fff",
       black: "#2e2d2d",
-      grey: {darker: "#414142", default: "#E1E2E1", lighter: "#F5F5F6"},
+      grey: {darker: "#3a3a3a", default: "#E1E2E1", lighter: "#bebebf"},
       secondary: {lighter: "#ff8c86", default: "#fa5959", darker: "#c02030"},
       highlight: {lighter: '#df5bfa', default: "#ab20c8", darker: "#760094"}
     },
@@ -24,7 +24,7 @@ module.exports = {
       4: "24px",
       5: "32px",
       6: "48px",
-      7: "64px"
+      7: "96px"
     }
   },
   variants: {
