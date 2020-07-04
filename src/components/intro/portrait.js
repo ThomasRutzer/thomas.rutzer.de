@@ -1,8 +1,8 @@
-import React, { Suspense } from 'react'
+import React, { Suspense } from "react"
 import networkAnalyzer from "../../utils/networkAnalyzer"
 import isMobileDevice from "../../utils/isMobileDevice"
-import portraitImagePath from './../../images/me.jpg'
-const Smear = React.lazy(() => import(`../smear/smear`))
+import portraitImagePath from "./../../images/me.jpg"
+const Smear = React.lazy(() => import("../smear/smear"))
 
 const Portrait = () => {
   const sufficientConnection = networkAnalyzer() && !isMobileDevice()

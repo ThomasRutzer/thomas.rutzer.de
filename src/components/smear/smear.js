@@ -1,6 +1,6 @@
-import React from 'react'
-import * as PIXI from 'pixi.js'
-import displacementMap from './../../images/displacement.png'
+import React from "react"
+import * as PIXI from "pixi.js"
+import displacementMap from "./../../images/displacement.png"
 
 PIXI.utils.skipHello()
 
@@ -30,8 +30,8 @@ export default class Smear extends React.PureComponent {
   }
 
   preload() {
-    this.app.loader.add('bg', this.props.img)
-    this.app.loader.add('brush', displacementMap)
+    this.app.loader.add("bg", this.props.img)
+    this.app.loader.add("brush", displacementMap)
     this.app.loader.load((loader, resources) => {
       this.bgTexture = resources.bg.texture
       this.brushTexture = resources.brush.texture
@@ -65,7 +65,7 @@ export default class Smear extends React.PureComponent {
 
     this.app.stage.interactive = true
 
-    this.app.stage.on('pointermove', this.onPointerMove.bind(this))
+    this.app.stage.on("pointermove", this.onPointerMove.bind(this))
 
     this.app.start()
   }
@@ -90,6 +90,6 @@ export default class Smear extends React.PureComponent {
   }
 
   render() {
-    return <canvas style={{ width: '100%' }} ref={this.canvas} />
+    return <canvas style={{ width: "100%" }} ref={this.canvas} />
   }
 }
