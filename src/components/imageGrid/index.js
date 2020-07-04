@@ -26,11 +26,11 @@ const ImageGrid = ({ title, subtitle, images = [] }) => {
 
   return (
     <div className="relative">
-      <div className="mb-6 md:absolute md:w-full md:h-full flex items-center justify-center flex-col z-10">
+      <div className="mb-4 md:mb-6 md:absolute md:w-full md:h-full flex items-center justify-center flex-col z-10">
         <h2 className="text-6xl border-solid border-b-4">{title}</h2>
         <h3 className="mt-4">{subtitle}</h3>
       </div>
-      <div className="grid grid-cols-3 grid-rows-2 md:grid-cols-6 md:grid-rows-3 md:gap-5 md:h-screen">
+      <div className="grid grid-cols-6 md:grid-rows-3 md:gap-5 md:h-screen">
         {images.map((image, key) =>
           <Image
             index={key}

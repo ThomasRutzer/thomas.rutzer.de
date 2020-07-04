@@ -16,8 +16,11 @@ export default ({ data }) => {
       <Seo />
       <Intro />
       {data.allWorksJson.edges.map((work, key) =>
-        <section key={key} className={key % 2 === 0 ? "bg-grey-darker" : "bg-black"}>
-          <ContentWrapper variant="large">
+        <section key={key} className={key % 2 === 0 ? "bg-black" : "bg-grey-darker"}>
+          <ContentWrapper
+            variant="large"
+            additionalClasses="md:px-5"
+            horizontalSpacing={false}>
             {key === 0 &&
               <>
                 <h3 className="text-sm mb-4">
@@ -36,19 +39,26 @@ export default ({ data }) => {
               }))}
               title={work.node.title}
               subtitle={work.node.subTitle} />
-            <div className="grid grid-cols-6 md:mt-7 md:gap-5">
-              <div className="col-start-1 cols-span-4 md:col-span-1">
+          </ContentWrapper>
+          <ContentWrapper variant="large">
+            <div className="grid grid-cols-6 md:gap-5">
+              <div
+                className="
+                  flex md:flex-col justify-between 
+                  col-start-1 col-span-6 md:col-span-1
+                  mb-4 md:mb-0
+                ">
                 <p className="text-grey">{work.node.year}</p>
                 <FeatureList items={work.node.features} />
               </div>
-              <div className="col-start-1 col-span-6 md:col-start-2 md:col-span-3">
+              <div className="col-start-1 col-span-6 md:col-start-2 md:col-span-4">
                 <p>{work.node.description}</p>
               </div>
-              <div className="col-start-1 col-span-6 md:col-start-5 md:col-span-2">
+              <div className="col-start-1 col-span-6 md:col-start-6 md:col-span-1">
                 <div className="flex flex-col md:items-end">
                   <div className="md:transform md:-rotate-90 md:translate-x-1/2 md:origin-bottom">
                     {work.node.links.map(({ link, label }, key) =>
-                      <div key={key}>
+                      <div className="whitespace-no-wrap" key={key}>
                         <ExternalLink
                           link={link}
                           appearace="primary">
@@ -151,29 +161,26 @@ export default ({ data }) => {
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
               <h5 className="mb-2">images</h5>
-              <ul>
-                <li>
-                  <ExternalLink
-                    link="https://futurium.de/uploads/images/Futurium_David_von_Becker_VB_4593.jpg"
-                    size="small">
-                    Fig.1: Futurium <i>permanent exhibition</i> by David von Becker
-                </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink
-                    link="https://futurium.de/uploads/images/FUT_Eroeffnung_Jan_Windszus_06092019_01734.jpg"
-                    size="small">
-                    Fig.2: Futurium <i>permanent exhibition</i> by Jan Windszus
-              </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink
-                    link="https://futurium.de/uploads/images/Futurium_David_von_Becker_VB_9824.jpg"
-                    size="small">
-                    Fig.3: Futurium <i>permanent exhibition</i> by David von Becker
-              </ExternalLink>
-                </li>
-              </ul>
+              {data.allWorksJson.edges.map((work, key) =>
+                <ul key={key}>
+                  {work.node.images.map((image, imageKey) =>
+                    <li key={imageKey}>
+                      {image.reference.link &&
+                        <ExternalLink
+                          link={image.link}
+                          size="small">
+                          Fig.{imageKey + 1}: {work.node.title} <i>{work.node.subTitle}</i> by {image.reference.author}
+                        </ExternalLink>
+                      }
+                      {!image.reference.link &&
+                        <p className="text-sm">
+                          Fig.{imageKey + 1}: {work.node.title} <i>{work.node.subTitle}</i> by {image.reference.author}
+                        </p>
+                      }
+                    </li>
+                  )}
+                </ul>
+              )}
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
               <h5 className="mb-2">this site</h5>
@@ -236,8 +243,11 @@ export const query = graphql`
             alt,
             grid {
               tiles,
-              mobileRow,
               fit
+            },
+            reference {
+              author,
+              link
             }
           },
           fields {
