@@ -10,25 +10,25 @@ import ContentWrapper from "./../components/layout/contentWrapper"
 import ExternalLink from "../components/links/externalLink/externalLink"
 
 export default ({ data }) => {
-  console.log(data.allWorksJson.edges)
   return (
     <LayoutWrapper>
       <Seo />
       <Intro />
+      <ContentWrapper
+        variant="large"
+        verticalSpacing={false}
+        additionalClasses="pt-4 md:pt-7">
+        <h3 className="text-sm mb-4">
+          <span className="underline">works</span>
+          <span className="text-secondary">.</span>
+        </h3>
+      </ContentWrapper>
       {data.allWorksJson.edges.map((work, key) =>
         <section key={key} className={key % 2 === 0 ? "bg-black" : "bg-grey-darker"}>
           <ContentWrapper
             variant="large"
             additionalClasses="md:px-5"
             horizontalSpacing={false}>
-            {key === 0 &&
-              <>
-                <h3 className="text-sm mb-4">
-                  <span className="underline">works</span>
-                  <span className="text-secondary">.</span>
-                </h3>
-              </>
-            }
             <ImageGrid
               images={work.node.images.map((image, key) => ({
                 src: work.node.fields.workImageAssets[key],
@@ -56,12 +56,15 @@ export default ({ data }) => {
               </div>
               <div className="col-start-1 col-span-6 md:col-start-6 md:col-span-1">
                 <div className="flex flex-col md:items-end">
-                  <div className="md:transform md:-rotate-90 md:translate-x-1/2 md:origin-bottom">
+                  <div 
+                    className="
+                      md:transform md:-rotate-90 md:translate-x-1/2 md:origin-bottom 
+                    ">
                     {work.node.links.map(({ link, label }, key) =>
                       <div className="whitespace-no-wrap" key={key}>
                         <ExternalLink
-                          link={link}
-                          appearace="primary">
+                          appearace="primary"
+                          link={link}>
                           {label}
                         </ExternalLink>
                       </div>
@@ -113,12 +116,12 @@ export default ({ data }) => {
             <div className="col-start-1 md:col-start-2 col-span-1">
               <p>
                 I currently work at <ExternalLink link={"https://artcom.de"} appearace="primary">art+com</ExternalLink>, a studio for media installations and spaces.
-          </p>
+              </p>
               <p className="mt-4">
-                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom interfaces with web technologies and realtime communications with mqtt.
+            In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom interfaces with web technologies and realtime communications with mqtt.
           </p>
-              <p className="mt-4">
-                My personal reasearch focus at the moment is bringing interfaces into spaces with the new webXR API.
+          <p className="mt-4">
+            My personal reasearch focus at the moment is bringing interfaces into spaces with the new webXR API.
           </p>
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
@@ -150,8 +153,10 @@ export default ({ data }) => {
           </div>
         </ContentWrapper>
       </section>
-      <section>
-        <ContentWrapper variant="large">
+      <section className="bg-secondary md:pb-7">
+        <ContentWrapper 
+          additionalClasses="bg-highlight md:bg-secondary md:border-4 md:border-highlight md:text-highlight" 
+          variant="large">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
               <h3 className="text-sm">
@@ -160,7 +165,7 @@ export default ({ data }) => {
               </h3>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
-              <h5 className="mb-2">images</h5>
+              <h5 className="mb-2 font-bold">images</h5>
               {data.allWorksJson.edges.map((work, key) =>
                 <ul key={key}>
                   {work.node.images.map((image, imageKey) =>
@@ -183,7 +188,7 @@ export default ({ data }) => {
               )}
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
-              <h5 className="mb-2">this site</h5>
+              <h5 className="mb-2 font-bold">this site</h5>
               <ul>
                 <li>
                   <ExternalLink
@@ -203,7 +208,7 @@ export default ({ data }) => {
                   <ExternalLink
                     link={"https://github.com/features/actions"}
                     size="small">
-                    CD with Github actions
+                    Github actions
               </ExternalLink>
                 </li>
                 <li>

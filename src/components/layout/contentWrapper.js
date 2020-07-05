@@ -1,10 +1,18 @@
 import React from "react"
 import classnames from "classnames"
 
-function ContentWrapper({ children, className = "", variant, verticalSpacing = true }) {
+function ContentWrapper(
+  { 
+    children, 
+    additionalClasses = "", 
+    variant, 
+    verticalSpacing = true, 
+    horizontalSpacing = true 
+  }
+) {
   const createClasses = () => {
     const widthClass = (variant => {
-      switch(variant) {
+      switch (variant) {
         case 'small':
           return "max-w-xl";
         case "large":
@@ -15,15 +23,16 @@ function ContentWrapper({ children, className = "", variant, verticalSpacing = t
     })(variant);
 
     return classnames(
-      "relative", "container", "mx-auto", "px-4", "md:px-5",
-      { ["py-4 md:py-7"]: verticalSpacing }, 
-      { [`${ widthClass}`]: true },
-    ) 
+      "relative", "container", "mx-auto",
+      { ["px-4 md:px-5"]: horizontalSpacing },
+      { ["py-4 md:py-7"]: verticalSpacing },
+      { [`${widthClass}`]: true },
+    )
   }
 
   return (
-    <div className={ `${ createClasses() } ${ className }` }>
-      { children }
+    <div className={`${createClasses()} ${additionalClasses}`}>
+      {children}
     </div>
   )
 }
