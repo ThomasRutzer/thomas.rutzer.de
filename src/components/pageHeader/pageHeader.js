@@ -1,11 +1,16 @@
-import React from 'react'
-import pageHeaderStyles from './pageHeader.module.scss'
-import Headline from './../headline/headline'
+import React from "react"
+
+import Header from "./../header/header"
+import ContentWrapper from "./../layout/contentWrapper"
 
 export default props => (
-  <div className={pageHeaderStyles.pageHeader}>
-    <Headline priority={1} spacing={false}>
-      {props.title}
-    </Headline>
-  </div>
+  <>
+
+    <Header></Header>
+    <ContentWrapper>
+      <h1 className="text-4xl md:text-5xl">
+        {props.title}
+      </h1>
+    </ContentWrapper>
+  </>
 )

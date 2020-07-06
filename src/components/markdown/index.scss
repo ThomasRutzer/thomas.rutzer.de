@@ -1,0 +1,25 @@
+.markdown {
+  h2 {
+    @apply my-4;
+    @apply text-3xl;
+
+    @screen lg {
+      @apply my-5;
+    }
+  }
+
+  h3 {
+    @apply mb-3;
+    @apply text-2xl;
+  }
+
+  p {
+    @apply mb-2;
+  }
+
+  ul {
+    @apply pl-3;
+    @apply mb-2;
+    list-style: disc;
+  }
+}
