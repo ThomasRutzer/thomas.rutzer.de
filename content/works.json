@@ -19,7 +19,41 @@
         "label": "futurium.de"
       }
     ],
-    "images": []
+    "images": [
+      {
+        "src": "Futurium_David_von_Becker_VB_4593.jpg",
+        "alt": "Ausstellung: Auftakt mit Pepper",
+        "grid": {
+          "tiles":  [[1, 2], [2, 2]]
+        },
+        "reference": {
+          "author": "David von Becker",
+          "link": "https://futurium.de/de/pressemappen/pressebilder"
+        }
+      },
+      {
+        "src": "Futurium_David_von_Becker_VB_4871.jpg",
+        "alt": "Futurium – Außenansicht Spreeseite",
+        "grid": {
+          "tiles":  [[4, 2], [1, 1]]
+        },
+        "reference": {
+          "author": "David von Becker",
+          "link": "https://futurium.de/de/pressemappen/pressebilder"
+        }
+      },
+      {
+        "src": "Futurium_David_von_Becker_VB_9824.jpg",
+        "alt": "Ausstellung Denkraum Mensch",
+        "grid": {
+          "tiles":  [[5, 2], [2, 1]]
+        },
+        "reference": {
+          "author": "David von Becker",
+          "link": "https://futurium.de/de/pressemappen/pressebilder"
+        }
+      }
+    ]
   },
   {
     "id": "qurator-nlp",
