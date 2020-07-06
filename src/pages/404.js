@@ -1,14 +1,12 @@
-import React, { useRef, useState } from 'react'
-import anime from 'animejs'
-import Seo from '../components/seo/seo'
-import SlotMachine from 'react-slot-machine'
-import Copy from '../components/copy/copy'
-import Headline from '../components/headline/headline'
-import LayoutWrapper from '../components/layout/layoutWrapper'
-import ContentWrapper from '../components/layout/contentWrapper'
-import InternalLink from '../components/internalLink/internalLink'
-import page404Styles from './404.module.scss'
-import SecondaryButton from './../components/buttons/secondary-button'
+import React, { useRef, useState } from "react"
+import anime from "animejs"
+import Seo from "../components/seo/seo"
+import SlotMachine from "react-slot-machine"
+import LayoutWrapper from "../components/layout/layoutWrapper"
+import ContentWrapper from "../components/layout/contentWrapper"
+import InternalLink from "../components/links/internalLink"
+import page404Styles from "./404.module.scss"
+import SecondaryButton from "./../components/buttons/secondary-button"
 
 export default () => {
   const slotMachineRef = useRef()
@@ -27,14 +25,14 @@ export default () => {
         targets: document.body,
         duration: 1200,
         keyframes: [
-          { filter: 'invert(100%)', backgroundColor: '#f8f8f8' },
-          { filter: 'invert(0%)', backgroundColor: '#2e2d2d' },
-          { filter: 'invert(100%)', backgroundColor: '#f8f8f8' },
-          { filter: 'invert(0%)', backgroundColor: '#2e2d2d' },
+          { filter: "invert(100%)", backgroundColor: "#f8f8f8" },
+          { filter: "invert(0%)", backgroundColor: "#2e2d2d" },
+          { filter: "invert(100%)", backgroundColor: "#f8f8f8" },
+          { filter: "invert(0%)", backgroundColor: "#2e2d2d" },
         ],
-        easing: 'easeInOutQuad',
+        easing: "easeInOutQuad",
         complete() {
-          document.body.removeAttribute('style')
+          document.body.removeAttribute("style")
         },
       })
     }
@@ -42,36 +40,36 @@ export default () => {
 
   return (
     <>
-      <Seo title={'404 — Too bad'} />
+      <Seo title="404 — Too bad" />
       <LayoutWrapper>
-        <div className={page404Styles.grid}>
-          <div className={page404Styles.intro}>
-            <ContentWrapper size={'small'}>
-              <Headline priority={1} center={true} spacing={false}>
+        <ContentWrapper variant="large">
+          <div className={page404Styles.grid}>
+            <div className="pb-4 text-center">
+              <h1 className="text-4xl md:text-5xl">
                 Too bad
-            </Headline>
-              <Copy center={true}>
+              </h1>
+              <p>
                 — I couldn't find what you were looking for. <br></br>Go&nbsp;
-              <InternalLink to={'/'} label={'home'} /> or try your luck.
-            </Copy>
-              <hr className={page404Styles.divider} />
-            </ContentWrapper>
+              <InternalLink link="/">home</InternalLink> or try your luck.
+              </p>
+            </div>
+            <hr className={page404Styles.divider} />
+            <SlotMachine
+              symbols={["0", "1", "2", "3", "4"]}
+              ref={slotMachineRef}
+              initialSymbols={["4", "0", "4"]}
+              onSpinningEnd={res => onSpinningEnd(res)}
+              symbolEvaluatedStyleClass={page404Styles.evaluated}
+              symbolDefaultStyleClass={page404Styles.symbol} />
+            <div className={page404Styles.cta}>
+              <SecondaryButton
+                disabled={isSpinning}
+                onClick={onStartSpinning}
+                label="Spin to win!"
+              />
+            </div>
           </div>
-          <SlotMachine
-            symbols={["0", "1", "2", "3", "4"]}
-            ref={slotMachineRef}
-            initialSymbols={["4", "0", "4"]}
-            onSpinningEnd={res => onSpinningEnd(res)}
-            symbolEvaluatedStyleClass={page404Styles.evaluated}
-            symbolDefaultStyleClass={page404Styles.symbol} />
-          <div className={page404Styles.cta}>
-            <SecondaryButton
-              disabled={isSpinning}
-              onClick={onStartSpinning}
-              label={'Spin to win!'}
-            />
-          </div>
-        </div>
+        </ContentWrapper>
       </LayoutWrapper>
     </>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import ContentWrapper from '../layout/contentWrapper'
-import InternalLink from "./../../components/links/internalLink/internalLink"
+import InternalLink from "../links/internalLink"
 
 export default () => (
   <footer className="bg-black-pattern">

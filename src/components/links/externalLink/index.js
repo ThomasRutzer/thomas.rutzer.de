@@ -1,8 +1,6 @@
 import React, { useMemo } from "react"
 import classnames from "classnames"
 
-import "./externalLink.scss"
-
 export default ({ children, link, appearace, size }) => {
   const createSizeClass = useMemo(() => classnames({ 
     "externalLink--large text-3xl md:text-5xl": size === "large",
