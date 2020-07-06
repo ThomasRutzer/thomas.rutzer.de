@@ -3,7 +3,7 @@ import ContentWrapper from '../layout/contentWrapper'
 import InternalLink from "./../../components/links/internalLink/internalLink"
 
 export default () => (
-  <footer>
+  <footer className="bg-black-pattern">
     <ContentWrapper variant="large">
       <ul>
         <li className="text-sm">
