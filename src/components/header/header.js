@@ -1,19 +1,23 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import headerStyles from './header.module.scss'
+import React from "react"
+import { Link } from "gatsby"
 
-export default props => (
+import headerStyles from "./header.module.scss"
+import ContentWrapper from "./../layout/contentWrapper"
+
+export default () => (
   <header className={headerStyles.header}>
-    <ul className={headerStyles.headerList}>
-      <li>
-        <Link
-          className={headerStyles.headerLink}
-          to="/"
-          activeClassName={headerStyles.headerLinkActive}
-        >
-          start
+    <ContentWrapper variant="large">
+      <ul className={headerStyles.headerList}>
+        <li>
+          <Link
+            className={headerStyles.headerLink}
+            to="/"
+            activeClassName={headerStyles.headerLinkActive}
+          >
+            start
         </Link>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </ContentWrapper>
   </header>
 )
