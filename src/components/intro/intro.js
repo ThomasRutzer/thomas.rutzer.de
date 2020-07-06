@@ -29,7 +29,6 @@ export default class Intro extends React.Component {
         targets: this.bg.current,
         opacity: [0, 1],
         duration: 1200,
-        delay: 700,
         easing: 'easeOutQuad'
       })
       .add({
@@ -45,7 +44,7 @@ export default class Intro extends React.Component {
         duration: 2700,
         delay: anime.stagger(20, {}),
         easing: 'easeInOutExpo',
-      })
+      }, '-=1200')
       .add({
         targets: this.subline.current,
         opacity: [0, 1],

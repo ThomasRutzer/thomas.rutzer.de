@@ -26,7 +26,11 @@ const ImageGrid = ({ title, subtitle, images = [] }) => {
 
   return (
     <div className="relative">
-      <div className="mb-4 md:mb-6 md:absolute md:w-full md:h-full flex items-center justify-center flex-col z-10">
+      <div 
+        className="
+          mb-4 md:mb-6 md:absolute md:w-full md:h-full 
+          flex items-center justify-center flex-col z-10
+        ">
         <h2 className="text-6xl border-solid border-b-4">{title}</h2>
         <h3 className="mt-4">{subtitle}</h3>
       </div>
@@ -38,7 +42,6 @@ const ImageGrid = ({ title, subtitle, images = [] }) => {
             alt={image.alt}
             fit={image.fit}
             tiles={image.tiles}
-            mobileRow={image.mobileRow}
             offsetX={tx} offsetY={ty} />
         )}
       </div>

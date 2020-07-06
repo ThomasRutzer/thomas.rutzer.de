@@ -51,12 +51,12 @@ export default ({ data }) => {
                 <p className="text-grey">{work.node.year}</p>
                 <FeatureList items={work.node.features} />
               </div>
-              <div className="col-start-1 col-span-6 md:col-start-2 md:col-span-4">
+              <div className="my-4 md:my-0 col-start-1 col-span-6 md:col-start-2 md:col-span-4">
                 <p>{work.node.description}</p>
               </div>
               <div className="col-start-1 col-span-6 md:col-start-6 md:col-span-1">
                 <div className="flex flex-col md:items-end">
-                  <div 
+                  <div
                     className="
                       md:transform md:-rotate-90 md:translate-x-1/2 md:origin-bottom 
                     ">
@@ -76,34 +76,30 @@ export default ({ data }) => {
           </ContentWrapper>
         </section>
       )}
-      <ContentWrapper variant="large">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="col-start-1 col-span-1">
-            <h3 className="text-sm md:mt-4">
-              <span className="underline">writes</span>
-              <span className="text-secondary">.</span>
-            </h3>
-          </div>
-          <div className="col-start-1 md:col-start-2 col-span-2">
-            <div className="mb-7">
-              <ExternalLink link={"https://blog.diepartments.de/pains-and-gains-when-developing-a-node-js-dialogflow-application/"} size="large">
-                Pains and gains when developing a node.js Dialogflow application
-      </ExternalLink>
-              <small className="block italic">— Published first time 07.2018 on diepartments' blog. A translated version has been printed in
-        <ExternalLink link="https://kiosk.entwickler.de/php-magazin/php-magazin-3-2019/"> php magazin 03.2019</ExternalLink>
-              </small>
+      <section className="bg-black-pattern">
+        <ContentWrapper variant="large">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="col-start-1 col-span-1">
+              <h3 className="text-sm md:mt-4">
+                <span className="underline">writes</span>
+                <span className="text-secondary">.</span>
+              </h3>
             </div>
-            <div>
-              <ExternalLink
-                link="https://blog.diepartments.de/webvr-webgl-vue-js-2-0-and-aframe-js-a-sweet-couple/"
-                size="large">
-                vue.js 2.0 and aframe.js for WebVR & 3D WebGL applications
-      </ExternalLink>
-              <small className="block italic">— Published 02.2017</small>
+            <div className="col-start-1 md:col-start-2 col-span-2">
+              {data.allWritesJson.edges.map((write, key) =>
+                <div key={key} className={key === 0 ? "mb-4 md:mb-7" : "mb-0"}>
+                  <ExternalLink link={write.node.link} size="large">
+                    {write.node.title}
+                  </ExternalLink>
+                  <small className="block italic">— {write.node.description}
+                  </small>
+                </div>
+              )}
             </div>
           </div>
-        </div>
-      </ContentWrapper>
+        </ContentWrapper>
+      </section>
+
       <section className="bg-secondary">
         <ContentWrapper variant="large">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -118,10 +114,10 @@ export default ({ data }) => {
                 I currently work at <ExternalLink link={"https://artcom.de"} appearace="primary">art+com</ExternalLink>, a studio for media installations and spaces.
               </p>
               <p className="mt-4">
-            In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom interfaces with web technologies and realtime communications with mqtt.
+                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom interfaces with web technologies and realtime communications with mqtt.
           </p>
-          <p className="mt-4">
-            My personal reasearch focus at the moment is bringing interfaces into spaces with the new webXR API.
+              <p className="mt-4">
+                My personal reasearch focus at the moment is bringing interfaces into spaces with the new webXR API.
           </p>
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
@@ -154,8 +150,8 @@ export default ({ data }) => {
         </ContentWrapper>
       </section>
       <section className="bg-secondary md:pb-7">
-        <ContentWrapper 
-          additionalClasses="bg-highlight md:bg-secondary md:border-4 md:border-highlight md:text-highlight" 
+        <ContentWrapper
+          additionalClasses="bg-highlight md:bg-secondary md:border-4 md:border-highlight md:text-highlight"
           variant="large">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
@@ -167,12 +163,12 @@ export default ({ data }) => {
             <div className="col-start-1 md:col-start-2 col-span-1">
               <h5 className="mb-2 font-bold">images</h5>
               {data.allWorksJson.edges.map((work, key) =>
-                <ul key={key}>
+                <ul key={key} className={key === 0 ? "mb-4" : "mb-0"}>
                   {work.node.images.map((image, imageKey) =>
                     <li key={imageKey}>
                       {image.reference.link &&
                         <ExternalLink
-                          link={image.link}
+                          link={image.reference.link}
                           size="small">
                           Fig.{imageKey + 1}: {work.node.title} <i>{work.node.subTitle}</i> by {image.reference.author}
                         </ExternalLink>
@@ -232,6 +228,15 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
+    allWritesJson {
+      edges {
+        node {
+          title
+          link
+          description
+        }
+      }
+    }
     allWorksJson(limit: 3) {
       edges {
         node {
