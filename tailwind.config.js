@@ -6,9 +6,10 @@ module.exports = {
     colors: {
       white: "#fff",
       black: "#2e2d2d",
-      grey: {darker: "#3a3a3a", default: "#E1E2E1", lighter: "#bebebf"},
-      secondary: {lighter: "#ff8c86", default: "#fa5959", darker: "#c02030"},
-      highlight: {lighter: '#373faa', default: "#424fff", darker: "#1929ff"}
+      grey: { darker: "#3a3a3a", default: "#E1E2E1", lighter: "#bebebf" },
+      tertiary: "#5551FF",
+      secondary: "#FFC700",
+      primary: "#FE8477"
     },
     fill: theme => ({
       "highlight": theme("colors.highlight"),

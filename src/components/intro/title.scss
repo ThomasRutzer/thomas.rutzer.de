@@ -3,16 +3,28 @@
   transform: translate(0, 0);
   line-height: 1.2;
   font-weight: 400;
-  font-size: 5rem;
+  font-size: 4.5rem;
 
   @screen md {
-    font-size: 120px;
+    font-size: 150px;
   }
 
   .word {
     overflow: hidden;
-    display: inline-block;
+    display: block;
     transform-origin: left top;
+
+    &:first-child {
+      -webkit-text-stroke: 2px theme("colors.primary");
+      color: transparent;
+      font-style: italic;
+    }
+
+    &:last-child {
+      @screen md {
+        margin-left: 1.2em;
+      }
+    }
   }
 
   .char {

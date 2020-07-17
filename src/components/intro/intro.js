@@ -28,8 +28,12 @@ export default class Intro extends React.Component {
       .add({
         targets: this.bg.current,
         opacity: [0, 1],
-        duration: 1200,
-        easing: 'easeOutQuad'
+        keyframes: [
+          { clipPath: 'inset(0)' }, 
+          { clipPath: 'inset(32px)'}
+        ],
+        duration: 2000,
+        easing: 'easeInOutExpo'
       })
       .add({
         targets: this.headline.current,
@@ -49,9 +53,9 @@ export default class Intro extends React.Component {
         targets: this.subline.current,
         opacity: [0, 1],
         'translateY': [20, 0],
-        duration: 1200,
+        duration: 1000,
         easing: 'easeOutQuad',
-      }, '-=1200')
+      }, '-=1600')
 
 
     tl.play()
@@ -59,24 +63,20 @@ export default class Intro extends React.Component {
 
   render() {
     return (
-      <div className="relative py-5 min-h-screen flex items-center overflow-hidden">
+      <div className="relative flex items-center overflow-hidden">
         <div aria-hidden="true" ref={this.bg} className={introStyles.bg}>
           <Portrait />
         </div>
-        <ContentWrapper variant="large">
-          <div className="md:grid md:grid-cols-3">
-            <div ref={this.main} className="col-start-1 col-span-2">
-              <Title ref={this.headline}>
-                hay, I'm thomas
+        <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
+          <Title ref={this.headline}>
+            hay, I'm thomas
               </Title>
-              <div ref={this.subline}>
-                <h2 className="md:text-4xl">
-                  creative developer who feels most comfortable where sophisticated design meets well structured code.
-                </h2>
-              </div>
-            </div>
+          <div ref={this.subline} className="max-w-screen-sm">
+            <p>
+              — creative developer who feels most comfortable where sophisticated design meets well structured code.
+                </p>
           </div>
-        </ContentWrapper>
+        </div>
       </div>
     )
   }

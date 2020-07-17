@@ -7,7 +7,8 @@ import Seo from "../components/seo/seo"
 import ImageGrid from "../components/imageGrid"
 import FeatureList from "../components/lists/featureList"
 import ContentWrapper from "./../components/layout/contentWrapper"
-import ExternalLink from "../components/links/externalLink/externalLink"
+import ExternalLink from "../components/links/externalLink"
+import SectionTitle from "./../components/sectionTitle"
 
 export default ({ data }) => {
   return (
@@ -15,13 +16,9 @@ export default ({ data }) => {
       <Seo />
       <Intro />
       <ContentWrapper
-        variant="large"
         verticalSpacing={false}
         additionalClasses="pt-4 md:pt-7">
-        <h3 className="text-sm mb-4">
-          <span className="underline">works</span>
-          <span className="text-secondary">.</span>
-        </h3>
+        <SectionTitle>works</SectionTitle>
       </ContentWrapper>
       {data.allWorksJson.edges.map((work, key) =>
         <section key={key} className={key % 2 === 0 ? "bg-black" : "bg-grey-darker"}>
@@ -40,7 +37,7 @@ export default ({ data }) => {
               title={work.node.title}
               subtitle={work.node.subTitle} />
           </ContentWrapper>
-          <ContentWrapper variant="large">
+          <ContentWrapper>
             <div className="grid grid-cols-6 md:gap-5">
               <div
                 className="
@@ -48,7 +45,10 @@ export default ({ data }) => {
                   col-start-1 col-span-6 md:col-span-1
                   mb-4 md:mb-0
                 ">
-                <p className="text-grey">{work.node.year}</p>
+                <p>
+                  <span className="text-grey-lighter block">first release</span>
+                  <span className="text-grey">{work.node.year}</span>
+                </p>
                 <FeatureList items={work.node.features} />
               </div>
               <div className="my-4 md:my-0 col-start-1 col-span-6 md:col-start-2 md:col-span-4">
@@ -63,7 +63,7 @@ export default ({ data }) => {
                     {work.node.links.map(({ link, label }, key) =>
                       <div className="whitespace-no-wrap" key={key}>
                         <ExternalLink
-                          appearace="primary"
+                          appearance="primary"
                           link={link}>
                           {label}
                         </ExternalLink>
@@ -77,13 +77,10 @@ export default ({ data }) => {
         </section>
       )}
       <section className="bg-black-pattern">
-        <ContentWrapper variant="large">
+        <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
-              <h3 className="text-sm md:mt-4">
-                <span className="underline">writes</span>
-                <span className="text-secondary">.</span>
-              </h3>
+              <SectionTitle appearance="primary">thoughts</SectionTitle>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-2">
               {data.allWritesJson.edges.map((write, key) =>
@@ -99,32 +96,29 @@ export default ({ data }) => {
           </div>
         </ContentWrapper>
       </section>
-
-      <section className="bg-secondary">
-        <ContentWrapper variant="large">
+      <section className="bg-tertiary">
+        <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
-              <h3 className="text-sm">
-                <span className="underline">about</span>
-                <span>.</span>
-              </h3>
+              <SectionTitle>about</SectionTitle>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
               <p>
-                I currently work at <ExternalLink link={"https://artcom.de"} appearace="primary">art+com</ExternalLink>, a studio for media installations and spaces.
+                I currently work at <ExternalLink link={"https://artcom.de"} appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
               </p>
               <p className="mt-4">
                 In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom interfaces with web technologies and realtime communications with mqtt.
-          </p>
+              </p>
               <p className="mt-4">
                 My personal reasearch focus at the moment is bringing interfaces into spaces with the new webXR API.
-          </p>
+              </p>
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
               <div className="flex flex-col md:items-end">
                 <div className="md:transform md:-rotate-90 md:pl-2">
                   <div>
                     <ExternalLink
+                      appearance="primary"
                       link={"twitter.com/thomasrutzer"}
                       size="large">
                       twitter
@@ -132,6 +126,7 @@ export default ({ data }) => {
                   </div>
                   <div>
                     <ExternalLink
+                      appearance="primary"
                       link={"mailto:thomas@rutzer.de"}
                       size="large">
                       mail
@@ -139,6 +134,7 @@ export default ({ data }) => {
                   </div>
                   <div>
                     <ExternalLink
+                      appearance="primary"
                       link={"https://github.com/ThomasRutzer"}
                       size="large">
                       github
@@ -149,16 +145,11 @@ export default ({ data }) => {
           </div>
         </ContentWrapper>
       </section>
-      <section className="bg-secondary md:pb-7">
-        <ContentWrapper
-          additionalClasses="bg-highlight md:bg-secondary md:border-4 md:border-highlight md:text-highlight"
-          variant="large">
+      <section className="bg-secondary text-tertiary">
+        <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
-              <h3 className="text-sm">
-                <span className="underline">credits</span>
-                <span className="secondary">.</span>
-              </h3>
+              <SectionTitle appearance="primary">credits</SectionTitle>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
               <h5 className="mb-2 font-bold">images</h5>
@@ -221,10 +212,7 @@ export default ({ data }) => {
       </section>
     </LayoutWrapper>
   )
-
 }
-
-
 
 export const query = graphql`
   query {

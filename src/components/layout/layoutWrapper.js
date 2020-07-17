@@ -1,8 +1,7 @@
 import React from 'react'
 import Footer from './../footer/footer'
-import Header from './../header/header'
 
-export default ({ children, seo }) => (
+export default ({ children }) => (
   <div>
     {children}
     <Footer />

@@ -7,6 +7,7 @@ import ContentWrapper from "../components/layout/contentWrapper"
 import InternalLink from "../components/links/internalLink"
 import page404Styles from "./404.module.scss"
 import SecondaryButton from "./../components/buttons/secondary-button"
+import Header from "./../components/header"
 
 export default () => {
   const slotMachineRef = useRef()
@@ -40,6 +41,7 @@ export default () => {
 
   return (
     <>
+      <Header />
       <Seo title="404 — Too bad" />
       <LayoutWrapper>
         <ContentWrapper variant="large">

@@ -28,7 +28,7 @@ const ImageGrid = ({ title, subtitle, images = [] }) => {
     <div className="relative">
       <div 
         className="
-          mb-4 md:mb-6 md:absolute md:w-full md:h-full 
+          mb-6 md:absolute md:w-full md:h-full 
           flex items-center justify-center flex-col z-10
         ">
         <h2 className="text-6xl border-solid border-b-4">{title}</h2>

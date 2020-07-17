@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const InternalLink = ({ children, link }) =>
-  <Link className="internalLink" to={link} activeClassName="internalLink--active">
+  <Link className="internal-link text-tertiary" to={link} activeClassName="internal-link--active">
     {children}
   </Link>
 

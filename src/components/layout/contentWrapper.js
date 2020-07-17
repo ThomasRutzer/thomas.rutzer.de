@@ -14,11 +14,11 @@ function ContentWrapper(
     const widthClass = (variant => {
       switch (variant) {
         case 'small':
-          return "max-w-xl";
-        case "large":
-          return "max-w-full xl:max-w-screen-xl";
-        default:
           return "max-w-4xl";
+        case "large":
+          return "max-w-full";
+        default:
+          return "max-w-6xl";
       }
     })(variant);
 

@@ -1,12 +1,11 @@
 import React from "react"
 
-import Header from "./../header/header"
+import Header from "./../header"
 import ContentWrapper from "./../layout/contentWrapper"
 
 export default props => (
   <>
-
-    <Header></Header>
+    <Header />
     <ContentWrapper>
       <h1 className="text-4xl md:text-5xl">
         {props.title}

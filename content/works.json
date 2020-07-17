@@ -8,7 +8,7 @@
       "react",
       "mqtt"
     ],
-    "description": "art+com led the exhibition design of the futurium, a brand new museum in Berlin. I was part of the team which has been responsible for a solid infrastructure as well as for multiple exhibits itself. The infrastructure includes automated deployment via ansible and a backend with multiple services around a mqtt-broker, which guarantees realtime communication across all the exhibits. Various sensors enhance the user interaction and are also connected to to exhibits through mqtt.",
+    "description": "art+com led the exhibition design of the futurium, a brand new museum in Berlin. I was part of the team which has been responsible for a solid infrastructure as well as for multiple exhibits itself. The infrastructure includes automated deployment via ansible and a backend with multiple services around a mqtt-broker, which guarantees realtime communication across all the exhibits. Various sensors enhance the user interaction and are also connected to exhibits by mqtt.",
     "links": [
       {
         "link": "https://artcom.de/en/project/futurium-permanent-exhibition/",
@@ -24,7 +24,8 @@
         "src": "Futurium_David_von_Becker_VB_4593.jpg",
         "alt": "Ausstellung: Auftakt mit Pepper",
         "grid": {
-          "tiles":  [[1, 2], [2, 2]]
+          "tiles":  [[1, 2], [2, 2]],
+          "fit": "cover"
         },
         "reference": {
           "author": "David von Becker",
@@ -35,7 +36,8 @@
         "src": "Futurium_David_von_Becker_VB_4871.jpg",
         "alt": "Futurium – Außenansicht Spreeseite",
         "grid": {
-          "tiles":  [[4, 2], [1, 1]]
+          "tiles":  [[4, 2], [1, 1]],
+          "fit": "cover"
         },
         "reference": {
           "author": "David von Becker",
@@ -46,7 +48,8 @@
         "src": "Futurium_David_von_Becker_VB_9824.jpg",
         "alt": "Ausstellung Denkraum Mensch",
         "grid": {
-          "tiles":  [[5, 2], [2, 1]]
+          "tiles":  [[5, 2], [2, 1]],
+          "fit": "cover"
         },
         "reference": {
           "author": "David von Becker",
@@ -80,7 +83,7 @@
         "src": "Upload-File.png",
         "alt": "Screenshot no.1 of qurator-nlp UI: Upload Sources",
         "grid": {
-          "tiles":  [[1, 3], [1, 1]],
+          "tiles":  [[1, 3], [1, 2]],
           "fit": "contain"
         },
         "reference": {
@@ -104,7 +107,7 @@
         "src": "Selected.png",
         "alt": "Screenshot no.3 of qurator-nlp UI: Select Entity",
         "grid": {
-          "tiles": [[2, 2], [3, 1]],
+          "tiles": [[2, 3], [3, 1]],
           "fit": "contain"
         },
         "reference": {

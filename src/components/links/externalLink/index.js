@@ -1,14 +1,14 @@
 import React, { useMemo } from "react"
 import classnames from "classnames"
 
-export default ({ children, link, appearace, size }) => {
+export default ({ children, link, appearance, size }) => {
   const createSizeClass = useMemo(() => classnames({ 
     "externalLink--large text-3xl md:text-5xl": size === "large",
     "externalLink--small text-sm": size === "small"  
   }), [size])
   const createAppearanceClass = useMemo(
-    () => classnames({ "externalLink--primary text-highlight": appearace === "primary" }), 
-    [appearace]
+    () => classnames({ "externalLink--primary text-primary": appearance === "primary" }), 
+    [appearance]
   )
 
   return (

@@ -1,11 +1,15 @@
-import React, { Suspense } from "react"
+import React, { Suspense, useEffect, useState } from "react"
 import networkAnalyzer from "../../utils/networkAnalyzer"
 import isMobileDevice from "../../utils/isMobileDevice"
 import portraitImagePath from "./../../images/me.jpg"
 const Smear = React.lazy(() => import("../smear/smear"))
 
 const Portrait = () => {
-  const sufficientConnection = networkAnalyzer() && !isMobileDevice()
+  const [sufficientConnection, setSufficientConnection] = useState() 
+
+  useEffect(() => {
+    setSufficientConnection(networkAnalyzer() && !isMobileDevice())
+  }, [])
 
   return (
     <>
@@ -13,7 +17,7 @@ const Portrait = () => {
         <Suspense
           fallback={
             <span role="img" aria-label="loading...">
-              🏋️...
+              🏋️
             </span>
           }
         >
