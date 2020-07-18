@@ -33,7 +33,7 @@ body {
     background-color: theme("colors.grey.darkest");
     background-blend-mode: multiply;
   }
-  
+
   .bg-secondary-pattern {
     background: url("./images/seamless-BG.jpg") repeat;
     background-color: theme("colors.secondary");
@@ -41,11 +41,6 @@ body {
   }
 }
 
-.text-transparent { color: transparent }
-.text-stroke-black { -webkit-text-stroke-color: theme("colors.black")}
-.text-stroke-white { -webkit-text-stroke-color: theme("colors.white") }
-.text-stroke-tertiary { -webkit-text-stroke-color: theme("colors.tertiary") }
-
-.text-stroke-1 { -webkit-text-stroke-width: 1px }
-.text-stroke-2 { -webkit-text-stroke-width: 2px }
-.text-stroke-4 { -webkit-text-stroke-width: 4px }
+.underline-under {
+  text-underline-position: under;
+}
