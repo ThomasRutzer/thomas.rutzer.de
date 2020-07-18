@@ -8,7 +8,7 @@
       "react",
       "mqtt"
     ],
-    "description": "art+com led the exhibition design of the futurium, a brand new museum in Berlin. I was part of the team which has been responsible for a solid infrastructure as well as for multiple exhibits itself. The infrastructure includes automated deployment via ansible and a backend with multiple services around a mqtt-broker, which guarantees realtime communication across all the exhibits. Various sensors enhance the user interaction and are also connected to exhibits by mqtt.",
+    "description": "art+com led the exhibition design of the futurium, a brand new museum in Berlin.\n I was part of the team which has been responsible for a solid infrastructure as well as for multiple exhibits itself. The infrastructure includes automated deployment via ansible and a backend with multiple services around a mqtt-broker, which guarantees realtime communication across all the exhibits. Various sensors enhance the user interaction and are also connected to exhibits by mqtt.",
     "links": [
       {
         "link": "https://artcom.de/en/project/futurium-permanent-exhibition/",
@@ -16,7 +16,7 @@
       },
       {
         "link": "https://futurium.de/",
-        "label": "futurium.de"
+        "label": "about futurium"
       }
     ],
     "images": [
@@ -67,15 +67,19 @@
       "react",
       "nlp"
     ],
-    "description": "qurator is a research collaboration between art+com and 9 partner companies. For using a NLP backend service to analyze large amounts of texts, we build a suitable interface. User can upload data from different sources, e.g. their own text document or an wikipedia article. The backend service then outputs a result which includes entities like geographical places, historical events or persons. The user interface helps to handle the output. For example, they can select an entity and see on which pages it occurs. Or they can apply a variety of filters to make large amounts of text more workable. If they found a logical error in the output, for a example a term has been listed in the wrong category, they can also fix it by dragging it to the correct column.",
+    "description": "In context of qurator reasearch collaboration, art+com build a prototypical nlp based service.\n Users can analyze large amounts of texts, e.g. their own text document or an wikipedia article, with a suitable interface. The backend service then outputs a result which includes entities like geographical places, historical events or persons. Users can select an entity and see on which pages it occurs and how often. A variety of filters make text more workable. Logical error in the output, for a example a term has been listed in the wrong category, can be fixed by dragging it to the correct category. I led the frontend development.",
     "links": [
       {
         "link": "https://qurator.ai/",
-        "label": "qurator.ai"
+        "label": "about qurator"
       },
       {
         "link": "https://artcom.de/en/project/qurator/",
         "label": "art+com case"
+      },
+      {
+        "link": "https://en.wikipedia.org/wiki/Neuro-linguistic_programming",
+        "label": "about nlp"
       }
     ],
     "images": [

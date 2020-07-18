@@ -21,7 +21,7 @@ export default ({ data }) => {
         <SectionTitle>works</SectionTitle>
       </ContentWrapper>
       {data.allWorksJson.edges.map((work, key) =>
-        <section key={key} className={key % 2 === 0 ? "bg-black" : "bg-grey-darker"}>
+        <section key={key} className={key % 2 === 0 ? "bg-grey-darkest" : "bg-grey-darker"}>
           <ContentWrapper
             variant="large"
             additionalClasses="md:px-5"
@@ -52,13 +52,13 @@ export default ({ data }) => {
                 <FeatureList items={work.node.features} />
               </div>
               <div className="my-4 md:my-0 col-start-1 col-span-6 md:col-start-2 md:col-span-4">
-                <p>{work.node.description}</p>
+                <p className="whitespace-pre-line">{work.node.description}</p>
               </div>
               <div className="col-start-1 col-span-6 md:col-start-6 md:col-span-1">
                 <div className="flex flex-col md:items-end">
                   <div
                     className="
-                      md:transform md:-rotate-90 md:translate-x-1/2 md:origin-bottom 
+                      md:transform md:-rotate-90 md:-translate-x-1/2 md:origin-top-right 
                     ">
                     {work.node.links.map(({ link, label }, key) =>
                       <div className="whitespace-no-wrap" key={key}>
@@ -76,7 +76,7 @@ export default ({ data }) => {
           </ContentWrapper>
         </section>
       )}
-      <section className="bg-black-pattern">
+      <section className="bg-grey-darkest-pattern">
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
@@ -115,7 +115,7 @@ export default ({ data }) => {
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
               <div className="flex flex-col md:items-end">
-                <div className="md:transform md:-rotate-90 md:pl-2">
+                <div className="md:transform md:-rotate-90 md:-translate-x-1/2 md:origin-top-right md:pl-2">
                   <div>
                     <ExternalLink
                       appearance="primary"
@@ -145,7 +145,7 @@ export default ({ data }) => {
           </div>
         </ContentWrapper>
       </section>
-      <section className="bg-secondary text-tertiary">
+      <section className="bg-grey-darkest-pattern text-tertiary">
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
