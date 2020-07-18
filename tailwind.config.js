@@ -5,8 +5,8 @@ module.exports = {
     },
     colors: {
       white: "#fff",
-      black: "#2e2d2d",
-      grey: { darker: "#3a3a3a", default: "#E1E2E1", lighter: "#bebebf" },
+      black: "#1c1c1c",
+      grey: { darkest: "#2e2d2d", darker: "#3a3a3a", default: "#E1E2E1", lighter: "#bebebf" },
       tertiary: "#5551FF",
       secondary: "#FFC700",
       primary: "#FE8477"

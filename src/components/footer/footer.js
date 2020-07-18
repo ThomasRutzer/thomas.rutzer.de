@@ -3,7 +3,7 @@ import ContentWrapper from '../layout/contentWrapper'
 import InternalLink from "../links/internalLink"
 
 export default () => (
-  <footer className="bg-black-pattern">
+  <footer className="bg-black">
     <ContentWrapper>
       <div className="md:grid md:grid-cols-3">
         <ul>

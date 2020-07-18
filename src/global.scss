@@ -1,10 +1,10 @@
 @tailwind base;
 
 body {
-  background-color: theme("colors.black");
+  background-color: theme("colors.grey.darkest");
   color: theme("colors.white");
-  font-size: 18px;
-  line-height: 2;
+  font-size: 16px;
+  line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
   margin: 0;
@@ -12,12 +12,12 @@ body {
 
 ::-moz-selection {
   color: theme("colors.white");
-  background: theme("colors.secondary");
+  background: theme("colors.primary");
 }
 
 ::selection {
   color: theme("colors.white");
-  background: theme("colors.secondary");
+  background: theme("colors.primary");
 }
 
 @tailwind components;
@@ -28,9 +28,9 @@ body {
 @tailwind utilities;
 
 @responsive {
-  .bg-black-pattern {
+  .bg-grey-darkest-pattern {
     background: url("./images/seamless-BG.jpg") repeat;
-    background-color: theme("colors.black");
+    background-color: theme("colors.grey.darkest");
     background-blend-mode: multiply;
   }
   
