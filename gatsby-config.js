@@ -55,8 +55,8 @@ module.exports = {
         name: "Hay! I am thomas — a creative developer and foo/bar",
         short_name: "Hay! I am thomas — a creative developer and foo/bar",
         start_url: "/",
-        background_color: "#ad57ff",
-        theme_color: "#ad57ff",
+        background_color: "#FE8477",
+        theme_color: "#FE8477",
         display: "standalone",
         icon: "src/images/icon.png"
       }
