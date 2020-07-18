@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useEffect, useState } from "react"
+import React, { useMemo } from "react"
 import classnames from "classnames"
 import Img from "gatsby-image"
 
@@ -9,7 +9,7 @@ const Image = ({ src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0
     [`md:col-span-${tiles[0][1]}`]: true,
     [`md:row-start-${tiles[1][0]}`]: true,
     [`md:row-span-${tiles[1][1]}`]: true
-  }), [tiles[0][0], tiles[0][1], tiles[1][0], tiles[1][1]])
+  }), [index, tiles])
 
   return (
     <div

@@ -24,8 +24,8 @@ function ContentWrapper(
 
     return classnames(
       "relative", "container", "mx-auto",
-      { ["px-4 md:px-5"]: horizontalSpacing },
-      { ["py-4 md:py-7"]: verticalSpacing },
+      { "px-4 md:px-5": horizontalSpacing },
+      { "py-4 md:py-7": verticalSpacing },
       { [`${widthClass}`]: true },
     )
   }

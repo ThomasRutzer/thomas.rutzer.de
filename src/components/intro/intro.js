@@ -3,10 +3,8 @@ import anime from 'animejs'
 import Splitting from 'splitting'
 
 import introStyles from './intro.module.scss'
-
 import Title from './title'
 import Portrait from './portrait'
-import ContentWrapper from "./../layout/contentWrapper"
 
 export default class Intro extends React.Component {
   constructor(props) {
