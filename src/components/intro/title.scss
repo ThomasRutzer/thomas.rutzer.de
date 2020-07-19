@@ -6,6 +6,10 @@
   font-size: 4.5rem;
 
   @screen md {
+    font-size: 120px;
+  }
+
+  @screen lg {
     font-size: 150px;
   }
 
@@ -13,6 +17,7 @@
     overflow: hidden;
     display: block;
     transform-origin: left top;
+    white-space: nowrap;
 
     &:first-child {
       -webkit-text-stroke: 2px theme("colors.primary");
