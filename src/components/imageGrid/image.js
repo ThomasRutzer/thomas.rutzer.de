@@ -30,8 +30,8 @@ const Image = ({ src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0
         } }
         fluid={src.childImageSharp.fluid}
         alt={alt} />
-      <figcaption className="px-1 text-xs italic text-center mt-2">
-        Fig.{index + 1}
+      <figcaption className="px-1 text-xs italic text-center text-grey-lighter mt-2">
+        Fig.{index + 1}: {alt}
       </figcaption>
     </div>
   )
