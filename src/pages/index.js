@@ -52,7 +52,10 @@ export default ({ data }) => {
                 <FeatureList items={work.node.features} />
               </div>
               <div className="my-4 md:my-0 col-start-1 col-span-6 md:col-start-2 md:col-span-4">
-                <p className="whitespace-pre-line">{work.node.description}</p>
+                <p className="whitespace-pre-line">{work.node.leadingDescription}</p>
+                <p className="whitespace-pre-line mt-3">
+                  {work.node.description}
+                </p>
               </div>
               <div className="col-start-1 col-span-6 md:col-start-6 md:col-span-1">
                 <div className="flex flex-col md:items-end">
@@ -104,13 +107,13 @@ export default ({ data }) => {
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
               <p>
-                I currently work at <ExternalLink link={"https://artcom.de"} appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
+                I'm leading JavaScript developer with focus on unique interfaces and interactions, currently working at <ExternalLink link={"https://artcom.de"} appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
               </p>
               <p className="mt-4">
-                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom interfaces with web technologies and realtime communications with mqtt.
+                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions with web technologies and and mqtt based realtime communications.
               </p>
               <p className="mt-4">
-                My personal reasearch focus at the moment is bringing interfaces into spaces with the new webXR API.
+                My personal reasearch focus at the moment is blending interfaces into spaces with the new webXR API.
               </p>
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
@@ -230,6 +233,7 @@ export const query = graphql`
         node {
           title,
           subTitle,
+          leadingDescription,
           description,
           links {
             link,
