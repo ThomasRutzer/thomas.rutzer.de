@@ -3,7 +3,7 @@ const path = require(`path`)
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    title: "hay, I am thomas — a creative developer and foo/bar",
+    title: "thomas — creative developer",
     description: "default github.io user page of Thomas Rutzer"
   },
   plugins: [
@@ -52,8 +52,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Hay! I am thomas — a creative developer and foo/bar",
-        short_name: "Hay! I am thomas — a creative developer and foo/bar",
+        name: "thomas — creative developer and foo/bar",
+        short_name: "thomas — creative developer and foo/bar",
         start_url: "/",
         background_color: "#FE8477",
         theme_color: "#FE8477",
