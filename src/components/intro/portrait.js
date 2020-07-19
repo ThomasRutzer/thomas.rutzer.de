@@ -21,7 +21,7 @@ const Portrait = () => {
             </span>
           }
         >
-          <Smear img={portraitImagePath} initSize={[959, 1200]} />
+          <Smear img={portraitImagePath} />
         </Suspense>
       )}
 

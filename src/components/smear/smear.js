@@ -21,9 +21,9 @@ export default class Smear extends React.PureComponent {
 
   componentDidMount() {
     this.app = new PIXI.Application({
-      width: this.props.initSize[0],
-      height: this.props.initSize[1],
-      view: this.canvas.current,
+      width: window.innerWidth,
+      height: window.innerHeight,
+      view: this.canvas.current
     })
 
     this.preload()
@@ -48,8 +48,6 @@ export default class Smear extends React.PureComponent {
     )
 
     const initBg = new PIXI.Sprite(this.bgTexture)
-    initBg.width = this.app.screen.width
-    initBg.height = this.app.screen.height
 
     this.app.renderer.render(initBg, this.renderTextures[0])
     this.bg = new PIXI.Sprite(this.renderTextures[0])
