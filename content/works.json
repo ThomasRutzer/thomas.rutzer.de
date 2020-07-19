@@ -8,7 +8,8 @@
       "react",
       "mqtt"
     ],
-    "description": "art+com led the exhibition design of the futurium, a brand new museum in Berlin.\n I was part of the team which has been responsible for a solid infrastructure as well as for multiple exhibits itself. The infrastructure includes automated deployment via ansible and a backend with multiple services around a mqtt-broker, which guarantees realtime communication across all the exhibits. Various sensors enhance the user interaction and are also connected to exhibits by mqtt.",
+    "leadingDescription": "In fall of 2019 futurium, a museum which explores competing future scenarios, opened its doors in Berlin. art+com is lead agency for the exhibition design with its mix of analogue and digital media.",
+    "description": "I was part of the team which has been responsible for a solid infrastructure as well as for multiple exhibits itself. The infrastructure includes automated deployment via ansible and a backend with multiple services around a mqtt-broker. That guarantees realtime communication across all the exhibits. Various sensors enhance the user interaction and are also connected to exhibits by mqtt.",
     "links": [
       {
         "link": "https://artcom.de/en/project/futurium-permanent-exhibition/",
@@ -22,7 +23,7 @@
     "images": [
       {
         "src": "Futurium_David_von_Becker_VB_4593.jpg",
-        "alt": "Ausstellung: Auftakt mit Pepper",
+        "alt": "Exhibition entry",
         "grid": {
           "tiles":  [[1, 2], [2, 2]],
           "fit": "cover"
@@ -34,7 +35,7 @@
       },
       {
         "src": "Futurium_David_von_Becker_VB_4871.jpg",
-        "alt": "Futurium – Außenansicht Spreeseite",
+        "alt": "Futurium External view",
         "grid": {
           "tiles":  [[4, 2], [1, 1]],
           "fit": "cover"
@@ -46,7 +47,7 @@
       },
       {
         "src": "Futurium_David_von_Becker_VB_9824.jpg",
-        "alt": "Ausstellung Denkraum Mensch",
+        "alt": "Exhibition space \"Denkraum Mensch\"",
         "grid": {
           "tiles":  [[5, 2], [2, 1]],
           "fit": "cover"
@@ -67,7 +68,8 @@
       "react",
       "nlp"
     ],
-    "description": "In context of qurator reasearch collaboration, art+com build a prototypical nlp based service.\n Users can analyze large amounts of texts, e.g. their own text document or an wikipedia article, with a suitable interface. The backend service then outputs a result which includes entities like geographical places, historical events or persons. Users can select an entity and see on which pages it occurs and how often. A variety of filters make text more workable. Logical error in the output, for a example a term has been listed in the wrong category, can be fixed by dragging it to the correct category. I led the frontend development.",
+    "leadingDescription": "Qurator is a research collaboration focusing on content curation with AI technologies. The team at art+com built a prototypical nlp based service. I led the frontend development.",
+    "description": "The service helps users to analyze large amounts of texts (e.g. their own text documents or Wikipedia articles) with a suitable interface. The backend component outputs a result which includes entities like geographical locations, historical events or personalities. Through the frontend component users can select entities and examine its occurrences. A variety of filters make the input text more accessible.",
     "links": [
       {
         "link": "https://qurator.ai/",
@@ -85,7 +87,7 @@
     "images": [
       {
         "src": "Upload-File.png",
-        "alt": "Screenshot no.1 of qurator-nlp UI: Upload Sources",
+        "alt": "Upload Sources",
         "grid": {
           "tiles":  [[1, 3], [1, 2]],
           "fit": "contain"
@@ -97,7 +99,7 @@
       },
       {
         "src": "Combine-Entities.png",
-        "alt": "Screenshot no.2 of qurator-nlp UI: Combine Entities",
+        "alt": "Combine Entities",
         "grid": {
           "tiles": [[5, 2], [2, 1]],
           "fit": "contain"
@@ -109,7 +111,7 @@
       },
       {
         "src": "Selected.png",
-        "alt": "Screenshot no.3 of qurator-nlp UI: Select Entity",
+        "alt": "Select Entity",
         "grid": {
           "tiles": [[2, 3], [3, 1]],
           "fit": "contain"
