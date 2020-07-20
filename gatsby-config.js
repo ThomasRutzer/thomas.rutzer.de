@@ -36,14 +36,6 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `IBM Plex Mono\:400,400i,700&display=swap`
-        ]
-      }
-    },
-    {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
         lang: 'en'
@@ -55,8 +47,8 @@ module.exports = {
         name: "thomas — creative developer and foo/bar",
         short_name: "thomas — creative developer and foo/bar",
         start_url: "/",
-        background_color: "#FE8477",
-        theme_color: "#FE8477",
+        background_color: "#2e2d2d",
+        theme_color: "#2e2d2d",
         display: "standalone",
         icon: "src/images/icon.png"
       }
