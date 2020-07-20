@@ -91,7 +91,7 @@ export default ({ data }) => {
                   <ExternalLink link={write.node.link} size="large">
                     {write.node.title}
                   </ExternalLink>
-                  <small className="block italic">— {write.node.description}
+                  <small className="block italic text-grey-lighter">— {write.node.description}
                   </small>
                 </div>
               )}
