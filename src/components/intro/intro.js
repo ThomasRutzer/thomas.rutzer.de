@@ -24,11 +24,16 @@ export default class Intro extends React.Component {
 
     tl
       .add({
+        targets: this.main.current,
+        opacity: [0, 1],
+        duration: 0
+      })
+      .add({
         targets: this.bg.current,
         opacity: [0, 1],
         keyframes: [
-          { clipPath: 'inset(0)' }, 
-          { clipPath: 'inset(32px)'}
+          { clipPath: 'inset(0)' },
+          { clipPath: 'inset(32px)' }
         ],
         duration: 2000,
         easing: 'easeInOutExpo'
@@ -61,7 +66,10 @@ export default class Intro extends React.Component {
 
   render() {
     return (
-      <div className="relative flex items-center overflow-hidden">
+      <div
+        className="relative flex items-center overflow-hidden"
+        style={{ opacity: 0 }}
+        ref={this.main}>
         <div aria-hidden="true" ref={this.bg} className={introStyles.bg}>
           <Portrait />
         </div>
