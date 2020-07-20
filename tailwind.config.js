@@ -34,8 +34,34 @@ module.exports = {
   corePlugins: {
     float: false,
   },
-  purge: [
-    "./src/**/*.html",
-    "./src/**/*.js",
-  ]
+  purge: {
+    content: [
+      "./src/**/*.html",
+      "./src/**/*.js",
+    ],
+    options: {
+      whitelist: [
+        "col-start-1",
+        "col-start-2",
+        "md:col-start-1",
+        "md:col-start-2",
+        "md:col-start-3",
+        "md:col-start-4",
+        "md:col-start-5",
+        "md:col-start-6",
+        "md:col-span-1",
+        "md:col-span-2",
+        "md:col-span-3",
+        "md:col-span-4",
+        "md:col-span-5",
+        "md:col-span-6",
+        "md:row-start-1",
+        "md:row-start-2",
+        "md:row-start-3",
+        "md:row-span-1",
+        "md:row-span-2",
+        "md:row-span-3"
+      ]
+    }
+  }
 }
