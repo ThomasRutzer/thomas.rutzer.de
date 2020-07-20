@@ -21,7 +21,7 @@ const Image = ({ src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0
         overflow-hidden
         mb-4 md:mb-0
         flex items-center flex-col
-        transition-transform duration-1000 ease-out`
+        transition-transform duration-1000 delay-${index * 75} ease-in`
       }>
       <Img
         className="w-full"
