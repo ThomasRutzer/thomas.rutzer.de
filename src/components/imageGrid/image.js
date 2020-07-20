@@ -19,7 +19,7 @@ const Image = ({ src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0
       className={
         `${createTilesClasses} 
         overflow-hidden
-        mb-4 md:mb-0
+        mt-${index === 0 ? "0" : "4"} md:mt-0
         flex items-center flex-col
         transition-transform duration-1000 delay-${index * 75} ease-in`
       }>
@@ -27,7 +27,7 @@ const Image = ({ src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0
         className="w-full"
         imgStyle={{
           "objectFit": fit
-        } }
+        }}
         fluid={src.childImageSharp.fluid}
         alt={alt} />
       <figcaption className="px-1 text-xs italic text-center text-grey-lighter mt-2">
