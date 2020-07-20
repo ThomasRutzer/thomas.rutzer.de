@@ -88,10 +88,10 @@ export default ({ data }) => {
             <div className="col-start-1 md:col-start-2 col-span-2">
               {data.allWritesJson.edges.map((write, key) =>
                 <div key={key} className={key === 0 ? "mb-4 md:mb-7" : "mb-0"}>
-                  <ExternalLink link={write.node.link} size="large">
+                  <ExternalLink link={write.node.link} appearance="primary" size="large">
                     {write.node.title}
                   </ExternalLink>
-                  <small className="block italic text-grey-lighter">— {write.node.description}
+                  <small className="block italic text-grey-lighter mt-4">— {write.node.description}
                   </small>
                 </div>
               )}
@@ -110,7 +110,7 @@ export default ({ data }) => {
                 I'm leading JavaScript developer with focus on unique interfaces and interactions, currently working at <ExternalLink link={"https://artcom.de"} appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
               </p>
               <p className="mt-4">
-                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions with web technologies and and mqtt based realtime communications.
+                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions with web technologies and mqtt based realtime communications.
               </p>
               <p className="mt-4">
                 My personal reasearch focus at the moment is blending interfaces into spaces with the new webXR API.
@@ -155,7 +155,7 @@ export default ({ data }) => {
               <SectionTitle appearance="primary">credits</SectionTitle>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
-              <h5 className="mb-2 font-bold">images</h5>
+              <h4 className="mb-2 font-bold">images</h4>
               {data.allWorksJson.edges.map((work, key) =>
                 <ul key={key} className={key === 0 ? "mb-4" : "mb-0"}>
                   {work.node.images.map((image, imageKey) =>
@@ -178,7 +178,7 @@ export default ({ data }) => {
               )}
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
-              <h5 className="mb-2 font-bold">this site</h5>
+              <h4 className="mb-2 font-bold">this site</h4>
               <ul>
                 <li>
                   <ExternalLink
@@ -255,8 +255,8 @@ export const query = graphql`
           fields {
             workImageAssets {
               childImageSharp {
-                fluid(maxWidth: 1280, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 1000, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
