@@ -30,6 +30,7 @@ const ImageGrid = ({ title, subtitle, images = [] }) => {
         className="
           mb-6 md:absolute md:w-full md:h-full 
           flex items-center justify-center flex-col z-10
+          pointer-events-none
         ">
         <h2 className="text-6xl underline underline-under">{title}</h2>
         <h3 className="mt-4">{subtitle}</h3>
