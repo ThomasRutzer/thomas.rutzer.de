@@ -1,11 +1,11 @@
-.externalLink {
+.external-link {
   position: relative;
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
 
-    .externalLink__icon {
+    .external-link__icon {
       top: -.25em;
     }
   }
@@ -14,7 +14,7 @@
     outline: 1px dashed currentColor;
   }
 
-  &.externalLink--large:focus {
+  &.external-link--large:focus {
     outline: 3px dashed currentColor;
   }
 
@@ -23,7 +23,7 @@
   }
 }
 
-.externalLink__icon {
+.external-link__icon {
   position: relative;
   top: 0;
   margin-left: 0.25em;

@@ -1,25 +1,25 @@
 import React, { useMemo } from "react"
 import classnames from "classnames"
 
-export default ({ children, link, appearance, size }) => {
+export default ({ additionalClasses = "", children, link, appearance, size }) => {
   const createSizeClass = useMemo(() => classnames({ 
-    "externalLink--large text-3xl md:text-5xl": size === "large",
-    "externalLink--small text-sm": size === "small"  
+    "external-link--large text-3xl md:text-5xl": size === "large",
+    "external-link--small text-sm": size === "small"  
   }), [size])
   const createAppearanceClass = useMemo(
-    () => classnames({ "externalLink--primary text-primary": appearance === "primary" }), 
+    () => classnames({ "external-link--primary text-primary": appearance === "primary" }), 
     [appearance]
   )
 
   return (
     <a 
-      className={`externalLink ${createAppearanceClass} ${createSizeClass}`} 
+      className={`external-link ${additionalClasses} ${createAppearanceClass} ${createSizeClass}`} 
       href={link} 
       rel="noopener"
       target="blank">
       {children}
       <svg
-        className="externalLink__icon"
+        className="external-link__icon"
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
