@@ -1,13 +1,13 @@
 import React from "react"
 
-const SectionTitle = ({ children, appearance }) => {
+const SectionTitle = ({ children }) => {
   return (
-    <h3 className="text-2xl text-grey-lighter">
+    <h2 className="text-2xl">
       <span>
         {children}
       </span>
       <span className="text-primary">.</span>
-    </h3>
+    </h2>
   )
 }
 
