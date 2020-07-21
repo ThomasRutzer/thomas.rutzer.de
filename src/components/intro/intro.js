@@ -71,7 +71,7 @@ export default class Intro extends React.Component {
         style={{ opacity: 0 }}
         ref={this.main}>
         <div aria-hidden="true" ref={this.bg} className={introStyles.bg}>
-          <Portrait />
+          <Portrait imgPath={this.props.imgPath} />
         </div>
         <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
           <Title ref={this.headline}>

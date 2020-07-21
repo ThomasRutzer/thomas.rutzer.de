@@ -1,12 +1,12 @@
 import React, { Suspense, useEffect, useState } from "react"
 import networkAnalyzer from "../../utils/networkAnalyzer"
 import isMobileDevice from "../../utils/isMobileDevice"
-import portraitImagePath from "./../../images/me.jpg"
+import Img from "gatsby-image"
 const Smear = React.lazy(() => import("../smear/smear"))
 
-const Portrait = () => {
-  const [sufficientConnection, setSufficientConnection] = useState() 
-
+const Portrait = ({ imgPath }) => {
+  const [sufficientConnection, setSufficientConnection] = useState()
+console.log(imgPath)
   useEffect(() => {
     setSufficientConnection(networkAnalyzer() && !isMobileDevice())
   }, [])
@@ -21,14 +21,15 @@ const Portrait = () => {
             </span>
           }
         >
-          <Smear img={portraitImagePath} />
+          <Smear img={imgPath.src} />
         </Suspense>
       )}
 
       {!sufficientConnection && (
-        <img 
-          width="100%" 
-          alt={"Portrait of Thomas Rutzer"} src={portraitImagePath} />
+        <Img
+          className="w-full h-full"
+          alt={"Portrait of Thomas Rutzer"} 
+          fluid={imgPath} />
       )}
     </>
   )

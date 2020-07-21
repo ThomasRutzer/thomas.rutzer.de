@@ -11,10 +11,11 @@ import ExternalLink from "../components/links/externalLink"
 import SectionTitle from "./../components/sectionTitle"
 
 export default ({ data }) => {
+  console.log(data)
   return (
     <LayoutWrapper>
       <Seo />
-      <Intro />
+      <Intro imgPath={data.portrait.childImageSharp.fluid} />
       <ContentWrapper
         verticalSpacing={false}
         additionalClasses="pt-4 md:pt-7">
@@ -24,7 +25,8 @@ export default ({ data }) => {
         <section key={key} className={key % 2 === 0 ? "bg-grey-darkest" : "bg-grey-darker"}>
           <ContentWrapper
             variant="large"
-            additionalClasses="md:px-5"
+            additionalClasses="md:px-5 pt-6 md:pt-7"
+            verticalSpacing={false}
             horizontalSpacing={false}>
             <ImageGrid
               images={work.node.images.map((image, key) => ({
@@ -60,9 +62,7 @@ export default ({ data }) => {
               <div className="col-start-1 col-span-6 md:col-start-6 md:col-span-1">
                 <div className="flex flex-col md:items-end">
                   <div
-                    className="
-                      md:transform md:-rotate-90 md:-translate-x-1/2 md:origin-top-right 
-                    ">
+                    className="md:transform md:-rotate-90 md:-translate-y-full md:origin-bottom-right">
                     {work.node.links.map(({ link, label }, key) =>
                       <div className="whitespace-no-wrap" key={key}>
                         <ExternalLink
@@ -118,9 +118,10 @@ export default ({ data }) => {
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
               <div className="flex flex-col md:items-end">
-                <div className="md:transform md:-rotate-90 md:-translate-x-1/2 md:origin-top-right md:pl-2">
+                <div className="md:transform md:-rotate-90 md:-translate-y-full md:origin-bottom-right md:pl-2">
                   <div>
                     <ExternalLink
+                      additionalClasses="whitespace-no-wrap"
                       appearance="primary"
                       link={"twitter.com/thomasrutzer"}
                       size="large">
@@ -129,6 +130,7 @@ export default ({ data }) => {
                   </div>
                   <div>
                     <ExternalLink
+                      additionalClasses="whitespace-no-wrap"
                       appearance="primary"
                       link={"mailto:thomas@rutzer.de"}
                       size="large">
@@ -137,6 +139,7 @@ export default ({ data }) => {
                   </div>
                   <div>
                     <ExternalLink
+                      additionalClasses="whitespace-no-wrap"
                       appearance="primary"
                       link={"https://github.com/ThomasRutzer"}
                       size="large">
@@ -148,7 +151,7 @@ export default ({ data }) => {
           </div>
         </ContentWrapper>
       </section>
-      <section className="bg-grey-darkest-pattern text-tertiary">
+      <section className="bg-grey-darkest-pattern text-tertiary-lighter">
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
@@ -219,6 +222,13 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
+    portrait: file(relativePath: { eq: "me.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     allWritesJson {
       edges {
         node {
@@ -255,7 +265,7 @@ export const query = graphql`
           fields {
             workImageAssets {
               childImageSharp {
-                fluid(maxWidth: 1000, quality: 90) {
+                fluid(maxWidth: 720, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
