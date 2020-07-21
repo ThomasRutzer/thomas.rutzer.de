@@ -11,7 +11,6 @@ import ExternalLink from "../components/links/externalLink"
 import SectionTitle from "./../components/sectionTitle"
 
 export default ({ data }) => {
-  console.log(data)
   return (
     <LayoutWrapper>
       <Seo />
@@ -158,7 +157,7 @@ export default ({ data }) => {
               <SectionTitle appearance="primary">credits</SectionTitle>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
-              <h4 className="mb-2 font-bold">images</h4>
+              <p className="mb-2 font-bold">images</p>
               {data.allWorksJson.edges.map((work, key) =>
                 <ul key={key} className={key === 0 ? "mb-4" : "mb-0"}>
                   {work.node.images.map((image, imageKey) =>
@@ -181,7 +180,7 @@ export default ({ data }) => {
               )}
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
-              <h4 className="mb-2 font-bold">this site</h4>
+              <p className="mb-2 font-bold">this site</p>
               <ul>
                 <li>
                   <ExternalLink

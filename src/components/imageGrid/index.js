@@ -32,8 +32,8 @@ const ImageGrid = ({ title, subtitle, images = [] }) => {
           flex items-center justify-center flex-col z-10
           pointer-events-none
         ">
-        <h2 className="text-6xl underline underline-under">{title}</h2>
-        <h3 className="mt-4">{subtitle}</h3>
+        <h3 className="text-4xl md:text-6xl underline underline-under">{title}</h3>
+        <h4 className="mt-4">{subtitle}</h4>
       </div>
       <div className="grid grid-cols-6 md:grid-rows-3 md:gap-5 md:h-screen">
         {images.map((image, key) =>
