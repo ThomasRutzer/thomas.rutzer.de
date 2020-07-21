@@ -6,7 +6,7 @@ const FeatureList = ({ items }) => {
   return (
     <ul className="featureList pl-2">
       {items.map((item, key) => 
-        <li key={key} className="featureList__item text-tertiary">{item}</li>
+        <li key={key} className="featureList__item text-tertiary-lighter">{item}</li>
       )}
     </ul>
   )
