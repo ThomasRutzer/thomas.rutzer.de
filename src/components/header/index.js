@@ -13,7 +13,7 @@ export default () => (
             to="/"
           >
             <svg
-              className="externalLink__icon transform -rotate-90 mr-1"
+              className="external-link__icon transform -rotate-90 mr-1"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
