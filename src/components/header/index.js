@@ -8,10 +8,7 @@ export default () => (
     <ContentWrapper variant="large">
       <ul>
         <li>
-          <Link
-            className="text-primary"
-            to="/"
-          >
+          <Link to="/" >
             <svg
               className="external-link__icon transform -rotate-90 mr-1"
               xmlns="http://www.w3.org/2000/svg"

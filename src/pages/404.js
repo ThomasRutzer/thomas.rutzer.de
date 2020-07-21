@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react"
 import anime from "animejs"
+import { graphql } from "gatsby"
+
 import Seo from "../components/seo/seo"
 import SlotMachine from "react-slot-machine"
 import LayoutWrapper from "../components/layout/layoutWrapper"
@@ -8,8 +10,9 @@ import InternalLink from "../components/links/internalLink"
 import page404Styles from "./404.module.scss"
 import SecondaryButton from "./../components/buttons/secondary-button"
 import Header from "./../components/header"
+import PageHeader from "../components/pageHeader"
 
-export default () => {
+export default ({ data }) => {
   const slotMachineRef = useRef()
   const [isSpinning, setIsSpinning] = useState(true)
 
@@ -41,21 +44,12 @@ export default () => {
 
   return (
     <>
-      <Header />
       <Seo title="404 — Too bad" />
       <LayoutWrapper>
-        <ContentWrapper variant="large">
+        <PageHeader imgPath={data.header.childImageSharp.fluid} title="404 — Too bad" />
+        <ContentWrapper>
           <div className={page404Styles.grid}>
-            <div className="pb-4 text-center">
-              <h1 className="text-4xl md:text-5xl">
-                Too bad
-              </h1>
-              <p>
-                — I couldn't find what you were looking for. <br></br>Go&nbsp;
-              <InternalLink link="/">home</InternalLink> or try your luck.
-              </p>
-            </div>
-            <hr className={page404Styles.divider} />
+           
             <SlotMachine
               symbols={["0", "1", "2", "3", "4"]}
               ref={slotMachineRef}
@@ -70,9 +64,34 @@ export default () => {
                 label="Spin to win!"
               />
             </div>
+            <div className="mt-4 text-center">
+              <p>
+              I couldn't find what you were looking for. <br></br>Go&nbsp;
+              <InternalLink link="/">home</InternalLink> or try your luck.
+              </p>
+            </div>
           </div>
         </ContentWrapper>
       </LayoutWrapper>
     </>
   )
 }
+
+export const pageQuery = graphql`
+  query($path: String!) {
+    header: file(relativePath: { eq: "page-header-bg.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        path
+        title
+      }
+    }
+  }
+`
