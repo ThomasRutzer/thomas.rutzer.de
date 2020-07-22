@@ -77,20 +77,13 @@ export default ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    header: file(relativePath: { eq: "page-header-bg.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        path
-        title
+query {
+  header: file(relativePath: { eq: "page-header-bg.png" }) {
+    childImageSharp {
+      fluid(maxWidth: 1920, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
+}
 `
