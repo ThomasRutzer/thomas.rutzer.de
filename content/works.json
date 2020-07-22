@@ -1,5 +1,7 @@
 [
   {
+    "selected": true,
+    "selectedAppearance": "dark",
     "id": "futurium-permanent-exhibition",
     "title": "Futurium",
     "subTitle": "permanent exhibition",
@@ -25,7 +27,16 @@
         "src": "Futurium_David_von_Becker_VB_4593.jpg",
         "alt": "Exhibition entry",
         "grid": {
-          "tiles":  [[1, 2], [2, 2]],
+          "tiles": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
           "fit": "cover"
         },
         "reference": {
@@ -37,7 +48,16 @@
         "src": "Futurium_David_von_Becker_VB_4871.jpg",
         "alt": "Futurium External view",
         "grid": {
-          "tiles":  [[4, 2], [1, 1]],
+          "tiles": [
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
           "fit": "cover"
         },
         "reference": {
@@ -49,7 +69,16 @@
         "src": "Futurium_David_von_Becker_VB_9824.jpg",
         "alt": "Exhibition space \"Denkraum Mensch\"",
         "grid": {
-          "tiles":  [[5, 2], [2, 1]],
+          "tiles": [
+            [
+              5,
+              2
+            ],
+            [
+              2,
+              1
+            ]
+          ],
           "fit": "cover"
         },
         "reference": {
@@ -60,6 +89,93 @@
     ]
   },
   {
+    "selected": true,
+    "selectedAppearance": "tertiary",
+    "id": "mntns",
+    "title": "Mntns",
+    "subTitle": "github data vizualisation",
+    "year": 2018,
+    "features": [
+      "vuejs",
+      "threejs"
+    ],
+    "leadingDescription": "Mntns is a self initiated web experience to visualize open github data for a username.",
+    "description": "It fetches open github data of a useres and transforms them into a webGL based Mntns landscape. Several leves can be explored, each based on another data set.",
+    "links": [
+      {
+        "link": "https://thomasrutzer.github.io/mntns/",
+        "label": "view live"
+      }
+    ],
+    "images": [
+      {
+        "src": "explore.png",
+        "alt": "Mntns created with threeJS",
+        "grid": {
+          "tiles": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "fit": "cover"
+        },
+        "reference": {
+          "author": "thomas rutzer",
+          "link": ""
+        }
+      },
+      {
+        "src": "parameters-overlay.png",
+        "alt": "Parameters shape the Mntns",
+        "grid": {
+          "tiles": [
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "fit": "contain"
+        },
+        "reference": {
+          "author": "thomas rutzer",
+          "link": ""
+        }
+      },
+      {
+        "src": "fetch-github-data.png",
+        "alt": "Fetch data for a github user",
+        "grid": {
+          "tiles": [
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "fit": "contain"
+        },
+        "reference": {
+          "author": "thomas rutzer",
+          "link": ""
+        }
+      }
+    ]
+  },
+  {
+    "selected": true,
+    "selectedAppearance": "dark",
     "id": "qurator-nlp",
     "title": "Qurator",
     "subTitle": "nlp service",
@@ -89,7 +205,16 @@
         "src": "Upload-File.png",
         "alt": "Upload Sources",
         "grid": {
-          "tiles":  [[1, 3], [1, 2]],
+          "tiles": [
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
           "fit": "contain"
         },
         "reference": {
@@ -98,11 +223,20 @@
         }
       },
       {
-        "src": "Combine-Entities.png",
-        "alt": "Combine Entities",
+        "src": "Occurences.png",
+        "alt": "Occurences of a selected entity",
         "grid": {
-          "tiles": [[5, 2], [2, 1]],
-          "fit": "contain"
+          "tiles": [
+            [
+              5,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "fit": "cover"
         },
         "reference": {
           "author": "art+com internal",
@@ -110,10 +244,19 @@
         }
       },
       {
-        "src": "Selected.png",
-        "alt": "Select Entity",
+        "src": "Output.png",
+        "alt": "Output with entities categorized by NLP service.",
         "grid": {
-          "tiles": [[2, 3], [3, 1]],
+          "tiles": [
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1
+            ]
+          ],
           "fit": "contain"
         },
         "reference": {

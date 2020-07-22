@@ -6,7 +6,6 @@ const Smear = React.lazy(() => import("../smear/smear"))
 
 const Portrait = ({ imgPath }) => {
   const [sufficientConnection, setSufficientConnection] = useState()
-console.log(imgPath)
   useEffect(() => {
     setSufficientConnection(networkAnalyzer() && !isMobileDevice())
   }, [])
