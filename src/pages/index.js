@@ -20,8 +20,8 @@ export default ({ data }) => {
         <SectionTitle>works</SectionTitle>
       </ContentWrapper>
       {data.allWorksJson.edges.map((work, key) =>
-        <WorkSectionWithImageGrid 
-          work={work.node} 
+        <WorkSectionWithImageGrid
+          work={work.node}
           key={key} />
       )}
       <section className="bg-grey-darkest-pattern">
@@ -105,24 +105,29 @@ export default ({ data }) => {
             <div className="col-start-1 md:col-start-2 col-span-1">
               <p className="mb-2 font-bold">images</p>
               {data.allWorksJson.edges.map((work, key) =>
-                <ul key={key} className={key === 0 ? "mt-0" : "mt-4"}>
-                  {work.node.images.map((image, imageKey) =>
-                    <li key={imageKey}>
-                      {image.reference.link &&
-                        <ExternalLink
-                          link={image.reference.link}
-                          size="small">
-                          Fig.{imageKey + 1}: {work.node.title} <i>{work.node.subTitle}</i> by {image.reference.author}
-                        </ExternalLink>
-                      }
-                      {!image.reference.link &&
-                        <p className="text-sm">
-                          Fig.{imageKey + 1}: {work.node.title} <i>{work.node.subTitle}</i> by {image.reference.author}
-                        </p>
-                      }
-                    </li>
-                  )}
-                </ul>
+                <div key={key} className={key === 0 ? "mt-0" : "mt-4"}>
+                  <p className="text-sm text-tertiary-lighter"
+                    >{work.node.title} <i>{work.node.subTitle}</i>
+                  </p>
+                  <ul>
+                    {work.node.images.map((image, imageKey) =>
+                      <li key={imageKey}>
+                        {image.reference.link &&
+                          <ExternalLink
+                            link={image.reference.link}
+                            size="small">
+                            Fig.{imageKey + 1} by {image.reference.author}
+                          </ExternalLink>
+                        }
+                        {!image.reference.link &&
+                          <p className="text-sm">
+                            Fig.{imageKey + 1} by {image.reference.author}
+                          </p>
+                        }
+                      </li>
+                    )}
+                  </ul>
+                </div>
               )}
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
