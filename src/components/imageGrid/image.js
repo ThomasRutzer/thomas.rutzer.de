@@ -32,7 +32,7 @@ const Image = ({ appearance, src, alt, fit = "cover", tiles, index, offsetX = 0,
         alt={alt} />
       <figcaption 
         className={
-            `${appearance === "dark" ? "text-white" : "text-grey-darkest"} text-xs italic text-center mt-2 px-1 `
+            `text-xs italic text-center mt-2 px-1 `
           }>
         Fig.{index + 1}: {alt}
       </figcaption>
