@@ -109,7 +109,7 @@
     ],
     "images": [
       {
-        "src": "explore.png",
+        "src": "mntns intro.jpg",
         "alt": "Mntns created with threeJS",
         "grid": {
           "tiles": [
@@ -130,7 +130,7 @@
         }
       },
       {
-        "src": "parameters-overlay.png",
+        "src": "mntns parameters.jpg",
         "alt": "Parameters shape the Mntns",
         "grid": {
           "tiles": [
@@ -151,7 +151,7 @@
         }
       },
       {
-        "src": "fetch-github-data.png",
+        "src": "mntns add.jpg",
         "alt": "Fetch data for a github user",
         "grid": {
           "tiles": [
@@ -202,7 +202,7 @@
     ],
     "images": [
       {
-        "src": "Upload-File.png",
+        "src": "qurator-nlp-upload.jpg",
         "alt": "Upload Sources",
         "grid": {
           "tiles": [
@@ -218,12 +218,12 @@
           "fit": "contain"
         },
         "reference": {
-          "author": "art+com internal",
+          "author": "©ART+COM Studios",
           "link": ""
         }
       },
       {
-        "src": "Occurences.png",
+        "src": "qurator-nlp-context-viewer.jpg",
         "alt": "Occurences of a selected entity",
         "grid": {
           "tiles": [
@@ -239,18 +239,18 @@
           "fit": "cover"
         },
         "reference": {
-          "author": "art+com internal",
+          "author": "©ART+COM Studios",
           "link": ""
         }
       },
       {
-        "src": "Output.png",
-        "alt": "Output with entities categorized by NLP service.",
+        "src": "qurator-nlp-categorized-entities.jpg",
+        "alt": "Categorized entities",
         "grid": {
           "tiles": [
             [
-              3,
-              2
+              2,
+              4
             ],
             [
               3,
@@ -260,7 +260,7 @@
           "fit": "contain"
         },
         "reference": {
-          "author": "art+com internal",
+          "author": "©ART+COM Studios",
           "link": ""
         }
       }

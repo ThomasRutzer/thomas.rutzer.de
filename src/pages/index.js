@@ -55,7 +55,7 @@ export default ({ data }) => {
                 I'm leading JavaScript developer with focus on unique interfaces and interactions, currently working at <ExternalLink link={"https://artcom.de"} appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
               </p>
               <p className="mt-4">
-                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions with web technologies and mqtt based realtime communications.
+                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions, mostly with fullstack JavaScript and mqtt based realtime communication.
               </p>
               <p className="mt-4">
                 My personal reasearch focus at the moment is blending interfaces into spaces with the new webXR API.
