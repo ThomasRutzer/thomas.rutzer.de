@@ -93,7 +93,7 @@
     "selectedAppearance": "tertiary",
     "id": "mntns",
     "title": "Mntns",
-    "subTitle": "github data vizualisation",
+    "subTitle": "github data visualisation",
     "year": 2018,
     "features": [
       "vuejs",
@@ -244,7 +244,7 @@
         }
       },
       {
-        "src": "qurator-nlp-categorized-entities.jpg",
+        "src": "qurator-nlp-entities-browser.jpg",
         "alt": "Categorized entities",
         "grid": {
           "tiles": [
