@@ -19,16 +19,16 @@ const ImageGrid = ({ appearance, title, subtitle, images = [] }) => {
   }, [])
 
   useEffect(() => {
-    const xStart = getRandomNumber(15, 35);
-    const yStart = getRandomNumber(15, 35);
+    const xStart = getRandomNumber(15, 35)
+    const yStart = getRandomNumber(15, 35)
 
-    const render = () => {
+    const renderMousemove = () => {
       setTx(tx => lerp(tx, map(mouseX.current, 0, window.innerWidth, -xStart, xStart), 0.07))
       setTy(ty => lerp(ty, map(mouseY.current, 0, window.innerHeight, -yStart, yStart), 0.07))
 
-      requestAnimationFrame(render);
+      requestAnimationFrame(renderMousemove)
     }
-    requestAnimationFrame(render);
+    requestAnimationFrame(renderMousemove)
   }, [])
 
   useEffect(() => {

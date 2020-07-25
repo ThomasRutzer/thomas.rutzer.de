@@ -99,7 +99,7 @@
       "vuejs",
       "threejs"
     ],
-    "leadingDescription": "Mntns is a self initiated web experience to visualize open github data for a username.",
+    "leadingDescription": "Mntns is a self initiated web experience to visualise open github data for a username.",
     "description": "It fetches open github data of a useres and transforms them into a webGL based Mntns landscape. Several leves can be explored, each based on another data set.",
     "links": [
       {
