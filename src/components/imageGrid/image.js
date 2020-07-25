@@ -2,7 +2,7 @@ import React, { useMemo } from "react"
 import classnames from "classnames"
 import Img from "gatsby-image"
 
-const Image = ({ appearance, src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0 }) => {
+const Image = ({ src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0 }) => {
   const createTilesClasses = useMemo(() => classnames({
     [`col-start-${index % 2 === 0 ? "1" : "2"} col-span-5`]: true,
     [`lg:col-start-${tiles[0][0]}`]: true,
@@ -21,7 +21,7 @@ const Image = ({ appearance, src, alt, fit = "cover", tiles, index, offsetX = 0,
         overflow-hidden
         mt-${index === 0 ? "0" : "4"} lg:mt-0
         flex items-center flex-col
-        transition-transform duration-1000 delay-${index * 75} ease-in`
+        transition-transform duration-700 ease-out`
       }>
       <Img
         className="w-full"
