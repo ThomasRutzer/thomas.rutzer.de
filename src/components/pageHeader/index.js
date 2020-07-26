@@ -17,7 +17,7 @@ export default ({ imgPath, title }) => (
           fluid={imgPath} />
       </div>
 
-      <h1 className="relative text-4xl md:text-5xl text-primary max-w-screen-md z-10 lg:p-4">
+      <h1 className="relative text-4xl md:text-5xl text-primary max-w-screen-md z-10">
         {title}
       </h1>
     </ContentWrapper>

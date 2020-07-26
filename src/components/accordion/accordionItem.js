@@ -7,22 +7,25 @@ import {
 } from "react-accessible-accordion"
 import AccordionImage from "./AccordionImage"
 
-const AccordionItem = ({ children, title, subTitle, imgSrc }) => {
+const AccordionItem = ({ children, title, subTitle, imgSrc, imgAlt }) => {
   return (
     <AccessibleAccordionItem
       activeClassName="accordion-item accordion-item--expanded"
       className="accordion-item">
-      <AccordionImage
-        src={imgSrc}
-        className="accordion-item__image" />
-      <div className="accordion-item__content-wrapper flex flex-col px-4 max-w-screen-sm">
+      <div className="accordion-item__content-wrapper flex flex-col max-w-screen-md">
         <AccordionItemHeading className="accordion-item__heading">
-          <AccordionItemButton className=" accordion-item__title flex flex-col items-start justify-between">
-            <h3 className="text-4xl md:5xl underline underline-under">{title}</h3>
-            <h3 className="text-3xl">{subTitle}</h3>
+          <AccordionItemButton className=" accordion-item__title flex flex-row items-center">
+            <AccordionImage
+              alt={imgAlt}
+              src={imgSrc}
+              className="accordion-item__image" />
+            <div className="ml-4">
+              <h2 className="text-4xl md:5xl underline underline-under">{title}</h2>
+              <h3 className="text-xl">{subTitle}</h3>
+            </div>
           </AccordionItemButton>
         </AccordionItemHeading>
-        <AccordionItemPanel className="accordion-item__panel py-3 mt-4">
+        <AccordionItemPanel className="accordion-item__panel py-3">
           {children}
         </AccordionItemPanel>
       </div>

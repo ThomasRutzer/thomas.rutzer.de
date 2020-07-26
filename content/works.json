@@ -12,6 +12,7 @@
     ],
     "leadingDescription": "In fall of 2019 futurium, a museum which explores competing future scenarios, opened its doors in Berlin. art+com is lead agency for the exhibition design with its mix of analogue and digital media.",
     "description": "I was part of the team which has been responsible for a solid infrastructure as well as for multiple exhibits itself. The infrastructure includes automated deployment via ansible and a backend with multiple services around a mqtt-broker. That guarantees realtime communication across all the exhibits. Various sensors enhance the user interaction and are also connected to exhibits by mqtt.",
+    "teaserDescription": "In fall of 2019 futurium, a museum which explores competing future scenarios, opened its doors in Berlin. I was part of the team at art+com responsible for the first permanent exhibition.",
     "links": [
       {
         "link": "https://artcom.de/en/project/futurium-permanent-exhibition/",
@@ -22,6 +23,14 @@
         "label": "about futurium"
       }
     ],
+    "teaserImage": {
+      "src": "Futurium_David_von_Becker_VB_4593.jpg",
+      "alt": "Exhibition entry",
+      "reference": {
+        "author": "David von Becker",
+        "link": "https://futurium.de/de/pressemappen/pressebilder"
+      }
+    },
     "images": [
       {
         "src": "Futurium_David_von_Becker_VB_4593.jpg",
@@ -101,12 +110,21 @@
     ],
     "leadingDescription": "Mntns is a self initiated web experience to visualise open github data for a username.",
     "description": "It fetches open github data of a useres and transforms them into a webGL based Mntns landscape. Several leves can be explored, each based on another data set.",
+    "teaserDescription": "Mntns is a self initiated web experience to visualise open github data for a username.",
     "links": [
       {
         "link": "https://thomasrutzer.github.io/mntns/",
         "label": "view live"
       }
     ],
+    "teaserImage": {
+      "src": "mntns intro.jpg",
+      "alt": "Mntns created with threeJS",
+      "reference": {
+        "author": "thomas rutzer",
+        "link": ""
+      }
+    },
     "images": [
       {
         "src": "mntns intro.jpg",
@@ -186,6 +204,7 @@
     ],
     "leadingDescription": "Qurator is a research collaboration focusing on content curation with AI technologies. The team at art+com built a prototypical nlp based service. I led the frontend development.",
     "description": "The service helps users to analyze large amounts of texts (e.g. their own text documents or Wikipedia articles) with a suitable interface. The backend component outputs a result which includes entities like geographical locations, historical events or personalities. Through the frontend component users can select entities and examine its occurrences. A variety of filters make the input text more accessible.",
+    "teaserDescription": "Qurator is a research collaboration focusing on content curation with AI technologies. The team at art+com built a prototypical nlp based servic which helps users to analyze large amounts of texts with a suitable interface",
     "links": [
       {
         "link": "https://qurator.ai/",
@@ -200,6 +219,14 @@
         "label": "about nlp"
       }
     ],
+    "teaserImage": {
+      "src": "qurator-nlp-teaser.jpg",
+      "alt": "Qurator NLP service teaser",
+      "reference": {
+        "author": "©ART+COM Studios",
+        "link": ""
+      }
+    },
     "images": [
       {
         "src": "qurator-nlp-upload.jpg",
