@@ -22,10 +22,13 @@ body {
 
 @tailwind components;
 
-@import "./components//links/index.scss";
+@import "./components//accordion//index.scss";
+@import "./components/links/index.scss";
 @import "./components/markdown/index.scss";
 
 @tailwind utilities;
+
+@import "./utils/cssAnimations.scss";
 
 @responsive {
   .bg-grey-darkest-pattern {

@@ -57,7 +57,8 @@ const ImageGrid = ({ appearance, title, subtitle, images = [] }) => {
             alt={image.alt}
             fit={image.fit}
             tiles={image.tiles}
-            offsetX={tx} offsetY={ty} />
+            offsetX={tx} 
+            offsetY={ty} />
         )}
       </div>
     </div>
