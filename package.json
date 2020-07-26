@@ -21,6 +21,7 @@
     "gatsby-transformer-sharp": "^2.5.7",
     "pixi.js": "^5.3.0",
     "react": "^16.13.1",
+    "react-accessible-accordion": "^3.3.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.0",
     "react-slot-machine": "github:thomasrutzer/react-slot-machine",
