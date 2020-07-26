@@ -1,6 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 
+import InternalLink from "./../links/internalLink"
 import ContentWrapper from "./../layout/contentWrapper"
 
 export default () => (
@@ -8,7 +8,7 @@ export default () => (
     <ContentWrapper variant="large">
       <ul>
         <li>
-          <Link to="/" >
+          <InternalLink link="/">
             <svg
               className="external-link__icon transform -rotate-90 mr-1"
               xmlns="http://www.w3.org/2000/svg"
@@ -21,8 +21,8 @@ export default () => (
             >
               <path d="M7 17l9.2-9.2M17 17V7H7" />
             </svg>
-            start
-        </Link>
+            Go to start view
+          </InternalLink>
         </li>
       </ul>
     </ContentWrapper>

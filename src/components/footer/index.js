@@ -7,9 +7,14 @@ export default () => (
     <ContentWrapper>
       <div className="md:grid md:grid-cols-3">
         <ul>
-          <li className="text-sm">
+          <li className="text-sm inline">
             <InternalLink link="/legal/">
               Legal notice
+          </InternalLink>
+          </li>
+          <li className="text-sm inline ml-4">
+            <InternalLink link="/all-works/">
+              Work archive
           </InternalLink>
           </li>
         </ul>

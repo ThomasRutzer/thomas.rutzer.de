@@ -8,6 +8,7 @@ import WorkSectionWithImageGrid from "./../components/sections/workSectionWithIm
 import ContentWrapper from "./../components/layout/contentWrapper"
 import ExternalLink from "../components/links/externalLink"
 import SectionTitle from "../components/sections/sectionTitle"
+import SecondaryButtonLink from "./../components/buttons/secondary-button-link"
 
 export default ({ data }) => {
   return (
@@ -24,6 +25,15 @@ export default ({ data }) => {
           work={work.node}
           key={key} />
       )}
+      <ContentWrapper
+        verticalSpacing={false}
+        additionalClasses="pb-4 md:pb-7">
+        <div className="text-center">
+          <SecondaryButtonLink link="/all-works">
+            Dig works archive
+          </SecondaryButtonLink>
+        </div>
+      </ContentWrapper>
       <section className="bg-grey-darkest-pattern">
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -107,7 +117,7 @@ export default ({ data }) => {
               {data.allWorksJson.edges.map((work, key) =>
                 <div key={key} className={key === 0 ? "mt-0" : "mt-4"}>
                   <p className="text-sm text-tertiary-lighter"
-                    >{work.node.title} <i>{work.node.subTitle}</i>
+                  >{work.node.title} <i>{work.node.subTitle}</i>
                   </p>
                   <ul>
                     {work.node.images.map((image, imageKey) =>
@@ -145,7 +155,14 @@ export default ({ data }) => {
                     link={"https://tailwindcss.com/"}
                     size="small">
                     Tailwind.css
-              </ExternalLink>
+                  </ExternalLink>
+                </li>
+                <li>
+                  <ExternalLink
+                    link={"https://animejs.com/"}
+                    size="small">
+                    anime.js
+                  </ExternalLink>
                 </li>
                 <li>
                   <ExternalLink

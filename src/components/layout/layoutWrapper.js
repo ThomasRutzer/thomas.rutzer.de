@@ -1,10 +1,13 @@
 import React from "react"
-import Footer from "./../footer/footer"
 import "typeface-ibm-plex-mono"
 
-export default ({ children }) => (
+import Footer from "./../footer"
+
+const LayoutWrapper = ({ children }) => (
   <div>
     {children}
     <Footer />
   </div>
 )
+
+export default LayoutWrapper

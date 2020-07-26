@@ -48,7 +48,7 @@ export default ({ data }) => {
         <PageHeader imgPath={data.header.childImageSharp.fluid} title="404 — Too bad" />
         <ContentWrapper>
           <div className={page404Styles.grid}>
-           
+
             <SlotMachine
               symbols={["0", "1", "2", "3", "4"]}
               ref={slotMachineRef}
@@ -59,13 +59,13 @@ export default ({ data }) => {
             <div className={page404Styles.cta}>
               <SecondaryButton
                 disabled={isSpinning}
-                onClick={onStartSpinning}
-                label="Spin to win!"
-              />
+                onClick={onStartSpinning}>
+                Spin to Win!
+              </SecondaryButton>
             </div>
             <div className="mt-4 text-center">
               <p>
-              I couldn't find what you were looking for. <br></br>Go&nbsp;
+                I couldn't find what you were looking for. <br></br>Go&nbsp;
               <InternalLink link="/">home</InternalLink> or try your luck.
               </p>
             </div>
