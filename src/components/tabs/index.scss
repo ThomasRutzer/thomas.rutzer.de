@@ -1,0 +1,32 @@
+.tabs__tab-list {
+  @apply py-2;
+}
+
+.tabs__tab {
+  display: inline-block;
+  cursor: pointer;
+  @apply pr-2;
+  transition: color 300ms;
+
+  &:last-child {
+    @apply pr-0;
+  }
+
+  &:focus {
+    outline: 2px dashed currentColor;
+  }
+
+  &--selected {
+    @apply text-tertiary-lighter;
+  }
+}
+
+.tabs__tab-panel {
+  display: none;
+  @apply mt-4;
+  animation: enter 0.35s ease-in;
+
+  &--selected {
+    display: block;
+  }
+}
