@@ -5,20 +5,10 @@ $accordion-item-image-h: 160px;
   position: relative;
   min-height: $accordion-item-image-h;
   @apply mb-2;
-  animation: enter 0.35s ease-in;
-
-  &__content-wrapper {
-    transform: translateX($accordion-item-image-w);
-    transition: transform 300ms cubic-bezier(0,0,.58,1);
-  }
 
   &:hover, &--expanded {
     .accordion-item__image {
       clip-path: inset(0);
-    }
-
-    .accordion-item__content-wrapper {
-      transform: translateX($accordion-item-image-w);
     }
 
     .accordion-item__heading {
@@ -52,10 +42,7 @@ $accordion-item-image-h: 160px;
 }
 
 .accordion-item__image {
-  position: absolute;
   opacity: 0.4;
-  left: 0;
-  top: - 24px;
   clip-path: inset(theme("spacing.4") theme("spacing.2"));
   transition: all 600ms 100ms ease-out;
 }
@@ -66,10 +53,8 @@ $accordion-item-image-h: 160px;
 }
 
 .accordion-item__heading {
-  @apply text-grey-lighter;
-
   &:focus, &:focus-within {
-    outline: 3px dashed currentColor;
+    outline: 3px dashed theme("colors.grey.darker");
   }
 }
 
