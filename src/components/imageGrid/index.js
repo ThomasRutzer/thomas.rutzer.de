@@ -1,41 +1,10 @@
-import React, { useEffect, useState, useCallback, useRef } from "react"
+import React from "react"
 
-import getMousePosFromEvent from "./../../utils/getMousePosFromEvent"
-import getRandomNumber from "./../../utils/getRandomNumber"
-import lerp from "./../../utils/lerp"
-import map from "./../../utils/map"
 import Image from "./image"
+import {useMousemoveTranslation} from "./../../hooks"
 
 const ImageGrid = ({ appearance, title, subtitle, images = [] }) => {
-  const [tx, setTx] = useState(0)
-  const [ty, setTy] = useState(0)
-  const mouseY = useRef(null)
-  const mouseX = useRef(null)
-
-  const mousemoveHandler = useCallback(e => {
-    const { x, y } = getMousePosFromEvent(e)
-    mouseX.current = x
-    mouseY.current = y
-  }, [])
-
-  useEffect(() => {
-    const xStart = getRandomNumber(15, 35)
-    const yStart = getRandomNumber(15, 35)
-
-    const renderMousemove = () => {
-      setTx(tx => lerp(tx, map(mouseX.current, 0, window.innerWidth, -xStart, xStart), 0.07))
-      setTy(ty => lerp(ty, map(mouseY.current, 0, window.innerHeight, -yStart, yStart), 0.07))
-
-      requestAnimationFrame(renderMousemove)
-    }
-    requestAnimationFrame(renderMousemove)
-  }, [])
-
-  useEffect(() => {
-    window.addEventListener('mousemove', mousemoveHandler)
-
-    return () => window.removeEventListener('mousemove', mousemoveHandler)
-  }, [mousemoveHandler])
+  const translations = useMousemoveTranslation(15, 35, 15, 35)
 
   return (
     <div className="relative">
@@ -57,8 +26,8 @@ const ImageGrid = ({ appearance, title, subtitle, images = [] }) => {
             alt={image.alt}
             fit={image.fit}
             tiles={image.tiles}
-            offsetX={tx} 
-            offsetY={ty} />
+            offsetX={translations.tx} 
+            offsetY={translations.ty} />
         )}
       </div>
     </div>
