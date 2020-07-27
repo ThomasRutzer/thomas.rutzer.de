@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState } from "react"
 import networkAnalyzer from "../../utils/networkAnalyzer"
 import isMobileDevice from "../../utils/isMobileDevice"
 import Img from "gatsby-image"
-const Smear = React.lazy(() => import("../smear/smear"))
+const Smear = React.lazy(() => import("../smear"))
 
 const Portrait = ({ imgPath }) => {
   const [sufficientConnection, setSufficientConnection] = useState()

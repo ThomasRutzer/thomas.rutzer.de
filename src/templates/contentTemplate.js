@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import LayoutWrapper from "./../components/layout/layoutWrapper"
 import ContentWrapper from "./../components/layout/contentWrapper"
 import PageHeader from "../components/pageHeader"
-import Seo from "../components/seo/seo"
+import Seo from "../components/seo"
 
 export default function Template({ data }) {
   const { markdownRemark, header } = data

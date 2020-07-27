@@ -3,12 +3,12 @@ import { graphql } from "gatsby"
 
 import Intro from "../components/intro/intro"
 import LayoutWrapper from "../components/layout/layoutWrapper"
-import Seo from "../components/seo/seo"
+import Seo from "../components/seo"
 import WorkSectionWithImageGrid from "./../components/sections/workSectionWithImageGrid"
 import ContentWrapper from "./../components/layout/contentWrapper"
 import ExternalLink from "../components/links/externalLink"
 import SectionTitle from "../components/sections/sectionTitle"
-import SecondaryButtonLink from "./../components/buttons/secondary-button-link"
+import SectionDigArchive from "./../components/sections/sectionDigArchive"
 
 export default ({ data }) => {
   return (
@@ -25,15 +25,7 @@ export default ({ data }) => {
           work={work.node}
           key={key} />
       )}
-      <ContentWrapper
-        verticalSpacing={false}
-        additionalClasses="pb-4 md:pb-7">
-        <div className="text-center">
-          <SecondaryButtonLink link="/all-works">
-            Dig works archive
-          </SecondaryButtonLink>
-        </div>
-      </ContentWrapper>
+      <SectionDigArchive />
       <section className="bg-grey-darkest-pattern">
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
