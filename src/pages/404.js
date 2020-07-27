@@ -2,13 +2,13 @@ import React, { useRef, useState } from "react"
 import anime from "animejs"
 import { graphql } from "gatsby"
 
-import Seo from "../components/seo/seo"
+import Seo from "../components/seo"
 import SlotMachine from "react-slot-machine"
 import LayoutWrapper from "../components/layout/layoutWrapper"
 import ContentWrapper from "../components/layout/contentWrapper"
 import InternalLink from "../components/links/internalLink"
 import page404Styles from "./404.module.scss"
-import SecondaryButton from "./../components/buttons/secondary-button"
+import { CtaSecondaryTypeButton } from "./../components/cta"
 import PageHeader from "../components/pageHeader"
 
 export default ({ data }) => {
@@ -57,11 +57,11 @@ export default ({ data }) => {
               symbolEvaluatedStyleClass={page404Styles.evaluated}
               symbolDefaultStyleClass={page404Styles.symbol} />
             <div className={page404Styles.cta}>
-              <SecondaryButton
+              <CtaSecondaryTypeButton
                 disabled={isSpinning}
                 onClick={onStartSpinning}>
                 Spin to Win!
-              </SecondaryButton>
+              </CtaSecondaryTypeButton>
             </div>
             <div className="mt-4 text-center">
               <p>
@@ -77,13 +77,13 @@ export default ({ data }) => {
 }
 
 export const pageQuery = graphql`
-query {
-  header: file(relativePath: { eq: "page-header-bg.png" }) {
-    childImageSharp {
-      fluid(maxWidth: 1920, quality: 100) {
-        ...GatsbyImageSharpFluid_withWebp
+  query {
+    header: file(relativePath: { eq: "page-header-bg.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
       }
     }
   }
-}
 `
