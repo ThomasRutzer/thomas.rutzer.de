@@ -14,8 +14,8 @@ export default () => (
           </li>
           <li className="text-sm inline ml-4">
             <InternalLink link="/all-works/">
-              Work archive
-          </InternalLink>
+              project archive
+            </InternalLink>
           </li>
         </ul>
       </div>
