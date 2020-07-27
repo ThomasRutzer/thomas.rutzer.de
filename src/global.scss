@@ -22,9 +22,12 @@ body {
 
 @tailwind components;
 
-@import "./components//accordion//index.scss";
+@import "./components/accordion/index.scss";
+@import "./components/cta/index.scss";
 @import "./components/links/index.scss";
 @import "./components/markdown/index.scss";
+@import "./components/parallax-circles/index.scss";
+@import "./components/sections/index.scss";
 @import "./components/tabs/index.scss";
 
 @tailwind utilities;
@@ -38,13 +41,22 @@ body {
     background-blend-mode: multiply;
   }
 
-  .bg-secondary-pattern {
+  .bg-primary-pattern {
     background: url("./images/seamless-BG.jpg") repeat;
-    background-color: theme("colors.secondary");
+    background-color: theme("colors.primary");
     background-blend-mode: multiply;
   }
 }
 
 .underline-under {
   text-underline-position: under;
+}
+
+.text-stroke-primary {
+  -webkit-text-stroke-color: theme("colors.primary");
+  color: transparent;
+}
+
+.text-stroke-2 {
+  -webkit-text-stroke-width: theme("borderWidth.2");
 }
