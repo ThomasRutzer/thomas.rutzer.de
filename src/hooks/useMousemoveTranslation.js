@@ -4,26 +4,22 @@ import getMousePosFromEvent from "./../utils/getMousePosFromEvent"
 import getRandomNumber from "./../utils/getRandomNumber"
 import lerp from "./../utils/lerp"
 import map from "./../utils/map"
+import isTouchDevice from "./../utils/isTouchDevice"
 
 export default (xRangeMin, xRangeMax, yRangeMin, yRangeMax) => {
-  const [isActivated, setIsActivated] = useState(false)
   const [tx, setTx] = useState(null)
   const [ty, setTy] = useState(null)
   const mouseY = useRef(null)
   const mouseX = useRef(null)
 
   const mousemoveHandler = useCallback(e => {
-    if (!isActivated) {
-      setIsActivated(true)
-    }
-
     const { x, y } = getMousePosFromEvent(e)
     mouseX.current = x
     mouseY.current = y
-  }, [isActivated])
+  }, [])
 
   useEffect(() => {
-    if (!isActivated) return
+    if (isTouchDevice()) return
 
     let animationFrameId = null
     const xStart = getRandomNumber(xRangeMin, xRangeMax)
@@ -39,7 +35,7 @@ export default (xRangeMin, xRangeMax, yRangeMin, yRangeMax) => {
     animationFrameId = requestAnimationFrame(renderMousemove)
 
     return () => cancelAnimationFrame(animationFrameId)
-  }, [isActivated, xRangeMin, xRangeMax, yRangeMin, yRangeMax])
+  }, [xRangeMin, xRangeMax, yRangeMin, yRangeMax])
 
   useEffect(() => {
     window.addEventListener('mousemove', mousemoveHandler)
