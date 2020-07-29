@@ -4,14 +4,13 @@ import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import { ContentWrapper, LayoutWrapper } from "../components/layout"
 import PageHeader from "../components/pageHeader"
-import { Accordion, AccordionItem } from "./../components/accordion"
-import { ExternalLink } from "./../components/links"
-import FeatureList from "./../components/featureList"
-import Tabs from "./../components/tabs"
-import SectionTitle from "./../components/sections/sectionTitle"
+import { Accordion, AccordionItem } from "../components/accordion"
+import { ExternalLink } from "../components/links"
+import FeatureList from "../components/featureList"
+import Tabs from "../components/tabs"
+import SectionTitle from "../components/sections/sectionTitle"
 
 export default ({ data }) => {
-  console.log(data)
   return (
     <>
       <Seo title="all works" />
@@ -31,7 +30,7 @@ export default ({ data }) => {
                       imgAlt={work.node.teaserImage.alt}
                       subTitle={work.node.subTitle}
                       title={work.node.title}>
-                      <div className="grid grid-cols-1 md:grid-cols-all-works-descr gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-project-archive-descr gap-4">
                         <div className="col-start-1 col-span-1">
                           <span className="text-tertiary-lighter block text-sm">
                             key facts

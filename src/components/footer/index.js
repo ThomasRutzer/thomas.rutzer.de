@@ -13,7 +13,7 @@ export default () => (
           </InternalLink>
           </li>
           <li className="text-sm inline ml-4">
-            <InternalLink link="/all-works/">
+            <InternalLink link="/project-archive/">
               project archive
             </InternalLink>
           </li>

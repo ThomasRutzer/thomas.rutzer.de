@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'all-works-descr': '120px repeat(1, minmax(0, 1fr));',
+        'project-archive-descr': '120px repeat(1, minmax(0, 1fr));',
       }
     },
     colors: {
