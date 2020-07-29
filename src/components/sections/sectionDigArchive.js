@@ -16,7 +16,7 @@ const SectionDigArchive = () =>
             <h2 className="text-3xl md:text-5xl italic">
               There<br /> is more<br />
             </h2>
-            <div className="flex-none text-center md:text-left mt-2 md:mt-0 md:ml-7">
+            <div className="flex-none mt-2 md:mt-0 md:ml-7">
               <SecondaryButtonLink link="/project-archive">
                 project archive
               </SecondaryButtonLink>

@@ -30,7 +30,7 @@ export default ({ data }) => {
                       imgAlt={work.node.teaserImage.alt}
                       subTitle={work.node.subTitle}
                       title={work.node.title}>
-                      <div className="grid grid-cols-1 md:grid-cols-project-archive-descr gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-project-archive-descr gap-2 md:gap-4">
                         <div className="col-start-1 col-span-1">
                           <span className="text-tertiary-lighter block text-sm">
                             key facts
