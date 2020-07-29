@@ -2,16 +2,16 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Seo from "../components/seo"
-import LayoutWrapper from "../components/layout/layoutWrapper"
-import ContentWrapper from "../components/layout/contentWrapper"
+import { ContentWrapper, LayoutWrapper } from "../components/layout"
 import PageHeader from "../components/pageHeader"
 import { Accordion, AccordionItem } from "./../components/accordion"
-import ExternalLink from "./../components/links/externalLink"
+import { ExternalLink } from "./../components/links"
 import FeatureList from "./../components/featureList"
 import Tabs from "./../components/tabs"
 import SectionTitle from "./../components/sections/sectionTitle"
 
 export default ({ data }) => {
+  console.log(data)
   return (
     <>
       <Seo title="all works" />
@@ -74,7 +74,7 @@ export default ({ data }) => {
                       {group.edges[0].node.year}
                     </li>
                     {group.edges.map((work, key) =>
-                      <li key={key + groupKey} className="mb-2">
+                      <li key={key + groupKey} className="mb-2 block">
                         {work.node.teaserImage.reference.link &&
                           <ExternalLink
                             link={work.node.teaserImage.reference.link}
@@ -83,7 +83,7 @@ export default ({ data }) => {
                           </ExternalLink>
                         }
                         {!work.node.teaserImage.reference.link &&
-                          work.node.title + " " + work.node.subTitle + " " + work.node.teaserImage.reference.link} by {work.node.teaserImage.reference.author
+                          work.node.title + " " + work.node.subTitle + " " + work.node.teaserImage.reference.link + "by" + work.node.teaserImage.reference.author
                         }
                       </li>
                     )}

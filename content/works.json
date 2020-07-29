@@ -292,5 +292,290 @@
         }
       }
     ]
+  },
+  {
+    "selected": false,
+    "id": "nitribitt",
+    "title": "Nitribitt",
+    "subTitle": "agency portfolio",
+    "year": 2016,
+    "features": [
+      "jQuery",
+      "pimcore"
+    ],
+    "teaserDescription": "I helped Stuttgart based Design Agency nitribitt with their digital portfolio as a freelancer. The site is powered by a Pimcore CMS with a custom frontend.",
+    "links": [
+      {
+        "link": "https://nitribitt.com/",
+        "label": "view live"
+      }
+    ],
+    "teaserImage": {
+      "src": "nitribitt-teaser.jpg",
+      "alt": "Nitribitt GmbH digital portfolio teaser",
+      "reference": {
+        "author": "©Nitribitt GmbH",
+        "link": ""
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "hello-monday-revelator",
+    "title": "Revelator",
+    "subTitle": "teaser site",
+    "year": 2015,
+    "features": [
+      "JavaScript"
+    ],
+    "teaserDescription": "As part of the Hello Monday team, I helped to create the teaser page for Revelator.",
+    "links": [
+      {
+        "link": "https://www.awwwards.com/sites/revelator",
+        "label": "awwwards case"
+      }
+    ],
+    "teaserImage": {
+      "src": "hello-monday-revelator-teaser.jpg",
+      "alt": "hello monday Revelator teaser",
+      "reference": {
+        "author": "©Hello Monday ApS",
+        "link": ""
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "hello-monday-wove",
+    "title": "Wove",
+    "subTitle": "product launch site",
+    "year": 2015,
+    "features": [
+      "JavaScript",
+      "pimcore"
+    ],
+    "teaserDescription": "While being part of the Hello Monday team, I helped to create the product launch site for Wove - the world’s first wearable band with flexible display technology. I mainly prototyped the unique page transitions.",
+    "links": [
+      {
+        "link": "https://www.hellomonday.com/work/wove",
+        "label": "hello monday use case"
+      }
+    ],
+    "teaserImage": {
+      "src": "hello-monday-wove-teaser.jpg",
+      "alt": "hello monday wove teaser",
+      "reference": {
+        "author": "©Hello Monday ApS",
+        "link": ""
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "hello-monday-panthera",
+    "title": "Panthera",
+    "subTitle": "organization platform",
+    "year": 2015,
+    "features": [
+      "JavaScript"
+    ],
+    "teaserDescription": "Also while working at hello monday, we built the frontend for panthera.org.",
+    "links": [
+      {
+        "link": "https://www.panthera.org/",
+        "label": "view live"
+      }
+    ],
+    "teaserImage": {
+      "src": "hello-monday-panthera-teaser.jpg",
+      "alt": "hello monday panthera teaser",
+      "reference": {
+        "author": "©Praniket Desai",
+        "link": "https://unsplash.com/photos/SLyVj5uz6_I"
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "hello-monday-wove",
+    "title": "Wove",
+    "subTitle": "product launch site",
+    "year": 2015,
+    "features": [
+      "JavaScript",
+      "pimcore"
+    ],
+    "teaserDescription": "While being part of the Hello Monday team, I helped to create the product launch site for Wove - the world’s first wearable band with flexible display technology. I mainly prototyped the unique page transitions.",
+    "links": [
+      {
+        "link": "https://www.hellomonday.com/work/wove",
+        "label": "hello monday use case"
+      }
+    ],
+    "teaserImage": {
+      "src": "hello-monday-wove-teaser.jpg",
+      "alt": "hello monday wove teaser",
+      "reference": {
+        "author": "©Hello Monday ApS",
+        "link": ""
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "eurowings",
+    "title": "Eurowings",
+    "subTitle": "e-commerce platform relaunch",
+    "year": 2017,
+    "features": [
+      "vueJS",
+      "accessibility"
+    ],
+    "teaserDescription": "We of diepartments were part of the relaunch of the Eurowings e-commerce platform. Our focus was the overall frontend architecture as well as initial flight search form. The platform is meant to be as accessible as possible.",
+    "links": [
+      {
+        "link": "https://www.eurowings.com/de.html",
+        "label": "view live"
+      }
+    ],
+    "teaserImage": {
+      "src": "ew-teaser.jpg",
+      "alt": "eurowings teaser",
+      "reference": {
+        "author": "©Amarnath Tade",
+        "link": "https://unsplash.com/photos/gXs-mwiXrhA"
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "futurium-future-machine",
+    "title": "Futurium future machine",
+    "subTitle": "on-demand postcard printer",
+    "year": 2019,
+    "features": [
+      "nodejs",
+      "mqtt"
+    ],
+    "teaserDescription": "Inside the futurium permanent exhibition, visitors can collect information with a rfid wristband. They can print a postcard with a generative graphic based on their collected. The postcard also features a token code, which lead them to further readings on futurium.de.",
+    "links": [
+    ],
+    "teaserImage": {
+      "src": "futurium-postcard-printer-teaser.jpg",
+      "alt": "Futurium postcard printer teaser",
+      "reference": {
+        "author": "©ART+COM Studios",
+        "link": ""
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "futurium-pig-dog",
+    "title": "Futurium pig dog",
+    "subTitle": "multi channel audio installation",
+    "year": 2019,
+    "features": [
+      "webAudio",
+      "mqtt"
+    ],
+    "teaserDescription": "Powered by the web audio api, we at art+com developed a multi channel audio player for the futurium permanent installation.",
+    "links": [
+    ],
+    "teaserImage": {
+      "src": "Futurium_David_von_Becker_VB_4871.jpg",
+      "alt": "Futurium",
+      "reference": {
+        "author": "David von Becker",
+        "link": "https://futurium.de/de/pressemappen/pressebilder"
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "exhibition-control",
+    "title": "Exhibition Control",
+    "subTitle": "iot hardware control application",
+    "year": 2019,
+    "features": [
+      "react",
+      "mqtt"
+    ],
+    "teaserDescription": "An exhibition developed by art+com is full of hardware of different kinds. To make live easier for the operational staff we developed an application to view and handle state of hardware devices. An floor plans is the main visual guidance inside the app. From there, they can run various tasks, like adjusting light or audio settings, reboot computers, even control the blinds. Everything connected throught mqtt services.",
+    "links": [
+    ],
+    "teaserImage": {
+      "src": "exhibition-control-teaser.jpg",
+      "alt": "exhibition control teaser",
+      "reference": {
+        "author": "©ART+COM Studios",
+        "link": ""
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "munchable-landing",
+    "title": "Munchable",
+    "subTitle": "product landing page",
+    "year": 2020,
+    "features": [
+      "react",
+      "next.js",
+      "tailwind.css"
+    ],
+    "teaserDescription": "Munchable.co is around for a while, but this year it got a fresh and friendly landing page, design + code by me.",
+    "links": [
+      {
+        "link": "https://munchable.co/",
+        "label": "view live"
+      }
+    ],
+    "teaserImage": {
+      "src": "munchable-landing-teaser.jpg",
+      "alt": "munchable landing teaser",
+      "reference": {
+        "author": "©Thomas Rutzer",
+        "link": ""
+      }
+    },
+    "images": []
+  },
+  {
+    "selected": false,
+    "id": "munchable-app",
+    "title": "Munchable",
+    "subTitle": "web application",
+    "year": 2015,
+    "features": [
+      "angularJS",
+      "hapiJS",
+      "mongoDB"
+    ],
+    "teaserDescription": "Munchable.co is a web service which helps you as a host and your guest to plan a menu for everyones needs and wishes. I literally planned and built it on our kitchen table with my former roommate.",
+    "links": [
+      {
+        "link": "https://app.munchable.co/",
+        "label": "view live"
+      }
+    ],
+    "teaserImage": {
+      "src": "munchable-app-teaser.jpg",
+      "alt": "munchable app teaser",
+      "reference": {
+        "author": "©Thomas Rutzer",
+        "link": ""
+      }
+    },
+    "images": []
   }
 ]
