@@ -3,14 +3,11 @@ import Img from "gatsby-image"
 
 import Header from "../header"
 import { ContentWrapper } from "../layout"
-import ParallaxCircles from "./../parallaxCircles"
 
 export default ({ imgPath, title }) => (
   <>
     <Header />
-    <ContentWrapper
-      additionalClasses="flex items-end overflow-hidden"
-    >
+    <ContentWrapper additionalClasses="flex items-end overflow-hidden">
       <div className="absolute top-0 left-0 r-8 w-full h-full">
         <Img
           className="w-full h-full"

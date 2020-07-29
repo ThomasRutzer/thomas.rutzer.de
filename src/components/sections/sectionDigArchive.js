@@ -2,7 +2,7 @@ import React from "react"
 
 import { ContentWrapper } from "./../layout"
 import SecondaryButtonLink from "../cta/ctaSecondaryTypeLink"
-import ParallaxCircles from "./../parallax-circles"
+import ParallaxCircles from "./../parallaxCircles"
 
 const SectionDigArchive = () =>
   <section className="section-dig-archive md:py-4">
@@ -17,7 +17,7 @@ const SectionDigArchive = () =>
               There<br /> is more<br />
             </h2>
             <div className="flex-none text-center md:text-left mt-2 md:mt-0 md:ml-7">
-              <SecondaryButtonLink link="/all-works">
+              <SecondaryButtonLink link="/project-archive">
                 project archive
               </SecondaryButtonLink>
             </div>
