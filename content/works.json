@@ -1,581 +1,578 @@
 [
-  {
-    "selected": true,
-    "selectedAppearance": "dark",
-    "id": "futurium-permanent-exhibition",
-    "title": "Futurium",
-    "subTitle": "permanent exhibition",
-    "year": 2019,
-    "features": [
-      "react",
-      "mqtt"
-    ],
-    "leadingDescription": "In fall of 2019 futurium, a museum which explores competing future scenarios, opened its doors in Berlin. art+com is lead agency for the exhibition design with its mix of analogue and digital media.",
-    "description": "I was part of the team which has been responsible for a solid infrastructure as well as for multiple exhibits itself. The infrastructure includes automated deployment via ansible and a backend with multiple services around a mqtt-broker. That guarantees realtime communication across all the exhibits. Various sensors enhance the user interaction and are also connected to exhibits by mqtt.",
-    "teaserDescription": "In fall of 2019 futurium, a museum which explores competing future scenarios, opened its doors in Berlin. I was part of the team at art+com responsible for the first permanent exhibition.",
-    "links": [
-      {
-        "link": "https://artcom.de/en/project/futurium-permanent-exhibition/",
-        "label": "art+com case"
-      },
-      {
-        "link": "https://futurium.de/",
-        "label": "about futurium"
-      }
-    ],
-    "teaserImage": {
-      "src": "Futurium_David_von_Becker_VB_4593.jpg",
-      "alt": "Exhibition entry",
-      "reference": {
-        "author": "David von Becker",
-        "link": "https://futurium.de/de/pressemappen/pressebilder"
-      }
-    },
-    "images": [
-      {
-        "src": "Futurium_David_von_Becker_VB_4593.jpg",
-        "alt": "Exhibition entry",
-        "grid": {
-          "tiles": [
-            [
-              1,
-              2
-            ],
-            [
-              2,
-              2
-            ]
-          ],
-          "fit": "cover"
+    {
+        "selected": true,
+        "selectedAppearance": "dark",
+        "id": "futurium-permanent-exhibition",
+        "title": "Futurium",
+        "subTitle": "permanent exhibition",
+        "year": 2019,
+        "features": [
+            "react",
+            "mqtt"
+        ],
+        "leadingDescription": "In the fall of 2019 futurium, a museum that explores competing future scenarios, opened its doors in Berlin. art+com is the lead agency for the exhibition design with its mix of analog and digital media.",
+        "description": "I was part of the team which has been responsible for a solid infrastructure as well as for multiple exhibits itself. The infrastructure includes automated deployment via ansible and a backend with multiple services around a MQTT-broker. That guarantees real-time communication across all the exhibits. Various sensors enhance user interaction and are also connected to exhibits by MQTT.",
+        "teaserDescription": "In the fall of 2019 futurium, a museum that explores competing future scenarios, opened its doors in Berlin. I was part of the team at art+com responsible for the first permanent exhibition.",
+        "links": [
+            {
+                "link": "https://artcom.de/en/project/futurium-permanent-exhibition/",
+                "label": "art+com case"
+            },
+            {
+                "link": "https://futurium.de/",
+                "label": "about futurium"
+            }
+        ],
+        "teaserImage": {
+            "src": "Futurium_David_von_Becker_VB_4593.jpg",
+            "alt": "Exhibition entry",
+            "reference": {
+                "author": "David von Becker",
+                "link": "https://futurium.de/de/pressemappen/pressebilder"
+            }
         },
-        "reference": {
-          "author": "David von Becker",
-          "link": "https://futurium.de/de/pressemappen/pressebilder"
-        }
-      },
-      {
-        "src": "Futurium_David_von_Becker_VB_4871.jpg",
-        "alt": "Futurium External view",
-        "grid": {
-          "tiles": [
-            [
-              4,
-              2
-            ],
-            [
-              1,
-              1
-            ]
-          ],
-          "fit": "cover"
+        "images": [
+            {
+                "src": "Futurium_David_von_Becker_VB_4593.jpg",
+                "alt": "Exhibition entry",
+                "grid": {
+                    "tiles": [
+                        [
+                            1,
+                            2
+                        ],
+                        [
+                            2,
+                            2
+                        ]
+                    ],
+                    "fit": "cover"
+                },
+                "reference": {
+                    "author": "David von Becker",
+                    "link": "https://futurium.de/de/pressemappen/pressebilder"
+                }
+            },
+            {
+                "src": "Futurium_David_von_Becker_VB_4871.jpg",
+                "alt": "Futurium External view",
+                "grid": {
+                    "tiles": [
+                        [
+                            4,
+                            2
+                        ],
+                        [
+                            1,
+                            1
+                        ]
+                    ],
+                    "fit": "cover"
+                },
+                "reference": {
+                    "author": "David von Becker",
+                    "link": "https://futurium.de/de/pressemappen/pressebilder"
+                }
+            },
+            {
+                "src": "Futurium_David_von_Becker_VB_9824.jpg",
+                "alt": "Exhibition space \"Denkraum Mensch\"",
+                "grid": {
+                    "tiles": [
+                        [
+                            5,
+                            2
+                        ],
+                        [
+                            2,
+                            1
+                        ]
+                    ],
+                    "fit": "cover"
+                },
+                "reference": {
+                    "author": "David von Becker",
+                    "link": "https://futurium.de/de/pressemappen/pressebilder"
+                }
+            }
+        ]
+    },
+    {
+        "selected": true,
+        "selectedAppearance": "tertiary",
+        "id": "mntns",
+        "title": "Mntns",
+        "subTitle": "github data visualisation",
+        "year": 2018,
+        "features": [
+            "vuejs",
+            "threejs"
+        ],
+        "leadingDescription": "Mntns is a self-initiated web experience to visualize open Github data for a username.",
+        "description": "It fetches open Github data of users and transforms them into a webGL based Mntns landscape. Several levels can be explored, each based on another data set.",
+        "teaserDescription": "Mntns is a self-initiated web experience to visualize open Github data for a username.",
+        "links": [
+            {
+                "link": "https://thomasrutzer.github.io/mntns/",
+                "label": "view live"
+            }
+        ],
+        "teaserImage": {
+            "src": "mntns intro.jpg",
+            "alt": "Mntns created with threeJS",
+            "reference": {
+                "author": "thomas rutzer",
+                "link": ""
+            }
         },
-        "reference": {
-          "author": "David von Becker",
-          "link": "https://futurium.de/de/pressemappen/pressebilder"
-        }
-      },
-      {
-        "src": "Futurium_David_von_Becker_VB_9824.jpg",
-        "alt": "Exhibition space \"Denkraum Mensch\"",
-        "grid": {
-          "tiles": [
-            [
-              5,
-              2
-            ],
-            [
-              2,
-              1
-            ]
-          ],
-          "fit": "cover"
+        "images": [
+            {
+                "src": "mntns intro.jpg",
+                "alt": "Mntns created with threeJS",
+                "grid": {
+                    "tiles": [
+                        [
+                            1,
+                            3
+                        ],
+                        [
+                            2,
+                            2
+                        ]
+                    ],
+                    "fit": "cover"
+                },
+                "reference": {
+                    "author": "thomas rutzer",
+                    "link": ""
+                }
+            },
+            {
+                "src": "mntns parameters.jpg",
+                "alt": "Parameters shape the Mntns",
+                "grid": {
+                    "tiles": [
+                        [
+                            4,
+                            2
+                        ],
+                        [
+                            1,
+                            2
+                        ]
+                    ],
+                    "fit": "contain"
+                },
+                "reference": {
+                    "author": "thomas rutzer",
+                    "link": ""
+                }
+            },
+            {
+                "src": "mntns add.jpg",
+                "alt": "Fetch data for a github user",
+                "grid": {
+                    "tiles": [
+                        [
+                            4,
+                            1
+                        ],
+                        [
+                            3,
+                            1
+                        ]
+                    ],
+                    "fit": "contain"
+                },
+                "reference": {
+                    "author": "thomas rutzer",
+                    "link": ""
+                }
+            }
+        ]
+    },
+    {
+        "selected": true,
+        "selectedAppearance": "dark",
+        "id": "qurator-nlp",
+        "title": "Qurator",
+        "subTitle": "nlp service",
+        "year": 2019,
+        "features": [
+            "react",
+            "nlp"
+        ],
+        "leadingDescription": "Qurator is a research collaboration focusing on content curation with AI technologies. The team at art+com built a prototypical NLP based service. I led the frontend development.",
+        "description": "The service helps users to analyze large amounts of texts (e.g. text documents or Wikipedia articles) with a suitable interface. The backend component outputs a result that includes entities like geographical locations, historical events, or personalities. Through the frontend component, users can select entities and examine their occurrences. A variety of filters make the input text more accessible.",
+        "teaserDescription": "Qurator is a research collaboration focusing on content curation with AI technologies. The team at art+com built a prototypical NLP based service which helps users to analyze large amounts of texts with a suitable interface.",
+        "links": [
+            {
+                "link": "https://qurator.ai/",
+                "label": "about qurator"
+            },
+            {
+                "link": "https://artcom.de/en/project/qurator/",
+                "label": "art+com case"
+            },
+            {
+                "link": "https://en.wikipedia.org/wiki/Neuro-linguistic_programming",
+                "label": "about nlp"
+            }
+        ],
+        "teaserImage": {
+            "src": "qurator-nlp-teaser.jpg",
+            "alt": "Qurator NLP service teaser",
+            "reference": {
+                "author": "©ART+COM Studios",
+                "link": ""
+            }
         },
-        "reference": {
-          "author": "David von Becker",
-          "link": "https://futurium.de/de/pressemappen/pressebilder"
-        }
-      }
-    ]
-  },
-  {
-    "selected": true,
-    "selectedAppearance": "tertiary",
-    "id": "mntns",
-    "title": "Mntns",
-    "subTitle": "github data visualisation",
-    "year": 2018,
-    "features": [
-      "vuejs",
-      "threejs"
-    ],
-    "leadingDescription": "Mntns is a self initiated web experience to visualise open github data for a username.",
-    "description": "It fetches open github data of a useres and transforms them into a webGL based Mntns landscape. Several leves can be explored, each based on another data set.",
-    "teaserDescription": "Mntns is a self initiated web experience to visualise open github data for a username.",
-    "links": [
-      {
-        "link": "https://thomasrutzer.github.io/mntns/",
-        "label": "view live"
-      }
-    ],
-    "teaserImage": {
-      "src": "mntns intro.jpg",
-      "alt": "Mntns created with threeJS",
-      "reference": {
-        "author": "thomas rutzer",
-        "link": ""
-      }
+        "images": [
+            {
+                "src": "qurator-nlp-upload.jpg",
+                "alt": "Upload Sources",
+                "grid": {
+                    "tiles": [
+                        [
+                            1,
+                            3
+                        ],
+                        [
+                            1,
+                            2
+                        ]
+                    ],
+                    "fit": "contain"
+                },
+                "reference": {
+                    "author": "©ART+COM Studios",
+                    "link": ""
+                }
+            },
+            {
+                "src": "qurator-nlp-context-viewer.jpg",
+                "alt": "Occurences of a selected entity",
+                "grid": {
+                    "tiles": [
+                        [
+                            5,
+                            1
+                        ],
+                        [
+                            2,
+                            2
+                        ]
+                    ],
+                    "fit": "cover"
+                },
+                "reference": {
+                    "author": "©ART+COM Studios",
+                    "link": ""
+                }
+            },
+            {
+                "src": "qurator-nlp-entities-browser.jpg",
+                "alt": "Categorized entities",
+                "grid": {
+                    "tiles": [
+                        [
+                            2,
+                            4
+                        ],
+                        [
+                            3,
+                            1
+                        ]
+                    ],
+                    "fit": "contain"
+                },
+                "reference": {
+                    "author": "©ART+COM Studios",
+                    "link": ""
+                }
+            }
+        ]
     },
-    "images": [
-      {
-        "src": "mntns intro.jpg",
-        "alt": "Mntns created with threeJS",
-        "grid": {
-          "tiles": [
-            [
-              1,
-              3
-            ],
-            [
-              2,
-              2
-            ]
-          ],
-          "fit": "cover"
+    {
+        "selected": false,
+        "id": "nitribitt",
+        "title": "Nitribitt",
+        "subTitle": "agency portfolio",
+        "year": 2016,
+        "features": [
+            "jQuery",
+            "pimcore"
+        ],
+        "teaserDescription": "I helped Stuttgart based Design Agency nitribitt as a freelancer with its digital portfolio. The site is powered by a Pimcore CMS with a custom frontend.",
+        "links": [
+            {
+                "link": "https://nitribitt.com/",
+                "label": "view live"
+            }
+        ],
+        "teaserImage": {
+            "src": "nitribitt-teaser.jpg",
+            "alt": "Nitribitt GmbH digital portfolio teaser",
+            "reference": {
+                "author": "©Nitribitt GmbH",
+                "link": ""
+            }
         },
-        "reference": {
-          "author": "thomas rutzer",
-          "link": ""
-        }
-      },
-      {
-        "src": "mntns parameters.jpg",
-        "alt": "Parameters shape the Mntns",
-        "grid": {
-          "tiles": [
-            [
-              4,
-              2
-            ],
-            [
-              1,
-              2
-            ]
-          ],
-          "fit": "contain"
+        "images": []
+    },
+    {
+        "selected": false,
+        "id": "hello-monday-revelator",
+        "title": "Revelator",
+        "subTitle": "teaser site",
+        "year": 2015,
+        "features": [
+            "JavaScript"
+        ],
+        "teaserDescription": "As part of the Hello Monday team, I helped to create the teaser page for Revelator.",
+        "links": [
+            {
+                "link": "https://www.awwwards.com/sites/revelator",
+                "label": "awwwards case"
+            }
+        ],
+        "teaserImage": {
+            "src": "hello-monday-revelator-teaser.jpg",
+            "alt": "hello monday Revelator teaser",
+            "reference": {
+                "author": "©Hello Monday ApS",
+                "link": ""
+            }
         },
-        "reference": {
-          "author": "thomas rutzer",
-          "link": ""
-        }
-      },
-      {
-        "src": "mntns add.jpg",
-        "alt": "Fetch data for a github user",
-        "grid": {
-          "tiles": [
-            [
-              4,
-              1
-            ],
-            [
-              3,
-              1
-            ]
-          ],
-          "fit": "contain"
+        "images": []
+    },
+    {
+        "selected": false,
+        "id": "hello-monday-wove",
+        "title": "Wove",
+        "subTitle": "product launch site",
+        "year": 2015,
+        "features": [
+            "JavaScript",
+            "pimcore"
+        ],
+        "teaserDescription": "While being part of the Hello Monday team, I helped to create the product launch site for Wove - the world’s first wearable band with flexible display technology. I mainly prototyped those unique page transitions.",
+        "links": [
+            {
+                "link": "https://www.hellomonday.com/work/wove",
+                "label": "hello monday use case"
+            }
+        ],
+        "teaserImage": {
+            "src": "hello-monday-wove-teaser.jpg",
+            "alt": "hello monday wove teaser",
+            "reference": {
+                "author": "©Hello Monday ApS",
+                "link": ""
+            }
         },
-        "reference": {
-          "author": "thomas rutzer",
-          "link": ""
-        }
-      }
-    ]
-  },
-  {
-    "selected": true,
-    "selectedAppearance": "dark",
-    "id": "qurator-nlp",
-    "title": "Qurator",
-    "subTitle": "nlp service",
-    "year": 2019,
-    "features": [
-      "react",
-      "nlp"
-    ],
-    "leadingDescription": "Qurator is a research collaboration focusing on content curation with AI technologies. The team at art+com built a prototypical nlp based service. I led the frontend development.",
-    "description": "The service helps users to analyze large amounts of texts (e.g. their own text documents or Wikipedia articles) with a suitable interface. The backend component outputs a result which includes entities like geographical locations, historical events or personalities. Through the frontend component users can select entities and examine its occurrences. A variety of filters make the input text more accessible.",
-    "teaserDescription": "Qurator is a research collaboration focusing on content curation with AI technologies. The team at art+com built a prototypical nlp based servic which helps users to analyze large amounts of texts with a suitable interface",
-    "links": [
-      {
-        "link": "https://qurator.ai/",
-        "label": "about qurator"
-      },
-      {
-        "link": "https://artcom.de/en/project/qurator/",
-        "label": "art+com case"
-      },
-      {
-        "link": "https://en.wikipedia.org/wiki/Neuro-linguistic_programming",
-        "label": "about nlp"
-      }
-    ],
-    "teaserImage": {
-      "src": "qurator-nlp-teaser.jpg",
-      "alt": "Qurator NLP service teaser",
-      "reference": {
-        "author": "©ART+COM Studios",
-        "link": ""
-      }
+        "images": []
     },
-    "images": [
-      {
-        "src": "qurator-nlp-upload.jpg",
-        "alt": "Upload Sources",
-        "grid": {
-          "tiles": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ]
-          ],
-          "fit": "contain"
+    {
+        "selected": false,
+        "id": "hello-monday-panthera",
+        "title": "Panthera",
+        "subTitle": "organization platform",
+        "year": 2015,
+        "features": [
+            "JavaScript"
+        ],
+        "teaserDescription": "Also while working at Hello Monday, we built the frontend for panthera.org.",
+        "links": [
+            {
+                "link": "https://www.panthera.org/",
+                "label": "view live"
+            }
+        ],
+        "teaserImage": {
+            "src": "hello-monday-panthera-teaser.jpg",
+            "alt": "hello monday panthera teaser",
+            "reference": {
+                "author": "©Praniket Desai",
+                "link": "https://unsplash.com/photos/SLyVj5uz6_I"
+            }
         },
-        "reference": {
-          "author": "©ART+COM Studios",
-          "link": ""
-        }
-      },
-      {
-        "src": "qurator-nlp-context-viewer.jpg",
-        "alt": "Occurences of a selected entity",
-        "grid": {
-          "tiles": [
-            [
-              5,
-              1
-            ],
-            [
-              2,
-              2
-            ]
-          ],
-          "fit": "cover"
+        "images": []
+    },
+    {
+        "selected": false,
+        "id": "hello-monday-wove",
+        "title": "Wove",
+        "subTitle": "product launch site",
+        "year": 2015,
+        "features": [
+            "JavaScript",
+            "pimcore"
+        ],
+        "teaserDescription": "While being part of the Hello Monday team, I helped to create the product launch site for Wove - the world’s first wearable band with flexible display technology. I mainly prototyped the unique page transitions.",
+        "links": [
+            {
+                "link": "https://www.hellomonday.com/work/wove",
+                "label": "hello monday use case"
+            }
+        ],
+        "teaserImage": {
+            "src": "hello-monday-wove-teaser.jpg",
+            "alt": "hello monday wove teaser",
+            "reference": {
+                "author": "©Hello Monday ApS",
+                "link": ""
+            }
         },
-        "reference": {
-          "author": "©ART+COM Studios",
-          "link": ""
-        }
-      },
-      {
-        "src": "qurator-nlp-entities-browser.jpg",
-        "alt": "Categorized entities",
-        "grid": {
-          "tiles": [
-            [
-              2,
-              4
-            ],
-            [
-              3,
-              1
-            ]
-          ],
-          "fit": "contain"
+        "images": []
+    },
+    {
+        "selected": false,
+        "id": "eurowings",
+        "title": "Eurowings",
+        "subTitle": "e-commerce platform relaunch",
+        "year": 2017,
+        "features": [
+            "vueJS",
+            "accessibility"
+        ],
+        "teaserDescription": "We of diepartments were part of the relaunch of the Eurowings e-commerce platform. Our focus was on the overall frontend architecture as well as the flight search form on the start page. The platform is meant to be as accessible as possible.",
+        "links": [
+            {
+                "link": "https://www.eurowings.com/de.html",
+                "label": "view live"
+            }
+        ],
+        "teaserImage": {
+            "src": "ew-teaser.jpg",
+            "alt": "eurowings teaser",
+            "reference": {
+                "author": "©Amarnath Tade",
+                "link": "https://unsplash.com/photos/gXs-mwiXrhA"
+            }
         },
-        "reference": {
-          "author": "©ART+COM Studios",
-          "link": ""
-        }
-      }
-    ]
-  },
-  {
-    "selected": false,
-    "id": "nitribitt",
-    "title": "Nitribitt",
-    "subTitle": "agency portfolio",
-    "year": 2016,
-    "features": [
-      "jQuery",
-      "pimcore"
-    ],
-    "teaserDescription": "I helped Stuttgart based Design Agency nitribitt with their digital portfolio as a freelancer. The site is powered by a Pimcore CMS with a custom frontend.",
-    "links": [
-      {
-        "link": "https://nitribitt.com/",
-        "label": "view live"
-      }
-    ],
-    "teaserImage": {
-      "src": "nitribitt-teaser.jpg",
-      "alt": "Nitribitt GmbH digital portfolio teaser",
-      "reference": {
-        "author": "©Nitribitt GmbH",
-        "link": ""
-      }
+        "images": []
     },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "hello-monday-revelator",
-    "title": "Revelator",
-    "subTitle": "teaser site",
-    "year": 2015,
-    "features": [
-      "JavaScript"
-    ],
-    "teaserDescription": "As part of the Hello Monday team, I helped to create the teaser page for Revelator.",
-    "links": [
-      {
-        "link": "https://www.awwwards.com/sites/revelator",
-        "label": "awwwards case"
-      }
-    ],
-    "teaserImage": {
-      "src": "hello-monday-revelator-teaser.jpg",
-      "alt": "hello monday Revelator teaser",
-      "reference": {
-        "author": "©Hello Monday ApS",
-        "link": ""
-      }
+    {
+        "selected": false,
+        "id": "futurium-future-machine",
+        "title": "Futurium future machine",
+        "subTitle": "on-demand postcard printer",
+        "year": 2019,
+        "features": [
+            "nodejs",
+            "mqtt"
+        ],
+        "teaserDescription": "Inside the futurium permanent exhibition, visitors can collect information with a RFID wristband. Before leaving, they can print a postcard with a generative graphic based on their collection. The postcard also features a token code, which leads them to further readings on futurium.de.",
+        "links": [],
+        "teaserImage": {
+            "src": "futurium-postcard-printer-teaser.jpg",
+            "alt": "Futurium postcard printer teaser",
+            "reference": {
+                "author": "©ART+COM Studios",
+                "link": ""
+            }
+        },
+        "images": []
     },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "hello-monday-wove",
-    "title": "Wove",
-    "subTitle": "product launch site",
-    "year": 2015,
-    "features": [
-      "JavaScript",
-      "pimcore"
-    ],
-    "teaserDescription": "While being part of the Hello Monday team, I helped to create the product launch site for Wove - the world’s first wearable band with flexible display technology. I mainly prototyped the unique page transitions.",
-    "links": [
-      {
-        "link": "https://www.hellomonday.com/work/wove",
-        "label": "hello monday use case"
-      }
-    ],
-    "teaserImage": {
-      "src": "hello-monday-wove-teaser.jpg",
-      "alt": "hello monday wove teaser",
-      "reference": {
-        "author": "©Hello Monday ApS",
-        "link": ""
-      }
+    {
+        "selected": false,
+        "id": "futurium-pig-dog",
+        "title": "Futurium pig dog",
+        "subTitle": "multi channel audio installation",
+        "year": 2019,
+        "features": [
+            "web audio API",
+            "mqtt"
+        ],
+        "teaserDescription": "Powered by the web audio API, we at art+com developed a multi-channel audio player for the futurium permanent installation.",
+        "links": [],
+        "teaserImage": {
+            "src": "Futurium_David_von_Becker_VB_4871.jpg",
+            "alt": "Futurium",
+            "reference": {
+                "author": "David von Becker",
+                "link": "https://futurium.de/de/pressemappen/pressebilder"
+            }
+        },
+        "images": []
     },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "hello-monday-panthera",
-    "title": "Panthera",
-    "subTitle": "organization platform",
-    "year": 2015,
-    "features": [
-      "JavaScript"
-    ],
-    "teaserDescription": "Also while working at hello monday, we built the frontend for panthera.org.",
-    "links": [
-      {
-        "link": "https://www.panthera.org/",
-        "label": "view live"
-      }
-    ],
-    "teaserImage": {
-      "src": "hello-monday-panthera-teaser.jpg",
-      "alt": "hello monday panthera teaser",
-      "reference": {
-        "author": "©Praniket Desai",
-        "link": "https://unsplash.com/photos/SLyVj5uz6_I"
-      }
+    {
+        "selected": false,
+        "id": "exhibition-control",
+        "title": "Exhibition Control",
+        "subTitle": "iot hardware control application",
+        "year": 2019,
+        "features": [
+            "react",
+            "mqtt"
+        ],
+        "teaserDescription": "An exhibition developed by art+com is full of hardware of different kinds. To make life easier for the operational staff we developed an application to view and handle the state of hardware devices. A floor plan is the main visual guidance inside the app. From there, they can run various tasks, like adjusting light or audio settings, reboot computers, even control the blinds. Everything connected to MQTT.",
+        "links": [],
+        "teaserImage": {
+            "src": "exhibition-control-teaser.jpg",
+            "alt": "exhibition control teaser",
+            "reference": {
+                "author": "©ART+COM Studios",
+                "link": ""
+            }
+        },
+        "images": []
     },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "hello-monday-wove",
-    "title": "Wove",
-    "subTitle": "product launch site",
-    "year": 2015,
-    "features": [
-      "JavaScript",
-      "pimcore"
-    ],
-    "teaserDescription": "While being part of the Hello Monday team, I helped to create the product launch site for Wove - the world’s first wearable band with flexible display technology. I mainly prototyped the unique page transitions.",
-    "links": [
-      {
-        "link": "https://www.hellomonday.com/work/wove",
-        "label": "hello monday use case"
-      }
-    ],
-    "teaserImage": {
-      "src": "hello-monday-wove-teaser.jpg",
-      "alt": "hello monday wove teaser",
-      "reference": {
-        "author": "©Hello Monday ApS",
-        "link": ""
-      }
+    {
+        "selected": false,
+        "id": "munchable-landing",
+        "title": "Munchable",
+        "subTitle": "product landing page",
+        "year": 2020,
+        "features": [
+            "react",
+            "next.js",
+            "tailwind.css"
+        ],
+        "teaserDescription": "Munchable.co is around for a while, but this year it got a fresh and friendly landing page.",
+        "links": [
+            {
+                "link": "https://munchable.co/",
+                "label": "view live"
+            }
+        ],
+        "teaserImage": {
+            "src": "munchable-landing-teaser.jpg",
+            "alt": "munchable landing teaser",
+            "reference": {
+                "author": "©Thomas Rutzer",
+                "link": ""
+            }
+        },
+        "images": []
     },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "eurowings",
-    "title": "Eurowings",
-    "subTitle": "e-commerce platform relaunch",
-    "year": 2017,
-    "features": [
-      "vueJS",
-      "accessibility"
-    ],
-    "teaserDescription": "We of diepartments were part of the relaunch of the Eurowings e-commerce platform. Our focus was the overall frontend architecture as well as initial flight search form. The platform is meant to be as accessible as possible.",
-    "links": [
-      {
-        "link": "https://www.eurowings.com/de.html",
-        "label": "view live"
-      }
-    ],
-    "teaserImage": {
-      "src": "ew-teaser.jpg",
-      "alt": "eurowings teaser",
-      "reference": {
-        "author": "©Amarnath Tade",
-        "link": "https://unsplash.com/photos/gXs-mwiXrhA"
-      }
-    },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "futurium-future-machine",
-    "title": "Futurium future machine",
-    "subTitle": "on-demand postcard printer",
-    "year": 2019,
-    "features": [
-      "nodejs",
-      "mqtt"
-    ],
-    "teaserDescription": "Inside the futurium permanent exhibition, visitors can collect information with a rfid wristband. They can print a postcard with a generative graphic based on their collected. The postcard also features a token code, which lead them to further readings on futurium.de.",
-    "links": [
-    ],
-    "teaserImage": {
-      "src": "futurium-postcard-printer-teaser.jpg",
-      "alt": "Futurium postcard printer teaser",
-      "reference": {
-        "author": "©ART+COM Studios",
-        "link": ""
-      }
-    },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "futurium-pig-dog",
-    "title": "Futurium pig dog",
-    "subTitle": "multi channel audio installation",
-    "year": 2019,
-    "features": [
-      "webAudio",
-      "mqtt"
-    ],
-    "teaserDescription": "Powered by the web audio api, we at art+com developed a multi channel audio player for the futurium permanent installation.",
-    "links": [
-    ],
-    "teaserImage": {
-      "src": "Futurium_David_von_Becker_VB_4871.jpg",
-      "alt": "Futurium",
-      "reference": {
-        "author": "David von Becker",
-        "link": "https://futurium.de/de/pressemappen/pressebilder"
-      }
-    },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "exhibition-control",
-    "title": "Exhibition Control",
-    "subTitle": "iot hardware control application",
-    "year": 2019,
-    "features": [
-      "react",
-      "mqtt"
-    ],
-    "teaserDescription": "An exhibition developed by art+com is full of hardware of different kinds. To make live easier for the operational staff we developed an application to view and handle state of hardware devices. An floor plans is the main visual guidance inside the app. From there, they can run various tasks, like adjusting light or audio settings, reboot computers, even control the blinds. Everything connected throught mqtt services.",
-    "links": [
-    ],
-    "teaserImage": {
-      "src": "exhibition-control-teaser.jpg",
-      "alt": "exhibition control teaser",
-      "reference": {
-        "author": "©ART+COM Studios",
-        "link": ""
-      }
-    },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "munchable-landing",
-    "title": "Munchable",
-    "subTitle": "product landing page",
-    "year": 2020,
-    "features": [
-      "react",
-      "next.js",
-      "tailwind.css"
-    ],
-    "teaserDescription": "Munchable.co is around for a while, but this year it got a fresh and friendly landing page, design + code by me.",
-    "links": [
-      {
-        "link": "https://munchable.co/",
-        "label": "view live"
-      }
-    ],
-    "teaserImage": {
-      "src": "munchable-landing-teaser.jpg",
-      "alt": "munchable landing teaser",
-      "reference": {
-        "author": "©Thomas Rutzer",
-        "link": ""
-      }
-    },
-    "images": []
-  },
-  {
-    "selected": false,
-    "id": "munchable-app",
-    "title": "Munchable",
-    "subTitle": "web application",
-    "year": 2015,
-    "features": [
-      "angularJS",
-      "hapiJS",
-      "mongoDB"
-    ],
-    "teaserDescription": "Munchable.co is a web service which helps you as a host and your guest to plan a menu for everyones needs and wishes. I literally planned and built it on our kitchen table with my former roommate.",
-    "links": [
-      {
-        "link": "https://app.munchable.co/",
-        "label": "view live"
-      }
-    ],
-    "teaserImage": {
-      "src": "munchable-app-teaser.jpg",
-      "alt": "munchable app teaser",
-      "reference": {
-        "author": "©Thomas Rutzer",
-        "link": ""
-      }
-    },
-    "images": []
-  }
+    {
+        "selected": false,
+        "id": "munchable-app",
+        "title": "Munchable",
+        "subTitle": "web application",
+        "year": 2015,
+        "features": [
+            "angularJS",
+            "hapiJS",
+            "mongoDB"
+        ],
+        "teaserDescription": "Munchable.co is a web service that helps you as a host and your guests to plan a menu for everyone's needs and wishes. I literally planned and built it at our kitchen table with my former roommate.",
+        "links": [
+            {
+                "link": "https://app.munchable.co/",
+                "label": "view live"
+            }
+        ],
+        "teaserImage": {
+            "src": "munchable-app-teaser.jpg",
+            "alt": "munchable app teaser",
+            "reference": {
+                "author": "©Thomas Rutzer",
+                "link": ""
+            }
+        },
+        "images": []
+    }
 ]
