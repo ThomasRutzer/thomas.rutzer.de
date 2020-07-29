@@ -20,7 +20,7 @@ const AccordionItem = ({ children, title, subTitle, imgSrc, imgAlt }) => {
               src={imgSrc}
               className="accordion-item__image" />
             <div className="ml-4">
-              <h2 className="text-4xl md:5xl underline underline-under">{title}</h2>
+              <h2 className="text-3xl md:5xl underline underline-under">{title}</h2>
               <h3 className="text-xl">{subTitle}</h3>
             </div>
           </AccordionItemButton>
