@@ -1,14 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Intro from "../components/intro/intro"
-import LayoutWrapper from "../components/layout/layoutWrapper"
+import Intro from "../components/intro"
 import Seo from "../components/seo"
-import WorkSectionWithImageGrid from "./../components/sections/workSectionWithImageGrid"
-import ContentWrapper from "./../components/layout/contentWrapper"
-import ExternalLink from "../components/links/externalLink"
-import SectionTitle from "../components/sections/sectionTitle"
-import SectionDigArchive from "./../components/sections/sectionDigArchive"
+import { ContentWrapper, LayoutWrapper } from "./../components/layout"
+import { ExternalLink } from "../components/links"
+import { SectionDigArchive, SectionTitle, WorkSectionWithImageGrid } from "./../components/sections"
 
 export default ({ data }) => {
   return (

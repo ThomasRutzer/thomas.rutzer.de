@@ -1,7 +1,6 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react"
+import Helmet from "react-helmet"
+import { StaticQuery, graphql } from "gatsby"
 
 const Seo = ({ title = null, description = null }) => (
   <StaticQuery
@@ -35,10 +34,5 @@ const Seo = ({ title = null, description = null }) => (
     }}
   />
 )
-
-Seo.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-}
 
 export default Seo

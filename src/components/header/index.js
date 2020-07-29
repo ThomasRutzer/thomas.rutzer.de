@@ -1,9 +1,9 @@
 import React from "react"
 
-import InternalLink from "./../links/internalLink"
-import ContentWrapper from "./../layout/contentWrapper"
+import { InternalLink } from "./../links"
+import { ContentWrapper } from "./../layout"
 
-export default () => (
+const Header = () => (
   <header>
     <ContentWrapper variant="large">
       <ul>
@@ -28,3 +28,5 @@ export default () => (
     </ContentWrapper>
   </header>
 )
+
+export default Header

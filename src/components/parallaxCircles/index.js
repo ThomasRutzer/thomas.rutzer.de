@@ -1,6 +1,6 @@
 import React from "react"
 
-import { useMousemoveTranslation } from "./../../hooks"
+import { useMousemoveTranslation } from "../../hooks"
 
 const ParallaxCircles = () => {
   const translations = useMousemoveTranslation(10, 20, 10, 20)

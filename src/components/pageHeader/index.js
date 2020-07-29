@@ -2,7 +2,8 @@ import React from "react"
 import Img from "gatsby-image"
 
 import Header from "../header"
-import ContentWrapper from "../layout/contentWrapper"
+import { ContentWrapper } from "../layout"
+import ParallaxCircles from "./../parallaxCircles"
 
 export default ({ imgPath, title }) => (
   <>

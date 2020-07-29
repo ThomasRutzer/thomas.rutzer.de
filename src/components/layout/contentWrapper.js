@@ -11,7 +11,7 @@ function ContentWrapper(
   }
 ) {
   const createClasses = () => {
-    const widthClass = (variant => {
+    const maxWClass = (variant => {
       switch (variant) {
         case 'small':
           return "max-w-4xl";
@@ -26,7 +26,7 @@ function ContentWrapper(
       "relative", "container", "mx-auto",
       { "px-5": horizontalSpacing },
       { "py-6 md:py-7": verticalSpacing },
-      { [`${widthClass}`]: true },
+      { [`${maxWClass}`]: true },
     )
   }
 

@@ -1,6 +1,6 @@
 import React from "react"
 
-import ContentWrapper from "./../layout/contentWrapper"
+import { ContentWrapper } from "./../layout"
 import SecondaryButtonLink from "../cta/ctaSecondaryTypeLink"
 import ParallaxCircles from "./../parallax-circles"
 

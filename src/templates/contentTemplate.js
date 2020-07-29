@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import LayoutWrapper from "./../components/layout/layoutWrapper"
-import ContentWrapper from "./../components/layout/contentWrapper"
+import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import PageHeader from "../components/pageHeader"
 import Seo from "../components/seo"
 

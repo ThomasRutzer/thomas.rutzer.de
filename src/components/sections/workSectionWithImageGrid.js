@@ -1,8 +1,8 @@
 import React from "react"
 import classNames from "classnames"
 
-import ContentWrapper from "./../layout/contentWrapper"
-import ExternalLink from "./../links/externalLink"
+import { ContentWrapper } from "./../layout"
+import { ExternalLink } from "./../links"
 import ImageGrid from "./../imageGrid"
 import FeatureList from "./../featureList"
 
