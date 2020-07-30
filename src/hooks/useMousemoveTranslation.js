@@ -7,6 +7,7 @@ import map from "./../utils/map"
 import isTouchDevice from "./../utils/isTouchDevice"
 
 export default (xRangeMin, xRangeMax, yRangeMin, yRangeMax) => {
+  const [isActivated, setIsActivated] = useState(false)
   const [tx, setTx] = useState(null)
   const [ty, setTy] = useState(null)
   const mouseY = useRef(null)
@@ -19,6 +20,8 @@ export default (xRangeMin, xRangeMax, yRangeMin, yRangeMax) => {
   }, [])
 
   useEffect(() => {
+    if (!isActivated) return
+
     let animationFrameId = null
     const xStart = getRandomNumber(xRangeMin, xRangeMax)
     const yStart = getRandomNumber( yRangeMin, yRangeMax)
@@ -33,10 +36,12 @@ export default (xRangeMin, xRangeMax, yRangeMin, yRangeMax) => {
     animationFrameId = requestAnimationFrame(renderMousemove)
 
     return () => cancelAnimationFrame(animationFrameId)
-  }, [xRangeMin, xRangeMax, yRangeMin, yRangeMax])
+  }, [isActivated, xRangeMin, xRangeMax, yRangeMin, yRangeMax])
 
   useEffect(() => {
-    if (!isTouchDevice()) return
+    if (!isTouchDevice()) {
+      setIsActivated(true)
+    }
 
     window.addEventListener('mousemove', mousemoveHandler)
 
