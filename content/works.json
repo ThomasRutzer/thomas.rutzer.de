@@ -574,5 +574,36 @@
             }
         },
         "images": []
-    }
+    },
+    {
+      "selected": false,
+      "id": "conversational-interface",
+      "title": "TV guide",
+      "subTitle": "conversational interface",
+      "year": 2018,
+      "features": [
+          "nodeJS",
+          "assistantJS"
+      ],
+      "teaserDescription": "We at diepartments created a conversational tv guide for Google home devices. The foundation here has been Dialog Flow for speech recognition and the nodeJS based abstraction assistantJS.",
+      "links": [
+          {
+              "link": "https://blog.diepartments.de/pains-and-gains-when-developing-a-node-js-dialogflow-application/",
+              "label": "read about the process"
+          },
+          {
+            "link": "https://github.com/webcomputing/AssistantJS",
+            "label": "about assistantJS"
+        }
+      ],
+      "teaserImage": {
+          "src": "dialog-flow-app-teaser.jpg",
+          "alt": "conversational interface teaser",
+          "reference": {
+              "author": "©Thomas Rutzer",
+              "link": ""
+          }
+      },
+      "images": []
+  }
 ]
