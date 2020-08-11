@@ -3,8 +3,11 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'project-archive-descr': '120px repeat(1, minmax(0, 1fr));',
-      }
+        "project-archive-descr": "120px repeat(1, minmax(0, 1fr));",
+      },
+      fontSize: {
+        "6xl": "5rem",
+      },
     },
     colors: {
       white: "#fff",
@@ -18,7 +21,7 @@ module.exports = {
       "highlight": theme("colors.highlight"),
     }),
     fontFamily: {
-      sans: 'IBM Plex Mono'
+      sans: "IBM Plex Mono"
     },
     spacing: {
       0: "0px",
