@@ -13,8 +13,8 @@ const SectionDigArchive = () =>
             <ParallaxCircles />
           </div>
           <div className="flex flex-col md:flex-row md:items-center">
-            <h2 className="text-3xl md:text-5xl italic">
-              There<br /> is more<br />
+            <h2 className="text-3xl md:text-5xl md:text-stroke-white md:text-stroke">
+              There<br /> is<br /> more
             </h2>
             <div className="flex-none mt-2 md:mt-0 md:ml-7">
               <SecondaryButtonLink link="/project-archive">

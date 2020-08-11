@@ -74,12 +74,12 @@ export default class Intro extends React.Component {
         </div>
         <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
           <Title ref={this.headline}>
-            hay, I'm thomas
+            hay I’m Thomas
               </Title>
           <div ref={this.subline} className="max-w-screen-sm">
             <p>
-              — creative developer who feels most comfortable where sophisticated design meets well structured code.
-                </p>
+              creative developer who feels most comfortable where sophisticated design meets well structured code.
+            </p>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default ({ data }) => {
       <ContentWrapper
         verticalSpacing={false}
         additionalClasses="pt-4 md:pt-7">
-        <SectionTitle>works</SectionTitle>
+        <SectionTitle>work</SectionTitle>
       </ContentWrapper>
       {data.allWorksJson.edges.map((work, key) =>
         <WorkSectionWithImageGrid

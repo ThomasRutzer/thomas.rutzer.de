@@ -4,7 +4,7 @@ module.exports = {
   pathPrefix: "/",
   siteMetadata: {
     title: "thomas — creative developer",
-    description: "I'm thomas rutzer, leading JavaScript developer with focus on unique interfaces and interactions"
+    description: "I’m thomas rutzer, leading JavaScript developer with focus on unique interfaces and interactions"
   },
   plugins: [
     {

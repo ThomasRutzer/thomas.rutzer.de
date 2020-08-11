@@ -434,7 +434,7 @@
         "year": 2017,
         "features": [
             "vueJS",
-            "accessibility"
+            "a11y"
         ],
         "teaserDescription": "We of diepartments were part of the relaunch of the Eurowings e-commerce platform. Our focus was on the overall frontend architecture as well as the flight search form on the start page. The platform is meant to be as accessible as possible.",
         "links": [
@@ -456,7 +456,7 @@
     {
         "selected": false,
         "id": "futurium-future-machine",
-        "title": "Futurium future machine",
+        "title": "Future machine",
         "subTitle": "on-demand postcard printer",
         "year": 2019,
         "features": [
@@ -478,7 +478,7 @@
     {
         "selected": false,
         "id": "futurium-pig-dog",
-        "title": "Futurium pig dog",
+        "title": "Pig dog",
         "subTitle": "multi channel audio installation",
         "year": 2019,
         "features": [
@@ -500,7 +500,7 @@
     {
         "selected": false,
         "id": "exhibition-control",
-        "title": "Exhibition Control",
+        "title": "Exhibition control",
         "subTitle": "iot hardware control application",
         "year": 2019,
         "features": [
@@ -558,7 +558,7 @@
             "hapiJS",
             "mongoDB"
         ],
-        "teaserDescription": "Munchable.co is a web service that helps you as a host and your guests to plan a menu for everyone's needs and wishes. I literally planned and built it at our kitchen table with my former roommate.",
+        "teaserDescription": "Munchable.co is a web service that helps you as a host and your guests to plan a menu for everyone’s needs and wishes. I literally planned and built it at our kitchen table with my former roommate.",
         "links": [
             {
                 "link": "https://app.munchable.co/",
@@ -585,7 +585,7 @@
           "nodeJS",
           "assistantJS"
       ],
-      "teaserDescription": "We at diepartments created a conversational tv guide for Google home devices. The foundation here has been Dialog Flow for speech recognition and the nodeJS based abstraction assistantJS.",
+      "teaserDescription": "We of diepartments created a conversational tv guide for Google home devices. The foundation here has been Dialog Flow for speech recognition and the nodeJS based abstraction assistantJS.",
       "links": [
           {
               "link": "https://blog.diepartments.de/pains-and-gains-when-developing-a-node-js-dialogflow-application/",
