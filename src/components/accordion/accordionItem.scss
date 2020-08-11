@@ -44,7 +44,8 @@ $accordion-item-image-h: 160px;
 .accordion-item__image {
   opacity: 0.4;
   clip-path: inset(theme("spacing.4") theme("spacing.2"));
-  transition: all 600ms 100ms ease-out;
+  transition: all 400ms 100ms ease-out;
+  height: $accordion-item-image-h;
 }
 
 .accordion-item__title {
@@ -59,5 +60,5 @@ $accordion-item-image-h: 160px;
 }
 
 .accordion-item__panel {
-  animation: fade-in 0.35s ease-in;
+  animation: fade-in 400ms ease-out;
 }
