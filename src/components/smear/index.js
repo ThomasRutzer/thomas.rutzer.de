@@ -43,7 +43,6 @@ export default class Smear extends React.PureComponent {
   setup() {
     this.renderTextures.push(
       PIXI.RenderTexture.create(this.app.screen.width, this.app.screen.height),
-      PIXI.RenderTexture.create(this.app.screen.width, this.app.screen.height),
       PIXI.RenderTexture.create(this.app.screen.width, this.app.screen.height)
     )
 
@@ -69,12 +68,13 @@ export default class Smear extends React.PureComponent {
   }
 
   update() {
+    const swapTexture = 1 - this.current
     this.app.renderer.render(
       this.app.stage,
-      this.renderTextures[2 - this.current]
+      this.renderTextures[swapTexture]
     )
-    this.bg.texture = this.renderTextures[2 - this.current]
-    this.current = 2 - this.current
+    this.bg.texture = this.renderTextures[swapTexture]
+    this.current = swapTexture
   }
 
   onPointerMove(event) {
@@ -84,7 +84,7 @@ export default class Smear extends React.PureComponent {
       Math.atan(event.data.global.y - this.brush.y) * 7
 
     this.brush.position.copyFrom(event.data.global)
-    this.update(event)
+    this.update()
   }
 
   render() {
