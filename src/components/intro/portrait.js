@@ -1,7 +1,11 @@
 import React, { Suspense, useEffect, useState } from "react"
+import { useScrollPercentage } from "react-scroll-percentage"
+import Img from "gatsby-image"
+
 import networkAnalyzer from "../../utils/networkAnalyzer"
 import isMobileDevice from "../../utils/isMobileDevice"
-import Img from "gatsby-image"
+import map from "../../utils/map"
+
 const Smear = React.lazy(() => import("../smear"))
 
 const Portrait = ({ imgPath }) => {
@@ -10,8 +14,16 @@ const Portrait = ({ imgPath }) => {
     setSufficientConnection(networkAnalyzer() && !isMobileDevice())
   }, [])
 
+  const [ref, percentage] = useScrollPercentage({
+    threshold: 0,
+  })
+
   return (
-    <>
+    <div
+      ref={ref}
+      className="portrait"
+      aria-hidden="true"
+      style={{ opacity: percentage > .5 ? 1 - map(percentage, .5, 1, 0, 1) : 1 }}>
       {sufficientConnection && (
         <Suspense
           fallback={
@@ -27,10 +39,10 @@ const Portrait = ({ imgPath }) => {
       {!sufficientConnection && (
         <Img
           className="w-full h-full"
-          alt={"Portrait of Thomas Rutzer"} 
+          alt={"Portrait of Thomas Rutzer"}
           fluid={imgPath} />
       )}
-    </>
+    </div>
   )
 }
 

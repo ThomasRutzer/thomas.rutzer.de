@@ -69,7 +69,7 @@ export default class Intro extends React.Component {
         className="relative flex items-center overflow-hidden"
         style={{ opacity: 0 }}
         ref={this.main}>
-        <div aria-hidden="true" ref={this.bg} className="intro__bg">
+        <div ref={this.bg} className="intro__bg">
           <Portrait imgPath={this.props.imgPath} />
         </div>
         <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
