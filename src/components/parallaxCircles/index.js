@@ -12,7 +12,7 @@ const ParallaxCircles = () => {
           style={{
             transform: `translate(${translations.tx}px, ${translations.ty}px)`
           }}
-          className="parallax-circles__inner  transition-transform duration-700 ease-out"></div>
+          className="parallax-circles__inner bg-gradient-to-r from-grey-darker transition-transform duration-700 ease-out"></div>
       </div>
     </div>
   )
