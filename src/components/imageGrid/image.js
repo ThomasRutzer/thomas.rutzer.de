@@ -21,7 +21,7 @@ const Image = ({ src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0
         overflow-hidden
         mt-${index === 0 ? "0" : "4"} lg:mt-0
         flex items-center flex-col
-        transition-transform duration-700 ease-out`
+        transition-transform duration-1000 ease-out`
       }>
       <Img
         className="w-full"
