@@ -23,7 +23,7 @@ const Portrait = ({ imgPath }) => {
       ref={ref}
       className="portrait"
       aria-hidden="true"
-      style={{ opacity: percentage > .5 ? 1 - map(percentage, .5, 1, 0, 1) : 1 }}>
+      style={{ opacity: 1 - map(percentage, .5, 1, 0, 1) }}>
       {sufficientConnection && (
         <Suspense
           fallback={
