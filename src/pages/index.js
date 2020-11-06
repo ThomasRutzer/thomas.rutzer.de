@@ -105,8 +105,8 @@ export default ({ data }) => {
               <p className="mb-2 font-bold">images</p>
               {data.allWorksJson.edges.map((work, key) =>
                 <div key={key} className={key === 0 ? "mt-0" : "mt-4"}>
-                  <p className="text-sm text-tertiary-lighter"
-                  >{work.node.title} <i>{work.node.subTitle}</i>
+                  <p className="text-sm text-tertiary-lighter">
+                    {work.node.title} <i>{work.node.subTitle}</i>
                   </p>
                   <ul>
                     {work.node.images.map((image, imageKey) =>

@@ -36,9 +36,9 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-html-attributes',
+      resolve: "gatsby-plugin-html-attributes",
       options: {
-        lang: 'en'
+        lang: "en"
       }
     },
     {
@@ -53,6 +53,7 @@ module.exports = {
         icon: "src/images/icon.png"
       }
     },
-    'gatsby-plugin-offline'
+    "gatsby-plugin-offline",
+    "gatsby-plugin-transition-link"
   ]
 }
