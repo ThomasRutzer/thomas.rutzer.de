@@ -1,4 +1,9 @@
-[
+[ 
+  {
+    "title": "Recipes for unit tests when working with date and time in React/JavaScript",
+    "link": "https://thomasrutzer.medium.com/recipes-for-unit-tests-when-working-with-date-and-time-in-react-javascript-cbd1ad2ef9e5",
+    "description": "Published 11.2020"
+  },
   {
     "title": "Pains and gains when developing a node.js Dialogflow application",
     "link": "https://blog.diepartments.de/pains-and-gains-when-developing-a-node-js-dialogflow-application/",
