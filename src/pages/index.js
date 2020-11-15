@@ -31,7 +31,7 @@ export default ({ data }) => {
             </div>
             <div className="col-start-1 md:col-start-2 col-span-2">
               {data.allWritesJson.edges.map((write, key) =>
-                <div key={key} className={key === 0 ? "mb-4 md:mb-7" : "mb-0"}>
+                <div key={key} className={key === 0 ? "mt-0" : "mt-4 md:mt-7"}>
                   <ExternalLink link={write.node.link} appearance="primary" size="large">
                     {write.node.title}
                   </ExternalLink>
