@@ -89,7 +89,7 @@ export default ({ data }) => {
                           </ExternalLink>
                         }
                         {!work.node.teaserImage.reference.link &&
-                          work.node.title + " " + work.node.subTitle + " " + work.node.teaserImage.reference.link + "by" + work.node.teaserImage.reference.author
+                          work.node.title + " " + work.node.subTitle + " " + work.node.teaserImage.reference.link + "by " + work.node.teaserImage.reference.author
                         }
                       </li>
                     )}
