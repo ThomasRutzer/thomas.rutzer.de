@@ -5,7 +5,7 @@ import { ContentWrapper } from "./../layout"
 
 const Header = () => (
   <header>
-    <ContentWrapper variant="large">
+    <ContentWrapper>
       <ul>
         <li>
           <InternalLink link="/">
