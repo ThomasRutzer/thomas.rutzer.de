@@ -5,7 +5,7 @@ import Intro from "../components/intro"
 import Seo from "../components/seo"
 import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import { ExternalLink } from "../components/links"
-import { SectionDigArchive, SectionTitle, WorkSectionWithImageGrid } from "./../components/sections"
+import { SectionTitle, WorkSectionWithImageGrid } from "./../components/sections"
 
 export default ({ data }) => {
   return (
@@ -22,7 +22,6 @@ export default ({ data }) => {
           work={work.node}
           key={key} />
       )}
-      <SectionDigArchive />
       <section className="bg-grey-darkest-pattern">
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -57,7 +56,7 @@ export default ({ data }) => {
                 In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions, mostly with full-stack JavaScript and MQTT based realtime communication.
               </p>
               <p className="mt-4">
-                My personal research focus at the moment is blending interfaces into spaces with the new web XR API.
+                My personal research focus at the moment is blending interfaces into spaces with the new WebXR Device API.
               </p>
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">

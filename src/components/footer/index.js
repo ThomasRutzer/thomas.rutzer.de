@@ -10,11 +10,6 @@ export default () => (
           <li className="text-sm inline">
             <InternalLink link="/legal/">
               Legal notice
-          </InternalLink>
-          </li>
-          <li className="text-sm inline ml-4">
-            <InternalLink link="/project-archive/">
-              project archive
             </InternalLink>
           </li>
         </ul>
