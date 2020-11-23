@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react"
 import anime from "animejs"
-import { graphql } from "gatsby"
 
 import Seo from "../components/seo"
 import SlotMachine from "react-slot-machine"
@@ -10,7 +9,7 @@ import page404Styles from "./404.module.scss"
 import { CtaSecondaryTypeButton } from "./../components/cta"
 import PageHeader from "../components/pageHeader"
 
-export default ({ data }) => {
+export default () => {
   const slotMachineRef = useRef()
   const [isSpinning, setIsSpinning] = useState(true)
 
@@ -44,7 +43,7 @@ export default ({ data }) => {
     <>
       <Seo title="404 — Too bad" />
       <LayoutWrapper>
-        <PageHeader imgPath={data.header.childImageSharp.fluid} title="404 — Too bad" />
+        <PageHeader title="404 — Too bad" />
         <ContentWrapper>
           <div className={page404Styles.grid}>
 
@@ -74,15 +73,3 @@ export default ({ data }) => {
     </>
   )
 }
-
-export const pageQuery = graphql`
-  query {
-    header: file(relativePath: { eq: "page-header-bg.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-  }
-`

@@ -12,7 +12,7 @@ export default function Template({ data }) {
     <>
       <Seo title={frontmatter.title} />
       <LayoutWrapper>
-        <PageHeader imgPath={header.childImageSharp.fluid} title={frontmatter.title} />
+        <PageHeader title={frontmatter.title} />
         <ContentWrapper>
           <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
         </ContentWrapper>
