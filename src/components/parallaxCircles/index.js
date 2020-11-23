@@ -2,8 +2,10 @@ import React from "react"
 
 import { useMousemoveTranslation } from "../../hooks"
 
-const ParallaxCircles = () => {
-  const translations = useMousemoveTranslation(10, 20, 10, 20)
+const ParallaxCircles = ({ translationValues = [10, 20, 10, 20] }) => {
+  const translations = useMousemoveTranslation(
+    translationValues[0], translationValues[1], translationValues[2], translationValues[3]
+  )
 
   return (
     <div className="parallax-circles" aria-hidden>
