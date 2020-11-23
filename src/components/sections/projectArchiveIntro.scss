@@ -1,0 +1,44 @@
+.project-archive-intro__title {
+  span {
+    &:last-child {
+      @screen md {
+        margin-left: 2.2em;
+      }
+    }
+  }
+}
+
+.project-archive-intro__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.project-archive-intro__circle {
+  position: absolute;
+
+  &--1 {
+    width: 400px;
+    height: 400px;
+    bottom: -100px;
+    left: -100px;
+  }
+
+  &--2 {
+    width: 220px;
+    height: 220px;
+    top: -100px;
+    left: 50%;
+  }
+
+  &--3 {
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 60%;
+  }
+}

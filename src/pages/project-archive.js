@@ -9,15 +9,14 @@ import { ExternalLink } from "../components/links"
 import FeatureList from "../components/featureList"
 import Tabs from "../components/tabs"
 import SectionTitle from "../components/sections/sectionTitle"
+import ProjectArchiveIntro from "../components/sections/projectArchiveIntro"
 
 export default ({ data }) => {
   return (
     <>
-      <Seo title="all works" />
+      <Seo title="project archive" />
       <LayoutWrapper>
-        <PageHeader
-          imgPath={data.header.childImageSharp.fluid}
-          title="(Almost) everything I design & code down the road" />
+       <ProjectArchiveIntro />
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
