@@ -1,0 +1,29 @@
+.tab-list__item {
+  display: inline-block;
+  cursor: pointer;
+  @apply mr-2;
+  transition: color 300ms;
+
+  &:last-child {
+    @apply mr-0;
+  }
+
+  &:focus {
+    outline: 2px dashed currentColor;
+  }
+
+  &--selected { 
+    @apply text-tertiary-lighter;
+  }
+}
+
+.tab-list__icon {
+  fill: theme("colors.tertiary.lighter");
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+
+  .tab-list__item--selected & {
+    animation: fade-in 300ms forwards;
+  }
+}

@@ -1,25 +1,4 @@
-.tabs__tab-list {
-  @apply py-2;
-}
-
-.tabs__tab {
-  display: inline-block;
-  cursor: pointer;
-  @apply pr-2;
-  transition: color 300ms;
-
-  &:last-child {
-    @apply pr-0;
-  }
-
-  &:focus {
-    outline: 2px dashed currentColor;
-  }
-
-  &--selected {
-    @apply text-tertiary-lighter;
-  }
-}
+@import "./tabList.scss";
 
 .tabs__tab-panel {
   display: none;
