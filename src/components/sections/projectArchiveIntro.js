@@ -17,13 +17,13 @@ const ProjectArchiveTitle = () => {
 
       <div className="project-archive-intro__bg bg-gradient-to-r from-black ">
         <div className="project-archive-intro__circle project-archive-intro__circle--1">
-          <ParallaxCircles />
+          <ParallaxCircles mouseMoveTranslations={[3, 6, 3, 6]} />
         </div>
         <div className="project-archive-intro__circle project-archive-intro__circle--2">
-          <ParallaxCircles translationValues={[5, 10, 5, 10]} />
+          <ParallaxCircles mouseMoveTranslations={[5, 10, 5, 10]} />
         </div>
         <div className="project-archive-intro__circle project-archive-intro__circle--3">
-          <ParallaxCircles translationValues={[3, 6, 3, 6]} />
+          <ParallaxCircles />
         </div>
       </div>
     </div>

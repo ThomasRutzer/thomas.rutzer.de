@@ -2,9 +2,9 @@ import React from "react"
 
 import { useMousemoveTranslation } from "../../hooks"
 
-const ParallaxCircles = ({ translationValues = [10, 20, 10, 20] }) => {
+const ParallaxCircles = ({ mouseMoveTranslations = [10, 20, 10, 20] }) => {
   const translations = useMousemoveTranslation(
-    translationValues[0], translationValues[1], translationValues[2], translationValues[3]
+    mouseMoveTranslations[0], mouseMoveTranslations[1], mouseMoveTranslations[2], mouseMoveTranslations[3]
   )
 
   return (

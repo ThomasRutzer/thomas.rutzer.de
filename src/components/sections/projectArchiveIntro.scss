@@ -16,16 +16,20 @@
   left: 0;
   z-index: -1;
   overflow: hidden;
+
+  @screen lg {
+    overflow: visible;
+  }
 }
 
 .project-archive-intro__circle {
   position: absolute;
 
   &--1 {
-    width: 400px;
-    height: 400px;
-    bottom: -100px;
-    left: -100px;
+    width: 80px;
+    height: 80px;
+    bottom: 40px;
+    left: 40px;
   }
 
   &--2 {
@@ -36,9 +40,9 @@
   }
 
   &--3 {
-    width: 80px;
-    height: 80px;
-    top: 50%;
+    width: 440px;
+    height: 440px;
+    top: 30%;
     left: 60%;
   }
 }
