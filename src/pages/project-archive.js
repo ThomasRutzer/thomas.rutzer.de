@@ -9,11 +9,12 @@ import Tabs from "../components/tabs"
 import SectionTitle from "../components/sections/sectionTitle"
 import ProjectArchiveIntro from "../components/sections/projectArchiveIntro"
 import Img from "gatsby-image"
+import PageHeader from "./../components/pageHeader"
 
 export default ({ data }) => {
   return (
     <>
-      <Seo title="project archive" />
+      <Seo title="thomas rutzer – project archive" />
       <LayoutWrapper>
         <ProjectArchiveIntro />
         <ContentWrapper>
@@ -24,72 +25,43 @@ export default ({ data }) => {
                   <div
                     key={groupKey}
                     className={
-                      `grid grid-cols-4 gap-3 md:gap-4 pb-5 ${groupKey !== 0 ? "pt-5 border-t-2 border-grey-lighter" : ""}`
+                      `grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-3 md:gap-5 pb-6 ${groupKey !== 0 ? "pt-6 border-t-2 border-grey-darker" : ""}`
                     }>
-                    <div className="col-start-1 col-span-2 md:col-span-1">
+                    <div className="col-start-1 col-span-1 row-start-1 row-span-2">
                       <Img
                         alt={work.node.teaserImage.alt}
                         fluid={work.node.fields.teaserImageAsset.childImageSharp.fluid} />
                     </div>
-                    <div className="col-start-3 col-span-2 md:col-span-1 flex flex-col md:justify-between">
+                    <div className="col-start-2 col-span-1">
                       <h2 className="text-3xl md:text-4xl">{work.node.title}</h2>
+                    </div>
+                    <div className="col-start-2 col-span-1 row-start-2 self-end">
                       <h3 className="text-tertiary-lighter">{work.node.subTitle}</h3>
                     </div>
-                    <div className="col-start-1 col-span-4 md:col-span-1 my-3">
+                    <div className="col-start-1 col-span-4 md:col-span-2">
                       <p>{work.node.teaserDescription}</p>
                     </div>
-                    <div className="col-start-1 col-span-2 md:col-span-1">
-                      <span className="text-tertiary-lighter block text-sm">
-                        key facts
+                    <div className="col-start-1 col-span-2 md:col-span-2 md:row-start-2 flex flex-row justify-between">
+                      <div className="self-end">
+                        <span className="text-tertiary-lighter block text-sm">
+                          key facts
                           </span>
-                      <FeatureList items={work.node.features} />
-                    </div>
-                    <div className="col-start-3 col-span-2">
-                      {work.node.links.map(({ link, label }, key) =>
-                        <div className="whitespace-no-wrap text-right" key={key}>
-                          <ExternalLink
-                            appearance="primary"
-                            link={link}>
-                            {label}
-                          </ExternalLink>
-                        </div>
-                      )}
+                        <FeatureList items={work.node.features} />
+                      </div>
+                      <div className="self-end">
+                        {work.node.links.map(({ link, label }, key) =>
+                          <div className="whitespace-no-wrap" key={key}>
+                            <ExternalLink
+                              appearance="primary"
+                              link={link}>
+                              {label}
+                            </ExternalLink>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 )}
-                {/* <Accordion>
-                      {group.edges.map((work, key) =>
-                        <AccordionItem
-                          key={key}
-                          imgSrc={work.node.fields.teaserImageAsset.childImageSharp.fixed}
-                          imgAlt={work.node.teaserImage.alt}
-                          subTitle={work.node.subTitle}
-                          title={work.node.title}>
-                          <div className="grid grid-cols-1 md:grid-cols-project-archive-descr gap-2 md:gap-4 leading-7">
-                            <div className="col-start-1 col-span-1">
-                              <span className="text-tertiary-lighter block text-sm">
-                                key facts
-                              </span>
-                              <FeatureList items={work.node.features} />
-                            </div>
-                            <div className="md:col-start-2 md:col-span-2">
-                              {work.node.teaserDescription}
-                            </div>
-                            <div className="md:col-start-4 md:col-span-1">
-                              {work.node.links.map(({ link, label }, key) =>
-                                <div className="whitespace-no-wrap" key={key}>
-                                  <ExternalLink
-                                    appearance="primary"
-                                    link={link}>
-                                    {label}
-                                  </ExternalLink>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </AccordionItem>
-                      )}
-                    </Accordion> */}
               </section>
             )}
           </Tabs>
