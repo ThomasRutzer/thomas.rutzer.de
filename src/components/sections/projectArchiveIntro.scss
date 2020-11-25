@@ -1,9 +1,7 @@
 .project-archive-intro__title {
   span {
     &:last-child {
-      @screen md {
-        margin-left: 2.2em;
-      }
+      margin-left: 2.2em;
     }
   }
 }
@@ -24,12 +22,14 @@
 
 .project-archive-intro__circle {
   position: absolute;
+  opacity: 0;
 
   &--1 {
     width: 80px;
     height: 80px;
     bottom: 40px;
     left: 40px;
+    animation: enter 600ms 300ms forwards;
   }
 
   &--2 {
@@ -37,12 +37,14 @@
     height: 220px;
     top: -100px;
     left: 50%;
+    animation: enter 600ms 400ms forwards;
   }
 
   &--3 {
-    width: 440px;
-    height: 440px;
-    top: 30%;
+    width: 400px;
+    height: 400px;
+    top: 25%;
     left: 60%;
+    animation: enter 600ms 500ms forwards;
   }
 }
