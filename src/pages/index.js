@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import { ExternalLink } from "../components/links"
 import { SectionTitle, WorkSectionWithImageGrid } from "./../components/sections"
+import { CtaSecondaryTypeLink } from "./../components/cta"
 
 export default ({ data }) => {
   return (
@@ -22,6 +23,18 @@ export default ({ data }) => {
           work={work.node}
           key={key} />
       )}
+      <section className="bg-gradient-to-r from-black md:py-4">
+        <ContentWrapper>
+          <div className="flex flex-col md:flex-row items-center justify-center">
+            <h2 className="text-2xl md:text-4xl md:text-stroke-white md:text-stroke mb-2 md:mb-0 md:mr-4">
+              There is more
+            </h2>
+            <CtaSecondaryTypeLink link="/project-archive">
+              project archive
+            </CtaSecondaryTypeLink>
+          </div>
+        </ContentWrapper>
+      </section>
       <section className="bg-grey-darkest-pattern">
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
