@@ -8,7 +8,7 @@ const ParallaxCircles = ({ mouseMoveTranslations = [10, 20, 10, 20] }) => {
   )
 
   return (
-    <div className="parallax-circles" aria-hidden>
+    <div className="parallax-circles">
       <div className="parallax-circles__outer">
         <div
           style={{
