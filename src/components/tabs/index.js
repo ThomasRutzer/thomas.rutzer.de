@@ -5,8 +5,8 @@ export default ({ children, defaultIndex }) => {
   return (
     <Tabs
       defaultIndex={defaultIndex}
-      className="tabs py">
-      <TabList className="tab-list text-sm mb-5">
+      className="tabs">
+      <TabList className="tab-list py mb-5">
         {children.map((tab, key) =>
           <Tab
             key={key}
@@ -24,9 +24,7 @@ export default ({ children, defaultIndex }) => {
             </svg>
           </Tab>
         )}
-
       </TabList>
-
       {children.map((tab, key) =>
         <TabPanel
           key={key}

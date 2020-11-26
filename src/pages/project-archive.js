@@ -17,7 +17,7 @@ export default ({ data }) => {
       <LayoutWrapper>
         <ProjectArchiveIntro />
         <ContentWrapper>
-          <Tabs defaultIndex={Math.floor(Math.random() * data.allWorksJson.group.length - 1) + 1}>
+          <Tabs>
             {data.allWorksJson.group.map((group, key) =>
               <section key={key} label={`${group.edges[0].node.year}`}>
                 {group.edges.map((work, groupKey) =>
