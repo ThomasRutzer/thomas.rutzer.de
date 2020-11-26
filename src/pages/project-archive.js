@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Seo from "../components/seo"
 import { ContentWrapper, LayoutWrapper } from "../components/layout"
@@ -8,8 +9,6 @@ import FeatureList from "../components/featureList"
 import Tabs from "../components/tabs"
 import SectionTitle from "../components/sections/sectionTitle"
 import ProjectArchiveIntro from "../components/sections/projectArchiveIntro"
-import Img from "gatsby-image"
-import PageHeader from "./../components/pageHeader"
 
 export default ({ data }) => {
   return (
@@ -29,6 +28,7 @@ export default ({ data }) => {
                     }>
                     <div className="col-start-1 col-span-1 row-start-1 row-span-2">
                       <Img
+                        className="h-full"
                         alt={work.node.teaserImage.alt}
                         fluid={work.node.fields.teaserImageAsset.childImageSharp.fluid} />
                     </div>
@@ -39,7 +39,7 @@ export default ({ data }) => {
                       <h3 className="text-tertiary-lighter">{work.node.subTitle}</h3>
                     </div>
                     <div className="col-start-1 col-span-4 md:col-span-2">
-                      <p>{work.node.teaserDescription}</p>
+                      <p className="md:mt-2">{work.node.teaserDescription}</p>
                     </div>
                     <div className="col-start-1 col-span-2 md:col-span-2 md:row-start-2 flex flex-row justify-between">
                       <div className="self-end">
