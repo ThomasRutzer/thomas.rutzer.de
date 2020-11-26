@@ -44,31 +44,32 @@ export default () => {
       <Seo title="404 — Too bad" />
       <LayoutWrapper>
         <PageHeader title="404 — Too bad" />
-        <ContentWrapper>
-          <div className={page404Styles.grid}>
-
-            <SlotMachine
-              symbols={["0", "1", "2", "3", "4"]}
-              ref={slotMachineRef}
-              initialSymbols={["4", "0", "4"]}
-              onSpinningEnd={res => onSpinningEnd(res)}
-              symbolEvaluatedStyleClass={page404Styles.evaluated}
-              symbolDefaultStyleClass={page404Styles.symbol} />
-            <div className={page404Styles.cta}>
-              <CtaSecondaryTypeButton
-                disabled={isSpinning}
-                onClick={onStartSpinning}>
-                Spin to Win!
+        <section className="bg-gradient-to-r from-black">
+          <ContentWrapper>
+            <div className={`${page404Styles.grid}`}>
+              <SlotMachine
+                symbols={["0", "1", "2", "3", "4"]}
+                ref={slotMachineRef}
+                initialSymbols={["4", "0", "4"]}
+                onSpinningEnd={res => onSpinningEnd(res)}
+                symbolEvaluatedStyleClass={page404Styles.evaluated}
+                symbolDefaultStyleClass={page404Styles.symbol} />
+              <div className={page404Styles.cta}>
+                <CtaSecondaryTypeButton
+                  disabled={isSpinning}
+                  onClick={onStartSpinning}>
+                  Spin to Win!
               </CtaSecondaryTypeButton>
-            </div>
-            <div className="mt-4 text-center">
-              <p>
-                I couldn't find what you were looking for. <br></br>Go&nbsp;
+              </div>
+              <div className="mt-4 text-center">
+                <p>
+                  I couldn't find what you were looking for. <br></br>Go&nbsp;
               <InternalLink link="/">home</InternalLink> or try your luck.
               </p>
+              </div>
             </div>
-          </div>
-        </ContentWrapper>
+          </ContentWrapper>
+        </section>
       </LayoutWrapper>
     </>
   )

@@ -4,18 +4,12 @@
   height: calc(100vh - 140px);
 } 
 
-.divider {
-  width: 400px;
-  max-width: 100%;
-  margin: 32px auto 0 auto;
-  opacity: 0.2;
-}
-
 .symbol {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: theme("colors.white");
   color: transparent;
   transition: color 700ms ease-out;
+
 }
 
 .evaluated {
