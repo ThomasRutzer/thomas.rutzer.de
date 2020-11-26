@@ -6,7 +6,7 @@ import PageHeader from "../components/pageHeader"
 import Seo from "../components/seo"
 
 export default function Template({ data }) {
-  const { markdownRemark, header } = data
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <>

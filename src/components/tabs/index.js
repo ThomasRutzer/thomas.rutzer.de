@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from "react"
+import React from "react"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 export default ({ children, defaultIndex }) => {
