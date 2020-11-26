@@ -221,7 +221,7 @@ export const query = graphql`
           fields {
             workImageAssets {
               childImageSharp {
-                fluid(maxWidth: 720, quality: 90) {
+                fluid(maxWidth: 320, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
