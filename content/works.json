@@ -145,7 +145,7 @@
       }
     ],
     "teaserImage": {
-      "src": "mntns intro.jpg",
+      "src": "mntns-teaser.jpg",
       "alt": "Mntns created with threeJS",
       "reference": {
         "author": "Thomas Rutzer",
@@ -395,7 +395,7 @@
       "alt": "hello monday wove teaser",
       "reference": {
         "author": "©Hello Monday ApS",
-        "link": ""
+        "link": "https://www.hellomonday.com/work/wove"
       }
     },
     "images": []
@@ -515,7 +515,7 @@
     "teaserDescription": "Powered by the web audio API, we at art+com developed a multi-channel audio player for the futurium permanent installation.",
     "links": [],
     "teaserImage": {
-      "src": "Futurium_David_von_Becker_VB_4871.jpg",
+      "src": "futurium-pig-dog-teaser.jpg",
       "alt": "Futurium",
       "reference": {
         "author": "David von Becker",
@@ -534,7 +534,7 @@
       "react",
       "mqtt"
     ],
-    "teaserDescription": "An exhibition developed by art+com is full of hardware of different kinds. To make life easier for the operational staff we developed an application to view and handle the state of hardware devices. A floor plan is the main visual guidance inside the app. From there, they can run various tasks, like adjusting light or audio settings, reboot computers, even control the blinds. Everything connected to MQTT.",
+    "teaserDescription": "An exhibition developed by art+com is full of hardware of different kinds. That's why we developed an application to view and handle the state of hardware devices. It can run various tasks, like adjusting light or audio settings, reboot computers, even control the blinds. Everything connected to MQTT.",
     "links": [],
     "teaserImage": {
       "src": "exhibition-control-teaser.jpg",
@@ -624,7 +624,7 @@
       }
     ],
     "teaserImage": {
-      "src": "dialog-flow-app-teaser.jpg",
+      "src": "conversational-interface-teaser.jpg",
       "alt": "conversational interface teaser",
       "reference": {
         "author": "©Carolin Schweizer",
