@@ -4,7 +4,7 @@ import displacementMap from "./../../images/displacement.png"
 
 PIXI.utils.skipHello()
 
-export default class Smear extends React.PureComponent {
+class Smear extends React.PureComponent {
   constructor(props) {
     super(props)
 
@@ -47,6 +47,12 @@ export default class Smear extends React.PureComponent {
     )
 
     const initBg = new PIXI.Sprite(this.bgTexture)
+    const dimensions = getImageDimensionsWithAspect(
+      this.bgTexture.baseTexture.width, this.bgTexture.baseTexture.height,
+      this.app.screen.width, this.app.screen.height
+    )
+    initBg.height = dimensions.height
+    initBg.width = dimensions.width;
 
     this.app.renderer.render(initBg, this.renderTextures[0])
     this.bg = new PIXI.Sprite(this.renderTextures[0])
@@ -91,3 +97,20 @@ export default class Smear extends React.PureComponent {
     return <canvas style={{ width: "100%" }} ref={this.canvas} />
   }
 }
+
+function getImageDimensionsWithAspect(imgW, imgH, containerW, containerH) {
+  const imageRatio = imgW / imgH
+  const containerRatio = containerW / containerH
+
+  return containerRatio > imageRatio
+    ? {
+      height: imgH / (imgW / containerW),
+      width: containerW
+    }
+    : {
+      width: imgW / (imgH / containerH),
+      height: containerH
+    }
+}
+
+export default Smear
