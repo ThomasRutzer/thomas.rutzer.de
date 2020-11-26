@@ -33,18 +33,30 @@
   }
 
   &--2 {
-    width: 220px;
-    height: 220px;
-    top: -100px;
+    width: 160px;
+    height: 160px;
+    top: -80px;
     left: 50%;
     animation: enter 600ms 400ms forwards;
+
+    @screen lg {
+      width: 220px;
+      height: 220px;
+      top: -100px;
+    }
   }
 
   &--3 {
-    width: 400px;
-    height: 400px;
-    top: 25%;
+    width: 220px;
+    height: 220px;
+    top: 20%;
     left: 60%;
     animation: enter 600ms 500ms forwards;
+
+    @screen lg {
+      width: 400px;
+      height: 400px;
+      top: 35%;
+    }
   }
 }
