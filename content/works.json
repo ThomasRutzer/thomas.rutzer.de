@@ -387,7 +387,7 @@
     "links": [
       {
         "link": "https://www.hellomonday.com/work/wove",
-        "label": "hello monday use case"
+        "label": "hello monday case"
       }
     ],
     "teaserImage": {
@@ -440,7 +440,7 @@
     "links": [
       {
         "link": "https://www.hellomonday.com/work/wove",
-        "label": "hello monday use case"
+        "label": "hello monday case"
       }
     ],
     "teaserImage": {
@@ -616,7 +616,7 @@
     "links": [
       {
         "link": "https://blog.diepartments.de/pains-and-gains-when-developing-a-node-js-dialogflow-application/",
-        "label": "read about the process"
+        "label": "read more"
       },
       {
         "link": "https://github.com/webcomputing/AssistantJS",
