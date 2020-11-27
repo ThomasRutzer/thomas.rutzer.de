@@ -20,6 +20,8 @@ body {
   background: theme("colors.grey.darker");
 }
 
+@import "./pages/index.scss";
+
 @tailwind components;
 
 @import "./components/intro/index.scss";
@@ -29,8 +31,6 @@ body {
 @import "./components/parallaxCircles/index.scss";
 @import "./components/sections/index.scss";
 @import "./components/tabs/index.scss";
-
-@tailwind utilities;
 
 @import "./utils/cssAnimations.scss";
 
@@ -69,3 +69,5 @@ body {
 .underline-under {
   text-underline-position: under;
 }
+
+@tailwind utilities;
