@@ -5,7 +5,6 @@ import Seo from "../components/seo"
 import SlotMachine from "react-slot-machine"
 import { ContentWrapper, LayoutWrapper } from "../components/layout"
 import { InternalLink } from "../components/links"
-import page404Styles from "./404.module.scss"
 import { CtaSecondaryTypeButton } from "./../components/cta"
 import PageHeader from "../components/pageHeader"
 
@@ -46,15 +45,15 @@ export default () => {
         <PageHeader title="404 — Too bad" />
         <section className="bg-gradient-to-r from-black">
           <ContentWrapper>
-            <div className={`${page404Styles.grid}`}>
+            <div className="flex flex-col h-screen">
               <SlotMachine
                 symbols={["0", "1", "2", "3", "4"]}
                 ref={slotMachineRef}
                 initialSymbols={["4", "0", "4"]}
                 onSpinningEnd={res => onSpinningEnd(res)}
-                symbolEvaluatedStyleClass={page404Styles.evaluated}
-                symbolDefaultStyleClass={page404Styles.symbol} />
-              <div className={page404Styles.cta}>
+                symbolEvaluatedStyleClass="text-white"
+                symbolDefaultStyleClass="text-stroke text-stroke-white transition-colors duration-700" />
+              <div className="flex justify-center mt-3 md:mt-6">
                 <CtaSecondaryTypeButton
                   disabled={isSpinning}
                   onClick={onStartSpinning}>
