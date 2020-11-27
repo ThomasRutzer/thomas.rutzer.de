@@ -24,7 +24,7 @@ export default ({ data }) => {
                   <div
                     key={groupKey}
                     className={
-                      `grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-3 md:gap-5 pb-6 ${groupKey !== 0 ? "pt-6 border-t-2 border-grey-darker" : ""}`
+                      `project-archive-item__grid-item grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 pb-6 ${groupKey !== 0 ? "pt-6 border-t-2 border-grey-darker" : ""}`
                     }>
                     <div className="col-start-1 col-span-1 row-start-1 row-span-2">
                       <Img
