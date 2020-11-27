@@ -38,7 +38,7 @@ export default ({ data }) => {
                     <div className="col-start-2 col-span-1 row-start-2 self-end">
                       <h3 className="text-tertiary-lighter">{work.node.subTitle}</h3>
                     </div>
-                    <div className="col-start-1 col-span-4 md:col-span-2">
+                    <div className="col-start-1 col-span-2 md:col-span-2">
                       <p className="md:mt-2">{work.node.teaserDescription}</p>
                     </div>
                     <div className="col-start-1 col-span-2 md:col-span-2 md:row-start-2 flex flex-row justify-between">
