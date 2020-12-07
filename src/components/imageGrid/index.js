@@ -8,7 +8,7 @@ const ImageGrid = ({ appearance, title, subtitle, images = [] }) => {
   const [disableImgTranslations, setDisableImgTranslations] = useState(true)
   const translations = useMousemoveTranslation(10, 20, 10, 20, disableImgTranslations)
 
-  const isTouch = isTouchDevice()
+  const isTouch = typeof window === "undefined" ? false : isTouchDevice()
   const mouseEvents = useCallback({
     onMouseEnter: !isTouch ? () => setDisableImgTranslations(false) : null,
     onMouseLeave: !isTouch ? () => setDisableImgTranslations(true) : null
