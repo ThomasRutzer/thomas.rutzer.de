@@ -1,10 +1,15 @@
 import React from "react"
 
 import { useMousemoveTranslation } from "../../hooks"
+import isTouchDevice from "./../../utils/isTouchDevice"
 
 const ParallaxCircles = ({ mouseMoveTranslations = [10, 20, 10, 20] }) => {
   const translations = useMousemoveTranslation(
-    mouseMoveTranslations[0], mouseMoveTranslations[1], mouseMoveTranslations[2], mouseMoveTranslations[3]
+    mouseMoveTranslations[0], 
+    mouseMoveTranslations[1], 
+    mouseMoveTranslations[2], 
+    mouseMoveTranslations[3],
+    isTouchDevice()
   )
 
   return (
