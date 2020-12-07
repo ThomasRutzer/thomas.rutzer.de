@@ -3,13 +3,13 @@
     "selected": false,
     "id": "schere-stein-papier",
     "title": "Schere, Stein, Papier",
-    "subTitle": "a react-three-fiber evaluation",
+    "subTitle": "r3f evaluation",
     "year": 2020,
     "features": [
       "react",
       "react three fiber"
     ],
-    "teaserDescription": "I read a lot about react-three-fiber and wanted to give it a try. So this demo is primarily a technical evaluation with a fun factor.",
+    "teaserDescription": "I read a lot about react-three-fiber (r3f) and wanted to give it a try. So this demo is primarily a technical evaluation with a fun factor.",
     "links": [
       {
         "link": "https://thomasrutzer.github.io/schere-stein-papier/",
