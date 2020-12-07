@@ -20,48 +20,50 @@ export default ({ data }) => {
           <Tabs>
             {data.allWorksJson.group.map((group, key) =>
               <section key={key} label={`${group.edges[0].node.year}`}>
-                {group.edges.map((work, groupKey) =>
-                  <div
-                    key={groupKey}
-                    className={
-                      `project-archive-item__grid-item grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 pb-6 ${groupKey !== 0 ? "pt-6 border-t-2 border-grey-darker" : ""}`
-                    }>
-                    <div className="col-start-1 col-span-1 row-start-1 row-span-2">
-                      <Img
-                        className="h-full"
-                        alt={work.node.teaserImage.alt}
-                        fluid={work.node.fields.teaserImageAsset.childImageSharp.fluid} />
-                    </div>
-                    <div className="col-start-2 col-span-1">
-                      <h2 className="text-3xl md:text-4xl">{work.node.title}</h2>
-                    </div>
-                    <div className="col-start-2 col-span-1 row-start-2 self-end">
-                      <h3 className="text-tertiary-lighter">{work.node.subTitle}</h3>
-                    </div>
-                    <div className="col-start-1 col-span-2 md:col-span-2">
-                      <p className="md:mt-2">{work.node.teaserDescription}</p>
-                    </div>
-                    <div className="col-start-1 col-span-2 md:col-span-2 md:row-start-2 flex flex-row justify-between">
-                      <div className="self-end">
-                        <span className="text-tertiary-lighter block text-sm">
-                          key facts
+                <ul>
+                  {group.edges.map((work, groupKey) =>
+                    <li
+                      key={groupKey}
+                      className={
+                        `project-archive-item__grid-item grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 pb-6 ${groupKey !== 0 ? "pt-6 border-t-2 border-grey-darker" : ""}`
+                      }>
+                      <div className="col-start-1 col-span-1 row-start-1 row-span-2">
+                        <Img
+                          className="h-full"
+                          alt={work.node.teaserImage.alt}
+                          fluid={work.node.fields.teaserImageAsset.childImageSharp.fluid} />
+                      </div>
+                      <div className="col-start-2 col-span-1">
+                        <h2 className="text-3xl md:text-4xl -mt-2">{work.node.title}</h2>
+                      </div>
+                      <div className="col-start-2 col-span-1 row-start-2 self-end">
+                        <h3 className="text-tertiary-lighter">{work.node.subTitle}</h3>
+                      </div>
+                      <div className="col-start-1 col-span-2 md:col-span-2">
+                        <p>{work.node.teaserDescription}</p>
+                      </div>
+                      <div className="col-start-1 col-span-2 md:col-span-2 md:row-start-2 flex flex-row justify-between">
+                        <div className="self-end">
+                          <span className="text-tertiary-lighter block text-sm">
+                            key facts
                           </span>
-                        <FeatureList items={work.node.features} />
+                          <FeatureList items={work.node.features} />
+                        </div>
+                        <div className="self-end">
+                          {work.node.links.map(({ link, label }, key) =>
+                            <div className="whitespace-no-wrap" key={key}>
+                              <ExternalLink
+                                appearance="primary"
+                                link={link}>
+                                {label}
+                              </ExternalLink>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                      <div className="self-end">
-                        {work.node.links.map(({ link, label }, key) =>
-                          <div className="whitespace-no-wrap" key={key}>
-                            <ExternalLink
-                              appearance="primary"
-                              link={link}>
-                              {label}
-                            </ExternalLink>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                )}
+                    </li>
+                  )}
+                </ul>
               </section>
             )}
           </Tabs>
