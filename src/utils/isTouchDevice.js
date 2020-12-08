@@ -1,1 +1,1 @@
-export default () => window.matchMedia("(pointer: coarse)").matches
+export default () => window && window.matchMedia("(pointer: coarse)").matches

@@ -18,6 +18,8 @@ export default (xRangeMin, xRangeMax, yRangeMin, yRangeMax, isDisabled) => {
   }, [])
 
   useEffect(() => {
+    if (isDisabled) return 
+
     let animationFrameId = null
 
     const xStart = getRandomNumber(xRangeMin, xRangeMax)
