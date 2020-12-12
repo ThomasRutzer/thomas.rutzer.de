@@ -32,8 +32,9 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "start": "npm run develop",
+    "start:build": "gatsby build && gatsby serve",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests!",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master"
