@@ -80,7 +80,7 @@ export default class Intro extends React.Component {
             hay I’m Thomas
               </Title>
           <div ref={this.subline} className="max-w-screen-sm">
-            <p>
+            <p className="relative">
               creative developer who feels most comfortable where sophisticated design meets well structured code.
             </p>
           </div>
