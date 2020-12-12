@@ -30,6 +30,10 @@ class Smear extends React.PureComponent {
     this.preload()
   }
 
+  componentWillUnmount() {
+    this.app.destroy()
+  }
+
   preload() {
     this.app.loader.add("bg", this.props.img)
     this.app.loader.add("brush", displacementMap)
@@ -38,6 +42,7 @@ class Smear extends React.PureComponent {
       this.brushTexture = resources.brush.texture
 
       this.setup()
+      this.props.onReady()
     })
   }
 

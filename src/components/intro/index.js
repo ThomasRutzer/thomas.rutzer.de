@@ -15,7 +15,7 @@ export default class Intro extends React.Component {
     this.bg = React.createRef()
   }
 
-  async componentDidMount() {
+  async startAnimation() {
     const splittedHeadline = Splitting({
       target: this.headline.current,
     })
@@ -70,7 +70,7 @@ export default class Intro extends React.Component {
         style={{ opacity: 0 }}
         ref={this.main}>
         <div ref={this.bg} className="intro__bg">
-          <Portrait imgPath={this.props.imgPath} />
+          <Portrait imgPath={this.props.imgPath} onReady={this.startAnimation.bind(this)} />
         </div>
         <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
           <Title ref={this.headline}>

@@ -8,7 +8,7 @@ import map from "../../utils/map"
 
 const Smear = React.lazy(() => import("../smear"))
 
-const Portrait = ({ imgPath }) => {
+const Portrait = ({ imgPath, onReady }) => {
   const [sufficientConnection, setSufficientConnection] = useState()
   useEffect(() => {
     setSufficientConnection(networkAnalyzer() && !isMobileDevice())
@@ -32,12 +32,13 @@ const Portrait = ({ imgPath }) => {
             </span>
           }
         >
-          <Smear img={imgPath.src} />
+          <Smear img={imgPath.src} onReady={onReady} />
         </Suspense>
       )}
 
       {!sufficientConnection && (
         <Img
+          onLoad={onReady}
           className="w-full h-full"
           alt={"Portrait of Thomas Rutzer"}
           fluid={imgPath} />
