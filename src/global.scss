@@ -20,12 +20,6 @@ body {
   background: theme("colors.grey.darker");
 }
 
-@mixin no-js {
-  .no-js & {
-    @content;
-  }
-}
-
 @import "./pages/index.scss";
 
 @tailwind components;

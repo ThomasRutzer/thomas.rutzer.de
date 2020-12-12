@@ -2,10 +2,6 @@
 
 .intro {
   opacity: 0;
-
-  @include no-js {
-    opacity: 1;
-  }
 }
 
 .intro__title {

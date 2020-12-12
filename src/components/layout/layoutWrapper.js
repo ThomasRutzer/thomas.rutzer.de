@@ -6,21 +6,6 @@ import Footer from "./../footer"
 
 const LayoutWrapper = ({ children }) => (
   <>
-    <Helmet>
-      <script>
-        {
-          (function () {
-            try {
-              if (typeof document !== `undefined`)  {
-                document.documentElement.classList.remove("no-js")
-              }
-            } catch (error) {
-              console.warn(error)
-            }
-          }())
-        }
-      </script>
-    </Helmet>
     {children}
     <Footer />
   </>

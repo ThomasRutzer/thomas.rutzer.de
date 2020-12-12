@@ -38,8 +38,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-html-attributes",
       options: {
-        lang: "en",
-        className: "no-js"
+        lang: "en"
       }
     },
     {
