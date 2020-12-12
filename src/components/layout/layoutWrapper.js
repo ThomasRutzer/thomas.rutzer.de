@@ -11,7 +11,9 @@ const LayoutWrapper = ({ children }) => (
         {
           (function () {
             try {
-              document.documentElement.classList.add("js-enabled")
+              if (typeof document !== `undefined`)  {
+                document.documentElement.classList.add("js-enabled")
+              }
             } catch (error) {
               console.warn(error)
             }
