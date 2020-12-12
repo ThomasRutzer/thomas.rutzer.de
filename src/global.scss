@@ -20,8 +20,8 @@ body {
   background: theme("colors.grey.darker");
 }
 
-@mixin js {
-  .js-enabled & {
+@mixin no-js {
+  .no-js & {
     @content;
   }
 }

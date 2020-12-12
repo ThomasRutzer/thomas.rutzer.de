@@ -36,9 +36,10 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-html-attributes',
+      resolve: "gatsby-plugin-html-attributes",
       options: {
-        lang: 'en'
+        lang: "en",
+        className: "no-js"
       }
     },
     {

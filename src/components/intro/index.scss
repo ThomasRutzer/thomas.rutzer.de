@@ -1,10 +1,10 @@
 @import "./portrait.scss";
 
 .intro {
-  opacity: 1;
+  opacity: 0;
 
-  @include js {
-    opacity: 0;
+  @include no-js {
+    opacity: 1;
   }
 }
 
