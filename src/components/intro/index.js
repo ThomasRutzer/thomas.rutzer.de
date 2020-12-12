@@ -66,8 +66,7 @@ export default class Intro extends React.Component {
   render() {
     return (
       <div
-        className="relative flex items-center overflow-hidden"
-        style={{ opacity: 0 }}
+        className="intro relative flex items-center overflow-hidden"
         ref={this.main}>
         <div ref={this.bg} className="intro__bg">
           <Portrait imgPath={this.props.imgPath} onReady={this.startAnimation.bind(this)} />

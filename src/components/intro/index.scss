@@ -1,5 +1,13 @@
 @import "./portrait.scss";
 
+.intro {
+  opacity: 1;
+
+  @include js {
+    opacity: 0;
+  }
+}
+
 .intro__title {
   margin: 0;
   transform: translate(0, 0);
