@@ -23,7 +23,8 @@ class Smear extends React.PureComponent {
     this.app = new PIXI.Application({
       width: window.innerWidth,
       height: window.innerHeight,
-      view: this.canvas.current
+      view: this.canvas.current,
+      backgroundColor: 0x7c7c7c
     })
 
     this.preload()
