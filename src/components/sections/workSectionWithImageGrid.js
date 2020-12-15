@@ -11,7 +11,7 @@ const WorkSectionWithImageGrid = ({
 }) => {
   const bgClass = classNames({
     "bg-grey-darkest": work.selectedAppearance === "dark",
-    "bg-tertiary": work.selectedAppearance === "tertiary"
+    "bg-secondary": work.selectedAppearance === "secondary"
   })
   return (
     <section className={bgClass}>
@@ -38,14 +38,14 @@ const WorkSectionWithImageGrid = ({
             className="flex md:flex-col justify-between text-sm col-start-1 col-span-6 md:col-span-1 mb-4 md:mb-0">
             <p>
               <span
-                className={`${work.selectedAppearance === "dark" ? "text-tertiary-lighter" : "text-grey-darkest"} block`}>
+                className={`${work.selectedAppearance === "dark" ? "text-secondary-lighter" : "text-grey-darkest"} block`}>
                 first release
               </span>
               <span className="text-grey-lighter">{work.year}</span>
             </p>
             <div>
               <span
-                className={`${work.selectedAppearance === "dark" ? "text-tertiary-lighter" : "text-grey-darkest"} block`}>
+                className={`${work.selectedAppearance === "dark" ? "text-secondary-lighter" : "text-grey-darkest"} block`}>
                 key facts
               </span>
               <FeatureList items={work.features} />

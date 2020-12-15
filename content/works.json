@@ -126,7 +126,7 @@
   },
   {
     "selected": true,
-    "selectedAppearance": "tertiary",
+    "selectedAppearance": "secondary",
     "id": "mntns",
     "title": "Mntns",
     "subTitle": "github data visualisation",

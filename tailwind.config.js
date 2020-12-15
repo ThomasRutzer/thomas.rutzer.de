@@ -13,8 +13,7 @@ module.exports = {
       white: "#fff",
       black: "#1c1c1c",
       grey: { darkest: "#2e2d2d", darker: "#3a3a3a", default: "#E1E2E1", lighter: "#bebebf" },
-      tertiary: { default: "#5551FF", lighter: "#9693ff" },
-      secondary: "#FFC700",
+      secondary: { default: "#5551FF", lighter: "#9693ff" },
       primary: "#FE8477"
     },
     fill: theme => ({

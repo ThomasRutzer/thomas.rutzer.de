@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const InternalLink = ({ children, link }) =>
   <Link
-    className="internal-link text-tertiary-lighter text-sm"
+    className="internal-link text-secondary-lighter text-sm"
     to={link}
     activeClassName="internal-link--active">
     {children}

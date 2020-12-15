@@ -23,11 +23,14 @@ export default ({ data }) => {
           work={work.node}
           key={key} />
       )}
-      <section className="bg-gradient-to-r from-black md:py-4">
+      <section className="md:py-4 bg-black bg-gradient-to-b from-grey-darkest">
         <ContentWrapper>
           <div className="flex flex-col md:flex-row items-center justify-center">
-            <h2 className="text-2xl md:text-4xl md:text-stroke-white md:text-stroke mb-2 md:mb-0 md:mr-4">
-              There is more
+            <h2 className="mb-2 md:mb-0 md:mr-5 md:-mt-6">
+              <span className="text-4xl md:text-6xl md:text-stroke-white md:text-stroke italic md:ml-6 ">
+                There
+              </span>
+            <span className="text-4xl block">is more</span>
             </h2>
             <CtaSecondaryTypeLink link="/project-archive">
               project archive
@@ -55,7 +58,7 @@ export default ({ data }) => {
           </div>
         </ContentWrapper>
       </section>
-      <section className="bg-tertiary">
+      <section className="bg-secondary">
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
@@ -117,7 +120,7 @@ export default ({ data }) => {
               <p className="mb-2 font-bold">images</p>
               {data.allWorksJson.edges.map((work, key) =>
                 <div key={key} className={key === 0 ? "mt-0" : "mt-4"}>
-                  <p className="text-sm text-tertiary-lighter"
+                  <p className="text-sm text-secondary-lighter"
                   >{work.node.title} <i>{work.node.subTitle}</i>
                   </p>
                   <ul>
@@ -234,7 +237,7 @@ export const query = graphql`
           fields {
             workImageAssets {
               childImageSharp {
-                fluid(maxWidth: 320, quality: 90) {
+                fluid(maxWidth: 1080, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

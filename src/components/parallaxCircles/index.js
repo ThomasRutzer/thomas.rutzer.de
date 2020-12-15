@@ -14,7 +14,7 @@ const ParallaxCircles = ({ mouseMoveTranslations = [10, 20, 10, 20] }) => {
 
   return (
     <div className="parallax-circles">
-      <div className="parallax-circles__outer">
+      <div className="parallax-circles__outer bg-primary bg-gradient-to-b from-secondary">
         <div
           style={{
             transform: `translate(${translations.tx}px, ${translations.ty}px)`

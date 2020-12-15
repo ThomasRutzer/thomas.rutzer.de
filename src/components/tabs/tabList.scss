@@ -13,12 +13,12 @@
   }
 
   &--selected { 
-    @apply text-tertiary-lighter;
+    @apply text-secondary-lighter;
   }
 }
 
 .tab-list__icon {
-  fill: theme("colors.tertiary.lighter");
+  fill: theme("colors.secondary.lighter");
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
