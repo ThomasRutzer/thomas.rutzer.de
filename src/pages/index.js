@@ -26,11 +26,11 @@ export default ({ data }) => {
       <section className="md:py-4 bg-black bg-gradient-to-b from-grey-darkest">
         <ContentWrapper>
           <div className="flex flex-col md:flex-row items-center justify-center">
-            <h2 className="mb-2 md:mb-0 md:mr-5 md:-mt-6">
-              <span className="text-4xl md:text-6xl md:text-stroke-white md:text-stroke italic md:ml-6 ">
+            <h2 className="mb-4 md:mb-0 md:mr-5 md:-mt-6">
+              <span className="text-4xl md:text-6xl md:text-stroke-white md:text-stroke italic md:ml-4">
                 There
               </span>
-            <span className="text-4xl block">is more</span>
+            <span className="text-4xl ml-4 md:ml-0 block">is more</span>
             </h2>
             <CtaSecondaryTypeLink link="/project-archive">
               project archive
