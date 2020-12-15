@@ -1,6 +1,5 @@
 import React from "react"
 import "typeface-ibm-plex-mono"
-import { Helmet } from "react-helmet"
 
 import Footer from "./../footer"
 
