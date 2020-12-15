@@ -21,7 +21,6 @@
     "gatsby-transformer-sharp": "^2.5.19",
     "pixi.js": "^5.3.3",
     "react": "^16.14.0",
-    "react-accessible-accordion": "^3.3.3",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.0",
     "react-scroll-percentage": "^4.2.0",
