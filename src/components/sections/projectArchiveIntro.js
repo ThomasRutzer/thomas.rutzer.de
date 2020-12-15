@@ -32,7 +32,7 @@ const ProjectArchiveTitle = () => {
           <h1 className="project-archive-intro__title leading-tight md:my-4">
             <span className="text-sm text-grey-lighter">(Almost all)</span>
             <span className="text-6xl font-bold block">Design <br />& Code</span>
-            <span className="text-5xl text-stroke text-stroke-white block">along the road</span>
+            <span className="text-5xl text-stroke text-stroke-white block italic">along the road</span>
           </h1>
         </ContentWrapper>
 
