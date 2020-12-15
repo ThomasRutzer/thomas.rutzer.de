@@ -37,14 +37,14 @@ export default ({ data }) => {
                         <h2 className="text-3xl md:text-4xl -mt-2">{work.node.title}</h2>
                       </div>
                       <div className="col-start-2 col-span-1 row-start-2 self-end">
-                        <h3 className="text-tertiary-lighter">{work.node.subTitle}</h3>
+                        <h3 className="text-secondary-lighter">{work.node.subTitle}</h3>
                       </div>
                       <div className="col-start-1 col-span-2 md:col-span-2">
                         <p>{work.node.teaserDescription}</p>
                       </div>
                       <div className="col-start-1 col-span-2 md:col-span-2 md:row-start-2 flex flex-row justify-between">
                         <div className="self-end">
-                          <span className="text-tertiary-lighter block text-sm">
+                          <span className="text-secondary-lighter block text-sm">
                             key facts
                           </span>
                           <FeatureList items={work.node.features} />
@@ -78,7 +78,7 @@ export default ({ data }) => {
                 <p className="mb-2 font-bold">teaser images</p>
                 {data.allWorksJson.group.map((group, groupKey) =>
                   <ul key={groupKey} className="text-sm">
-                    <li className="text-tertiary-lighter mb-1">
+                    <li className="text-secondary-lighter mb-1">
                       {group.edges[0].node.year}
                     </li>
                     {group.edges.map((work, key) =>
