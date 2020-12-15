@@ -4,6 +4,7 @@
   "description": "Hello! I am creative developer Thomas Rutzer",
   "version": "0.1.0",
   "author": "Thomas Rutzer <thomas@rutzer.de>",
+  "browserslist": "> 1% or last 2 versions",
   "dependencies": {
     "animejs": "^3.2.1",
     "classnames": "^2.2.6",
