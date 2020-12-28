@@ -18,7 +18,7 @@ const Seo = ({ title = null, description = null, image = null }) => (
     `}
     render={({
       site: {
-        siteMetadata: { defaultTitle, defaultDescription, defaultImage },
+        siteMetadata: { defaultTitle, defaultDescription, defaultImage, url },
       },
     }) => {
       const seo = {
@@ -33,7 +33,7 @@ const Seo = ({ title = null, description = null, image = null }) => (
             <meta name="description" content={seo.description} />
             <meta property="og:title" content={seo.title} />
             <meta property="og:description" content={seo.description} />
-            <meta property="og:image" content={seo.image} />
+            <meta property="og:image" content={`${seo.url}${seo.image}`} />
             <meta property="og:url" content={seo.url} />
             <meta name="twitter:card" content="summary_large_image" />
           </Helmet>
