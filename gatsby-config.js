@@ -4,7 +4,9 @@ module.exports = {
   pathPrefix: "/",
   siteMetadata: {
     title: "thomas rutzer — creative developer and foo/bar",
-    description: "I’m thomas rutzer, leading JavaScript developer with focus on unique interfaces and interactions"
+    description: "I’m thomas rutzer, leading JavaScript developer with focus on unique interfaces and interactions",
+    image: `${__dirname}/src/images/seo/seo-default.jpg`,
+    url: "https://thomasrutzer.github.io"
   },
   plugins: [
     {
