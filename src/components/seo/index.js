@@ -33,8 +33,8 @@ const Seo = ({ title = null, description = null, image = null }) => (
             <meta name="description" content={seo.description} />
             <meta property="og:title" content={seo.title} />
             <meta property="og:description" content={seo.description} />
-            <meta property="og:image" content={`${seo.url}${seo.image}`} />
-            <meta property="og:url" content={seo.url} />
+            <meta property="og:image" content={`${url}${seo.image}`} />
+            <meta property="og:url" content={url} />
             <meta name="twitter:card" content="summary_large_image" />
           </Helmet>
         </>
