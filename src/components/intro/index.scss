@@ -1,7 +1,9 @@
 @import "./portrait.scss";
 
 .intro {
-  opacity: 0;
+  html:not(.no-js) & {
+    opacity: 0;
+  }
 }
 
 .intro__title {

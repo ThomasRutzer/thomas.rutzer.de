@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Intro from "../components/intro"
-import Seo from "../components/seo"
+import HeadInfos from "../components/headInfos"
 import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import { ExternalLink } from "../components/links"
 import { SectionTitle, WorkSectionWithImageGrid } from "./../components/sections"
@@ -11,7 +11,7 @@ import { CtaSecondaryTypeLink } from "./../components/cta"
 export default ({ data }) => {
   return (
     <LayoutWrapper>
-      <Seo />
+      <HeadInfos />
       <Intro imgPath={data.portrait.childImageSharp.fluid} />
       <ContentWrapper
         verticalSpacing={false}

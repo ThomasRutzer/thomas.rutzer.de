@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import anime from "animejs"
 
-import Seo from "../components/seo"
+import HeadInfos from "../components/headInfos"
 import SlotMachine from "react-slot-machine"
 import { ContentWrapper, LayoutWrapper } from "../components/layout"
 import { InternalLink } from "../components/links"
@@ -40,7 +40,7 @@ export default () => {
 
   return (
     <>
-      <Seo title="404 — Too bad" />
+      <HeadInfos title="404 — Too bad" />
       <LayoutWrapper>
         <PageHeader title="404 — Too bad" />
         <section className="bg-gradient-to-r from-black">

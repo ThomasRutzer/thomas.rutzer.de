@@ -3,14 +3,14 @@ import { graphql } from "gatsby"
 
 import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import PageHeader from "../components/pageHeader"
-import Seo from "../components/seo"
+import HeadInfos from "../components/headInfos"
 
 export default function Template({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <>
-      <Seo title={frontmatter.title} />
+      <HeadInfos title={frontmatter.title} />
       <LayoutWrapper>
         <PageHeader title={frontmatter.title} />
         <ContentWrapper>

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Seo from "../components/seo"
+import HeadInfos from "../components/headInfos"
 import { ContentWrapper, LayoutWrapper } from "../components/layout"
 import { ExternalLink } from "../components/links"
 import FeatureList from "../components/featureList"
@@ -13,7 +13,7 @@ import ProjectArchiveIntro from "../components/sections/projectArchiveIntro"
 export default ({ data }) => {
   return (
     <>
-      <Seo title="thomas rutzer – project archive" />
+      <HeadInfos title="thomas rutzer – project archive" />
       <LayoutWrapper>
         <ProjectArchiveIntro />
         <ContentWrapper>
