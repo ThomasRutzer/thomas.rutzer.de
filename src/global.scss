@@ -20,6 +20,10 @@ body {
   background: theme("colors.grey.darker");
 }
 
+.no-js .no-js\:hidden {
+  display: none;
+}
+
 @import "./pages/index.scss";
 
 @tailwind components;

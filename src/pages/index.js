@@ -23,7 +23,7 @@ export default ({ data }) => {
           work={work.node}
           key={key} />
       )}
-      <section className="md:py-4 bg-black bg-gradient-to-b from-grey-darkest">
+      <section className="no-js:hidden md:py-4 bg-black bg-gradient-to-b from-grey-darkest">
         <ContentWrapper>
           <div className="flex flex-col md:flex-row items-center justify-center">
             <h2 className="mb-4 md:mb-0 md:mr-5 md:-mt-6">
