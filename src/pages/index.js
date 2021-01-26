@@ -72,7 +72,7 @@ export default ({ data }) => {
                 In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions, mostly with full-stack JavaScript and MQTT based realtime communication.
               </p>
               <p className="mt-4">
-                My personal research focus at the moment is blending interfaces into spaces with the new WebXR Device API.
+                Personally, I do everything possible with Javascript. My research focus at the moment is blending interfaces into spaces with the new WebXR Device API.
               </p>
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
