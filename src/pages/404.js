@@ -1,12 +1,11 @@
 import React, { useRef, useState } from "react"
 import anime from "animejs"
+import SlotMachine from "react-slot-machine"
 
 import HeadInfos from "../components/headInfos"
-import SlotMachine from "react-slot-machine"
 import { ContentWrapper, LayoutWrapper } from "../components/layout"
 import { InternalLink } from "../components/links"
 import { CtaSecondaryTypeButton } from "./../components/cta"
-import PageHeader from "../components/pageHeader"
 
 export default () => {
   const slotMachineRef = useRef()
@@ -42,30 +41,27 @@ export default () => {
     <>
       <HeadInfos title="404 — Too bad" />
       <LayoutWrapper>
-        <PageHeader title="404 — Too bad" />
         <section className="bg-gradient-to-r from-black">
-          <ContentWrapper>
-            <div className="flex flex-col h-screen">
-              <SlotMachine
-                symbols={["0", "1", "2", "3", "4"]}
-                ref={slotMachineRef}
-                initialSymbols={["4", "0", "4"]}
-                onSpinningEnd={res => onSpinningEnd(res)}
-                symbolEvaluatedStyleClass="text-white"
-                symbolDefaultStyleClass="text-stroke text-stroke-white transition-colors duration-700" />
-              <div className="flex justify-center mt-3 md:mt-6">
-                <CtaSecondaryTypeButton
-                  disabled={isSpinning}
-                  onClick={onStartSpinning}>
-                  Spin to Win!
+          <ContentWrapper additionalClasses="flex flex-col h-screen">
+            <SlotMachine
+              symbols={["0", "1", "2", "3", "4"]}
+              ref={slotMachineRef}
+              initialSymbols={["4", "0", "4"]}
+              onSpinningEnd={res => onSpinningEnd(res)}
+              symbolEvaluatedStyleClass="text-white"
+              symbolDefaultStyleClass="text-stroke text-stroke-white transition-colors duration-700" />
+            <div className="flex justify-center mt-3 md:mt-6">
+              <CtaSecondaryTypeButton
+                disabled={isSpinning}
+                onClick={onStartSpinning}>
+                Spin to Win!
               </CtaSecondaryTypeButton>
-              </div>
-              <div className="mt-4 text-center">
-                <p>
-                  I couldn't find what you were looking for. <br></br>Go&nbsp;
+            </div>
+            <div className="mt-4 text-center">
+              <p>
+                I couldn't find what you were looking for. <br></br>Go&nbsp;
               <InternalLink link="/">home</InternalLink> or try your luck.
               </p>
-              </div>
             </div>
           </ContentWrapper>
         </section>
