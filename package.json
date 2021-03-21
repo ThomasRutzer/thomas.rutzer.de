@@ -16,7 +16,7 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.0",
     "react-scroll-percentage": "^4.2.0",
-    "react-slot-machine": "github:thomasrutzer/react-slot-machine",
+    "react-slot-machine": "github:thomasrutzer/react-slot-machine#v1.0.3",
     "react-tabs": "^3.1.1",
     "splitting": "^1.0.6",
     "tailwindcss": "^1.9.5",
