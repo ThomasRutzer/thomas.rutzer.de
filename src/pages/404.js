@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import anime from "animejs"
 import SlotMachine from "react-slot-machine"
 
@@ -9,17 +9,29 @@ import { CtaSecondaryTypeButton } from "./../components/cta"
 
 export default () => {
   const slotMachineRef = useRef()
+  const fadeContainerRef = useRef()
   const [isSpinning, setIsSpinning] = useState(true)
+
+  useEffect(() => {
+    anime({
+      targets: fadeContainerRef.current,
+      duration: 700,
+      opacity: 1,
+      easing: "easeInOutQuad",
+      complete: () => {
+        onStartSpinning()
+      }
+    })
+  }, [])
 
   const onStartSpinning = () => {
     slotMachineRef.current.spin()
     setIsSpinning(true)
   }
 
-  const onSpinningEnd = res => {
-    setIsSpinning(false)
+  const onSpinningEnd = isJackpot => {
 
-    if (res) {
+    if (isJackpot) {
       anime({
         targets: document.body,
         duration: 1200,
@@ -32,8 +44,11 @@ export default () => {
         easing: "easeInOutQuad",
         complete() {
           document.body.removeAttribute("style")
-        },
+          setIsSpinning(false)
+        }
       })
+    } else {
+      setIsSpinning(false)
     }
   }
 
@@ -43,13 +58,21 @@ export default () => {
       <LayoutWrapper>
         <section className="bg-gradient-to-r from-black">
           <ContentWrapper additionalClasses="flex flex-col h-screen">
-            <SlotMachine
-              symbols={["0", "1", "2", "3", "4"]}
-              ref={slotMachineRef}
-              initialSymbols={["4", "0", "4"]}
-              onSpinningEnd={res => onSpinningEnd(res)}
-              symbolEvaluatedStyleClass="text-white"
-              symbolDefaultStyleClass="text-stroke text-stroke-white transition-colors duration-700" />
+            <div
+              ref={fadeContainerRef}
+              style={{
+                height: "100%",
+                width: "100%",
+                opacity: 0
+              }}>
+              <SlotMachine
+                symbols={["0", "1", "2", "3", "4"]}
+                ref={slotMachineRef}
+                initialSymbols={["4", "0", "4"]}
+                onSpinningEnd={isJackpot => onSpinningEnd(isJackpot)}
+                symbolEvaluatedStyleClass="text-white"
+                symbolDefaultStyleClass="text-stroke text-stroke-white transition-colors duration-700" />
+            </div>
             <div className="flex justify-center mt-3 md:mt-6">
               <CtaSecondaryTypeButton
                 disabled={isSpinning}
