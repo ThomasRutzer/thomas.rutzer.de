@@ -1,9 +1,9 @@
-import React from 'react'
-import anime from 'animejs'
-import Splitting from 'splitting'
+import React from "react"
+import anime from "animejs"
+import Splitting from "splitting"
 
-import Title from './title'
-import Portrait from './portrait'
+import Title from "./title"
+import Portrait from "./portrait"
 
 export default class Intro extends React.Component {
   constructor(props) {
@@ -16,6 +16,8 @@ export default class Intro extends React.Component {
   }
 
   async startAnimation() {
+    if (!this.headline.current) return
+
     const splittedHeadline = Splitting({
       target: this.headline.current,
     })
@@ -31,11 +33,11 @@ export default class Intro extends React.Component {
         targets: this.bg.current,
         opacity: [0, 1],
         keyframes: [
-          { clipPath: 'inset(0)' },
-          { clipPath: 'inset(32px)' }
+          { clipPath: "inset(0)" },
+          { clipPath: "inset(32px)" }
         ],
         duration: 2000,
-        easing: 'easeInOutExpo'
+        easing: "easeInOutExpo"
       })
       .add({
         targets: this.headline.current,
@@ -45,19 +47,19 @@ export default class Intro extends React.Component {
       .add({
         targets: splittedHeadline[0].chars,
         rotate: [20, 0],
-        translateY: ['100%', 0],
+        translateY: ["100%", 0],
         opacity: [0, 1],
         duration: 2700,
         delay: anime.stagger(20, {}),
-        easing: 'easeInOutExpo',
-      }, '-=1200')
+        easing: "easeInOutExpo",
+      }, "-=1200")
       .add({
         targets: this.subline.current,
         opacity: [0, 1],
-        'translateY': [20, 0],
+        "translateY": [20, 0],
         duration: 1000,
-        easing: 'easeOutQuad',
-      }, '-=1600')
+        easing: "easeOutQuad",
+      }, "-=1600")
 
     tl.play()
   }
