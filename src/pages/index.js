@@ -12,7 +12,7 @@ const PageHome = ({ data }) => {
   return (
     <LayoutWrapper>
       <HeadInfos />
-      <Intro imgPath={data.portrait.childImageSharp.fluid} />
+      <Intro />
       <ContentWrapper
         verticalSpacing={false}
         additionalClasses="pt-4 md:pt-7">
@@ -193,13 +193,6 @@ const PageHome = ({ data }) => {
 
 export const query = graphql`
   query {
-    portrait: file(relativePath: { eq: "me.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
     allWritesJson {
       edges {
         node {
@@ -237,9 +230,12 @@ export const query = graphql`
           fields {
             workImageAssets {
               childImageSharp {
-                fluid(maxWidth: 1080, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(
+                  layout: CONSTRAINED,
+                  width: 1080,
+                  placeholder: BLURRED,
+                  quality: 90
+                )
               }
             }
           }

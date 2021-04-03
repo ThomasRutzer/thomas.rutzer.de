@@ -24,6 +24,7 @@ module.exports = {
       },
     },
     "gatsby-transformer-json",
+    `gatsby-plugin-image`,
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-transformer-remark",
@@ -41,7 +42,7 @@ module.exports = {
       resolve: "gatsby-plugin-html-attributes",
       options: {
         lang: "en",
-        class: "no-js"
+        className: "no-js"
       }
     },
     {

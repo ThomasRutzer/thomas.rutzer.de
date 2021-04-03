@@ -24,15 +24,15 @@ const ImageGrid = ({ appearance, title, subtitle, images = [] }) => {
         <h4>{subtitle}</h4>
       </div>
       <div className="grid grid-cols-6 lg:grid-rows-3 lg:gap-5 lg:h-screen">
-        {images.map((image, key) =>
+        {images.map(({ gatsbyImageData, alt, fit, tiles }, key) =>
           <Image
             appearance={appearance}
             key={key}
             index={key}
-            src={image.src}
-            alt={image.alt}
-            fit={image.fit}
-            tiles={image.tiles}
+            gatsbyImageData={gatsbyImageData}
+            alt={alt}
+            fit={fit}
+            tiles={tiles}
             offsetX={translations.tx}
             offsetY={translations.ty} />
         )}
