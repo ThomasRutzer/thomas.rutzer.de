@@ -66,7 +66,7 @@ const PageHome = ({ data }) => {
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
               <p>
-                I'm a leading JavaScript developer with a focus on unique interfaces and interactions, currently working at <ExternalLink link={"https://artcom.de"} appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
+                I'm a leading JavaScript developer with a focus on unique interfaces and interactions, currently working at <ExternalLink link="https://artcom.de" appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
               </p>
               <p className="mt-4">
                 In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions, mostly with full-stack JavaScript and MQTT based realtime communication.
@@ -82,7 +82,7 @@ const PageHome = ({ data }) => {
                     <ExternalLink
                       additionalClasses="whitespace-no-wrap"
                       appearance="primary"
-                      link={"twitter.com/thomasrutzer"}
+                      link="twitter.com/thomasrutzer"
                       size="large">
                       twitter
                 </ExternalLink>
@@ -91,7 +91,7 @@ const PageHome = ({ data }) => {
                     <ExternalLink
                       additionalClasses="whitespace-no-wrap"
                       appearance="primary"
-                      link={"mailto:thomas@rutzer.de"}
+                      link="mailto:thomas@rutzer.de"
                       size="large">
                       mail
                 </ExternalLink>
@@ -100,7 +100,7 @@ const PageHome = ({ data }) => {
                     <ExternalLink
                       additionalClasses="whitespace-no-wrap"
                       appearance="primary"
-                      link={"https://github.com/ThomasRutzer"}
+                      link="https://github.com/ThomasRutzer"
                       size="large">
                       github
                 </ExternalLink></div>
@@ -149,35 +149,35 @@ const PageHome = ({ data }) => {
               <ul>
                 <li>
                   <ExternalLink
-                    link={"https://www.gatsbyjs.org/"}
+                    link="https://www.gatsbyjs.org/"
                     size="small">
                     Gatsby.js
               </ExternalLink>
                 </li>
                 <li>
                   <ExternalLink
-                    link={"https://tailwindcss.com/"}
+                    link="https://tailwindcss.com/"
                     size="small">
                     Tailwind.css
                   </ExternalLink>
                 </li>
                 <li>
                   <ExternalLink
-                    link={"https://animejs.com/"}
+                    link="https://animejs.com/"
                     size="small">
                     anime.js
                   </ExternalLink>
                 </li>
                 <li>
                   <ExternalLink
-                    link={"https://github.com/features/actions"}
+                    link="https://github.com/features/actions"
                     size="small">
                     Github actions
               </ExternalLink>
                 </li>
                 <li>
                   <ExternalLink
-                    link={"https://fonts.google.com/specimen/IBM+Plex+Mono"}
+                    link="https://fonts.google.com/specimen/IBM+Plex+Mono"
                     size="small">
                     IBM Plex Mono
               </ExternalLink>
