@@ -7,7 +7,7 @@ import { ContentWrapper, LayoutWrapper } from "../components/layout"
 import { InternalLink } from "../components/links"
 import { CtaSecondaryTypeButton } from "./../components/cta"
 
-export default () => {
+const Page404 = () => {
   const slotMachineRef = useRef()
   const fadeContainerRef = useRef()
   const [isSpinning, setIsSpinning] = useState(true)
@@ -92,3 +92,5 @@ export default () => {
     </>
   )
 }
+
+export default Page404

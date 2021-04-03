@@ -10,7 +10,7 @@ import Tabs from "../components/tabs"
 import SectionTitle from "../components/sections/sectionTitle"
 import ProjectArchiveIntro from "../components/sections/projectArchiveIntro"
 
-export default ({ data }) => {
+const PageProjectArchive = ({ data }) => {
   return (
     <>
       <HeadInfos title="thomas rutzer – project archive" />
@@ -150,3 +150,5 @@ query {
   }
 }
 `
+
+export default PageProjectArchive

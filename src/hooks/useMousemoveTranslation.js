@@ -5,7 +5,7 @@ import getRandomNumber from "./../utils/getRandomNumber"
 import lerp from "./../utils/lerp"
 import map from "./../utils/map"
 
-export default (xRangeMin, xRangeMax, yRangeMin, yRangeMax, isDisabled) => {
+const useMouseMoveTranslation = (xRangeMin, xRangeMax, yRangeMin, yRangeMax, isDisabled) => {
   const [tx, setTx] = useState(null)
   const [ty, setTy] = useState(null)
   const mouseY = useRef(null)
@@ -51,3 +51,5 @@ export default (xRangeMin, xRangeMax, yRangeMin, yRangeMax, isDisabled) => {
 
   return {tx, ty}
 }
+
+export default useMouseMoveTranslation

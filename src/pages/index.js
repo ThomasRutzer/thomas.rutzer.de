@@ -8,7 +8,7 @@ import { ExternalLink } from "../components/links"
 import { SectionTitle, WorkSectionWithImageGrid } from "./../components/sections"
 import { CtaSecondaryTypeLink } from "./../components/cta"
 
-export default ({ data }) => {
+const PageHome = ({ data }) => {
   return (
     <LayoutWrapper>
       <HeadInfos />
@@ -248,3 +248,5 @@ export const query = graphql`
     }
   }
 `
+
+export default PageHome

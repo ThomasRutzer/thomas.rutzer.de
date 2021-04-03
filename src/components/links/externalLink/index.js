@@ -1,7 +1,7 @@
 import React, { useMemo } from "react"
 import classnames from "classnames"
 
-export default ({ additionalClasses = "", children, link, appearance, size }) => {
+const ExternalLink = ({ additionalClasses = "", children, link, appearance, size }) => {
   const createSizeClass = useMemo(() => classnames({ 
     "external-link--large text-3xl md:text-5xl": size === "large",
     "external-link--small text-sm": size === "small"  
@@ -35,3 +35,5 @@ export default ({ additionalClasses = "", children, link, appearance, size }) =>
     </a>
   )
 }
+
+export default ExternalLink

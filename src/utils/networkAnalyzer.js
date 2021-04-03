@@ -1,1 +1,3 @@
-export default () => navigator.connection && navigator.connection.type !== 'cellular'
+const networkAnalyzer = () => navigator.connection && navigator.connection.type !== "cellular"
+
+export default networkAnalyzer

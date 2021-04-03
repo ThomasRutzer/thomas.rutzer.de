@@ -3,7 +3,7 @@ import React from "react"
 import { ContentWrapper } from "../layout"
 import { InternalLink } from "./../links"
 
-export default ({ title }) => (
+const PageHeader = ({ title }) => (
   <header className="bg-grey-darkest-pattern">
     <ContentWrapper verticalSpacing={false}>      
     <ul className="py-2">
@@ -33,3 +33,5 @@ export default ({ title }) => (
     </ContentWrapper>
   </header>
 )
+
+export default PageHeader
