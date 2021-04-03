@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react"
+import React, { useMemo, useState } from "react"
 
 import Image from "./image"
 import { useMousemoveTranslation } from "./../../hooks"
@@ -8,17 +8,17 @@ const ImageGrid = ({ appearance, title, subtitle, images = [] }) => {
   const [disableImgTranslations, setDisableImgTranslations] = useState(true)
   const translations = useMousemoveTranslation(10, 20, 10, 20, disableImgTranslations)
 
-  const isTouch = typeof window === "undefined" ? false : isTouchDevice()
-  const mouseEvents = useCallback({
-    onMouseEnter: !isTouch ? () => setDisableImgTranslations(false) : null,
-    onMouseLeave: !isTouch ? () => setDisableImgTranslations(true) : null
-  }, [isTouch])
+  const mouseEvents = useMemo(() => {
+    const isTouch = typeof window === "undefined" ? false : isTouchDevice()
+
+    return {
+      onMouseEnter: !isTouch ? () => setDisableImgTranslations(false) : null,
+      onMouseLeave: !isTouch ? () => setDisableImgTranslations(false) : null
+    }
+  }, [])
 
   return (
-    <div
-      className="relative"
-      {...mouseEvents}
-    >
+    <div className="relative"  {...mouseEvents}>
       <div className={`flex items-center justify-center flex-col  lg:absolute lg:w-full lg:h-full z-10 mb-6 pointer-events-none`}>
         <h3 className="text-4xl md:text-6xl md:text-stroke-white md:text-stroke-2 italic">{title}</h3>
         <h4>{subtitle}</h4>
