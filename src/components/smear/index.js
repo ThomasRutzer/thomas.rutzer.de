@@ -1,6 +1,8 @@
 import React from "react"
 import * as PIXI from "pixi.js"
-import displacementMap from "./../../images/displacement.png"
+
+import displacementMapPath from "./../../images/displacement.png"
+import imagePath from "./../../images/me.jpg"
 
 PIXI.utils.skipHello()
 
@@ -35,8 +37,8 @@ class Smear extends React.PureComponent {
   }
 
   preload() {
-    this.app.loader.add("bg", this.props.img)
-    this.app.loader.add("brush", displacementMap)
+    this.app.loader.add("bg", imagePath)
+    this.app.loader.add("brush", displacementMapPath)
     this.app.loader.load((loader, resources) => {
       this.bgTexture = resources.bg.texture
       this.brushTexture = resources.brush.texture
