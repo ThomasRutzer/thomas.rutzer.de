@@ -6,9 +6,7 @@ import { ExternalLink } from "./../links"
 import ImageGrid from "./../imageGrid"
 import FeatureList from "./../featureList"
 
-const WorkSectionWithImageGrid = ({
-  work
-}) => {
+const WorkSectionWithImageGrid = ({ work }) => {
   const bgClass = classNames({
     "bg-grey-darkest": work.selectedAppearance === "dark",
     "bg-secondary": work.selectedAppearance === "secondary"
@@ -23,7 +21,7 @@ const WorkSectionWithImageGrid = ({
         <ImageGrid
           appearance={work.selectedAppearance === "dark" ? "light" : "dark"}
           images={work.images.map((image, key) => ({
-            src: work.fields.workImageAssets[key],
+            gatsbyImageData: work.fields.workImageAssets[key].childImageSharp.gatsbyImageData,
             alt: image.alt,
             tiles: image.grid.tiles,
             mobileRow: image.grid.mobileRow,

@@ -1,8 +1,9 @@
 import React, { useMemo } from "react"
 import classnames from "classnames"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-const Image = ({ src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0 }) => {
+const Image = ({ gatsbyImageData, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0 }) => {
+  console.log(gatsbyImageData);
   const createTilesClasses = useMemo(() => classnames({
     [`col-start-${index % 2 === 0 ? "1" : "2"} col-span-5`]: true,
     [`lg:col-start-${tiles[0][0]}`]: true,
@@ -23,12 +24,12 @@ const Image = ({ src, alt, fit = "cover", tiles, index, offsetX = 0, offsetY = 0
         flex items-center flex-col
         transition-transform duration-1000 ease-out`
       }>
-      <Img
+      <GatsbyImage
         className="w-full"
         imgStyle={{
           "objectFit": fit
         }}
-        fluid={src.childImageSharp.fluid}
+        image={gatsbyImageData}
         alt={alt} />
       <figcaption 
         className={
