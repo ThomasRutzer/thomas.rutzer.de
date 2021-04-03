@@ -59,7 +59,6 @@ export default class Intro extends React.Component {
         easing: 'easeOutQuad',
       }, '-=1600')
 
-
     tl.play()
   }
 
