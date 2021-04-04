@@ -6,13 +6,13 @@ exports.onCreateNode = ({ node, actions }) => {
   if (node.internal.type === "WorksJson") {
     createNodeField({
       node,
-      name: `workImageAssets`, 
+      name: `workImageAssets`,
       value: node.images.map(image => `./../src/images/works/${node.id}/${image.src}`)
     })
 
     createNodeField({
       node,
-      name: `teaserImageAsset`, 
+      name: `teaserImageAsset`,
       value: `./../src/images/works/${node.id}/${node.teaserImage.src}`
     })
   }
@@ -59,8 +59,28 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: contentTemplate,
-        context: {}, 
+        context: {},
       })
     })
   })
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    CollectionsJson: {
+      includedWorks: {
+        type: ["WorksJson"],
+        resolve(source, args, context) {
+          return context.nodeModel.runQuery({
+            query: {
+              filter: {id: { in: source.includes }}
+            },
+            type: "WorksJson",
+            firstOnly: false,
+          })
+        },
+      },
+    },
+  }
+  createResolvers(resolvers)
 }

@@ -1,0 +1,8 @@
+[
+  {
+    "id": "webgl-experiments",
+    "title": "WebGL experiments",
+    "selected": true,
+    "includes": ["schere-stein-papier", "mntns"]
+  }
+]
