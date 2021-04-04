@@ -1,13 +1,12 @@
 import React, { Suspense, useEffect, useState } from "react"
 import { useScrollPercentage } from "react-scroll-percentage"
-import { StaticImage } from "gatsby-plugin-image"
 
+import imgAsset from  "./../../images/me.jpg"
 import networkAnalyzer from "../../utils/networkAnalyzer"
 import isMobileDevice from "../../utils/isMobileDevice"
 import map from "../../utils/map"
 
 const Smear = React.lazy(() => import("../smear"))
-const imgPath = "./../../images/me.jpg"
 
 const Portrait = ({ onReady }) => {
   const [sufficientConnection, setSufficientConnection] = useState()
@@ -38,13 +37,11 @@ const Portrait = ({ onReady }) => {
       )}
 
       {!sufficientConnection && (
-        <StaticImage
-          loading="eager"
-          layout="fullWidth"
+        <img
           onLoad={onReady}
-          className="w-full h-full"
+          className="w-full h-full object-cover"
           alt="Portrait of Thomas Rutzer"
-          src={imgPath} />
+          src={imgAsset} />
       )}
     </div>
   )
