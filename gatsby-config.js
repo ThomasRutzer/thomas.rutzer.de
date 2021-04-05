@@ -10,21 +10,21 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `images`),
+        name: "images",
+        path: path.join(__dirname, "src", "images"),
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content/`,
         name: "markdown-pages",
       },
     },
     "gatsby-transformer-json",
-    `gatsby-plugin-image`,
+    "gatsby-plugin-image",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-transformer-remark",
@@ -37,7 +37,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-html-attributes",
       options: {
@@ -46,7 +46,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: "thomas rutzer — creative javascript developer and foo/bar",
         short_name: "thomas rutzer — creative javascript developer and foo/bar",
