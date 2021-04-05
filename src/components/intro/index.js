@@ -1,36 +1,35 @@
-import React from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import anime from "animejs"
 import Splitting from "splitting"
 
 import Title from "./title"
 import Portrait from "./portrait"
 
-export default class Intro extends React.Component {
-  constructor(props) {
-    super(props)
+const Intro = () => {
+  const [contentAnimatedIn, setContentAnimatedIn] = useState(false)
+  const headline = useRef()
+  const main = useRef()
+  const subline = useRef()
+  const bg = useRef()
 
-    this.headline = React.createRef()
-    this.main = React.createRef()
-    this.subline = React.createRef()
-    this.bg = React.createRef()
-  }
+  const startAnimation = useCallback(() => {
+    if (contentAnimatedIn) return
 
-  async startAnimation() {
-    if (!this.headline.current) return
+    setContentAnimatedIn(true)
 
     const splittedHeadline = Splitting({
-      target: this.headline.current,
+      target: headline.current,
     })
     const tl = anime.timeline()
 
     tl
       .add({
-        targets: this.main.current,
+        targets: main.current,
         opacity: [0, 1],
         duration: 0
       })
       .add({
-        targets: this.bg.current,
+        targets: bg.current,
         opacity: [0, 1],
         keyframes: [
           { clipPath: "inset(0)" },
@@ -40,7 +39,7 @@ export default class Intro extends React.Component {
         easing: "easeInOutExpo"
       })
       .add({
-        targets: this.headline.current,
+        targets: headline.current,
         opacity: [0, 1],
         duration: 0,
       }, "-=300")
@@ -54,7 +53,7 @@ export default class Intro extends React.Component {
         easing: "easeInOutExpo",
       }, "-=1200")
       .add({
-        targets: this.subline.current,
+        targets: subline.current,
         opacity: [0, 1],
         "translateY": [20, 0],
         duration: 1000,
@@ -62,27 +61,31 @@ export default class Intro extends React.Component {
       }, "-=1600")
 
     tl.play()
-  }
+  }, [contentAnimatedIn])
 
-  render() {
-    return (
-      <div
-        className="intro relative flex items-center overflow-hidden"
-        ref={this.main}>
-        <div ref={this.bg} className="intro__bg">
-          <Portrait onReady={this.startAnimation.bind(this)} />
-        </div>
-        <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
-          <Title ref={this.headline}>
-            hay I’m Thomas
-              </Title>
-          <div ref={this.subline} className="max-w-screen-sm">
-            <p className="relative text-xl md:text-3xl">
-              creative developer who feels most comfortable where sophisticated design meets well structured code.
-            </p>
-          </div>
+  useEffect(() => {
+    startAnimation()
+  }, [startAnimation])
+
+  return (
+    <div
+      className="intro relative flex items-center overflow-hidden"
+      ref={main}>
+      <div ref={bg} className="intro__bg">
+        <Portrait onReady={startAnimation} />
+      </div>
+      <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
+        <Title ref={headline}>
+          hay I’m Thomas
+            </Title>
+        <div ref={subline} className="max-w-screen-sm">
+          <p className="relative text-xl md:text-3xl">
+            creative developer who feels most comfortable where sophisticated design meets well structured code.
+          </p>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
+
+export default Intro
