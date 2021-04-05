@@ -1,12 +1,30 @@
 .internal-link {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    bottom: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    opacity: 0;
+    border: 1px dashed theme("colors.text-secondary.lighter");
+    transition: opacity 400ms ease-out;
+    @apply rounded-md;
+  }
+
   &:hover:not(:focus), &--active {
     text-decoration: underline;
     text-underline-position: under;
   }
 
   &:focus {
-    text-decoration-style: dashed;
-    outline: 1px dashed currentColor;
+    outline: 0;
+
+    &:after {
+      opacity: 1;
+    }
   }
 
   &:active {

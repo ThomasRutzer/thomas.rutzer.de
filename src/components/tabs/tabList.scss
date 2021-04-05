@@ -1,15 +1,33 @@
 .tab-list__item {
+  position: relative;
   display: inline-block;
   cursor: pointer;
   @apply mr-2;
   transition: color 300ms;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    bottom: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    opacity: 0;
+    border: 1px dashed currentColor;
+    transition: opacity 400ms ease-out;
+    @apply rounded-md;
+  }
 
   &:last-child {
     @apply mr-0;
   }
 
   &:focus {
-    outline: 2px dashed currentColor;
+    outline: 0;
+
+    &:after {
+      opacity: 1;
+    }
   }
 
   &--selected { 

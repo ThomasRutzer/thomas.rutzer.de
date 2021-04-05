@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react"
 import { useScrollPercentage } from "react-scroll-percentage"
 
-import imgAsset from  "./../../images/me.jpg"
+import imgAsset from "./../../images/me.jpg"
 import networkAnalyzer from "../../utils/networkAnalyzer"
 import isMobileDevice from "../../utils/isMobileDevice"
 import map from "../../utils/map"
@@ -21,7 +21,7 @@ const Portrait = ({ onReady }) => {
   return (
     <div
       ref={ref}
-      className="portrait"
+      className="portrait rounded-xl overflow-hidden w-full h-full"
       style={{ opacity: Math.min(1, 1 - map(percentage, .5, 1, 0, 1)) }}>
       {sufficientConnection && (
         <Suspense
