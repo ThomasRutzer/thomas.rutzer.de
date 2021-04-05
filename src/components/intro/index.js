@@ -34,7 +34,7 @@ const Intro = () => {
         opacity: [0, 1],
         keyframes: [
           { clipPath: "inset(0)", padding: 0 },
-          { clipPath: "inset(32px)", padding: 32 }
+          { clipPath: "inset(32px)", padding: "32px" }
         ],
         duration: 2000,
         easing: "easeInOutExpo"

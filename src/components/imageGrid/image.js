@@ -24,7 +24,7 @@ const Image = ({ gatsbyImageData, alt, fit = "cover", tiles, index, offsetX = 0,
         transition-transform duration-1000 ease-out`
       }>
       <GatsbyImage
-        className="w-full rounded-xl"        
+        className="w-full rounded-xl overflow-hidden"        
         imgStyle={{
           "objectFit": fit
         }}
