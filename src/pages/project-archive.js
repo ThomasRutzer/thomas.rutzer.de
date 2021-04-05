@@ -28,7 +28,7 @@ const PageProjectArchive = ({ data }) =>
                     }>
                     <div className="col-start-1 col-span-1 row-start-1 row-span-2">
                       <GatsbyImage
-                        className="h-full"
+                        className="h-full rounded-lg"
                         alt={work.node.teaserImage.alt}
                         image={work.node.fields.teaserImageAsset.childImageSharp.gatsbyImageData} />
                     </div>

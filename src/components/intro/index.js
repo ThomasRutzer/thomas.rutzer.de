@@ -7,6 +7,7 @@ import Portrait from "./portrait"
 
 const Intro = () => {
   const [contentAnimatedIn, setContentAnimatedIn] = useState(false)
+
   const headline = useRef()
   const main = useRef()
   const subline = useRef()
@@ -32,8 +33,8 @@ const Intro = () => {
         targets: bg.current,
         opacity: [0, 1],
         keyframes: [
-          { clipPath: "inset(0)" },
-          { clipPath: "inset(32px)" }
+          { clipPath: "inset(0)", padding: 0 },
+          { clipPath: "inset(32px)", padding: 32 }
         ],
         duration: 2000,
         easing: "easeInOutExpo"
@@ -72,9 +73,7 @@ const Intro = () => {
       className="intro relative flex items-center overflow-hidden"
       ref={main}>
       <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
-        <Title ref={headline}>
-          hay I’m Thomas
-            </Title>
+        <Title ref={headline}>hay I’m Thomas</Title>
         <div ref={subline} className="max-w-screen-sm">
           <p className="relative text-xl md:text-3xl">
             creative developer who feels most comfortable where sophisticated design meets well structured code.
@@ -82,7 +81,7 @@ const Intro = () => {
         </div>
       </div>
       <div ref={bg} className="intro__bg" aria-hidden="true">
-        <Portrait onReady={startAnimation} />
+          <Portrait onReady={startAnimation} />
       </div>
     </div>
   )

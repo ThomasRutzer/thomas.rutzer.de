@@ -11,16 +11,19 @@
   color: theme("colors.white");
   background-color: transparent;
   transition: background-color 400ms ease-in-out, color 400ms ease-out;
+  @apply rounded-md;
 
   &:after {
     content: "";
     position: absolute;
-    left: -5px;
-    bottom: -5px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
+    left: -8px;
+    bottom: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
     opacity: 0;
     transition: opacity 400ms ease-out;
+    border: 1px dashed theme("colors.white");
+    @apply rounded-md;
   }
 
   &:disabled {
@@ -49,7 +52,6 @@
 
     &:after {
       opacity: 1;
-      border: 1px dashed theme("colors.white");
     }
   }
 }
