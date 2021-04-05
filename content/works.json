@@ -28,7 +28,6 @@
   },
   {
     "selected": true,
-    "selectedAppearance": "dark",
     "id": "futurium-permanent-exhibition",
     "title": "Futurium",
     "subTitle": "permanent exhibition",
@@ -125,8 +124,7 @@
     ]
   },
   {
-    "selected": true,
-    "selectedAppearance": "secondary",
+    "selected": false,
     "id": "mntns",
     "title": "Mntns",
     "subTitle": "github data visualisation",
@@ -220,7 +218,6 @@
   },
   {
     "selected": true,
-    "selectedAppearance": "dark",
     "id": "qurator-nlp",
     "title": "Qurator",
     "subTitle": "nlp service",
