@@ -24,16 +24,18 @@ const Image = ({ gatsbyImageData, alt, fit = "cover", tiles, index, offsetX = 0,
         transition-transform duration-1000 ease-out`
       }>
       <GatsbyImage
-        className="w-full"
+        alt={alt}
+        className="w-full rounded-xl"
+        image={gatsbyImageData}
         imgStyle={{
           "objectFit": fit
         }}
-        image={gatsbyImageData}
-        alt={alt} />
-      <figcaption 
+        loading="lazy"
+      />
+      <figcaption
         className={
-            `text-xs italic text-center mt-2 px-1`
-          }>
+          `text-xs italic text-center mt-2 px-1`
+        }>
         Fig.{index + 1}: {alt}
       </figcaption>
     </div>
