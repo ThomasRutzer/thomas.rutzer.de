@@ -2,7 +2,38 @@
   {
     "id": "webgl-experiments",
     "title": "WebGL experiments",
+    "subTitle": "personal explorations",
     "selected": true,
-    "includes": ["schere-stein-papier", "mntns"]
+    "includes": [
+      "mntns"
+    ],
+    "imageGrid": {
+      "tiles": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ]
+    }
   }
 ]
