@@ -71,9 +71,6 @@ const Intro = () => {
     <div
       className="intro relative flex items-center overflow-hidden"
       ref={main}>
-      <div ref={bg} className="intro__bg">
-        <Portrait onReady={startAnimation} />
-      </div>
       <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
         <Title ref={headline}>
           hay I’m Thomas
@@ -83,6 +80,9 @@ const Intro = () => {
             creative developer who feels most comfortable where sophisticated design meets well structured code.
           </p>
         </div>
+      </div>
+      <div ref={bg} className="intro__bg" aria-hidden="true">
+        <Portrait onReady={startAnimation} />
       </div>
     </div>
   )

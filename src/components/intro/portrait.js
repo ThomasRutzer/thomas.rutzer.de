@@ -22,8 +22,7 @@ const Portrait = ({ onReady }) => {
     <div
       ref={ref}
       className="portrait"
-      aria-hidden="true"
-      style={{ opacity: 1 - map(percentage, .5, 1, 0, 1) }}>
+      style={{ opacity: Math.min(1, 1 - map(percentage, .5, 1, 0, 1)) }}>
       {sufficientConnection && (
         <Suspense
           fallback={
