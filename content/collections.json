@@ -2,7 +2,7 @@
   {
     "id": "webgl-experiments",
     "selected": true,
-    "title": "WebGL experiments",
+    "title": "WebGL lab",
     "subTitle": "personal explorations",
     "description": "Various WebGL experiments and personal explorations to sharpen my skills in this particular field. Currently, I am very intrigued by React Three Fiber as a good match to my existing React apps.",
     "teaserDescription": "Qurator is a research collaboration focusing on content curation with AI technologies. The team at art+com built a prototypical NLP based service which helps users to analyze large amounts of texts with a suitable interface.",
@@ -10,39 +10,28 @@
       {
         "link": "https://thomasrutzer.github.io/mntns/",
         "label": "view mntns live"
+      },
+      {
+        "link": "https://thomasrutzer.github.io/schere-stein-papier/",
+        "label": "view ✊✌️✋ live"
       }
     ],
     "features": [
       "Three.js"
     ],
     "includes": [
+      "schere-stein-papier",
       "mntns"
     ],
     "imageGrid": {
       "tiles": [
         [
-          1,
-          3
+          [4,2],
+          [1,2]
         ],
         [
-          2,
-          2
-        ],
-        [
-          4,
-          2
-        ],
-        [
-          1,
-          2
-        ],
-        [
-          4,
-          1
-        ],
-        [
-          3,
-          1
+          [1,3],
+          [2,2]
         ]
       ]
     }

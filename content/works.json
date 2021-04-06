@@ -24,7 +24,29 @@
         "link": ""
       }
     },
-    "images": []
+    "images": [
+      {
+        "src": "schere-stein-papier-preview.png",
+        "alt": "✊, ✌️, ✋ – a react-three-fiber evaluation",
+        "grid": {
+          "tiles": [
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "fit": "cover"
+        },
+        "reference": {
+          "author": "Thomas Rutzer",
+          "link": ""
+        }
+      }
+    ]
   },
   {
     "selected": true,
