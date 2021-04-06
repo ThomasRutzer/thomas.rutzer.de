@@ -30,7 +30,7 @@
     }
   }
 
-  &--selected { 
+  &--selected , &:hover { 
     @apply text-secondary-lighter;
   }
 }
