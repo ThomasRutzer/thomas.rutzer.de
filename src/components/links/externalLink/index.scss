@@ -12,7 +12,7 @@
     height: calc(100% + 8px);
     opacity: 0;
     transition: opacity 400ms ease-out;
-    border: 1px dashed theme("colors.primary");
+    border: 1px dashed theme("colors.white");
     @apply rounded-md;
   }
 
@@ -23,6 +23,12 @@
       bottom: -8px;
       width: calc(100% + 16px);
       height: calc(100% + 16px);
+    }
+  }
+
+  &.external-link--primary {
+    &:after {
+      border-color: theme("colors.primary");
     }
   }
 
