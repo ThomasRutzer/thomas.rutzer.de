@@ -3,6 +3,7 @@ import React from "react"
 import { ContentWrapper } from "../layout"
 import { ExternalLink } from "../links"
 import ImageGrid from "../imageGrid"
+import FeatureList from "./../featureList"
 
 const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
   console.log(collection);
@@ -24,6 +25,42 @@ const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
             tiles: [collection.imageGrid.tiles[key], collection.imageGrid.tiles[key + 1]],
             fit: work.fields.workImageAssets[0].fit
           }))} />
+      </ContentWrapper>
+      <ContentWrapper>
+        <div className="grid grid-cols-6 md:gap-5 leading-7">
+          <div
+            className="flex md:flex-col justify-between text-sm col-start-1 col-span-6 md:col-span-1 mb-4 md:mb-0">
+            <div>
+              <span
+                className={`${appearance === "primary" ? "text-secondary-lighter" : "text-grey-darkest"} block`}>
+                key facts
+              </span>
+              <FeatureList items={collection.features} />
+            </div>
+          </div>
+          <div className="my-4 md:my-0 col-start-1 col-span-6 md:col-start-2 md:col-span-4">
+            <p className="whitespace-pre-line">
+              {collection.description}
+            </p>
+          </div>
+          <div className="col-start-1 col-span-6 md:col-start-6 md:col-span-1">
+            <div className="flex flex-col md:items-end">
+              <div
+                className="md:transform md:-rotate-90 md:-translate-y-full md:origin-bottom-right"
+              >
+                {collection.links.map(({ link, label }, key) =>
+                  <div className="whitespace-no-wrap" key={key}>
+                    <ExternalLink
+                      appearance="primary"
+                      link={link}>
+                      {label}
+                    </ExternalLink>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
       </ContentWrapper>
     </section>
   )
