@@ -213,6 +213,12 @@ export const query = graphql`
         node {
           title,
           subTitle,
+          description, 
+          links {
+            link,
+            label
+          },
+          features,
           imageGrid {
             tiles
           }
@@ -220,10 +226,6 @@ export const query = graphql`
             title,
             subTitle,
             year,
-            links {
-              link,
-              label
-            },
             images {
               alt,
               reference {
