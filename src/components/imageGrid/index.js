@@ -18,7 +18,7 @@ const ImageGrid = ({ category, title, subTitle, images = [] }) => {
   }, [])
 
   return (
-    <div className="relative"  {...mouseEvents}>
+    <div className="relative" {...mouseEvents}>
       <div className={
         `flex items-center justify-center flex-col text-center lg:absolute lg:w-full lg:h-full z-10 mb-6 pointer-events-none`
       }>

@@ -22,7 +22,7 @@ const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
           images={collection.includedWorks.map((work, key) => ({
             gatsbyImageData: work.fields.workImageAssets[0].childImageSharp.gatsbyImageData,
             alt: `${work.title} – ${work.subTitle} (${work.year})`,
-            tiles: [collection.imageGrid.tiles[key], collection.imageGrid.tiles[key + 1]],
+            tiles: collection.imageGrid.tiles[key],
             fit: work.fields.workImageAssets[0].fit
           }))} />
       </ContentWrapper>
