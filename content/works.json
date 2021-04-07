@@ -24,11 +24,32 @@
         "link": ""
       }
     },
-    "images": []
+    "images": [
+      {
+        "src": "schere-stein-papier-preview.png",
+        "alt": "✊, ✌️, ✋ – a react-three-fiber evaluation",
+        "grid": {
+          "tiles": [
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "fit": "cover"
+        },
+        "reference": {
+          "author": "Thomas Rutzer",
+          "link": ""
+        }
+      }
+    ]
   },
   {
     "selected": true,
-    "selectedAppearance": "dark",
     "id": "futurium-permanent-exhibition",
     "title": "Futurium",
     "subTitle": "permanent exhibition",
@@ -125,8 +146,7 @@
     ]
   },
   {
-    "selected": true,
-    "selectedAppearance": "secondary",
+    "selected": false,
     "id": "mntns",
     "title": "Mntns",
     "subTitle": "github data visualisation",
@@ -220,7 +240,6 @@
   },
   {
     "selected": true,
-    "selectedAppearance": "dark",
     "id": "qurator-nlp",
     "title": "Qurator",
     "subTitle": "nlp service",
@@ -303,15 +322,15 @@
         "grid": {
           "tiles": [
             [
-              2,
-              4
+              3,
+              2
             ],
             [
               3,
               1
             ]
           ],
-          "fit": "contain"
+          "fit": "cover"
         },
         "reference": {
           "author": "©ART+COM Studios",
