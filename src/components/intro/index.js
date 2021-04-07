@@ -76,7 +76,7 @@ const Intro = () => {
         <Title ref={headline}>hay I’m Thomas</Title>
         <div ref={subline} className="max-w-screen-sm">
           <p className="relative text-xl md:text-3xl">
-            creative developer who feels most comfortable where sophisticated design meets well structured code.
+            creative JavaScript developer who feels most comfortable where sophisticated design meets well structured code.
           </p>
         </div>
       </div>

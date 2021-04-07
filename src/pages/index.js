@@ -213,6 +213,7 @@ export const query = graphql`
         node {
           title,
           subTitle,
+          leadingDescription,
           description, 
           links {
             link,

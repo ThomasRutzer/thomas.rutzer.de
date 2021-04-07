@@ -6,8 +6,6 @@ import ImageGrid from "../imageGrid"
 import FeatureList from "./../featureList"
 
 const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
-  console.log(collection);
-
   return (
     <section className={appearance === "primary" ? "bg-grey-darkest" : "bg-secondary"}>
       <ContentWrapper
@@ -39,7 +37,8 @@ const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
             </div>
           </div>
           <div className="my-4 md:my-0 col-start-1 col-span-6 md:col-start-2 md:col-span-4">
-            <p className="whitespace-pre-line">
+            <p className="whitespace-pre-line">{collection.leadingDescription}</p>
+            <p className="whitespace-pre-line mt-3">
               {collection.description}
             </p>
           </div>
