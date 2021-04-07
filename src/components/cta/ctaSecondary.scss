@@ -37,10 +37,6 @@
   &:hover {
     background-color: theme("colors.white");
     color: theme("colors.black");
-
-    &:after {
-      opacity: 1;
-    }
   }
 
   &:focus {
