@@ -3,17 +3,15 @@ import { ContentWrapper } from '../layout'
 import { InternalLink } from "../links"
 
 const Footer = () =>
-  <footer className="bg-black">
-    <ContentWrapper>
-      <div className="md:grid md:grid-cols-3">
+  <footer className="bg-grey-darkest-pattern">
+    <ContentWrapper additionalClasses="py-4" verticalSpacing={false}>
         <ul>
-          <li className="text-sm inline">
+          <li className="text-sm inline rounded-md px-3 py-1 bg-black">
             <InternalLink link="/legal/">
               Legal notice
             </InternalLink>
           </li>
         </ul>
-      </div>
     </ContentWrapper>
   </footer>
 
