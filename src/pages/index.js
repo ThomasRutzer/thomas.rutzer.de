@@ -72,7 +72,7 @@ const PageHome = ({ data }) =>
           <div className="col-start-1 col-span-1">
             <SectionTitle>about</SectionTitle>
           </div>
-          <div className="col-start-1 md:col-start-2 col-span-1">
+          <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-span-1">
             <p>
               I'm a leading JavaScript developer with a focus on unique interfaces and interactions, currently working at <ExternalLink link="https://artcom.de" appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
               </p>
@@ -83,9 +83,9 @@ const PageHome = ({ data }) =>
               Personally, I do everything possible with Javascript. My research focus at the moment is blending interfaces into spaces with the new WebXR Device API.
               </p>
           </div>
-          <div className="col-start-1 md:col-start-3 col-span-1">
+          <div className="col-start-1 md:col-start-2 lg:col-start-3 col-span-1">
             <div className="flex flex-col md:items-end">
-              <div className="md:transform md:-rotate-90 md:-translate-y-full md:origin-bottom-right md:pl-2">
+              <div className="lg:transform lg:-rotate-90 lg:-translate-y-full lg:origin-bottom-right lg:pl-2">
                 <div>
                   <ExternalLink
                     additionalClasses="whitespace-no-wrap"
@@ -99,7 +99,7 @@ const PageHome = ({ data }) =>
                   <ExternalLink
                     additionalClasses="whitespace-no-wrap"
                     appearance="primary"
-                    link="mailto:thomas@rutzer.de"
+                    link="mailto:hi@thomasrutzer.dev"
                     size="large">
                     mail
                 </ExternalLink>
