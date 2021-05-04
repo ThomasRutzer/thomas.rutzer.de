@@ -74,7 +74,7 @@ const PageHome = ({ data }) =>
           </div>
           <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-span-1">
             <p>
-              I'm a leading JavaScript developer with a focus on unique interfaces and interactions, currently working at <ExternalLink link="https://artcom.de" appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
+              I'm a creative JavaScript developer with a focus on unique interfaces and interactions, currently working at <ExternalLink link="https://artcom.de" appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
               </p>
             <p className="mt-4">
               In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions, mostly with full-stack JavaScript and MQTT based realtime communication.
