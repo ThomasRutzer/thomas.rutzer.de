@@ -84,7 +84,7 @@ const PageHome = ({ data }) =>
               </p>
           </div>
           <div className="col-start-1 md:col-start-2 lg:col-start-3 col-span-1">
-            <div className="flex flex-col md:items-end">
+            <div className="flex flex-col lg:items-end">
               <div className="lg:transform lg:-rotate-90 lg:-translate-y-full lg:origin-bottom-right lg:pl-2">
                 <div>
                   <ExternalLink
