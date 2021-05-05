@@ -25,12 +25,12 @@ const ExternalLink = ({
     href={link}
     rel="noopener noreferrer"
     target="_blank">
-    { contentType === "image" && 
-      <span className="external-link__image-wrapper" aria-hidden="true">
+    {contentType === "image" &&
+      <span className="inherit" aria-hidden="true">
         {children}
       </span>
     }
-    { contentType !== "image" && <>{children}</>}
+    {contentType !== "image" && <>{children}</>}
     <svg
       className="external-link__icon"
       aria-hidden="true"
