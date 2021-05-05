@@ -26,6 +26,10 @@
     }
   }
 
+  .external-link__image-wrapper {
+    display: inherit;
+  }
+
   &.external-link--primary {
     &:after {
       border-color: theme("colors.primary");
@@ -34,10 +38,6 @@
 
   &:hover {
     text-decoration: underline;
-
-    .external-link__icon {
-      top: -0.25em;
-    }
   }
 
   &:focus {
@@ -62,10 +62,26 @@
 }
 
 .external-link__icon {
-  position: relative;
   top: 0;
   margin-left: 0.25em;
   display: inline-block;
   stroke: currentColor;
   transition: top 300ms ease-in-out;
+
+  .external-link:hover & {
+    top: -0.25em;
+  }
+
+  .external-link--content-type-image & {
+    position: absolute;
+    right: 0;
+  }
+
+  .external-link--content-type-text & {
+    position: relative;
+  }
+}
+
+.external-link__image-wrapper {
+  display: inherit;
 }

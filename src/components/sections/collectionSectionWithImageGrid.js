@@ -21,7 +21,8 @@ const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
             gatsbyImageData: work.fields.workImageAssets[0].childImageSharp.gatsbyImageData,
             alt: `${work.title} – ${work.subTitle} (${work.year})`,
             tiles: collection.imageGrid.tiles[key],
-            fit: work.fields.workImageAssets[0].fit
+            fit: work.fields.workImageAssets[0].fit,
+            link: work.links.filter(link => link.type === "live")[0]
           }))} />
       </ContentWrapper>
       <ContentWrapper>
@@ -41,23 +42,6 @@ const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
             <p className="whitespace-pre-line mt-3">
               {collection.description}
             </p>
-          </div>
-          <div className="col-start-1 col-span-6 md:col-start-6 md:col-span-1">
-            <div className="flex flex-col md:items-end">
-              <div
-                className="md:transform md:-rotate-90 md:-translate-y-full md:origin-bottom-right"
-              >
-                {collection.links.map(({ link, label }, key) =>
-                  <div className="whitespace-no-wrap" key={key}>
-                    <ExternalLink
-                      appearance="primary"
-                      link={link}>
-                      {label}
-                    </ExternalLink>
-                  </div>
-                )}
-              </div>
-            </div>
           </div>
         </div>
       </ContentWrapper>
