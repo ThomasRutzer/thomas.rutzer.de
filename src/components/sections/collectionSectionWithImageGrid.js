@@ -1,7 +1,6 @@
 import React from "react"
 
 import { ContentWrapper } from "../layout"
-import { ExternalLink } from "../links"
 import ImageGrid from "../imageGrid"
 import FeatureList from "./../featureList"
 
