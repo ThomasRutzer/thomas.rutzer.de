@@ -13,7 +13,8 @@
     "links": [
       {
         "link": "https://thomasrutzer.github.io/schere-stein-papier/",
-        "label": "view live"
+        "label": "view live",
+        "type": "live"
       }
     ],
     "teaserImage": {
@@ -161,7 +162,8 @@
     "links": [
       {
         "link": "https://thomasrutzer.github.io/mntns/",
-        "label": "view live"
+        "label": "view live",
+        "type": "live"
       }
     ],
     "teaserImage": {
@@ -353,7 +355,8 @@
     "links": [
       {
         "link": "https://nitribitt.com/",
-        "label": "view live"
+        "label": "view live",
+        "type": "live"
       }
     ],
     "teaserImage": {
@@ -432,7 +435,8 @@
     "links": [
       {
         "link": "https://www.panthera.org/",
-        "label": "view live"
+        "label": "view live",
+        "type": "live"
       }
     ],
     "teaserImage": {
@@ -486,7 +490,8 @@
     "links": [
       {
         "link": "https://www.eurowings.com/de.html",
-        "label": "view live"
+        "label": "view live",
+        "type": "live"
       }
     ],
     "teaserImage": {
@@ -580,7 +585,8 @@
     "links": [
       {
         "link": "https://munchable.co/",
-        "label": "view live"
+        "label": "view live",
+        "type": "live"
       }
     ],
     "teaserImage": {
@@ -608,7 +614,8 @@
     "links": [
       {
         "link": "https://app.munchable.co/",
-        "label": "view live"
+        "label": "view live",
+        "type": "live"
       }
     ],
     "teaserImage": {

@@ -58,7 +58,8 @@ const PageHome = ({ data }) =>
                 <ExternalLink link={write.node.link} appearance="primary" size="large">
                   {write.node.title}
                 </ExternalLink>
-                <small className="block italic text-grey-lighter mt-4">— {write.node.description}
+                <small className="block italic text-grey-lighter mt-4">
+                  — {write.node.description}
                 </small>
               </div>
             )}
@@ -215,10 +216,6 @@ export const query = graphql`
           subTitle,
           leadingDescription,
           description, 
-          links {
-            link,
-            label
-          },
           features,
           imageGrid {
             tiles
@@ -227,6 +224,11 @@ export const query = graphql`
             title,
             subTitle,
             year,
+            links {
+              link,
+              label,
+              type
+            },
             images {
               alt,
               reference {
