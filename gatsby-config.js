@@ -33,9 +33,15 @@ module.exports = {
       options: {
         postCssPlugins: [
           require("tailwindcss"),
-          require("./tailwind.config.js"), 
+          require("./tailwind.config.js"),
         ],
       },
+    },
+    {
+      resolve: 'gatsby-plugin-html-minifier',
+      options: {
+        removeComments: true
+      }
     },
     "gatsby-plugin-react-helmet",
     {
