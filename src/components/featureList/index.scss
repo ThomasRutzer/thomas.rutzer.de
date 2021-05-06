@@ -1,4 +1,10 @@
 .featureList__item {
-  list-style-type: '#';
-  padding-left: 4px;
+  position: relative;
+  padding-left: 12px;
+
+  &::before {
+    content: "#";
+    position: absolute;
+    left: 0;
+  }
 }
