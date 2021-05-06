@@ -33,7 +33,7 @@ const PageProjectArchive = ({ data }) =>
                         image={work.node.fields.teaserImageAsset.childImageSharp.gatsbyImageData} />
                     </div>
                     <div className="col-start-2 col-span-1">
-                      <h2 className="text-3xl md:text-4xl -mt-2">{work.node.title}</h2>
+                      <h2 className="text-3xl lg:text-4xl -mt-2">{work.node.title}</h2>
                     </div>
                     <div className="col-start-2 col-span-1 row-start-2 self-end">
                       <h3 className="text-secondary-lighter">{work.node.subTitle}</h3>
