@@ -1,15 +1,16 @@
 import React from "react"
 
-import { useMousemoveTranslation } from "../../hooks"
+import { useMousemoveTranslation, useReducedMotion } from "../../hooks"
 import isTouchDevice from "./../../utils/isTouchDevice"
 
 const ParallaxCircles = ({ mouseMoveTranslations = [10, 20, 10, 20] }) => {
+  const prefersReducedMotion = useReducedMotion()
   const translations = useMousemoveTranslation(
     mouseMoveTranslations[0],
     mouseMoveTranslations[1],
     mouseMoveTranslations[2],
     mouseMoveTranslations[3],
-    typeof window === "undefined" ? false : isTouchDevice()
+    typeof window === "undefined" ? false : isTouchDevice() || prefersReducedMotion
   )
 
   return (

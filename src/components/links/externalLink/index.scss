@@ -68,8 +68,10 @@
   stroke: currentColor;
   transition: top 300ms ease-in-out;
 
-  .external-link:hover & {
-    top: -0.25em;
+  @media (prefers-reduced-motion: no-preference) {
+    .external-link:hover & {
+      top: -0.25em;
+    }
   }
 
   .external-link--content-type-image & {

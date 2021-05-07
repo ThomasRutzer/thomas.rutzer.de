@@ -26,7 +26,7 @@ const renderGatsbyImage = (gatsbyImageData, objectFit) => (
   <GatsbyImage
     className={classes.image}
     // weird Safari hack: https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
-    style={{ webkitMaskImage: "-webkit-radial-gradient(white, black)" }}
+    style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
     imgStyle={{
       objectFit: objectFit,
     }}

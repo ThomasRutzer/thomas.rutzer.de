@@ -1,3 +1,4 @@
+import useReducedMotion from "./useReducedMotion"
 import useMousemoveTranslation from "./useMousemoveTranslation"
 
-export { useMousemoveTranslation }
+export { useReducedMotion, useMousemoveTranslation }

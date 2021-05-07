@@ -2,11 +2,13 @@ import React, { useCallback, useEffect, useRef, useState } from "react"
 import anime from "animejs"
 import Splitting from "splitting"
 
+import {useReducedMotion} from "./../../hooks"
 import Title from "./title"
 import Portrait from "./portrait"
 
 const Intro = () => {
   const [contentAnimatedIn, setContentAnimatedIn] = useState(false)
+  const prefersReducedMotion = useReducedMotion()
 
   const headline = useRef()
   const main = useRef()
@@ -14,7 +16,7 @@ const Intro = () => {
   const bg = useRef()
 
   const startAnimation = useCallback(() => {
-    if (contentAnimatedIn) return
+    if (prefersReducedMotion || contentAnimatedIn) return
 
     setContentAnimatedIn(true)
 
@@ -23,54 +25,46 @@ const Intro = () => {
     })
     const tl = anime.timeline()
 
-    tl.add({
+    tl
+    .add({
       targets: main.current,
       opacity: [0, 1],
       duration: 0,
     })
-      .add({
-        targets: bg.current,
+    .add({
+      targets: bg.current,
+      opacity: [0, 1],
+      keyframes: [
+        { clipPath: "inset(0)", padding: 0 },
+        { clipPath: "inset(32px)", padding: "32px" },
+      ],
+      duration: 2000,
+      easing: "easeInOutExpo",
+    })
+    .add({
+        targets: headline.current,
         opacity: [0, 1],
-        keyframes: [
-          { clipPath: "inset(0)", padding: 0 },
-          { clipPath: "inset(32px)", padding: "32px" },
-        ],
-        duration: 2000,
-        easing: "easeInOutExpo",
-      })
-      .add(
-        {
-          targets: headline.current,
-          opacity: [0, 1],
-          duration: 0,
-        },
-        "-=300"
-      )
-      .add(
-        {
-          targets: splittedHeadline[0].chars,
-          rotate: [20, 0],
-          translateY: ["100%", 0],
-          opacity: [0, 1],
-          duration: 2700,
-          delay: anime.stagger(20, {}),
-          easing: "easeInOutExpo",
-        },
-        "-=1200"
-      )
-      .add(
-        {
-          targets: subline.current,
-          opacity: [0, 1],
-          translateY: [20, 0],
-          duration: 1000,
-          easing: "easeOutQuad",
-        },
-        "-=1600"
-      )
+        duration: 0,
+      },"-=300")
+    .add({
+      targets: splittedHeadline[0].chars,
+      rotate: [20, 0],
+      translateY: ["100%", 0],
+      opacity: [0, 1],
+      duration: 2700,
+      delay: anime.stagger(20, {}),
+      easing: "easeInOutExpo",
+    },"-=1200")
+    .add({
+        targets: subline.current,
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 1000,
+        easing: "easeOutQuad",
+      },"-=1600")
 
     tl.play()
-  }, [contentAnimatedIn])
+  }, [contentAnimatedIn, prefersReducedMotion])
 
   useEffect(() => {
     startAnimation()

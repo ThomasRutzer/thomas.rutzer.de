@@ -32,7 +32,7 @@ const PageProjectArchive = ({ data }) => (
                         className="h-full rounded-lg"
                         // weird Safari hack: https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
                         style={{
-                          webkitMaskImage:
+                          WebkitMaskImage:
                             "-webkit-radial-gradient(white, black)",
                         }}
                         alt={work.node.teaserImage.alt}
