@@ -3,5 +3,4 @@ const isMobileDevice = () =>
     navigator.userAgent
   )
 
-  export default isMobileDevice
-  
+export default isMobileDevice

@@ -22,7 +22,8 @@ const Portrait = ({ onReady }) => {
     <div
       ref={ref}
       className="portrait rounded-xl overflow-hidden w-full h-full"
-      style={{ opacity: Math.min(1, 1 - map(percentage, .5, 1, 0, 1)) }}>
+      style={{ opacity: Math.min(1, 1 - map(percentage, 0.5, 1, 0, 1)) }}
+    >
       {sufficientConnection && (
         <Suspense
           fallback={
@@ -40,7 +41,8 @@ const Portrait = ({ onReady }) => {
           onLoad={onReady}
           className="w-full h-full object-cover"
           alt="Portrait of Thomas Rutzer"
-          src={imgAsset} />
+          src={imgAsset}
+        />
       )}
     </div>
   )

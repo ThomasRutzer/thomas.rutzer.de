@@ -3,13 +3,15 @@ import classnames from "classnames"
 
 const classes = {
   contentType: contentType => `external-link--content-type-${contentType}`,
-  size: size => classnames({
-    "external-link--large text-3xl md:text-5xl": size === "large",
-    "external-link--small text-sm": size === "small"
-  }),
-  appearance: appearance => classnames({
-    "external-link--primary text-primary": appearance === "primary"
-  })
+  size: size =>
+    classnames({
+      "external-link--large text-3xl md:text-5xl": size === "large",
+      "external-link--small text-sm": size === "small",
+    }),
+  appearance: appearance =>
+    classnames({
+      "external-link--primary text-primary": appearance === "primary",
+    }),
 }
 
 const ExternalLink = ({
@@ -18,18 +20,23 @@ const ExternalLink = ({
   children,
   contentType = "text",
   link,
-  size
-}) =>
+  size,
+}) => (
   <a
-    className={`external-link ${classes.contentType(contentType)} ${classes.appearance(appearance)} ${classes.size(size)} ${additionalClasses}`}
+    className={`external-link ${classes.contentType(
+      contentType
+    )} ${classes.appearance(appearance)} ${classes.size(
+      size
+    )} ${additionalClasses}`}
     href={link}
     rel="noopener noreferrer"
-    target="_blank">
-    {contentType === "image" &&
+    target="_blank"
+  >
+    {contentType === "image" && (
       <span className="inherit" aria-hidden="true">
         {children}
       </span>
-    }
+    )}
     {contentType !== "image" && <>{children}</>}
     <svg
       className="external-link__icon"
@@ -47,5 +54,6 @@ const ExternalLink = ({
       <path d="M7 17l9.2-9.2M17 17V7H7" />
     </svg>
   </a>
+)
 
 export default ExternalLink

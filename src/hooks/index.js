@@ -1,5 +1,3 @@
 import useMousemoveTranslation from "./useMousemoveTranslation"
 
-export {
-  useMousemoveTranslation
-}
+export { useMousemoveTranslation }

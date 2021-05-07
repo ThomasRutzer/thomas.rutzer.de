@@ -2,14 +2,14 @@ import React from "react"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
-const HeadInfos = ({ title, description, image }) => 
+const HeadInfos = ({ title, description, image }) => (
   <StaticQuery
     query={graphql`
       query SEOQuery {
         site {
           siteMetadata {
             defaultTitle: title
-            defaultDescription: description,
+            defaultDescription: description
             defaultImage: image
             url
           }
@@ -24,7 +24,7 @@ const HeadInfos = ({ title, description, image }) =>
       const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        image: image || defaultImage
+        image: image || defaultImage,
       }
 
       return (
@@ -37,14 +37,14 @@ const HeadInfos = ({ title, description, image }) =>
             <meta property="og:url" content={url} />
             <meta name="twitter:card" content="summary_large_image" />
             <script>
-              typeof document !== `undefined`
-              ? document.documentElement.classList.remove("no-js")
-              : null
+              typeof document !== `undefined` ?
+              document.documentElement.classList.remove("no-js") : null
             </script>
           </Helmet>
         </>
       )
     }}
   />
+)
 
 export default HeadInfos

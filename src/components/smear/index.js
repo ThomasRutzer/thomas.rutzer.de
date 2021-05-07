@@ -26,7 +26,7 @@ class Smear extends React.PureComponent {
       width: window.innerWidth,
       height: window.innerHeight,
       view: this.canvas.current,
-      backgroundColor: 0x7c7c7c
+      backgroundColor: 0x7c7c7c,
     })
 
     this.preload()
@@ -56,11 +56,13 @@ class Smear extends React.PureComponent {
 
     const initBg = new PIXI.Sprite(this.bgTexture)
     const dimensions = getImageDimensionsWithAspect(
-      this.bgTexture.baseTexture.width, this.bgTexture.baseTexture.height,
-      this.app.screen.width, this.app.screen.height
+      this.bgTexture.baseTexture.width,
+      this.bgTexture.baseTexture.height,
+      this.app.screen.width,
+      this.app.screen.height
     )
     initBg.height = dimensions.height
-    initBg.width = dimensions.width;
+    initBg.width = dimensions.width
 
     this.app.renderer.render(initBg, this.renderTextures[0])
     this.bg = new PIXI.Sprite(this.renderTextures[0])
@@ -83,10 +85,7 @@ class Smear extends React.PureComponent {
 
   update() {
     const swapTexture = 1 - this.current
-    this.app.renderer.render(
-      this.app.stage,
-      this.renderTextures[swapTexture]
-    )
+    this.app.renderer.render(this.app.stage, this.renderTextures[swapTexture])
     this.bg.texture = this.renderTextures[swapTexture]
     this.current = swapTexture
   }
@@ -112,13 +111,13 @@ function getImageDimensionsWithAspect(imgW, imgH, containerW, containerH) {
 
   return containerRatio > imageRatio
     ? {
-      height: imgH / (imgW / containerW),
-      width: containerW
-    }
+        height: imgH / (imgW / containerW),
+        width: containerW,
+      }
     : {
-      width: imgW / (imgH / containerH),
-      height: containerH
-    }
+        width: imgW / (imgH / containerH),
+        height: containerH,
+      }
 }
 
 export default Smear

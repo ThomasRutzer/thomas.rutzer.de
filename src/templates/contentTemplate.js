@@ -14,7 +14,10 @@ export default function Template({ data }) {
       <LayoutWrapper>
         <PageHeader title={frontmatter.title} />
         <ContentWrapper>
-          <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
+          <div
+            className="markdown"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
         </ContentWrapper>
       </LayoutWrapper>
     </>

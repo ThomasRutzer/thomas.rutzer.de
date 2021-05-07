@@ -20,7 +20,7 @@ const Page404 = () => {
       easing: "easeInOutQuad",
       complete: () => {
         onStartSpinning()
-      }
+      },
     })
   }, [])
 
@@ -30,7 +30,6 @@ const Page404 = () => {
   }
 
   const onSpinningEnd = isJackpot => {
-
     if (isJackpot) {
       anime({
         targets: document.body,
@@ -45,7 +44,7 @@ const Page404 = () => {
         complete() {
           document.body.removeAttribute("style")
           setIsSpinning(false)
-        }
+        },
       })
     } else {
       setIsSpinning(false)
@@ -63,27 +62,30 @@ const Page404 = () => {
               style={{
                 height: "100%",
                 width: "100%",
-                opacity: 0
-              }}>
+                opacity: 0,
+              }}
+            >
               <SlotMachine
                 symbols={["0", "1", "2", "3", "4"]}
                 ref={slotMachineRef}
                 initialSymbols={["4", "0", "4"]}
                 onSpinningEnd={isJackpot => onSpinningEnd(isJackpot)}
                 symbolEvaluatedStyleClass="text-white"
-                symbolDefaultStyleClass="text-stroke text-stroke-white transition-colors duration-700" />
+                symbolDefaultStyleClass="text-stroke text-stroke-white transition-colors duration-700"
+              />
             </div>
             <div className="flex justify-center mt-3 md:mt-6">
               <CtaSecondaryTypeButton
                 disabled={isSpinning}
-                onClick={onStartSpinning}>
+                onClick={onStartSpinning}
+              >
                 Spin to Win!
               </CtaSecondaryTypeButton>
             </div>
             <div className="mt-4 text-center">
               <p>
                 I couldn't find what you were looking for. <br></br>Go&nbsp;
-              <InternalLink link="/">home</InternalLink> or try your luck.
+                <InternalLink link="/">home</InternalLink> or try your luck.
               </p>
             </div>
           </ContentWrapper>

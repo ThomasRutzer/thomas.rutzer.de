@@ -6,43 +6,45 @@ import HeadInfos from "../components/headInfos"
 import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import { ExternalLink } from "../components/links"
 import {
-  SectionTitle, CollectionSectionWithImageGrid, WorkSectionWithImageGrid
+  SectionTitle,
+  CollectionSectionWithImageGrid,
+  WorkSectionWithImageGrid,
 } from "./../components/sections"
 import { CtaSecondaryTypeLink } from "./../components/cta"
 
-const PageHome = ({ data }) =>
+const PageHome = ({ data }) => (
   <LayoutWrapper>
     <HeadInfos />
     <Intro />
-    <ContentWrapper
-      verticalSpacing={false}
-      additionalClasses="pt-4 md:pt-7">
+    <ContentWrapper verticalSpacing={false} additionalClasses="pt-4 md:pt-7">
       <SectionTitle>work</SectionTitle>
     </ContentWrapper>
-    {data.allWorksJson.edges.map((work, key) =>
+    {data.allWorksJson.edges.map((work, key) => (
       <WorkSectionWithImageGrid
         work={work.node}
         appearance={key % 2 === 0 ? "primary" : "secondary"}
-        key={key} />
-    )}
-    {data.allCollectionsJson.edges.map((collection, key) =>
+        key={key}
+      />
+    ))}
+    {data.allCollectionsJson.edges.map((collection, key) => (
       <CollectionSectionWithImageGrid
         collection={collection.node}
         appearance={key % 2 === 0 ? "primary" : "secondary"}
-        key={key} />
-    )}
+        key={key}
+      />
+    ))}
     <section className="no-js:hidden md:py-4 bg-black bg-gradient-to-b from-grey-darkest">
       <ContentWrapper>
         <div className="flex flex-col md:flex-row items-center align-center justify-center">
           <h2 className="mb-4 md:mb-0 md:mr-5">
             <span className="text-4xl md:text-stroke-white md:text-stroke italic md:-ml-4">
               There
-              </span>
+            </span>
             <span className="text-4xl ml-4 md:ml-0 block">is more</span>
           </h2>
           <CtaSecondaryTypeLink link="/project-archive">
             project archive
-            </CtaSecondaryTypeLink>
+          </CtaSecondaryTypeLink>
         </div>
       </ContentWrapper>
     </section>
@@ -53,16 +55,20 @@ const PageHome = ({ data }) =>
             <SectionTitle appearance="primary">thoughts</SectionTitle>
           </div>
           <div className="col-start-1 md:col-start-2 col-span-2">
-            {data.allWritesJson.edges.map((write, key) =>
+            {data.allWritesJson.edges.map((write, key) => (
               <div key={key} className={key === 0 ? "mt-0" : "mt-4 md:mt-7"}>
-                <ExternalLink link={write.node.link} appearance="primary" size="large">
+                <ExternalLink
+                  link={write.node.link}
+                  appearance="primary"
+                  size="large"
+                >
                   {write.node.title}
                 </ExternalLink>
                 <small className="block italic text-grey-lighter mt-4">
                   — {write.node.description}
                 </small>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </ContentWrapper>
@@ -75,14 +81,23 @@ const PageHome = ({ data }) =>
           </div>
           <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-span-1">
             <p>
-              I'm a creative JavaScript developer with a focus on unique interfaces and interactions. I currently work at <ExternalLink link="https://artcom.de" appearance="primary">art+com</ExternalLink>, a studio for media installations and spaces.
-              </p>
+              I'm a creative JavaScript developer with a focus on unique
+              interfaces and interactions. I currently work at{" "}
+              <ExternalLink link="https://artcom.de" appearance="primary">
+                art+com
+              </ExternalLink>
+              , a studio for media installations and spaces.
+            </p>
             <p className="mt-4">
-              In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting custom solutions, mostly with full-stack JavaScript, WebGL and MQTT based realtime communication.
-              </p>
+              In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized
+              in crafting custom solutions, mostly with full-stack JavaScript,
+              WebGL and MQTT based realtime communication.
+            </p>
             <p className="mt-4">
-              Personally, I do everything possible with Javascript. My research focus at the moment is blending interfaces into spaces with the new WebXR Device API.
-              </p>
+              Personally, I do everything possible with Javascript. My research
+              focus at the moment is blending interfaces into spaces with the
+              new WebXR Device API.
+            </p>
           </div>
           <div className="col-start-1 md:col-start-2 lg:col-start-3 col-span-1">
             <div className="flex flex-col lg:items-end">
@@ -92,27 +107,31 @@ const PageHome = ({ data }) =>
                     additionalClasses="whitespace-no-wrap"
                     appearance="primary"
                     link="twitter.com/thomasrutzer"
-                    size="large">
+                    size="large"
+                  >
                     twitter
-                </ExternalLink>
+                  </ExternalLink>
                 </div>
                 <div>
                   <ExternalLink
                     additionalClasses="whitespace-no-wrap"
                     appearance="primary"
                     link="mailto:hi@thomasrutzer.dev"
-                    size="large">
+                    size="large"
+                  >
                     mail
-                </ExternalLink>
+                  </ExternalLink>
                 </div>
                 <div>
                   <ExternalLink
                     additionalClasses="whitespace-no-wrap"
                     appearance="primary"
                     link="https://github.com/ThomasRutzer"
-                    size="large">
+                    size="large"
+                  >
                     github
-                </ExternalLink></div>
+                  </ExternalLink>
+                </div>
               </div>
             </div>
           </div>
@@ -127,69 +146,63 @@ const PageHome = ({ data }) =>
           </div>
           <div className="col-start-1 md:col-start-2 col-span-1">
             <p className="mb-2 font-bold">images</p>
-            {data.allWorksJson.edges.map((work, key) =>
+            {data.allWorksJson.edges.map((work, key) => (
               <div key={key} className={key === 0 ? "mt-0" : "mt-4"}>
-                <p className="text-sm text-secondary-lighter"
-                >{work.node.title} <i>{work.node.subTitle}</i>
+                <p className="text-sm text-secondary-lighter">
+                  {work.node.title} <i>{work.node.subTitle}</i>
                 </p>
                 <ul>
-                  {work.node.images.map((image, imageKey) =>
+                  {work.node.images.map((image, imageKey) => (
                     <li key={imageKey}>
-                      {image.reference.link &&
-                        <ExternalLink
-                          link={image.reference.link}
-                          size="small">
+                      {image.reference.link && (
+                        <ExternalLink link={image.reference.link} size="small">
                           Fig.{imageKey + 1} by {image.reference.author}
                         </ExternalLink>
-                      }
-                      {!image.reference.link &&
+                      )}
+                      {!image.reference.link && (
                         <p className="text-sm">
                           Fig.{imageKey + 1} by {image.reference.author}
                         </p>
-                      }
+                      )}
                     </li>
-                  )}
+                  ))}
                 </ul>
               </div>
-            )}
+            ))}
           </div>
           <div className="col-start-1 md:col-start-3 col-span-1">
             <p className="mb-2 font-bold">this site</p>
             <ul>
               <li>
-                <ExternalLink
-                  link="https://www.gatsbyjs.org/"
-                  size="small">
+                <ExternalLink link="https://www.gatsbyjs.org/" size="small">
                   Gatsby.js
-              </ExternalLink>
+                </ExternalLink>
               </li>
               <li>
-                <ExternalLink
-                  link="https://tailwindcss.com/"
-                  size="small">
+                <ExternalLink link="https://tailwindcss.com/" size="small">
                   Tailwind.css
-                  </ExternalLink>
+                </ExternalLink>
               </li>
               <li>
-                <ExternalLink
-                  link="https://animejs.com/"
-                  size="small">
+                <ExternalLink link="https://animejs.com/" size="small">
                   anime.js
-                  </ExternalLink>
+                </ExternalLink>
               </li>
               <li>
                 <ExternalLink
                   link="https://github.com/features/actions"
-                  size="small">
+                  size="small"
+                >
                   Github actions
-              </ExternalLink>
+                </ExternalLink>
               </li>
               <li>
                 <ExternalLink
                   link="https://fonts.google.com/specimen/IBM+Plex+Mono"
-                  size="small">
+                  size="small"
+                >
                   IBM Plex Mono
-              </ExternalLink>
+                </ExternalLink>
               </li>
             </ul>
           </div>
@@ -197,6 +210,7 @@ const PageHome = ({ data }) =>
       </ContentWrapper>
     </section>
   </LayoutWrapper>
+)
 
 export const query = graphql`
   query {
@@ -209,40 +223,40 @@ export const query = graphql`
         }
       }
     }
-    allCollectionsJson(filter: {selected: { eq: true }}) {
+    allCollectionsJson(filter: { selected: { eq: true } }) {
       edges {
         node {
-          title,
-          subTitle,
-          leadingDescription,
-          description, 
-          features,
+          title
+          subTitle
+          leadingDescription
+          description
+          features
           imageGrid {
             tiles
           }
           includedWorks {
-            title,
-            subTitle,
-            year,
+            title
+            subTitle
+            year
             links {
-              link,
-              label,
+              link
+              label
               type
-            },
+            }
             images {
-              alt,
+              alt
               reference {
-                author,
+                author
                 link
               }
-            },
+            }
             fields {
               workImageAssets {
                 childImageSharp {
                   gatsbyImageData(
-                    layout: CONSTRAINED,
-                    width: 1080,
-                    placeholder: BLURRED,
+                    layout: CONSTRAINED
+                    width: 1080
+                    placeholder: BLURRED
                     quality: 90
                   )
                 }
@@ -252,37 +266,37 @@ export const query = graphql`
         }
       }
     }
-    allWorksJson(filter: {selected: { eq: true }}) {
+    allWorksJson(filter: { selected: { eq: true } }) {
       edges {
         node {
-          title,
-          subTitle,
-          leadingDescription,
-          description,
+          title
+          subTitle
+          leadingDescription
+          description
           links {
-            link,
+            link
             label
-          },
-          year,
-          features,
+          }
+          year
+          features
           images {
-            alt,
+            alt
             grid {
-              tiles,
+              tiles
               fit
-            },
+            }
             reference {
-              author,
+              author
               link
             }
-          },
+          }
           fields {
             workImageAssets {
               childImageSharp {
                 gatsbyImageData(
-                  layout: CONSTRAINED,
-                  width: 1080,
-                  placeholder: BLURRED,
+                  layout: CONSTRAINED
+                  width: 1080
+                  placeholder: BLURRED
                   quality: 90
                 )
               }
