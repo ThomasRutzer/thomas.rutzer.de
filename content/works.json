@@ -1,6 +1,51 @@
 [
   {
     "selected": false,
+    "id": "joefix-ar-radio",
+    "title": "JOE FIX AR Radio",
+    "subTitle": "WebAR image tracking experiment",
+    "year": 2021,
+    "features": [
+      "react",
+      "react three fiber",
+      "react-three-arnft"
+    ],
+    "teaserDescription": "Me & my band released a vinyl this year. So I decided to use the cover for a web-based image tracking experiment.",
+    "links": [
+      {
+        "link": "https://thomasrutzer.dev/joefix-ar-radio/",
+        "label": "view live",
+        "type": "live"
+      }
+    ],
+    "teaserImage": {
+      "src": "joefix-ar-radio-teaser.jpg",
+      "alt": "JOE FIX AR Radio teaser",
+      "reference": {
+        "author": "Thomas Rutzer",
+        "link": ""
+      }
+    },
+    "images": [
+      {
+        "src": "joefix-ar-radio.jpg",
+        "alt": "JOE FIX AR Radio",
+        "grid": {
+          "tiles": [
+            [4,2],
+            [1,2]
+          ],
+          "fit": "cover"
+        },
+        "reference": {
+          "author": "Thomas Rutzer",
+          "link": ""
+        }
+      }
+    ]
+  },
+  {
+    "selected": false,
     "id": "schere-stein-papier",
     "title": "✊✌️✋",
     "subTitle": "r3f evaluation",
@@ -12,7 +57,7 @@
     "teaserDescription": "I read a lot about react-three-fiber (r3f) and wanted to give it a try. So this demo is primarily a technical evaluation with a fun factor.",
     "links": [
       {
-        "link": "https://thomasrutzer.github.io/schere-stein-papier/",
+        "link": "https://thomasrutzer.dev/schere-stein-papier/",
         "label": "view live",
         "type": "live"
       }
@@ -31,14 +76,8 @@
         "alt": "✊, ✌️, ✋ – a react-three-fiber evaluation",
         "grid": {
           "tiles": [
-            [
-              4,
-              2
-            ],
-            [
-              1,
-              2
-            ]
+            [4,2],
+            [1,2]
           ],
           "fit": "cover"
         },
