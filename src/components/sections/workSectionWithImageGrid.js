@@ -11,7 +11,7 @@ const WorkSectionWithImageGrid = ({ work, appearance }) => (
   >
     <ContentWrapper
       variant="large"
-      additionalClasses="px-5 pt-6 md:pb-6 md:pt-7"
+      additionalClasses="px-5 pt-6 md:pt-7"
       verticalSpacing={false}
       horizontalSpacing={false}
     >
