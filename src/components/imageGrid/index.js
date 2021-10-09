@@ -32,7 +32,7 @@ const ImageGrid = ({ category, title, subTitle, images = [] }) => {
         </h3>
         <h4>{subTitle}</h4>
       </div>
-      <div className="grid grid-cols-6 lg:grid-rows-3 lg:gap-5 lg:h-screen">
+      <div className="grid grid-cols-6 lg:grid-rows-3 lg:gap-5 lg:min-h-screen">
         {images.map(({ gatsbyImageData, alt, fit, tiles, link }, key) => (
           <Image
             key={key}
