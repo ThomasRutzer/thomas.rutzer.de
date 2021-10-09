@@ -1,5 +1,102 @@
 [
   {
+    "selected": true,
+    "id": "fraport-bz",
+    "title": "Fraport",
+    "subTitle": "the globe",
+    "year": 2021,
+    "features": [
+      "react",
+      "mqtt"
+    ],
+    "leadingDescription": "In 2021 the visitor centre at Frankfurt airport opened its doors – implemented by art+com. The exhibitions high spot is “The Globe”. It consists of a media wall measuring around 25 square metres and a user control station to show air traffic across the globe in (almost) realtime.",
+    "description": "I was a key developer of the control station. It's a webapp which let users search for flights, now and back in time. Select a flight and observe the associated route on the media wall. High traffic data goes back and forth between the backend system, media wall and the control station to create  a joyful experience of global flight operations.",
+    "teaserDescription": "The new visitor centre at Frankfurt airport high spot is “The Globe”. It consists of a media wall measuring around 25 square metres and a user control station to show air traffic across the globe in (almost) realtime.",
+    "links": [
+      {
+        "link": "https://artcom.de/en/?project=fraport-visitor-center",
+        "label": "art+com case"
+      },
+      {
+        "link": "https://www.frankfurt-airport.com/en/news/explore-frankfurt-airport.html",
+        "label": "the visitor centre"
+      }
+    ],
+    "teaserImage": {
+      "src": "fraport-bz-teaser.jpg",
+      "alt": "Fraport visitor centre teaser",
+      "reference": {
+        "author": "©ART+COM Studios",
+        "link": ""
+      }
+    },
+    "images": [
+      {
+        "src": "fraport-bz-startview.jpg",
+        "alt": "The start view of the control centre",
+        "grid": {
+          "tiles": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "fit": "contain"
+        },
+        "reference": {
+          "author": "©ART+COM Studios",
+          "link": ""
+        }
+      },
+      {
+        "src": "fraport-bz-timeslider.jpg",
+        "alt": "View a flight route – now or back in time",
+        "grid": {
+          "tiles": [
+            [
+              5,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "fit": "cover"
+        },
+        "reference": {
+          "author": "©ART+COM Studios",
+          "link": ""
+        }
+      },
+      {
+        "src": "fraport-bz-the-globe-media-wall.jpg",
+        "alt": "The globe media wall",
+        "grid": {
+          "tiles": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "fit": "cover"
+        },
+        "reference": {
+          "author": "©ART+COM Studios",
+          "link": ""
+        }
+      }
+    ]
+  },
+  {
     "selected": false,
     "id": "joefix-ar-radio",
     "title": "JOE FIX AR Radio",
@@ -10,7 +107,7 @@
       "react three fiber",
       "react-three-arnft"
     ],
-    "teaserDescription": "Me & my band released a vinyl this year. So I decided to use the cover for a web-based image tracking experiment.",
+    "teaserDescription": "My band released a vinyl this year. So I decided to use the cover for a web-based image tracking experiment.",
     "links": [
       {
         "link": "https://thomasrutzer.dev/joefix-ar-radio/",
@@ -280,7 +377,7 @@
     ]
   },
   {
-    "selected": true,
+    "selected": false,
     "id": "qurator-nlp",
     "title": "Qurator",
     "subTitle": "nlp service",
