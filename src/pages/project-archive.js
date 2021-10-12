@@ -10,7 +10,7 @@ import Tabs from "../components/tabs"
 import SectionTitle from "../components/sections/sectionTitle"
 import ProjectArchiveIntro from "../components/sections/projectArchiveIntro"
 
-const formattedYear = year => `'${year.toString().slice(-2)}`
+const formattedYear = year => `${year.toString().slice(-2)}`
 
 const PageProjectArchive = ({ data }) => (
   <>
