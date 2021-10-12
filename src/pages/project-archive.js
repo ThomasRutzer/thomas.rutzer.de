@@ -10,6 +10,8 @@ import Tabs from "../components/tabs"
 import SectionTitle from "../components/sections/sectionTitle"
 import ProjectArchiveIntro from "../components/sections/projectArchiveIntro"
 
+const formattedYear = year => `'${year.toString().slice(-2)}`
+
 const PageProjectArchive = ({ data }) => (
   <>
     <HeadInfos title="thomas rutzer – project archive" />
@@ -18,7 +20,7 @@ const PageProjectArchive = ({ data }) => (
       <ContentWrapper>
         <Tabs>
           {data.allWorksJson.group.map((group, key) => (
-            <section key={key} label={`${group.edges[0].node.year}`}>
+            <section key={key} label={key === 0 ? group.edges[0].node.year : formattedYear(group.edges[0].node.year)}>
               <ul>
                 {group.edges.map((work, groupKey) => (
                   <li
