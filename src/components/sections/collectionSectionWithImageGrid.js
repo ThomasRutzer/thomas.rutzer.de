@@ -5,7 +5,6 @@ import ImageGrid from "../imageGrid"
 import FeatureList from "./../featureList"
 
 const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
-  console.log(collection.includedWorks)
   return (
     <section
       className={appearance === "primary" ? "bg-grey-darkest" : "bg-secondary"}
