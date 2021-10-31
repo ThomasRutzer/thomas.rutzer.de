@@ -54,6 +54,8 @@
       },
       {
         "src": "fraport-bz-timeslider.jpg",
+        "artDirectedSrc": "fraport-bz-timeslider-small-variant.jpg",
+
         "alt": "View a flight route – now or back in time",
         "grid": {
           "tiles": [

@@ -4,16 +4,21 @@ exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === "WorksJson") {
+    const pathPrefix = "./../src/images/works"
+
     createNodeField({
       node,
       name: `workImageAssets`,
-      value: node.images.map(image => `./../src/images/works/${node.id}/${image.src}`)
+      value: node.images.map(image => ({
+        default: `${pathPrefix}/${node.id}/${image.src}`, 
+        ...(!!image.artDirectedSrc && { artDirected: `${pathPrefix}/${node.id}/${image.artDirectedSrc}` }),
+      }))
     })
 
     createNodeField({
       node,
       name: `teaserImageAsset`,
-      value: `./../src/images/works/${node.id}/${node.teaserImage.src}`
+      value: `${pathPrefix}/${node.id}/${node.teaserImage.src}`
     })
   }
 }

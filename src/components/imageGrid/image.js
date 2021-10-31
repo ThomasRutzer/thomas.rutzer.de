@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useMemo } from "react"
 import classnames from "classnames"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, withArtDirection } from "gatsby-plugin-image"
+import resolveConfig from "tailwindcss/resolveConfig"
 
+import tailwindConfig from "./../../../tailwind.config"
 import ExternalLink from "./../links/externalLink"
 
 const classes = {
@@ -22,18 +24,39 @@ const classes = {
   },
 }
 
-const renderGatsbyImage = (gatsbyImageData, objectFit) => (
-  <GatsbyImage
-    className={classes.image}
-    // weird Safari hack: https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
-    style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
-    imgStyle={{
-      objectFit: objectFit,
-    }}
-    alt=""
-    image={gatsbyImageData}
-  />
-)
+const RenderGatsbyImage = ({ gatsbyImageData, objectFit }) => {
+  const fullConfig = resolveConfig(tailwindConfig)
+  const images = useMemo(
+    () =>
+      !!gatsbyImageData.artDirected
+        ? withArtDirection(
+            gatsbyImageData.default.childImageSharp.gatsbyImageData,
+            [
+              {
+                media: `(max-width: ${fullConfig.theme.screens.lg})`,
+                image:
+                  gatsbyImageData.artDirected.childImageSharp.gatsbyImageData,
+              },
+            ]
+          )
+        : gatsbyImageData.default.childImageSharp.gatsbyImageData,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [] 
+  )
+
+  return (
+    <GatsbyImage
+      className={`image-grid__image ${classes.image}`}
+      // weird Safari hack: https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
+      style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
+      imgStyle={{
+        objectFit: objectFit,
+      }}
+      alt=""
+      image={images}
+    />
+  )
+}
 
 const Image = ({
   alt,
@@ -63,11 +86,13 @@ const Image = ({
           contentType="image"
           size="large"
         >
-          {renderGatsbyImage(gatsbyImageData, fit)}
+          <RenderGatsbyImage gatsbyImageData={gatsbyImageData} fit={fit} />
           <span className="sr-only">(opens in new tab)</span>
         </ExternalLink>
       )}
-      {!link && renderGatsbyImage(gatsbyImageData, fit)}
+      {!link && (
+        <RenderGatsbyImage gatsbyImageData={gatsbyImageData} fit={fit} />
+      )}
       <figcaption className={classes.caption}>
         Fig.{index + 1}: {alt}
       </figcaption>

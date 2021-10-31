@@ -5,7 +5,8 @@ import { ExternalLink } from "./../links"
 import ImageGrid from "./../imageGrid"
 import FeatureList from "./../featureList"
 
-const WorkSectionWithImageGrid = ({ work, appearance }) => (
+const WorkSectionWithImageGrid = ({ work, appearance }) =>  {
+return (
   <section
     className={appearance === "primary" ? "bg-grey-darkest" : "bg-secondary"}
   >
@@ -20,8 +21,7 @@ const WorkSectionWithImageGrid = ({ work, appearance }) => (
         title={work.title}
         subTitle={work.subTitle}
         images={work.images.map((image, key) => ({
-          gatsbyImageData:
-            work.fields.workImageAssets[key].childImageSharp.gatsbyImageData,
+          gatsbyImageData: work.fields.workImageAssets[key],
           alt: image.alt,
           tiles: image.grid.tiles,
           fit: image.grid.fit,
@@ -76,6 +76,6 @@ const WorkSectionWithImageGrid = ({ work, appearance }) => (
       </div>
     </ContentWrapper>
   </section>
-)
+)}
 
 export default WorkSectionWithImageGrid

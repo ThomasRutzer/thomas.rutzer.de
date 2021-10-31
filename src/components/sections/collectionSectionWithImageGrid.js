@@ -5,6 +5,7 @@ import ImageGrid from "../imageGrid"
 import FeatureList from "./../featureList"
 
 const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
+  console.log(collection.includedWorks)
   return (
     <section
       className={appearance === "primary" ? "bg-grey-darkest" : "bg-secondary"}
@@ -20,8 +21,7 @@ const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
           title={collection.title}
           subTitle={collection.subTitle}
           images={collection.includedWorks.map((work, key) => ({
-            gatsbyImageData:
-              work.fields.workImageAssets[0].childImageSharp.gatsbyImageData,
+            gatsbyImageData: work.fields.workImageAssets[0],
             alt: `${work.title} – ${work.subTitle} (${work.year})`,
             tiles: collection.imageGrid.tiles[key],
             fit: work.fields.workImageAssets[0].fit,
