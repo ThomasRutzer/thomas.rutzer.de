@@ -28,14 +28,14 @@ const RenderGatsbyImage = ({ gatsbyImageData, objectFit }) => {
   const fullConfig = resolveConfig(tailwindConfig)
   const images = useMemo(
     () =>
-      !!gatsbyImageData.artDirected
+      !!gatsbyImageData.smallVariant
         ? withArtDirection(
             gatsbyImageData.default.childImageSharp.gatsbyImageData,
             [
               {
                 media: `(max-width: ${fullConfig.theme.screens.lg})`,
                 image:
-                  gatsbyImageData.artDirected.childImageSharp.gatsbyImageData,
+                  gatsbyImageData.smallVariant.childImageSharp.gatsbyImageData,
               },
             ]
           )

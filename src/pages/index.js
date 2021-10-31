@@ -267,13 +267,13 @@ export const query = graphql`
                     )
                   }
                 }
-                artDirected {
+                smallVariant {
                   childImageSharp {
                     gatsbyImageData(
-                      layout: FIXED
-                      width: 400
+                      layout: CONSTRAINED
+                      width: 768
                       placeholder: DOMINANT_COLOR
-                      quality: 90,
+                      quality: 90
                     )
                   }
                 }
@@ -319,11 +319,11 @@ export const query = graphql`
                   )
                 }
               }
-              artDirected {
+              smallVariant {
                 childImageSharp {
                   gatsbyImageData(
                     layout: CONSTRAINED
-                    width: 400
+                    width: 768
                     placeholder: DOMINANT_COLOR
                     quality: 90
                   )
