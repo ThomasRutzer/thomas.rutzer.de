@@ -112,9 +112,9 @@
     "teaserDescription": "My band released a vinyl this year. So I decided to use the cover for a web-based image tracking experiment.",
     "links": [
       {
-        "link": "https://thomasrutzer.dev/joefix-ar-radio/",
+        "link": "https://github.com/ThomasRutzer/joefix-ar-radio",
         "label": "view live",
-        "type": "live"
+        "type": "github"
       }
     ],
     "teaserImage": {

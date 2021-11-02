@@ -24,7 +24,7 @@ const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
             alt: `${work.title} – ${work.subTitle} (${work.year})`,
             tiles: collection.imageGrid.tiles[key],
             fit: work.fields.workImageAssets[0].fit,
-            link: work.links.filter(link => link.type === "live")[0],
+            link: work.links.filter(link => link.type === "live" || link.type === "github")[0],
           }))}
         />
       </ContentWrapper>
