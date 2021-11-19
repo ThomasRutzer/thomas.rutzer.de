@@ -18,7 +18,7 @@ const PageProjectArchive = ({ data }) => (
     <LayoutWrapper>
       <ProjectArchiveIntro />
       <ContentWrapper>
-        <Tabs>
+        <Tabs defaultIndex={data.allWorksJson.group.length -1 }>
           {data.allWorksJson.group.map((group, key) => (
             <section key={key} label={key === 0 ? group.edges[0].node.year : formattedYear(group.edges[0].node.year)}>
               <ul>
