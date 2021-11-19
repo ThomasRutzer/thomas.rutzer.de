@@ -17,7 +17,7 @@
     "react-helmet": "^6.1.0",
     "react-scroll-percentage": "^4.2.0",
     "react-slot-machine": "github:thomasrutzer/react-slot-machine#v1.0.3",
-    "react-tabs": "^3.1.1",
+    "react-tabs": "^3.2.3",
     "splitting": "^1.0.6",
     "tailwindcss": "^1.9.5",
     "typeface-ibm-plex-mono": "0.0.61"
