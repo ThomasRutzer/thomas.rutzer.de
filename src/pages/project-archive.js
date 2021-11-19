@@ -18,9 +18,12 @@ const PageProjectArchive = ({ data }) => (
     <LayoutWrapper>
       <ProjectArchiveIntro />
       <ContentWrapper>
-        <Tabs defaultIndex={data.allWorksJson.group.length -1 }>
+        <Tabs defaultIndex={data.allWorksJson.group.length - 1}>
           {data.allWorksJson.group.map((group, key) => (
-            <section key={key} label={key === 0 ? group.edges[0].node.year : formattedYear(group.edges[0].node.year)}>
+            <section
+              key={key}
+              label={key === 0 ? group.edges[0].node.year : formattedYear(group.edges[0].node.year)}
+            >
               <ul>
                 {group.edges.map((work, groupKey) => (
                   <li
@@ -34,34 +37,24 @@ const PageProjectArchive = ({ data }) => (
                         className="h-full rounded-lg"
                         // weird Safari hack: https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
                         style={{
-                          WebkitMaskImage:
-                            "-webkit-radial-gradient(white, black)",
+                          WebkitMaskImage: "-webkit-radial-gradient(white, black)",
                         }}
                         alt={work.node.teaserImage.alt}
-                        image={
-                          work.node.fields.teaserImageAsset.childImageSharp
-                            .gatsbyImageData
-                        }
+                        image={work.node.fields.teaserImageAsset.childImageSharp.gatsbyImageData}
                       />
                     </div>
                     <div className="col-start-2 col-span-1">
-                      <h2 className="text-3xl lg:text-4xl -mt-2">
-                        {work.node.title}
-                      </h2>
+                      <h2 className="text-3xl lg:text-4xl -mt-2">{work.node.title}</h2>
                     </div>
                     <div className="col-start-2 col-span-1 row-start-2 self-end">
-                      <h3 className="text-secondary-lighter">
-                        {work.node.subTitle}
-                      </h3>
+                      <h3 className="text-secondary-lighter">{work.node.subTitle}</h3>
                     </div>
                     <div className="col-start-1 col-span-2 md:col-span-2 my-2 md:my-0">
                       <p>{work.node.teaserDescription}</p>
                     </div>
                     <div className="col-start-1 col-span-2 md:col-span-2 md:row-start-2 flex flex-row justify-between">
                       <div className="self-end">
-                        <span className="text-secondary-lighter block text-sm">
-                          key facts
-                        </span>
+                        <span className="text-secondary-lighter block text-sm">key facts</span>
                         <FeatureList items={work.node.features} />
                       </div>
                       <div className="self-end">
@@ -91,16 +84,11 @@ const PageProjectArchive = ({ data }) => (
               <p className="mb-2 font-bold">teaser images</p>
               {data.allWorksJson.group.map((group, groupKey) => (
                 <ul key={groupKey} className="text-sm">
-                  <li className="text-secondary-lighter mb-1">
-                    {group.edges[0].node.year}
-                  </li>
+                  <li className="text-secondary-lighter mb-1">{group.edges[0].node.year}</li>
                   {group.edges.map((work, key) => (
                     <li key={key + groupKey} className="mb-2 block">
                       {work.node.teaserImage.reference.link && (
-                        <ExternalLink
-                          link={work.node.teaserImage.reference.link}
-                          size="small"
-                        >
+                        <ExternalLink link={work.node.teaserImage.reference.link} size="small">
                           {work.node.title + " " + work.node.subTitle} by{" "}
                           {work.node.teaserImage.reference.author}
                         </ExternalLink>

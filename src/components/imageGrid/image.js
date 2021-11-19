@@ -29,19 +29,15 @@ const RenderGatsbyImage = ({ gatsbyImageData, objectFit }) => {
   const images = useMemo(
     () =>
       !!gatsbyImageData.smallVariant
-        ? withArtDirection(
-            gatsbyImageData.default.childImageSharp.gatsbyImageData,
-            [
-              {
-                media: `(max-width: ${fullConfig.theme.screens.lg})`,
-                image:
-                  gatsbyImageData.smallVariant.childImageSharp.gatsbyImageData,
-              },
-            ]
-          )
+        ? withArtDirection(gatsbyImageData.default.childImageSharp.gatsbyImageData, [
+            {
+              media: `(max-width: ${fullConfig.theme.screens.lg})`,
+              image: gatsbyImageData.smallVariant.childImageSharp.gatsbyImageData,
+            },
+          ])
         : gatsbyImageData.default.childImageSharp.gatsbyImageData,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [] 
+    []
   )
 
   return (
@@ -90,9 +86,7 @@ const Image = ({
           <span className="sr-only">(opens in new tab)</span>
         </ExternalLink>
       )}
-      {!link && (
-        <RenderGatsbyImage gatsbyImageData={gatsbyImageData} fit={fit} />
-      )}
+      {!link && <RenderGatsbyImage gatsbyImageData={gatsbyImageData} fit={fit} />}
       <figcaption className={classes.caption}>
         Fig.{index + 1}: {alt}
       </figcaption>

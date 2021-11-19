@@ -11,9 +11,7 @@ const getInitialState = () => {
 }
 
 const usePrefersReducedMotion = () => {
-  const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(
-    getInitialState
-  )
+  const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(getInitialState)
   useEffect(() => {
     const mediaQueryList = window.matchMedia(QUERY)
     const listener = event => {

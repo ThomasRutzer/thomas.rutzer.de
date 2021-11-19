@@ -40,10 +40,7 @@ const ProjectArchiveTitle = () => {
         </h1>
       </ContentWrapper>
 
-      <div
-        className="project-archive-intro__bg bg-gradient-to-r from-black"
-        aria-hidden="true"
-      >
+      <div className="project-archive-intro__bg bg-gradient-to-r from-black" aria-hidden="true">
         <div className="project-archive-intro__circle project-archive-intro__circle--1">
           <ParallaxCircles mouseMoveTranslations={[1, 3, 1, 3]} />
         </div>

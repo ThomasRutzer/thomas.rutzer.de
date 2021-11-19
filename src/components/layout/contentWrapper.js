@@ -28,9 +28,7 @@ const ContentWrapper = ({
   }
 
   return (
-    <div
-      className={`relative container mx-auto ${createClasses()} ${additionalClasses}`}
-    >
+    <div className={`relative container mx-auto ${createClasses()} ${additionalClasses}`}>
       {children}
     </div>
   )

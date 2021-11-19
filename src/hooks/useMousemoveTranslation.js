@@ -5,13 +5,7 @@ import getRandomNumber from "./../utils/getRandomNumber"
 import lerp from "./../utils/lerp"
 import map from "./../utils/map"
 
-const useMouseMoveTranslation = (
-  xRangeMin,
-  xRangeMax,
-  yRangeMin,
-  yRangeMax,
-  isDisabled
-) => {
+const useMouseMoveTranslation = (xRangeMin, xRangeMax, yRangeMin, yRangeMax, isDisabled) => {
   const [tx, setTx] = useState(null)
   const [ty, setTy] = useState(null)
   const mouseY = useRef(null)
@@ -32,20 +26,8 @@ const useMouseMoveTranslation = (
     const yStart = getRandomNumber(yRangeMin, yRangeMax)
 
     const renderMousemove = () => {
-      setTx(tx =>
-        lerp(
-          tx,
-          map(mouseX.current, 0, window.innerWidth, -xStart, xStart),
-          0.07
-        )
-      )
-      setTy(ty =>
-        lerp(
-          ty,
-          map(mouseY.current, 0, window.innerHeight, -yStart, yStart),
-          0.07
-        )
-      )
+      setTx(tx => lerp(tx, map(mouseX.current, 0, window.innerWidth, -xStart, xStart), 0.07))
+      setTy(ty => lerp(ty, map(mouseY.current, 0, window.innerHeight, -yStart, yStart), 0.07))
 
       animationFrameId = requestAnimationFrame(renderMousemove)
     }

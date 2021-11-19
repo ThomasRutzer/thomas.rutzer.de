@@ -6,9 +6,7 @@ import FeatureList from "./../featureList"
 
 const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
   return (
-    <section
-      className={appearance === "primary" ? "bg-grey-darkest" : "bg-secondary"}
-    >
+    <section className={appearance === "primary" ? "bg-grey-darkest" : "bg-secondary"}>
       <ContentWrapper
         variant="large"
         additionalClasses="px-5 pt-6 md:pb-6 md:pt-7"
@@ -34,9 +32,7 @@ const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
             <div>
               <span
                 className={`${
-                  appearance === "primary"
-                    ? "text-secondary-lighter"
-                    : "text-grey-darkest"
+                  appearance === "primary" ? "text-secondary-lighter" : "text-grey-darkest"
                 } block`}
               >
                 key facts
@@ -45,9 +41,7 @@ const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
             </div>
           </div>
           <div className="my-4 md:my-0 col-start-1 col-span-6 md:col-start-2 md:col-span-4">
-            <p className="whitespace-pre-line">
-              {collection.leadingDescription}
-            </p>
+            <p className="whitespace-pre-line">{collection.leadingDescription}</p>
             <p className="whitespace-pre-line mt-3">{collection.description}</p>
           </div>
         </div>

@@ -43,9 +43,7 @@ const PageHome = ({ data }) => {
               </span>
               <span className="text-4xl ml-4 md:ml-0 block">is more</span>
             </h2>
-            <CtaSecondaryTypeLink link="/project-archive">
-              project archive
-            </CtaSecondaryTypeLink>
+            <CtaSecondaryTypeLink link="/project-archive">project archive</CtaSecondaryTypeLink>
           </div>
         </ContentWrapper>
       </section>
@@ -58,11 +56,7 @@ const PageHome = ({ data }) => {
             <div className="col-start-1 md:col-start-2 col-span-2">
               {data.allWritesJson.edges.map((write, key) => (
                 <div key={key} className={key === 0 ? "mt-0" : "mt-4 md:mt-7"}>
-                  <ExternalLink
-                    link={write.node.link}
-                    appearance="primary"
-                    size="large"
-                  >
+                  <ExternalLink link={write.node.link} appearance="primary" size="large">
                     {write.node.title}
                   </ExternalLink>
                   <small className="block italic text-grey-lighter mt-4">
@@ -82,22 +76,21 @@ const PageHome = ({ data }) => {
             </div>
             <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-span-1">
               <p>
-                I'm a creative JavaScript developer with a focus on unique
-                interfaces and interactions. I currently work at{" "}
+                I'm a creative JavaScript developer with a focus on unique interfaces and
+                interactions. I currently work at{" "}
                 <ExternalLink link="https://artcom.de" appearance="primary">
                   art+com
                 </ExternalLink>
                 , a studio for media installations and spaces.
               </p>
               <p className="mt-4">
-                In my team located in 50°56"52.8"N 6°54"48.7"E, we are
-                specialized in crafting custom solutions, mostly with full-stack
-                JavaScript, WebGL and MQTT based realtime communication.
+                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting
+                custom solutions, mostly with full-stack JavaScript, WebGL and MQTT based realtime
+                communication.
               </p>
               <p className="mt-4">
-                Personally, I do everything possible with Javascript. My
-                research focus at the moment is blending interfaces into spaces
-                with the new WebXR Device API.
+                Personally, I do everything possible with Javascript. My research focus at the
+                moment is blending interfaces into spaces with the new WebXR Device API.
               </p>
             </div>
             <div className="col-start-1 md:col-start-2 lg:col-start-3 col-span-1">
@@ -156,10 +149,7 @@ const PageHome = ({ data }) => {
                     {work.node.images.map((image, imageKey) => (
                       <li key={imageKey}>
                         {image.reference.link && (
-                          <ExternalLink
-                            link={image.reference.link}
-                            size="small"
-                          >
+                          <ExternalLink link={image.reference.link} size="small">
                             Fig.{imageKey + 1} by {image.reference.author}
                           </ExternalLink>
                         )}
@@ -193,18 +183,12 @@ const PageHome = ({ data }) => {
                   </ExternalLink>
                 </li>
                 <li>
-                  <ExternalLink
-                    link="https://github.com/features/actions"
-                    size="small"
-                  >
+                  <ExternalLink link="https://github.com/features/actions" size="small">
                     Github actions
                   </ExternalLink>
                 </li>
                 <li>
-                  <ExternalLink
-                    link="https://fonts.google.com/specimen/IBM+Plex+Mono"
-                    size="small"
-                  >
+                  <ExternalLink link="https://fonts.google.com/specimen/IBM+Plex+Mono" size="small">
                     IBM Plex Mono
                   </ExternalLink>
                 </li>

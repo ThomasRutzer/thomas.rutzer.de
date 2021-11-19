@@ -75,10 +75,7 @@ const Page404 = () => {
               />
             </div>
             <div className="flex justify-center mt-3 md:mt-6">
-              <CtaSecondaryTypeButton
-                disabled={isSpinning}
-                onClick={onStartSpinning}
-              >
+              <CtaSecondaryTypeButton disabled={isSpinning} onClick={onStartSpinning}>
                 Spin to Win!
               </CtaSecondaryTypeButton>
             </div>

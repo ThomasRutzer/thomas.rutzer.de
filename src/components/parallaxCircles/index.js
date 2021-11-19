@@ -10,9 +10,7 @@ const ParallaxCircles = ({ mouseMoveTranslations = [10, 20, 10, 20] }) => {
     mouseMoveTranslations[1],
     mouseMoveTranslations[2],
     mouseMoveTranslations[3],
-    typeof window === "undefined"
-      ? false
-      : isTouchDevice() || prefersReducedMotion
+    typeof window === "undefined" ? false : isTouchDevice() || prefersReducedMotion
   )
 
   return (

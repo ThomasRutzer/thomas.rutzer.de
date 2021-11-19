@@ -91,10 +91,8 @@ class Smear extends React.PureComponent {
   }
 
   onPointerMove(event) {
-    this.displacementFilter.scale.x =
-      Math.atan(event.data.global.x - this.brush.x) * 7
-    this.displacementFilter.scale.y =
-      Math.atan(event.data.global.y - this.brush.y) * 7
+    this.displacementFilter.scale.x = Math.atan(event.data.global.x - this.brush.x) * 7
+    this.displacementFilter.scale.y = Math.atan(event.data.global.y - this.brush.y) * 7
 
     this.brush.position.copyFrom(event.data.global)
     this.update()

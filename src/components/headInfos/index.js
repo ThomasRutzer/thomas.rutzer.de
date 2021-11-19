@@ -37,8 +37,8 @@ const HeadInfos = ({ title, description, image }) => (
             <meta property="og:url" content={url} />
             <meta name="twitter:card" content="summary_large_image" />
             <script>
-              typeof document !== `undefined` ?
-              document.documentElement.classList.remove("no-js") : null
+              typeof document !== `undefined` ? document.documentElement.classList.remove("no-js") :
+              null
             </script>
           </Helmet>
         </>

@@ -23,11 +23,9 @@ const ExternalLink = ({
   size,
 }) => (
   <a
-    className={`external-link ${classes.contentType(
-      contentType
-    )} ${classes.appearance(appearance)} ${classes.size(
-      size
-    )} ${additionalClasses}`}
+    className={`external-link ${classes.contentType(contentType)} ${classes.appearance(
+      appearance
+    )} ${classes.size(size)} ${additionalClasses}`}
     href={link}
     rel="noopener noreferrer"
     target="_blank"

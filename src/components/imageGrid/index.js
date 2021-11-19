@@ -24,9 +24,7 @@ const ImageGrid = ({ category, title, subTitle, images = [] }) => {
       <div
         className={`flex items-center justify-center flex-col text-center lg:absolute lg:w-full lg:h-full z-10 mb-6 pointer-events-none`}
       >
-        <h5 className="bg-primary text-xs italic rounded-md px-1">
-          {category}
-        </h5>
+        <h5 className="bg-primary text-xs italic rounded-md px-1">{category}</h5>
         <h3 className="text-4xl md:text-6xl md:text-stroke-white md:text-stroke-2 italic leading-snug">
           {title}
         </h3>
