@@ -1,5 +1,34 @@
 [
   {
+    "selected": false,
+    "id": "react-three-arjs",
+    "title": "Reactjs + Threejs + ARjs",
+    "subTitle": "npm package",
+    "year": 2021,
+    "features": [
+      "react",
+      "react three fiber",
+      "arjs"
+    ],
+    "teaserDescription": "An open source package to combine ARjs' ES6 rebuild with react-three-fiber (r3f)",
+    "links": [
+      {
+        "link": "https://github.com/artcom/react-three-arjs",
+        "label": "view on github",
+        "type": "github"
+      }
+    ],
+    "teaserImage": {
+      "src": "react-three-arjs-teaser.jpg",
+      "alt": "'Teaser for npm package @artcom/react-three-arjs",
+      "reference": {
+        "author": "Thomas Rutzer",
+        "link": ""
+      }
+    },
+    "images": []
+  },
+  {
     "selected": true,
     "id": "fraport-bz",
     "title": "Fraport",
@@ -55,7 +84,6 @@
       {
         "src": "fraport-bz-timeslider.jpg",
         "smallVariantSrc": "fraport-bz-timeslider-small-variant.jpg",
-
         "alt": "View a flight route – now or back in time",
         "grid": {
           "tiles": [
@@ -132,8 +160,14 @@
         "alt": "JOE FIX AR Radio",
         "grid": {
           "tiles": [
-            [4,2],
-            [1,2]
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              2
+            ]
           ],
           "fit": "cover"
         },
@@ -176,8 +210,14 @@
         "alt": "✊, ✌️, ✋ – a react-three-fiber evaluation",
         "grid": {
           "tiles": [
-            [4,2],
-            [1,2]
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              2
+            ]
           ],
           "fit": "cover"
         },
