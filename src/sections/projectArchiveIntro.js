@@ -1,8 +1,8 @@
 import React from "react"
 
-import ParallaxCircles from "./../parallaxCircles"
-import { ContentWrapper } from "../layout"
-import { InternalLink } from "./../links"
+import ParallaxCircles from "./../components/parallaxCircles"
+import { ContentWrapper } from "./../components/layout"
+import { InternalLink } from "./../components/links"
 
 const ProjectArchiveTitle = () => {
   return (
@@ -30,7 +30,7 @@ const ProjectArchiveTitle = () => {
       </ContentWrapper>
       <ContentWrapper>
         <h1 className="project-archive-intro__title leading-tight md:my-4">
-          <span className="text-sm text-grey-lighter">(Almost all)</span>
+          <span className="text-sm">(Almost all)</span>
           <span className="text-6xl font-bold block">
             Design <br />& Code
           </span>

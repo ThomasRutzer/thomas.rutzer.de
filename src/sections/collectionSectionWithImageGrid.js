@@ -1,8 +1,8 @@
 import React from "react"
 
-import { ContentWrapper } from "../layout"
-import ImageGrid from "../imageGrid"
-import FeatureList from "./../featureList"
+import { ContentWrapper } from "./../components/layout"
+import ImageGrid from "./../components/imageGrid"
+import FeatureList from "./../components/featureList"
 
 const CollectionSectionWithImageGrid = ({ collection, appearance }) => {
   return (

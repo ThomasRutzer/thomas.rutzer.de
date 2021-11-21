@@ -1,9 +1,9 @@
 import React from "react"
 
-import { ContentWrapper } from "./../layout"
-import { ExternalLink } from "./../links"
-import ImageGrid from "./../imageGrid"
-import FeatureList from "./../featureList"
+import { ContentWrapper } from "./../components/layout"
+import { ExternalLink } from "./../components/links"
+import ImageGrid from "./../components/imageGrid"
+import FeatureList from "./../components/featureList"
 
 const WorkSectionWithImageGrid = ({ work, appearance }) => {
   return (

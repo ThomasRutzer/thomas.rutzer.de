@@ -5,12 +5,13 @@ import Intro from "../components/intro"
 import HeadInfos from "../components/headInfos"
 import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import { ExternalLink } from "../components/links"
+import { CtaSecondaryTypeLink } from "./../components/cta"
+
 import {
   SectionTitle,
   CollectionSectionWithImageGrid,
   WorkSectionWithImageGrid,
-} from "./../components/sections"
-import { CtaSecondaryTypeLink } from "./../components/cta"
+} from "./../sections"
 
 const PageHome = ({ data }) => {
   return (

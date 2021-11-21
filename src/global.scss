@@ -34,9 +34,10 @@ body {
 @import "./components/links/index.scss";
 @import "./components/markdown/index.scss";
 @import "./components/parallaxCircles/index.scss";
-@import "./components/sections/index.scss";
 @import "./components/tabs/index.scss";
 
+
+@import "./sections/index.scss";
 @import "./utils/cssAnimations.scss";
 
 @responsive {

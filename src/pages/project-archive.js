@@ -7,8 +7,8 @@ import { ContentWrapper, LayoutWrapper } from "../components/layout"
 import { ExternalLink } from "../components/links"
 import FeatureList from "../components/featureList"
 import Tabs from "../components/tabs"
-import SectionTitle from "../components/sections/sectionTitle"
-import ProjectArchiveIntro from "../components/sections/projectArchiveIntro"
+
+import { ProjectArchiveIntro, SectionTitle } from "./../sections"
 
 const formattedYear = year => `${year.toString().slice(-2)}`
 
@@ -34,7 +34,7 @@ const PageProjectArchive = ({ data }) => (
                   >
                     <div className="col-start-1 col-span-1 row-start-1 row-span-2">
                       <GatsbyImage
-                        className="h-full rounded-lg"
+                        className="rounded-lg"
                         // weird Safari hack: https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
                         style={{
                           WebkitMaskImage: "-webkit-radial-gradient(white, black)",
