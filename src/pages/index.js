@@ -5,11 +5,11 @@ import Intro from "../components/intro"
 import HeadInfos from "../components/headInfos"
 import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import { ExternalLink } from "../components/links"
-import { CtaSecondaryTypeLink } from "./../components/cta"
 
 import {
   SectionTitle,
   CollectionSectionWithImageGrid,
+  ProjectArchiveTeaser,
   WorkSectionWithImageGrid,
 } from "./../sections"
 
@@ -35,22 +35,12 @@ const PageHome = ({ data }) => {
           key={key}
         />
       ))}
-      <section className="no-js:hidden md:py-4 bg-black bg-gradient-to-b from-grey-darkest">
-        <ContentWrapper>
-          <div className="flex flex-col md:flex-row items-center align-center justify-center">
-            <h2 className="mb-4 md:mb-0 md:mr-5">
-              <span className="text-4xl md:text-stroke-white md:text-stroke italic md:-ml-4">
-                There
-              </span>
-              <span className="text-4xl ml-4 md:ml-0 block">is more</span>
-            </h2>
-            <CtaSecondaryTypeLink link="/project-archive">project archive</CtaSecondaryTypeLink>
-          </div>
-        </ContentWrapper>
-      </section>
+
+      <ProjectArchiveTeaser />
+
       <section className="bg-grey-darkest-pattern">
         <ContentWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:mt-7">
             <div className="col-start-1 col-span-1">
               <SectionTitle appearance="primary">thoughts</SectionTitle>
             </div>
@@ -86,7 +76,7 @@ const PageHome = ({ data }) => {
               </p>
               <p className="mt-4">
                 In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting
-                custom solutions, mostly with full-stack JavaScript, WebGL and MQTT based realtime
+                custom solutions, mostly with fullstack JavaScript, WebGL and MQTT based realtime
                 communication.
               </p>
               <p className="mt-4">

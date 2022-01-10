@@ -1,0 +1,77 @@
+.project-archive-teaser__content {
+  position: relative;
+  z-index: 2;
+}
+
+.project-archive-teaser__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+
+  @screen lg {
+    overflow: visible;
+  }
+}
+
+.project-archive-teaser__circle {
+  position: absolute;
+
+  &--1 {
+    width: 220px;
+    height: 220px;
+    bottom: -80px;
+    left: -25px;
+
+    @screen lg {
+      width: 320px;
+      height: 320px;
+      bottom: -100px;
+    }
+  }
+
+  &--2 {
+    width: 160px;
+    height: 160px;
+    top: -80px;
+    left: 70%;
+
+    @screen lg {
+      width: 220px;
+      height: 220px;
+      top: -100px;
+    }
+  }
+
+
+  &--3 {
+    width: 64px;
+    height: 64px;
+    top: 48px;
+    right: -32px;
+
+    @screen lg {
+      top: 48px;
+      right: 10%;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    opacity: 0;
+
+    &--1 {
+      animation: enter 600ms 300ms forwards;
+    }
+
+    &--2 {
+      animation: enter 600ms 400ms forwards;
+    }
+
+    &--3 {
+      animation: enter 600ms 500ms forwards;
+    }
+  }
+}
