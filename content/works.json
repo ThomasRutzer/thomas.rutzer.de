@@ -1,6 +1,56 @@
 [
   {
     "selected": false,
+    "id": "entomon",
+    "title": "Entomon",
+    "subTitle": "A image gallery with depth",
+    "year": 2021,
+    "features": [
+      "react",
+      "react three fiber"
+    ],
+    "teaserDescription": "Laura Wagner & Lisa Marleen Mantel created a curated a collection of interspecies alternatives, using technologically mediated natures through machine vision.",
+    "links": [
+      {
+        "link": "https://munchie.uber.space/entomon/",
+        "label": "view live",
+        "type": "live"
+      }
+    ],
+    "teaserImage": {
+      "src": "entomon-teaser.jpg",
+      "alt": "Entomon teaser",
+      "reference": {
+        "author": "Thomas Rutzer",
+        "link": ""
+      }
+    },
+    "images": [
+      {
+        "src": "entomon-preview.jpg",
+        "alt": "A curated a collection of interspecies alternatives",
+        "grid": {
+          "tiles": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "fit": "cover"
+        },
+        "reference": {
+          "author": "Thomas Rutzer",
+          "link": ""
+        }
+      }
+    ]
+  },
+  {
+    "selected": false,
     "id": "react-three-arjs",
     "title": "r3f + ARjs",
     "subTitle": "npm package",
