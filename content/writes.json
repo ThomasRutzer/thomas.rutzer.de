@@ -1,5 +1,10 @@
 [ 
   {
+    "title": "Sync local and remote Zustand store in ReactJS",
+    "link": "https://thomasrutzer.medium.com/sync-local-and-remote-zustand-store-in-reactjs-10abde3b96cf",
+    "description": "Published 01.2022"
+  },
+  {
     "title": "✊✌️✋ – a demo to evaluate react-three-fiber and its ecosystem",
     "link": "https://thomasrutzer.medium.com/84c52df4621c",
     "description": "Published 11.2020"
