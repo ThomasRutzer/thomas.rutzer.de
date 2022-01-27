@@ -2,38 +2,10 @@
   position: relative;
   text-decoration: none;
   display: inline-block;
-
-  &:after {
-    content: "";
-    position: absolute;
-    left: -4px;
-    bottom: -4px;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    opacity: 0;
-    transition: opacity 400ms ease-out;
-    border: 1px dashed theme("colors.white");
-    @apply rounded-md;
-  }
-
-  &.external-link--large {
-    &:after {
-      border-width: 3px;
-      left: -8px;
-      bottom: -8px;
-      width: calc(100% + 16px);
-      height: calc(100% + 16px);
-    }
-  }
+  @apply rounded-md;
 
   .external-link__image-wrapper {
     display: inherit;
-  }
-
-  &.external-link--primary {
-    &:after {
-      border-color: theme("colors.primary");
-    }
   }
 
   &:hover {
@@ -41,19 +13,13 @@
   }
 
   &:focus {
-    outline: 0;
-
-    &:after {
-      opacity: 1;
-    }
+    outline: 1px dashed currentColor;
+    outline-offset: 4px;
   }
 
   &.external-link--large:focus {
-    outline: 0;
-
-    &:after {
-      opacity: 1;
-    }
+    outline-width: 3px;
+    outline-offset: 8px;
   }
 
   &:active {
