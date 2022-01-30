@@ -9,6 +9,7 @@
     "node": "16.13.1"
   },
   "dependencies": {
+    "@radix-ui/react-collapsible": "^0.1.5",
     "animejs": "^3.2.1",
     "classnames": "^2.2.6",
     "pixi.js": "^5.3.3",

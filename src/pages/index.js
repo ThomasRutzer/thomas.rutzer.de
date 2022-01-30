@@ -5,6 +5,7 @@ import Intro from "../components/intro"
 import HeadInfos from "../components/headInfos"
 import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import { ExternalLink } from "../components/links"
+import Collapsible from "../components/collapsible"
 
 import {
   SectionTitle,
@@ -130,60 +131,67 @@ const PageHome = ({ data }) => {
               <SectionTitle appearance="primary">credits</SectionTitle>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
-              <p className="mb-2 font-bold">images</p>
-              {data.allWorksJson.edges.map((work, key) => (
-                <div key={key} className={key === 0 ? "mt-0" : "mt-4"}>
-                  <p className="text-sm text-secondary-lighter">
-                    {work.node.title} <i>{work.node.subTitle}</i>
-                  </p>
-                  <ul>
-                    {work.node.images.map((image, imageKey) => (
-                      <li key={imageKey}>
-                        {image.reference.link && (
-                          <ExternalLink link={image.reference.link} size="small">
-                            Fig.{imageKey + 1} by {image.reference.author}
-                          </ExternalLink>
-                        )}
-                        {!image.reference.link && (
-                          <p className="text-sm">
-                            Fig.{imageKey + 1} by {image.reference.author}
-                          </p>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              <Collapsible title="images">
+                {data.allWorksJson.edges.map((work, key) => (
+                  <div key={key} className="mt-2">
+                    <dl>
+                      <dt className="mt-2">
+                        <span className="text-sm text-secondary-lighter">
+                          {work.node.title} <i>{work.node.subTitle}</i>
+                        </span>
+                      </dt>
+                      {work.node.images.map((image, imageKey) => (
+                        <dl className="mt-2" key={imageKey}>
+                          {image.reference.link && (
+                            <ExternalLink link={image.reference.link} size="small">
+                              Fig.{imageKey + 1} by {image.reference.author}
+                            </ExternalLink>
+                          )}
+                          {!image.reference.link && (
+                            <span className="text-sm">
+                              Fig.{imageKey + 1} by {image.reference.author}
+                            </span>
+                          )}
+                        </dl>
+                      ))}
+                    </dl>
+                  </div>
+                ))}
+              </Collapsible>
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
-              <p className="mb-2 font-bold">this site</p>
-              <ul>
-                <li>
-                  <ExternalLink link="https://www.gatsbyjs.org/" size="small">
-                    Gatsby.js
-                  </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink link="https://tailwindcss.com/" size="small">
-                    Tailwind.css
-                  </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink link="https://animejs.com/" size="small">
-                    anime.js
-                  </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink link="https://github.com/features/actions" size="small">
-                    Github actions
-                  </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink link="https://fonts.google.com/specimen/IBM+Plex+Mono" size="small">
-                    IBM Plex Mono
-                  </ExternalLink>
-                </li>
-              </ul>
+              <Collapsible title="this site">
+                <ul>
+                  <li className="mt-2">
+                    <ExternalLink link="https://www.gatsbyjs.org/" size="small">
+                      Gatsby.js
+                    </ExternalLink>
+                  </li>
+                  <li className="mt-2">
+                    <ExternalLink link="https://tailwindcss.com/" size="small">
+                      Tailwind.css
+                    </ExternalLink>
+                  </li>
+                  <li className="mt-2">
+                    <ExternalLink link="https://animejs.com/" size="small">
+                      anime.js
+                    </ExternalLink>
+                  </li>
+                  <li className="mt-2">
+                    <ExternalLink link="https://github.com/features/actions" size="small">
+                      Github actions
+                    </ExternalLink>
+                  </li>
+                  <li className="mt-2">
+                    <ExternalLink
+                      link="https://fonts.google.com/specimen/IBM+Plex+Mono"
+                      size="small"
+                    >
+                      IBM Plex Mono
+                    </ExternalLink>
+                  </li>
+                </ul>
+              </Collapsible>
             </div>
           </div>
         </ContentWrapper>

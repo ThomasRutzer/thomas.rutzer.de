@@ -1,0 +1,26 @@
+.collapsible {
+  &__title { 
+    &:focus {
+      outline: 1px dashed currentColor;
+      outline-offset: 4px;
+    }
+  }
+
+  &__icon {
+    width: 1.25em;
+    transform: rotate(135deg);
+    transition: transform 300ms ease-out;
+
+    [data-state="open"] & {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__content {
+    opacity: 0;
+
+    [data-state="open"] & {
+      animation: fade-in 300ms forwards;
+    }
+  }
+}
