@@ -40,7 +40,7 @@ body {
 @import "./sections/index.scss";
 @import "./utils/cssAnimations.scss";
 
-@responsive {
+@layer components {
   .bg-grey-darkest-pattern {
     background: url("./images/seamless-BG.jpg") repeat;
     background-color: theme("colors.grey.darkest");
