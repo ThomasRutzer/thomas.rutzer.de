@@ -10,15 +10,17 @@ exports.onCreateNode = ({ node, actions }) => {
       node,
       name: `workImageAssets`,
       value: node.images.map(image => ({
-        default: `${pathPrefix}/${node.id}/${image.src}`, 
-        ...(!!image.smallVariantSrc && { smallVariant: `${pathPrefix}/${node.id}/${image.smallVariantSrc}` }),
-      }))
+        default: `${pathPrefix}/${node.workId}/${image.src}`,
+        ...(!!image.smallVariantSrc && {
+          smallVariant: `${pathPrefix}/${node.workId}/${image.smallVariantSrc}`,
+        }),
+      })),
     })
 
     createNodeField({
       node,
       name: `teaserImageAsset`,
-      value: `${pathPrefix}/${node.id}/${node.teaserImage.src}`
+      value: `${pathPrefix}/${node.workId}/${node.teaserImage.src}`,
     })
   }
 }
@@ -78,7 +80,7 @@ exports.createResolvers = ({ createResolvers }) => {
         resolve(source, args, context) {
           return context.nodeModel.runQuery({
             query: {
-              filter: {id: { in: source.includes }}
+              filter: { workId: { in: source.includes } },
             },
             type: "WorksJson",
             firstOnly: false,

@@ -1,7 +1,7 @@
 [
   {
     "selected": false,
-    "id": "entomon",
+    "workId": "entomon",
     "title": "Entomon",
     "subTitle": "A image gallery with depth",
     "year": 2021,
@@ -51,7 +51,7 @@
   },
   {
     "selected": false,
-    "id": "react-three-arjs",
+    "workId": "react-three-arjs",
     "title": "r3f + ARjs",
     "subTitle": "npm package",
     "year": 2021,
@@ -80,7 +80,7 @@
   },
   {
     "selected": true,
-    "id": "fraport-bz",
+    "workId": "fraport-bz",
     "title": "Fraport",
     "subTitle": "the globe",
     "year": 2021,
@@ -178,7 +178,7 @@
   },
   {
     "selected": false,
-    "id": "joefix-ar-radio",
+    "workId": "joefix-ar-radio",
     "title": "JOE FIX AR Radio",
     "subTitle": "WebAR image tracking experiment",
     "year": 2021,
@@ -230,7 +230,7 @@
   },
   {
     "selected": false,
-    "id": "schere-stein-papier",
+    "workId": "schere-stein-papier",
     "title": "✊✌️✋",
     "subTitle": "r3f evaluation",
     "year": 2020,
@@ -280,7 +280,7 @@
   },
   {
     "selected": true,
-    "id": "futurium-permanent-exhibition",
+    "workId": "futurium-permanent-exhibition",
     "title": "Futurium",
     "subTitle": "permanent exhibition",
     "year": 2019,
@@ -377,7 +377,7 @@
   },
   {
     "selected": false,
-    "id": "mntns",
+    "workId": "mntns",
     "title": "Mntns",
     "subTitle": "github data visualisation",
     "year": 2018,
@@ -471,7 +471,7 @@
   },
   {
     "selected": false,
-    "id": "qurator-nlp",
+    "workId": "qurator-nlp",
     "title": "Qurator",
     "subTitle": "nlp service",
     "year": 2019,
@@ -572,7 +572,7 @@
   },
   {
     "selected": false,
-    "id": "nitribitt",
+    "workId": "nitribitt",
     "title": "Nitribitt",
     "subTitle": "agency portfolio",
     "year": 2016,
@@ -600,7 +600,7 @@
   },
   {
     "selected": false,
-    "id": "hello-monday-revelator",
+    "workId": "hello-monday-revelator",
     "title": "Revelator",
     "subTitle": "teaser site",
     "year": 2015,
@@ -626,7 +626,7 @@
   },
   {
     "selected": false,
-    "id": "hello-monday-wove",
+    "workId": "hello-monday-wove",
     "title": "Wove",
     "subTitle": "product launch site",
     "year": 2015,
@@ -653,7 +653,7 @@
   },
   {
     "selected": false,
-    "id": "hello-monday-panthera",
+    "workId": "hello-monday-panthera",
     "title": "Panthera",
     "subTitle": "organization platform",
     "year": 2015,
@@ -680,7 +680,7 @@
   },
   {
     "selected": false,
-    "id": "hello-monday-wove",
+    "workId": "hello-monday-wove",
     "title": "Wove",
     "subTitle": "product launch site",
     "year": 2015,
@@ -707,7 +707,7 @@
   },
   {
     "selected": false,
-    "id": "eurowings",
+    "workId": "eurowings",
     "title": "Eurowings",
     "subTitle": "e-commerce platform relaunch",
     "year": 2017,
@@ -735,7 +735,7 @@
   },
   {
     "selected": false,
-    "id": "futurium-future-machine",
+    "workId": "futurium-future-machine",
     "title": "Future machine",
     "subTitle": "on-demand postcard printer",
     "year": 2019,
@@ -757,7 +757,7 @@
   },
   {
     "selected": false,
-    "id": "futurium-pig-dog",
+    "workId": "futurium-pig-dog",
     "title": "Pig dog",
     "subTitle": "multi channel audio installation",
     "year": 2019,
@@ -779,7 +779,7 @@
   },
   {
     "selected": false,
-    "id": "exhibition-control",
+    "workId": "exhibition-control",
     "title": "Exhibition control",
     "subTitle": "iot hardware control application",
     "year": 2019,
@@ -801,7 +801,7 @@
   },
   {
     "selected": false,
-    "id": "munchable-landing",
+    "workId": "munchable-landing",
     "title": "Munchable",
     "subTitle": "product landing page",
     "year": 2020,
@@ -830,7 +830,7 @@
   },
   {
     "selected": false,
-    "id": "munchable-app",
+    "workId": "munchable-app",
     "title": "Munchable",
     "subTitle": "web application",
     "year": 2015,
@@ -859,7 +859,7 @@
   },
   {
     "selected": false,
-    "id": "conversational-interface",
+    "workId": "conversational-interface",
     "title": "TV guide",
     "subTitle": "conversational interface",
     "year": 2018,

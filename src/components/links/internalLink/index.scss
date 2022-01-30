@@ -9,7 +9,7 @@
     width: calc(100% + 8px);
     height: calc(100% + 8px);
     opacity: 0;
-    border: 1px dashed theme("colors.text-secondary.lighter");
+    border: 1px dashed currentColor;
     transition: opacity 400ms ease-out;
     @apply rounded-md;
   }
