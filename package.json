@@ -3,10 +3,10 @@
   "private": true,
   "description": "Hello! I am creative developer Thomas Rutzer and this is my digital home.",
   "version": "1.1.0",
-  "author": "Thomas Rutzer <thomas@rutzer.de>",
+  "author": "Thomas Rutzer <hi@thomasrutzer.dev>",
   "browserslist": "> 1% or last 2 versions",
   "engines": {
-    "node": "12.13.1"
+    "node": "15.13.0"
   },
   "dependencies": {
     "animejs": "^3.2.1",
@@ -48,7 +48,7 @@
     "gatsby-transformer-sharp": "^3.2.0",
     "gh-pages": "^2.2.0",
     "html-minifier": "^4.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^5.0.0",
     "prettier": "^1.19.1"
   }
 }
