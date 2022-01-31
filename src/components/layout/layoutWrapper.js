@@ -1,5 +1,4 @@
 import React from "react"
-import "typeface-ibm-plex-mono"
 
 import Footer from "./../footer"
 

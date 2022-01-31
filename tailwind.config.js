@@ -20,7 +20,8 @@ module.exports = {
       highlight: theme("colors.highlight"),
     }),
     fontFamily: {
-      sans: "IBM Plex Mono",
+      mono: "IBM Plex Mono, monospace",
+      sans: "IBM Plex Sans, sans",
     },
     spacing: {
       0: "0px",

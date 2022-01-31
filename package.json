@@ -9,6 +9,8 @@
     "node": "16.13.1"
   },
   "dependencies": {
+    "@fontsource/ibm-plex-mono": "^4.5.2",
+    "@fontsource/ibm-plex-sans": "^4.5.2",
     "@radix-ui/react-collapsible": "^0.1.5",
     "animejs": "^3.2.1",
     "classnames": "^2.2.6",
@@ -20,8 +22,7 @@
     "react-slot-machine": "github:thomasrutzer/react-slot-machine#v1.0.3",
     "react-tabs": "^3.2.3",
     "splitting": "^1.0.6",
-    "tailwindcss": "^3.0.0",
-    "typeface-ibm-plex-mono": "0.0.61"
+    "tailwindcss": "^3.0.0"
   },
   "scripts": {
     "build": "gatsby build",

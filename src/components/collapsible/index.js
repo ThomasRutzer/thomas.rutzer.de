@@ -5,7 +5,7 @@ import "./index.scss"
 
 const Collapsible = ({ children, title }) => (
   <RadixCollapsible.Root className="collapsible w-full">
-    <RadixCollapsible.Trigger className="collapsible__title flex items-center justify-between w-full border-2 border-white rounded-md px-1 py-2 hover:bg-white hover:text-black transition-all duration-300">
+    <RadixCollapsible.Trigger className="collapsible__title flex items-center justify-between w-full border-2 border-white rounded-md px-1 py-2 hover:bg-white hover:text-black transition-colors duration-300">
       <span>{title}</span>
       <svg
         className="collapsible__icon"
