@@ -77,14 +77,16 @@ exports.createResolvers = ({ createResolvers }) => {
     CollectionsJson: {
       includedWorks: {
         type: ["WorksJson"],
-        resolve(source, args, context) {
-          return context.nodeModel.runQuery({
+        resolve: async (source, args, context) => {
+          const { entries } = await context.nodeModel.findAll({
             query: {
               filter: { workId: { in: source.includes } },
             },
             type: "WorksJson",
             firstOnly: false,
           })
+
+          return entries
         },
       },
     },
