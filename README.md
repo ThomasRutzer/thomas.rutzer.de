@@ -7,7 +7,7 @@ Based on [Gatsby Starter](https://github.com/gatsbyjs/gatsby-starter-default)
 
 ```
 /src
-  /components     -> very low-level React compoonents
+  /components     -> very low-level React components
   /hooks          -> custom React hooks
   /images         -> image assets proceeded by Gatsby
   /pages          -> Gatsby pages
