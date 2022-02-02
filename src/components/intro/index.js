@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import React, { useCallback, useRef, useState } from "react"
 import anime from "animejs"
 import Splitting from "splitting"
 
 import { useReducedMotion } from "./../../hooks"
 import Title from "./title"
-import Portrait from "./portrait"
+import Background from "./background"
+import { ContentWrapper } from "../layout"
 
 const Intro = () => {
   const [contentAnimatedIn, setContentAnimatedIn] = useState(false)
@@ -74,24 +75,30 @@ const Intro = () => {
     tl.play()
   }, [contentAnimatedIn, prefersReducedMotion])
 
-  useEffect(() => {
-    startAnimation()
-  }, [startAnimation])
-
   return (
-    <div className="intro relative flex items-center overflow-hidden" ref={main}>
-      <div className="min-h-screen flex justify-between flex-col p-6 md:p-7" variant="large">
+    <div className="intro h-screen relative overflow-hidden" ref={main}>
+      <div className="h-full w-full flex flex-col justify-between p-6 md:px-0 md:py-7">
+        <ContentWrapper
+          horizontalSpacing={false}
+          verticalSpacing={false}
+          additionalClasses="flex md:justify-center md:px-5"
+        >
+          <span className="block md:w-4/6">---------------------------</span>
+        </ContentWrapper>
+
         <Title ref={headline}>hay I’m Thomas</Title>
-        <div ref={subline} className="max-w-screen-sm">
-          <p className="relative text-xl md:text-3xl">
-            creative JavaScript developer who feels most comfortable where sophisticated design
-            meets well structured code.
+
+        <ContentWrapper
+          horizontalSpacing={false}
+          verticalSpacing={false}
+          additionalClasses="flex md:justify-center md:px-5"
+        >
+          <p ref={subline} className="md:w-4/6 text-xl md:text-xl tracking-widest uppercase">
+            specialized in crafting unique interfaces & interactions for the browser platform
           </p>
-        </div>
+        </ContentWrapper>
       </div>
-      <div ref={bg} className="intro__bg" aria-hidden="true">
-        <Portrait onReady={startAnimation} />
-      </div>
+      <Background ref={bg} onReady={startAnimation} />
     </div>
   )
 }

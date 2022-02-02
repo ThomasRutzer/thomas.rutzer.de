@@ -27,6 +27,7 @@ class Smear extends React.PureComponent {
       height: window.innerHeight,
       view: this.canvas.current,
       backgroundColor: 0x7c7c7c,
+      resizeTo: window,
     })
 
     this.preload()
@@ -99,7 +100,11 @@ class Smear extends React.PureComponent {
   }
 
   render() {
-    return <canvas style={{ width: "100%" }} ref={this.canvas} />
+    return (
+      <div className="rounded-xl overflow-hidden w-full h-full">
+        <canvas style={{ width: "100%" }} ref={this.canvas} />
+      </div>
+    )
   }
 }
 
