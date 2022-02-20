@@ -95,7 +95,7 @@ const Intro = () => {
           additionalClasses="flex justify-center md:px-5 h-full"
         >
           <div ref={subline} className="flex justify-between flex-col h-full md:w-4/6">
-            <SectionTitle fullWidth={true}>Intro</SectionTitle>
+            <SectionTitle>Intro</SectionTitle>
             <Title ref={headline}>hay I’m Thomas</Title>
             <p ref={copy} className="text-xl md:text-2xl tracking-widest uppercase">
               specialized in crafting unique interfaces & interactions for the browser platform

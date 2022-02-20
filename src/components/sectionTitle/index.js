@@ -1,16 +1,10 @@
 import React from "react"
-import classnames from "classnames"
 
 import "./index.scss"
 
-const SectionTitle = ({ children, className }) => {
-  const cssClasses = classnames(
-    "section-title relative flex items-center gap-2 md:gap-4 text-sm w-full",
-    className
-  )
-
+const SectionTitle = ({ children }) => {
   return (
-    <h2 className={cssClasses}>
+    <h2 className="section-title relative inline-flex items-center gap-2 md:gap-2 text-sm">
       <span>{children}</span>
     </h2>
   )

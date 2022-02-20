@@ -1,5 +1,4 @@
 .section-title {
-
   span {
     order: 3;
   }
@@ -19,6 +18,7 @@
     order: 2;
     content: "";
     width: 100%;
+    min-width: 2rem;
     height: 1px;
     background-color: theme("colors.white");
   }

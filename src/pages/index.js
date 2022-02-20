@@ -6,9 +6,9 @@ import HeadInfos from "../components/headInfos"
 import { ContentWrapper, LayoutWrapper } from "./../components/layout"
 import { ExternalLink } from "../components/links"
 import Collapsible from "../components/collapsible"
+import SectionTitle from "../components/sectionTitle"
 
 import {
-  SectionTitle,
   CollectionSectionWithImageGrid,
   ProjectArchiveTeaser,
   WorkSectionWithImageGrid,
@@ -43,7 +43,7 @@ const PageHome = ({ data }) => {
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:mt-7">
             <div className="col-start-1 col-span-1">
-              <SectionTitle appearance="primary">thoughts</SectionTitle>
+              <SectionTitle>thoughts</SectionTitle>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-2">
               {data.allWritesJson.edges.map((write, key) => (
@@ -128,7 +128,7 @@ const PageHome = ({ data }) => {
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
-              <SectionTitle appearance="primary">credits</SectionTitle>
+              <SectionTitle>credits</SectionTitle>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
               <Collapsible title="images">

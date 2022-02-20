@@ -78,7 +78,7 @@ const PageProjectArchive = ({ data }) => (
         <ContentWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
-              <SectionTitle appearance="primary">credits</SectionTitle>
+              <SectionTitle>credits</SectionTitle>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-2">
               <p className="mb-2 font-bold">teaser images</p>
