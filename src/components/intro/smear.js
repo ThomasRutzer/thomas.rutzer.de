@@ -102,7 +102,7 @@ class Smear extends React.PureComponent {
   render() {
     return (
       <div className="rounded-xl overflow-hidden w-full h-full">
-        <canvas style={{ width: "100%" }} ref={this.canvas} />
+        <canvas ref={this.canvas} />
       </div>
     )
   }
