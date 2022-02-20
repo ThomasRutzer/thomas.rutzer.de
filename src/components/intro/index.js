@@ -4,6 +4,7 @@ import Splitting from "splitting"
 
 import { useReducedMotion } from "./../../hooks"
 import Title from "./title"
+import SectionTitle from "../sectionTitle"
 import Background from "./background"
 import { ContentWrapper } from "../layout"
 
@@ -12,8 +13,9 @@ const Intro = () => {
   const prefersReducedMotion = useReducedMotion()
 
   const headline = useRef()
-  const main = useRef()
   const subline = useRef()
+  const copy = useRef()
+  const main = useRef()
   const bg = useRef()
 
   const startAnimation = useCallback(() => {
@@ -65,6 +67,15 @@ const Intro = () => {
         {
           targets: subline.current,
           opacity: [0, 1],
+          duration: 1000,
+          easing: "easeOutQuad",
+        },
+        "-=1600"
+      )
+      .add(
+        {
+          targets: copy.current,
+          opacity: [0, 1],
           translateY: [20, 0],
           duration: 1000,
           easing: "easeOutQuad",
@@ -83,7 +94,9 @@ const Intro = () => {
           verticalSpacing={false}
           additionalClasses="flex md:justify-center md:px-5"
         >
-          <span className="block md:w-4/6">---------------------------</span>
+          <span ref={subline} className="w-full md:w-4/6">
+            <SectionTitle>Intro</SectionTitle>
+          </span>
         </ContentWrapper>
 
         <Title ref={headline}>hay I’m Thomas</Title>
@@ -93,7 +106,7 @@ const Intro = () => {
           verticalSpacing={false}
           additionalClasses="flex md:justify-center md:px-5"
         >
-          <p ref={subline} className="md:w-4/6 text-xl md:text-xl tracking-widest uppercase">
+          <p ref={copy} className="md:w-4/6 text-xl md:text-xl tracking-widest uppercase">
             specialized in crafting unique interfaces & interactions for the browser platform
           </p>
         </ContentWrapper>
