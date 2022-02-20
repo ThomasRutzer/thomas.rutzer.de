@@ -1,4 +1,9 @@
-[ 
+[
+  {
+    "title": "State of React uncontrolled forms in 2022",
+    "link": "https://medium.com/@thomasrutzer/state-of-react-uncontrolled-forms-in-2022-6ec0217a43fb",
+    "description": "Published 02.2022"
+  },
   {
     "title": "Sync local and remote Zustand store in ReactJS",
     "link": "https://thomasrutzer.medium.com/sync-local-and-remote-zustand-store-in-reactjs-10abde3b96cf",
