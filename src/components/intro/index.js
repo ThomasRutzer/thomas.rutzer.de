@@ -88,28 +88,36 @@ const Intro = () => {
 
   return (
     <div className="intro h-screen relative overflow-hidden" ref={main}>
-      <div className="h-full w-full flex flex-col justify-between p-6 md:px-0 md:py-7">
+      <div className="h-full w-full p-6 md:px-0 md:py-7">
+        <ContentWrapper
+          horizontalSpacing={false}
+          verticalSpacing={false}
+          additionalClasses="flex justify-center md:px-5 h-full"
+        >
+          <div ref={subline} className="flex justify-between flex-col h-full md:w-4/6">
+            <SectionTitle fullWidth={true}>Intro</SectionTitle>
+            <Title ref={headline}>hay I’m Thomas</Title>
+            <p ref={copy} className="text-xl md:text-2xl tracking-widest uppercase">
+              specialized in crafting unique interfaces & interactions for the browser platform
+            </p>
+          </div>
+        </ContentWrapper>
+        {/* 
         <ContentWrapper
           horizontalSpacing={false}
           verticalSpacing={false}
           additionalClasses="flex md:justify-center md:px-5"
         >
-          <span ref={subline} className="w-full md:w-4/6">
-            <SectionTitle>Intro</SectionTitle>
-          </span>
+          
         </ContentWrapper>
-
-        <Title ref={headline}>hay I’m Thomas</Title>
 
         <ContentWrapper
           horizontalSpacing={false}
           verticalSpacing={false}
           additionalClasses="flex md:justify-center md:px-5"
         >
-          <p ref={copy} className="md:w-4/6 text-xl md:text-xl tracking-widest uppercase">
-            specialized in crafting unique interfaces & interactions for the browser platform
-          </p>
-        </ContentWrapper>
+      
+        </ContentWrapper> */}
       </div>
       <Background ref={bg} onReady={startAnimation} />
     </div>

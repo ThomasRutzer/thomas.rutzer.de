@@ -2,8 +2,8 @@ import React, { forwardRef, Suspense, useEffect } from "react"
 import resolveConfig from "tailwindcss/resolveConfig"
 import { useScrollPercentage } from "react-scroll-percentage"
 
-import map from "../../utils/map"
 import tailwindConfig from "./../../../tailwind.config"
+import map from "../../utils/map"
 import { useMediaQuery } from "./../../hooks"
 import mergeRefs from "./../../utils/mergeRefs"
 
@@ -11,7 +11,7 @@ const Smear = React.lazy(() => import("./smear"))
 
 const Background = forwardRef(({ onReady }, ref) => {
   const { theme } = resolveConfig(tailwindConfig)
-  const matchesMQ = useMediaQuery(`(min-width: ${theme.screens.md})`)
+  const matchesMQ = useMediaQuery(`(min-width: ${theme.screens.lg})`)
   const [scrollTarget, percentage] = useScrollPercentage({
     threshold: 0,
   })
