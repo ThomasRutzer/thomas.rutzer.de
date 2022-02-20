@@ -8,14 +8,16 @@ const useMediaQuery = query => {
     return false
   }
   const [matches, setMatches] = useState(getMatches(query))
-  function handleChange() {
-    setMatches(getMatches(query))
-  }
+
   useEffect(() => {
     const matchMedia = window.matchMedia(query)
 
-    handleChange()
+    const handleChange = () => {
+      setMatches(getMatches(query))
+    }
+
     matchMedia.addEventListener("change", handleChange)
+
     return () => {
       matchMedia.removeEventListener("change", handleChange)
     }
