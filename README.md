@@ -3,15 +3,15 @@
 Based on [Gatsby Starter](https://github.com/gatsbyjs/gatsby-starter-default)
 
 ## development
+
 ### src folder structure
 
 ```
 /src
-  /components     -> very low-level React components
+  /components     -> React components
   /hooks          -> custom React hooks
   /images         -> image assets proceeded by Gatsby
   /pages          -> Gatsby pages
-  /sections       -> compounds of multiple components
   /templates      -> templates for programmatically created pages
   /utils          -> misc helper
 ```
