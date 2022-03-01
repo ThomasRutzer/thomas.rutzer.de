@@ -12,7 +12,7 @@
     "teaserDescription": "Laura Wagner & Lisa Marleen Mantel created a curated a collection of interspecies alternatives, using technologically mediated natures through machine vision. They are displayed in this experience.",
     "links": [
       {
-        "link": "https://munchie.uber.space/entomon/",
+        "link": "https://stateofthedeep.art",
         "label": "view live",
         "type": "live"
       }
@@ -81,8 +81,8 @@
   {
     "selected": true,
     "workId": "fraport-bz",
-    "title": "Fraport",
-    "subTitle": "the globe",
+    "title": "The Globe",
+    "subTitle": "Fraport",
     "year": 2021,
     "features": [
       "react",
@@ -98,7 +98,7 @@
       },
       {
         "link": "https://www.frankfurt-airport.com/en/news/explore-frankfurt-airport.html",
-        "label": "the visitor centre"
+        "label": "visitor centre"
       }
     ],
     "teaserImage": {
@@ -281,8 +281,8 @@
   {
     "selected": true,
     "workId": "futurium-permanent-exhibition",
-    "title": "Futurium",
-    "subTitle": "permanent exhibition",
+    "title": "Exhibition",
+    "subTitle": "Futurium",
     "year": 2019,
     "features": [
       "react",

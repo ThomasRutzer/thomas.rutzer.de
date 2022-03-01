@@ -2,8 +2,8 @@
   {
     "id": "webgl-experiments",
     "selected": true,
-    "title": "WebGL / WebXR",
-    "subTitle": "personal explorations",
+    "title": "Playground",
+    "subTitle": "personal",
     "leadingDescription": "A collection of various WebGL / WebXR experiments and personal explorations to sharpen my skills in this particular field.",
     "description": "Since WebGL is the foundation for immersive mixed reality experiences, I recently laid my focus in this direction. In combination with React Three Fiber (r3f) and its whole ecosystem, this seems to be the perfect continuation of my (mostly) React based frontend experiences.",
     "teaserDescription": "Qurator is a research collaboration focusing on content curation with AI technologies. The team at art+com built a prototypical NLP based service which helps users to analyze large amounts of texts with a suitable interface.",
@@ -20,8 +20,8 @@
       "tiles": [
         [
           [
-            4,
-            3
+            2,
+            2
           ],
           [
             3,
@@ -30,12 +30,12 @@
         ],
         [
           [
-            5,
+            6,
             1
           ],
           [
-            1,
-            1
+            2,
+            2
           ]
         ],
         [
@@ -44,8 +44,8 @@
             2
           ],
           [
-            2,
-            1
+            1,
+            2
           ]
         ]
       ]
