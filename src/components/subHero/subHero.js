@@ -1,12 +1,12 @@
 import React from "react"
 
-import ParallaxCircles from "./../components/parallaxCircles"
-import { ContentWrapper } from "./../components/layout"
-import { InternalLink } from "./../components/links"
+import ParallaxCircles from "../parallaxCircles"
+import { ContentWrapper } from "../layout"
+import { InternalLink } from "../links"
 
-const ProjectArchiveTitle = () => {
+const Root = () => {
   return (
-    <div className="project-archive-intro relative">
+    <div className="sub-hero relative">
       <ContentWrapper verticalSpacing={false}>
         <ul className="py-2">
           <li>
@@ -29,9 +29,9 @@ const ProjectArchiveTitle = () => {
         </ul>
       </ContentWrapper>
       <ContentWrapper>
-        <h1 className="project-archive-intro__title leading-tight md:my-4">
+        <h1 className="sub-hero__title leading-tight font-mono md:my-4">
           <span className="text-sm">(Almost all)</span>
-          <span className="text-6xl font-bold block">
+          <span className="text-6xl block font-semibold">
             Design <br />& Code
           </span>
           <span className="text-5xl text-stroke text-stroke-white block italic">
@@ -40,14 +40,14 @@ const ProjectArchiveTitle = () => {
         </h1>
       </ContentWrapper>
 
-      <div className="project-archive-intro__bg bg-gradient-to-r from-black" aria-hidden="true">
-        <div className="project-archive-intro__circle project-archive-intro__circle--1">
+      <div className="sub-hero__bg bg-gradient-to-r from-black" aria-hidden="true">
+        <div className="sub-hero__circle sub-hero__circle--1">
           <ParallaxCircles mouseMoveTranslations={[1, 3, 1, 3]} />
         </div>
-        <div className="project-archive-intro__circle project-archive-intro__circle--2">
+        <div className="sub-hero__circle sub-hero__circle--2">
           <ParallaxCircles mouseMoveTranslations={[5, 10, 5, 10]} />
         </div>
-        <div className="project-archive-intro__circle project-archive-intro__circle--3">
+        <div className="sub-hero__circle sub-hero__circle--3">
           <ParallaxCircles />
         </div>
       </div>
@@ -55,4 +55,4 @@ const ProjectArchiveTitle = () => {
   )
 }
 
-export default ProjectArchiveTitle
+export { Root }
