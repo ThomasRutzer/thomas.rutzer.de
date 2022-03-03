@@ -1,0 +1,10 @@
+.feature-list__item--with-delimiter {
+  position: relative;
+  padding-left: 12px;
+
+  &::before {
+    content: "#";
+    position: absolute;
+    left: 0;
+  }
+}
