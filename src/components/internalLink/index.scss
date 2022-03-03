@@ -1,0 +1,6 @@
+.internal-link {
+  &:hover:not(:focus), &--active {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+}
