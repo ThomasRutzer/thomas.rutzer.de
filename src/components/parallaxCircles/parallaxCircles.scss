@@ -1,0 +1,7 @@
+.parallax-circles__outer {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.parallax-circles__inner {
+  transform: translate(-4px, -4px);
+}

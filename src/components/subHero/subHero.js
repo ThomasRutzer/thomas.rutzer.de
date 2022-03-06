@@ -1,16 +1,16 @@
 import React from "react"
 
-import ParallaxCircles from "../parallaxCircles"
-import { ContentWrapper } from "../layout"
-import { InternalLink } from "../links"
+import * as ContentWrapper from "../contentWrapper"
+import * as InternalLink from "../internalLink"
+import * as ParallaxCircles from "../parallaxCircles"
 
 const Root = () => {
   return (
     <div className="sub-hero relative">
-      <ContentWrapper verticalSpacing={false}>
+      <ContentWrapper.Root verticalSpacing={false}>
         <ul className="py-2">
           <li>
-            <InternalLink link="/">
+            <InternalLink.Root link="/">
               <svg
                 className="external-link__icon transform -rotate-90 mr-1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -24,11 +24,11 @@ const Root = () => {
                 <path d="M7 17l9.2-9.2M17 17V7H7" />
               </svg>
               Go to start view
-            </InternalLink>
+            </InternalLink.Root>
           </li>
         </ul>
-      </ContentWrapper>
-      <ContentWrapper>
+      </ContentWrapper.Root>
+      <ContentWrapper.Root>
         <h1 className="sub-hero__title leading-tight font-mono md:my-4">
           <span className="text-sm">(Almost all)</span>
           <span className="text-6xl block font-semibold">
@@ -38,17 +38,23 @@ const Root = () => {
             along the road
           </span>
         </h1>
-      </ContentWrapper>
+      </ContentWrapper.Root>
 
       <div className="sub-hero__bg bg-gradient-to-r from-black" aria-hidden="true">
         <div className="sub-hero__circle sub-hero__circle--1">
-          <ParallaxCircles mouseMoveTranslations={[1, 3, 1, 3]} />
+          <ParallaxCircles.Root
+            appearance={ParallaxCircles.APPEARANCE.DARK}
+            mouseMoveTranslations={[1, 3, 1, 3]}
+          />
         </div>
         <div className="sub-hero__circle sub-hero__circle--2">
-          <ParallaxCircles mouseMoveTranslations={[5, 10, 5, 10]} />
+          <ParallaxCircles.Root
+            appearance={ParallaxCircles.APPEARANCE.DARK}
+            mouseMoveTranslations={[5, 10, 5, 10]}
+          />
         </div>
         <div className="sub-hero__circle sub-hero__circle--3">
-          <ParallaxCircles />
+          <ParallaxCircles.Root appearance={ParallaxCircles.APPEARANCE.DARK} />
         </div>
       </div>
     </div>

@@ -1,13 +1,13 @@
 import React from "react"
 
-import { ContentWrapper } from "../layout"
-import { CtaSecondaryTypeLink } from "../cta"
-import ParallaxCircles from "../parallaxCircles"
+import * as ContentWrapper from "../contentWrapper"
+import * as Cta from "../cta"
+import * as ParallaxCircles from "../parallaxCircles"
 
 const Root = () => {
   return (
     <section className="project-archive-teaser md:py-5 md:-mb-7 bg-black bg-gradient-to-b from-grey-darkest">
-      <ContentWrapper additionalClasses="bg-primary md:rounded-xl shadow-xl overflow-hidden">
+      <ContentWrapper.Root className="bg-primary md:rounded-xl shadow-xl overflow-hidden">
         <div className="project-archive-teaser__content flex flex-col md:flex-row items-center align-center justify-center">
           <h2 className="mb-4 md:mb-0 md:mr-7 font-mono">
             <span className="text-4xl md:-ml-4">There</span>
@@ -15,20 +15,31 @@ const Root = () => {
               is more
             </span>
           </h2>
-          <CtaSecondaryTypeLink link="/project-archive">project archive</CtaSecondaryTypeLink>
+          <Cta.Root href="/project-archive" as="a">
+            project archive
+          </Cta.Root>
         </div>
         <div className="project-archive-teaser__bg" aria-hidden="true">
           <div className="project-archive-teaser__circle project-archive-teaser__circle--1">
-            <ParallaxCircles mouseMoveTranslations={[2, 6, 2, 6]} />
+            <ParallaxCircles.Root
+              appearance={ParallaxCircles.APPEARANCE.PRIMARY}
+              mouseMoveTranslations={[6, 6, 6, 6]}
+            />
           </div>
           <div className="project-archive-teaser__circle project-archive-teaser__circle--2">
-            <ParallaxCircles mouseMoveTranslations={[5, 10, 5, 10]} />
+            <ParallaxCircles.Root
+              appearance={ParallaxCircles.APPEARANCE.PRIMARY}
+              mouseMoveTranslations={[10, 10, 10, 10]}
+            />
           </div>
           <div className="project-archive-teaser__circle project-archive-teaser__circle--3">
-            <ParallaxCircles mouseMoveTranslations={[1, 3, 1, 3]} />
+            <ParallaxCircles.Root
+              appearance={ParallaxCircles.APPEARANCE.PRIMARY}
+              mouseMoveTranslations={[4, 4, 4, 4]}
+            />
           </div>
         </div>
-      </ContentWrapper>
+      </ContentWrapper.Root>
     </section>
   )
 }

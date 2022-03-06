@@ -16,11 +16,11 @@ const Title = ({ children, appearance }) => {
   return <span className={cssClasses}>{children}</span>
 }
 
-const cssClassesListDefault = "featureList__item text-sm text-grey-lighter block font-mono text-xs"
+const cssClassesListDefault = "feature-list__item text-sm text-grey-lighter block font-mono text-xs"
 
 const List = ({ items, delimiter }) => {
   const cssClasses = classnames(cssClassesListDefault, {
-    "featureList__item--with-delimiter": delimiter,
+    "feature-list__item--with-delimiter": delimiter,
   })
 
   return (

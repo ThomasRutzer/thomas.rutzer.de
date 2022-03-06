@@ -4,27 +4,14 @@ import { GatsbyImage, withArtDirection } from "gatsby-plugin-image"
 import resolveConfig from "tailwindcss/resolveConfig"
 
 import tailwindConfig from "./../../../tailwind.config"
-import ExternalLink from "./../links/externalLink"
+import * as ExternalLink from "../externalLink"
 
-const classes = {
-  image: "w-full rounded-xl overflow-hidden",
-  caption: "text-xs italic text-center mt-2 px-1",
-  wrapper: {
-    tiles: (index, tiles) =>
-      classnames({
-        [`col-start-${index % 2 === 0 ? "1" : "2"} col-span-5`]: true,
-        [`lg:col-start-${tiles[0][0]}`]: true,
-        [`lg:col-span-${tiles[0][1]}`]: true,
-        [`lg:row-start-${tiles[1][0]}`]: true,
-        [`lg:row-span-${tiles[1][1]}`]: true,
-      }),
-    spacing: index => `mt-${index === 0 ? "0" : "4"} lg:mt-0`,
-    flex: "flex items-center flex-col",
-    animations: "transition-transform duration-1000 ease-out",
-  },
-}
+const cssClassesRoot = "flex items-center flex-col transition-transform duration-1000 ease-out"
+const cssClassesRootSpacingDefault = "lg:mt-0"
+const cssClassesImage = "image-grid__image w-full rounded-xl overflow-hidden"
+const cssClassesCaption = "text-xs text-center mt-2 px-1"
 
-const RenderGatsbyImage = ({ gatsbyImageData, objectFit }) => {
+const RenderGatsbyImage = ({ gatsbyImageData, objectFit, alt }) => {
   const fullConfig = resolveConfig(tailwindConfig)
   const images = useMemo(
     () =>
@@ -42,19 +29,19 @@ const RenderGatsbyImage = ({ gatsbyImageData, objectFit }) => {
 
   return (
     <GatsbyImage
-      className={`image-grid__image ${classes.image}`}
+      className={cssClassesImage}
       // weird Safari hack: https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
       style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
       imgStyle={{
         objectFit: objectFit,
       }}
-      alt=""
+      alt={alt}
       image={images}
     />
   )
 }
 
-const Image = ({
+const Root = ({
   alt,
   fit = "cover",
   gatsbyImageData,
@@ -64,34 +51,41 @@ const Image = ({
   offsetX = 0,
   offsetY = 0,
 }) => {
+  const cssClassesRootTiles = classnames({
+    [`col-start-${index % 2 === 0 ? "1" : "2"} col-span-5`]: true,
+    [`lg:col-start-${tiles[0][0]}`]: true,
+    [`lg:col-span-${tiles[0][1]}`]: true,
+    [`lg:row-start-${tiles[1][0]}`]: true,
+    [`lg:row-span-${tiles[1][1]}`]: true,
+  })
+  const cssClassesRootSpacingByIndex = classnames(cssClassesRootSpacingDefault, {
+    "mt-0": index === 0,
+    "mt-4": index !== 0,
+  })
+
   return (
     <figure
       style={{
         transform: `translate(${offsetX}px, ${offsetY}px)`,
       }}
-      className={`${classes.wrapper.tiles(index, tiles)} 
-        ${classes.wrapper.spacing(index)} 
-        ${classes.wrapper.flex} 
-        ${classes.wrapper.animations}`}
+      className={`${cssClassesRoot} ${cssClassesRootTiles} ${cssClassesRootSpacingByIndex}`}
     >
       {link && (
-        <ExternalLink
+        <ExternalLink.Root
           link={link.link}
-          additionalClasses="flex"
-          appearance="primary"
-          contentType="image"
-          size="large"
+          contentType={ExternalLink.CONTENT_TYPES.IMAGE}
+          size={ExternalLink.SIZES.LARGE}
         >
-          <RenderGatsbyImage gatsbyImageData={gatsbyImageData} fit={fit} />
+          <RenderGatsbyImage gatsbyImageData={gatsbyImageData} fit={fit} alt={alt} />
           <span className="sr-only">(opens in new tab)</span>
-        </ExternalLink>
+        </ExternalLink.Root>
       )}
-      {!link && <RenderGatsbyImage gatsbyImageData={gatsbyImageData} fit={fit} />}
-      <figcaption className={classes.caption}>
+      {!link && <RenderGatsbyImage gatsbyImageData={gatsbyImageData} fit={fit} alt={alt} />}
+      <figcaption className={cssClassesCaption}>
         Fig.{index + 1}: {alt}
       </figcaption>
     </figure>
   )
 }
 
-export default Image
+export { Root }

@@ -1,68 +1,76 @@
-import React from "react"
+import React, { useContext } from "react"
 import classNames from "classnames"
 
-import { ContentWrapper } from "../layout"
-import ImageGrid from "../imageGrid"
-import FeatureList from "../featureList"
-import { ExternalLink } from "../links"
+import * as ContentWrapper from "../contentWrapper"
+import * as ExternalLink from "../externalLink"
+import * as FeatureList from "../featureList"
 
-const Container = ({ children, appearance }) => {
+const ComponentContext = React.createContext()
+
+const Root = ({ children, appearance }) => {
   return (
-    <section className={appearance === "primary" ? "bg-grey-darkest" : "bg-secondary-default"}>
-      {React.Children.map(children, child =>
-        React.cloneElement(child, {
-          appearance,
-        })
-      )}
-    </section>
+    <ComponentContext.Provider value={{ appearance }}>
+      <section className={appearance === "primary" ? "bg-grey-darkest" : "bg-secondary-default"}>
+        {children}
+      </section>
+    </ComponentContext.Provider>
   )
 }
 
-const Images = ({ title, subTitle, category, imageData }) => {
+const HeroContent = ({ children }) => {
   return (
-    <ContentWrapper
+    <ContentWrapper.Root
       variant="large"
-      additionalClasses="px-5 pt-6 md:pb-6 md:pt-7"
+      className="px-5 pt-6 md:pb-6 md:pt-7"
       verticalSpacing={false}
       horizontalSpacing={false}
     >
-      <ImageGrid category={category} title={title} subTitle={subTitle} images={imageData} />
-    </ContentWrapper>
+      {children}
+    </ContentWrapper.Root>
   )
 }
 
-const Content = ({ children, appearance }) => {
+const TitleGroup = ({ category, title, subTitle }) => {
   return (
-    <ContentWrapper>
-      <div className="grid grid-cols-6 md:gap-5 leading-7">
-        {React.Children.map(children, child =>
-          React.cloneElement(child, {
-            appearance,
-          })
-        )}
+    <div className="flex items-start md:items-center md:justify-center flex-col xl:absolute xl:top-0 xl:w-full xl:h-full z-10 mb-6 pointer-events-none">
+      <h3 className="text-4xl lg:text-6xl lg:text-stroke-white lg:text-stroke font-mono leading-snug">
+        {title}
+      </h3>
+      <div className="use-case-preview-title-group__subline relative flex md:inline-flex justify-between items-center gap-2 w-full md:w-auto">
+        <h4 className="text-xl lg:text-2xl tracking-widest uppercase font-mono whitespace-nowrap">
+          {subTitle}
+        </h4>
+        <h5 className="md:order-3 text-xs text-primary">{category}</h5>
       </div>
-    </ContentWrapper>
+    </div>
   )
 }
 
-const Infos = ({ facts, features, appearance }) => {
+const Content = ({ children }) => {
   return (
-    <div className="flex md:flex-col justify-between text-sm col-start-1 col-span-6 md:col-span-1 mb-4 md:mb-0">
+    <ContentWrapper.Root>
+      <div className="grid grid-cols-6 md:gap-5 leading-7">{children}</div>
+    </ContentWrapper.Root>
+  )
+}
+
+const Infos = ({ facts, features }) => {
+  const { appearance } = useContext(ComponentContext)
+
+  return (
+    <div className="flex md:flex-col justify-between text-sm col-start-1 col-span-6 md:col-span-1 mb-4 md:mb-0 pt-1">
       {facts && (
-        <div>
-          <FeatureList
-            title="first release"
-            items={facts}
-            appearance={appearance}
-            delimiter={false}
-          />
-        </div>
+        <FeatureList.Root>
+          <FeatureList.Title appearance={appearance}>First release</FeatureList.Title>
+          <FeatureList.List items={facts} delimiter={false} />
+        </FeatureList.Root>
       )}
 
       {features && (
-        <div>
-          <FeatureList title="key facts" items={features} appearance={appearance} />
-        </div>
+        <FeatureList.Root>
+          <FeatureList.Title appearance={appearance}>Key facts</FeatureList.Title>
+          <FeatureList.List items={features} delimiter={true} />
+        </FeatureList.Root>
       )}
     </div>
   )
@@ -85,9 +93,9 @@ const Links = ({ links }) => {
       <div className="flex flex-col md:items-end">
         <div className="md:transform md:-rotate-90 md:-translate-y-full md:origin-bottom-right">
           {links.map(({ link, label }, key) => (
-            <ExternalLink key={key} appearance="primary" link={link}>
+            <ExternalLink.Root key={key} link={link}>
               {label}
-            </ExternalLink>
+            </ExternalLink.Root>
           ))}
         </div>
       </div>
@@ -95,4 +103,4 @@ const Links = ({ links }) => {
   )
 }
 
-export { Container, Images, Content, Links, Copy, Infos }
+export { Root, HeroContent, TitleGroup, Content, Links, Copy, Infos }

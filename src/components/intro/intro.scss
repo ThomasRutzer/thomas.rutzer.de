@@ -1,0 +1,9 @@
+.intro {
+  html:not(.no-js) & {
+    opacity: 0;
+
+    @media (prefers-reduced-motion: reduce) {
+      opacity: 1;
+    }
+  }
+}
