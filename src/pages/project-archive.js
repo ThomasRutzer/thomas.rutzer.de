@@ -3,21 +3,23 @@ import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import HeadInfos from "../components/headInfos"
-import { ContentWrapper, LayoutWrapper } from "../components/layout"
-import { ExternalLink } from "../components/links"
-import FeatureList from "../components/featureList"
 import Tabs from "../components/tabs"
-
-import { ProjectArchiveIntro, SectionTitle } from "./../sections"
+import * as Collapsible from "../components/collapsible"
+import * as ContentWrapper from "../components/contentWrapper"
+import * as ExternalLink from "../components/externalLink"
+import * as FeatureList from "../components/featureList"
+import * as LayoutWrapper from "../components/layoutWrapper"
+import * as SectionTitle from "../components/sectionTitle"
+import * as SubHero from "../components/subHero"
 
 const formattedYear = year => `${year.toString().slice(-2)}`
 
 const PageProjectArchive = ({ data }) => (
   <>
     <HeadInfos title="thomas rutzer – project archive" />
-    <LayoutWrapper>
-      <ProjectArchiveIntro />
-      <ContentWrapper>
+    <LayoutWrapper.Root>
+      <SubHero.Root />
+      <ContentWrapper.Root>
         <Tabs defaultIndex={data.allWorksJson.group.length - 1}>
           {data.allWorksJson.group.map((group, key) => (
             <section
@@ -44,25 +46,29 @@ const PageProjectArchive = ({ data }) => (
                       />
                     </div>
                     <div className="col-start-2 col-span-1">
-                      <h2 className="text-3xl lg:text-4xl -mt-2">{work.node.title}</h2>
+                      <h2 className="text-xl lg:text-2xl tracking-widest uppercase font-mono">
+                        {work.node.title}
+                      </h2>
                     </div>
                     <div className="col-start-2 col-span-1 row-start-2 self-end">
-                      <h3 className="text-secondary-lighter">{work.node.subTitle}</h3>
+                      <h3 className="text-secondary-lighter block font-mono text-xs uppercase">
+                        {work.node.subTitle}
+                      </h3>
                     </div>
-                    <div className="col-start-1 col-span-2 md:col-span-2 my-2 md:my-0">
+                    <div className="col-start-1 col-span-2 md:col-span-2 my-2 md:my-0 leading-loose">
                       <p>{work.node.teaserDescription}</p>
                     </div>
                     <div className="col-start-1 col-span-2 md:col-span-2 md:row-start-2 flex flex-row justify-between">
                       <div className="self-end">
-                        <span className="text-secondary-lighter block text-sm">key facts</span>
-                        <FeatureList items={work.node.features} />
+                        <FeatureList.Root>
+                          <FeatureList.Title appearance="primary">Key facts</FeatureList.Title>
+                          <FeatureList.List items={work.node.features} delimiter />
+                        </FeatureList.Root>
                       </div>
                       <div className="self-end">
                         {work.node.links.map(({ link, label }, key) => (
                           <div className="whitespace-no-wrap" key={key}>
-                            <ExternalLink appearance="primary" link={link}>
-                              {label}
-                            </ExternalLink>
+                            <ExternalLink.Root link={link}>{label}</ExternalLink.Root>
                           </div>
                         ))}
                       </div>
@@ -73,43 +79,47 @@ const PageProjectArchive = ({ data }) => (
             </section>
           ))}
         </Tabs>
-      </ContentWrapper>
+      </ContentWrapper.Root>
       <section className="bg-grey-darkest-pattern">
-        <ContentWrapper>
+        <ContentWrapper.Root>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
-              <SectionTitle>credits</SectionTitle>
+              <SectionTitle.Root>credits</SectionTitle.Root>
             </div>
-            <div className="col-start-1 md:col-start-2 col-span-2">
-              <p className="mb-2 font-bold">teaser images</p>
-              {data.allWorksJson.group.map((group, groupKey) => (
-                <ul key={groupKey} className="text-sm">
-                  <li className="text-secondary-lighter mb-1">{group.edges[0].node.year}</li>
-                  {group.edges.map((work, key) => (
-                    <li key={key + groupKey} className="mb-2 block">
-                      {work.node.teaserImage.reference.link && (
-                        <ExternalLink link={work.node.teaserImage.reference.link} size="small">
-                          {work.node.title + " " + work.node.subTitle} by{" "}
-                          {work.node.teaserImage.reference.author}
-                        </ExternalLink>
-                      )}
-                      {!work.node.teaserImage.reference.link &&
-                        work.node.title +
-                          " " +
-                          work.node.subTitle +
-                          " " +
-                          work.node.teaserImage.reference.link +
-                          "by " +
-                          work.node.teaserImage.reference.author}
-                    </li>
-                  ))}
-                </ul>
-              ))}
+            <div className="col-start-1 md:col-start-2 col-span-1">
+              <Collapsible.Root title="teaser images">
+                {data.allWorksJson.group.map((group, groupKey) => (
+                  <ul key={groupKey} className="text-sm">
+                    <li className="text-secondary-lighter mb-1">{group.edges[0].node.year}</li>
+                    {group.edges.map((work, key) => (
+                      <li key={key + groupKey} className="mb-2 block">
+                        {work.node.teaserImage.reference.link && (
+                          <ExternalLink.Root
+                            link={work.node.teaserImage.reference.link}
+                            size="small"
+                          >
+                            {work.node.title + " " + work.node.subTitle} by{" "}
+                            {work.node.teaserImage.reference.author}
+                          </ExternalLink.Root>
+                        )}
+                        {!work.node.teaserImage.reference.link &&
+                          work.node.title +
+                            " " +
+                            work.node.subTitle +
+                            " " +
+                            work.node.teaserImage.reference.link +
+                            "by " +
+                            work.node.teaserImage.reference.author}
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </Collapsible.Root>
             </div>
           </div>
-        </ContentWrapper>
+        </ContentWrapper.Root>
       </section>
-    </LayoutWrapper>
+    </LayoutWrapper.Root>
   </>
 )
 
