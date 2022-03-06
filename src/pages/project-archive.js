@@ -51,7 +51,7 @@ const PageProjectArchive = ({ data }) => (
                       </h2>
                     </div>
                     <div className="col-start-2 col-span-1 row-start-2 self-end">
-                      <h3 className="text-secondary-lighter block font-mono text-xs uppercase">
+                      <h3 className="text-secondary-lighter block font-mono uppercase">
                         {work.node.subTitle}
                       </h3>
                     </div>

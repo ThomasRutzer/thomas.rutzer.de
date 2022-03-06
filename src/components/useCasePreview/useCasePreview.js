@@ -48,7 +48,7 @@ const TitleGroup = ({ category, title, subTitle }) => {
 
 const Content = ({ children }) => {
   return (
-    <ContentWrapper.Root>
+    <ContentWrapper.Root verticalSpacing={false} className="pt-3 pb-6 md:pb-7">
       <div className="grid grid-cols-6 md:gap-5 leading-7">{children}</div>
     </ContentWrapper.Root>
   )
