@@ -61,14 +61,14 @@ const Infos = ({ facts, features }) => {
     <div className="flex md:flex-col justify-between text-sm col-start-1 col-span-6 md:col-span-1 mb-4 md:mb-0 pt-1">
       {facts && (
         <FeatureList.Root>
-          <FeatureList.Title appearance={appearance}>First release</FeatureList.Title>
+          <FeatureList.Title>First release</FeatureList.Title>
           <FeatureList.List items={facts} delimiter={false} />
         </FeatureList.Root>
       )}
 
       {features && (
         <FeatureList.Root>
-          <FeatureList.Title appearance={appearance}>Key facts</FeatureList.Title>
+          <FeatureList.Title>Key facts</FeatureList.Title>
           <FeatureList.List items={features} delimiter={true} />
         </FeatureList.Root>
       )}

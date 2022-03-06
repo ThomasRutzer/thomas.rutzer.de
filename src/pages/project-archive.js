@@ -61,7 +61,7 @@ const PageProjectArchive = ({ data }) => (
                     <div className="col-start-1 col-span-2 md:col-span-2 md:row-start-2 flex flex-row justify-between">
                       <div className="self-end">
                         <FeatureList.Root>
-                          <FeatureList.Title appearance="primary">Key facts</FeatureList.Title>
+                          <FeatureList.Title>Key facts</FeatureList.Title>
                           <FeatureList.List items={work.node.features} delimiter />
                         </FeatureList.Root>
                       </div>
