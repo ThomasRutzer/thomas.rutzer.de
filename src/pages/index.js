@@ -109,19 +109,21 @@ const PageHome = ({ data }) => {
             </div>
             <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-span-1 leading-loose">
               <p>
-                I'm a creative JavaScript developer with a focus on unique interfaces and
-                interactions. I currently work at{" "}
+                I'm a experienced JavaScript developer specialized in crafting unique interfaces &
+                interactions. I work on a high level with JavaScript in general and currently use
+                ReactJS daily. Building complex Frontend applications includes for me profound
+                knowledge about state management, data structures and algorithms. I also know how to
+                write semantic and accessible HTML and modern CSS that scales.
+              </p>
+              <p className="mt-4">
+                In the last two years, I extensivly used WebGL, mostly with react-three-fiber, and
+                researched how to blend blending interfaces into spaces with the new WebXR Device
+                API.
+              </p>
+              <p className="mt-4">
+                I currently work at&nbsp;
                 <ExternalLink.Root link="https://artcom.de">art+com</ExternalLink.Root>, a studio
                 for media installations and spaces.
-              </p>
-              <p className="mt-4">
-                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting
-                custom solutions, mostly with fullstack JavaScript, WebGL and MQTT based realtime
-                communication.
-              </p>
-              <p className="mt-4">
-                Personally, I do everything possible with Javascript. My research focus at the
-                moment is blending interfaces into spaces with the new WebXR Device API.
               </p>
             </div>
             <div className="col-start-1 md:col-start-2 lg:col-start-3 col-span-1">
