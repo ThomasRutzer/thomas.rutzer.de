@@ -3,9 +3,10 @@ import anime from "animejs"
 import SlotMachine from "react-slot-machine"
 
 import HeadInfos from "../components/headInfos"
-import { ContentWrapper, LayoutWrapper } from "../components/layout"
-import { InternalLink } from "../components/links"
-import { CtaSecondaryTypeButton } from "./../components/cta"
+import * as ContentWrapper from "../components/contentWrapper"
+import * as InternalLink from "../components/internalLink"
+import * as LayoutWrapper from "../components/layoutWrapper"
+import * as Cta from "./../components/cta"
 
 const Page404 = () => {
   const slotMachineRef = useRef()
@@ -54,9 +55,9 @@ const Page404 = () => {
   return (
     <>
       <HeadInfos title="404 — Too bad" />
-      <LayoutWrapper>
+      <LayoutWrapper.Root>
         <section className="bg-gradient-to-r from-black">
-          <ContentWrapper additionalClasses="flex flex-col h-screen">
+          <ContentWrapper.Root additionalClasses="flex flex-col h-screen">
             <div
               ref={fadeContainerRef}
               style={{
@@ -75,19 +76,19 @@ const Page404 = () => {
               />
             </div>
             <div className="flex justify-center mt-3 md:mt-6">
-              <CtaSecondaryTypeButton disabled={isSpinning} onClick={onStartSpinning}>
+              <Cta.Root disabled={isSpinning} onClick={onStartSpinning}>
                 Spin to Win!
-              </CtaSecondaryTypeButton>
+              </Cta.Root>
             </div>
             <div className="mt-4 text-center">
               <p>
                 I couldn't find what you were looking for. <br></br>Go&nbsp;
-                <InternalLink link="/">home</InternalLink> or try your luck.
+                <InternalLink.Root link="/">home</InternalLink.Root> or try your luck.
               </p>
             </div>
-          </ContentWrapper>
+          </ContentWrapper.Root>
         </section>
-      </LayoutWrapper>
+      </LayoutWrapper.Root>
     </>
   )
 }

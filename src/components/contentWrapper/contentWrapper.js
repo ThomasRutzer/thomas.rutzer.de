@@ -1,9 +1,9 @@
 import React from "react"
 import classnames from "classnames"
 
-const ContentWrapper = ({
+const Root = ({
   children,
-  additionalClasses = "",
+  className = "",
   variant,
   verticalSpacing = true,
   horizontalSpacing = true,
@@ -28,10 +28,8 @@ const ContentWrapper = ({
   }
 
   return (
-    <div className={`relative container mx-auto ${createClasses()} ${additionalClasses}`}>
-      {children}
-    </div>
+    <div className={`relative container mx-auto ${createClasses()} ${className}`}>{children}</div>
   )
 }
 
-export default ContentWrapper
+export { Root }
