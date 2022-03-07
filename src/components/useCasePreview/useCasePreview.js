@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import classNames from "classnames"
 
 import * as ContentWrapper from "../contentWrapper"
@@ -55,8 +55,6 @@ const Content = ({ children }) => {
 }
 
 const Infos = ({ facts, features }) => {
-  const { appearance } = useContext(ComponentContext)
-
   return (
     <div className="flex md:flex-col justify-between text-sm col-start-1 col-span-6 md:col-span-1 mb-4 md:mb-0 pt-1">
       {facts && (
