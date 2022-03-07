@@ -11,6 +11,7 @@ import * as LayoutWrapper from "../components/layoutWrapper"
 import * as ProjectArchiveTeaser from "../components/projectArchiveTeaser"
 import * as SectionTitle from "../components/sectionTitle"
 import * as UseCasePreview from "../components/useCasePreview"
+import * as WritingPreview from "../components/writingPreview"
 
 const PageHome = ({ data }) => {
   return (
@@ -78,7 +79,9 @@ const PageHome = ({ data }) => {
         </UseCasePreview.Root>
       ))}
 
-      <ProjectArchiveTeaser.Root />
+      <section className="py-5 md:pb-0 md:-mb-7 bg-black bg-gradient-to-b from-grey-darkest">
+        <ProjectArchiveTeaser.Root />
+      </section>
 
       <section className="bg-grey-darkest-pattern">
         <ContentWrapper.Root>
@@ -87,16 +90,33 @@ const PageHome = ({ data }) => {
               <SectionTitle.Root>thoughts</SectionTitle.Root>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-2">
-              {data.allWritesJson.edges.map((write, key) => (
-                <div key={key} className={key === 0 ? "mt-0" : "mt-4 md:mt-7"}>
-                  <ExternalLink.Root link={write.node.link} appearance="primary" size="large">
-                    {write.node.title}
-                  </ExternalLink.Root>
-                  <small className="block font-mono text-xs uppercase text-grey-lighter mt-4">
-                    — {write.node.description}
-                  </small>
-                </div>
-              ))}
+              <div className="grid gap-5 md:grid-cols-2">
+                {data.allWritesJson.edges.map((write, key) => (
+                  // <div key={key} className={key === 0 ? "mt-0" : "mt-4 md:mt-7"}>
+                  //   <ExternalLink.Root link={write.node.link} appearance="primary" size="large">
+                  //     {write.node.title}
+                  //   </ExternalLink.Root>
+                  //   <small className="block font-mono text-xs uppercase text-grey-lighter mt-4">
+                  //     — {write.node.description}
+                  //   </small>
+                  // </div>
+
+                  <WritingPreview.Root key={key}>
+                    <WritingPreview.Content>
+                      <WritingPreview.Title>{write.node.title}</WritingPreview.Title>
+
+                      <small className="block font-mono text-xs text-grey-lighter mt-4">
+                        — {write.node.description}
+                      </small>
+                    </WritingPreview.Content>
+                    <WritingPreview.Footer>
+                      <ExternalLink.Root link={write.node.link} size={ExternalLink.SIZES.SMALL}>
+                        read more
+                      </ExternalLink.Root>
+                    </WritingPreview.Footer>
+                  </WritingPreview.Root>
+                ))}
+              </div>
             </div>
           </div>
         </ContentWrapper.Root>
