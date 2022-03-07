@@ -89,13 +89,13 @@ const Links = ({ links }) => {
   return (
     <div className="col-start-1 col-span-6 md:col-start-6 md:col-span-1">
       <div className="flex flex-col md:items-end">
-        <div className="md:transform md:-rotate-90 md:-translate-y-full md:origin-bottom-right">
+        <ul className="md:transform md:-rotate-90 md:-translate-y-full md:origin-bottom-right">
           {links.map(({ link, label }, key) => (
-            <ExternalLink.Root key={key} link={link}>
-              {label}
-            </ExternalLink.Root>
+            <li key={key}>
+              <ExternalLink.Root link={link}>{label}</ExternalLink.Root>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   )

@@ -92,15 +92,6 @@ const PageHome = ({ data }) => {
             <div className="col-start-1 md:col-start-2 col-span-2">
               <div className="grid gap-5 md:grid-cols-2">
                 {data.allWritesJson.edges.map((write, key) => (
-                  // <div key={key} className={key === 0 ? "mt-0" : "mt-4 md:mt-7"}>
-                  //   <ExternalLink.Root link={write.node.link} appearance="primary" size="large">
-                  //     {write.node.title}
-                  //   </ExternalLink.Root>
-                  //   <small className="block font-mono text-xs uppercase text-grey-lighter mt-4">
-                  //     — {write.node.description}
-                  //   </small>
-                  // </div>
-
                   <WritingPreview.Root key={key}>
                     <WritingPreview.Content>
                       <WritingPreview.Title>{write.node.title}</WritingPreview.Title>
@@ -187,7 +178,7 @@ const PageHome = ({ data }) => {
       </section>
       <section className="bg-grey-darkest-pattern">
         <ContentWrapper.Root>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div className="col-start-1 col-span-1">
               <SectionTitle.Root>credits</SectionTitle.Root>
             </div>
