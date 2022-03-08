@@ -3,9 +3,10 @@ const path = require(`path`)
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    title: "thomas rutzer — creative javascript developer and foo/bar",
+    title:
+      "thomas rutzer — expert in crafting unique interfaces & interactions for the browser platform",
     description:
-      "I'm a creative JavaScript developer with a focus on unique interfaces and interactions.",
+      "I'm a experienced JavaScript developer specialized in crafting unique interfaces & interactions.",
     image: "/seo/seo-default.jpg",
     url: "https://thomasrutzer.dev",
   },
@@ -53,8 +54,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "thomas rutzer — creative javascript developer and foo/bar",
-        short_name: "thomas rutzer — creative javascript developer and foo/bar",
+        name:
+          "thomas rutzer — expert in crafting unique interfaces & interactions for the browser platform",
+        short_name: "thomas rutzer — Javascript Developer",
         start_url: "/",
         background_color: "#2e2d2d",
         theme_color: "#2e2d2d",
