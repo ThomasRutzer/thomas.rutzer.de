@@ -1,194 +1,266 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Intro from "../components/intro"
+import * as Intro from "../components/intro"
 import HeadInfos from "../components/headInfos"
-import { ContentWrapper, LayoutWrapper } from "./../components/layout"
-import { ExternalLink } from "../components/links"
-
-import {
-  SectionTitle,
-  CollectionSectionWithImageGrid,
-  ProjectArchiveTeaser,
-  WorkSectionWithImageGrid,
-} from "./../sections"
+import * as Collapsible from "../components/collapsible"
+import * as ContentWrapper from "./../components/contentWrapper"
+import * as ExternalLink from "../components/externalLink"
+import * as ImageGrid from "../components/imageGrid"
+import * as LayoutWrapper from "../components/layoutWrapper"
+import * as ProjectArchiveTeaser from "../components/projectArchiveTeaser"
+import * as SectionTitle from "../components/sectionTitle"
+import * as UseCasePreview from "../components/useCasePreview"
+import * as WritingPreview from "../components/writingPreview"
 
 const PageHome = ({ data }) => {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper.Root>
       <HeadInfos />
-      <Intro />
-      <ContentWrapper verticalSpacing={false} additionalClasses="pt-4 md:pt-7">
-        <SectionTitle>work</SectionTitle>
-      </ContentWrapper>
+      <Intro.Root />
+      <ContentWrapper.Root verticalSpacing={false} className="pt-4 md:pt-7">
+        <SectionTitle.Root>work</SectionTitle.Root>
+      </ContentWrapper.Root>
+
       {data.allWorksJson.edges.map((work, key) => (
-        <WorkSectionWithImageGrid
-          work={work.node}
-          appearance={key % 2 === 0 ? "primary" : "secondary"}
-          key={key}
-        />
+        <UseCasePreview.Root key={key} appearance={key % 2 === 0 ? "primary" : "secondary"}>
+          <UseCasePreview.HeroContent>
+            <UseCasePreview.TitleGroup
+              category="project"
+              title={work.node.title}
+              subTitle={work.node.subTitle}
+            />
+            <ImageGrid.Root
+              images={work.node.images.map((image, key) => ({
+                gatsbyImageData: work.node.fields.workImageAssets[key],
+                alt: image.alt,
+                tiles: image.grid.tiles,
+                fit: image.grid.fit,
+              }))}
+            />
+          </UseCasePreview.HeroContent>
+          <UseCasePreview.Content>
+            <UseCasePreview.Infos features={work.node.features} facts={[work.node.year]} />
+            <UseCasePreview.Copy>
+              {work.node.leadingDescription}
+              {work.node.description}
+            </UseCasePreview.Copy>
+            <UseCasePreview.Links links={work.node.links} />
+          </UseCasePreview.Content>
+        </UseCasePreview.Root>
       ))}
       {data.allCollectionsJson.edges.map((collection, key) => (
-        <CollectionSectionWithImageGrid
-          collection={collection.node}
-          appearance={key % 2 === 0 ? "primary" : "secondary"}
-          key={key}
-        />
+        <UseCasePreview.Root key={key} appearance={key % 2 === 0 ? "primary" : "secondary"}>
+          <UseCasePreview.HeroContent>
+            <UseCasePreview.TitleGroup
+              category="collection"
+              title={collection.node.title}
+              subTitle={collection.node.subTitle}
+            />
+            <ImageGrid.Root
+              images={collection.node.includedWorks.map(
+                ({ fields, title, subTitle, year, links }, key) => ({
+                  gatsbyImageData: fields.workImageAssets[0],
+                  alt: `${title} – ${subTitle} (${year})`,
+                  tiles: collection.node.imageGrid.tiles[key],
+                  fit: fields.workImageAssets[0].fit,
+                  link: links.filter(link => link.type === "live" || link.type === "github")[0],
+                })
+              )}
+            />
+          </UseCasePreview.HeroContent>
+          <UseCasePreview.Content>
+            <UseCasePreview.Infos features={collection.node.features} />
+            <UseCasePreview.Copy>
+              {collection.node.leadingDescription}
+              {collection.node.description}
+            </UseCasePreview.Copy>
+          </UseCasePreview.Content>
+        </UseCasePreview.Root>
       ))}
 
-      <ProjectArchiveTeaser />
+      <section className="py-5 md:pb-0 md:-mb-7 bg-black bg-gradient-to-b from-grey-darkest">
+        <ProjectArchiveTeaser.Root />
+      </section>
 
       <section className="bg-grey-darkest-pattern">
-        <ContentWrapper>
+        <ContentWrapper.Root>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:mt-7">
             <div className="col-start-1 col-span-1">
-              <SectionTitle appearance="primary">thoughts</SectionTitle>
+              <SectionTitle.Root>thoughts</SectionTitle.Root>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-2">
-              {data.allWritesJson.edges.map((write, key) => (
-                <div key={key} className={key === 0 ? "mt-0" : "mt-4 md:mt-7"}>
-                  <ExternalLink link={write.node.link} appearance="primary" size="large">
-                    {write.node.title}
-                  </ExternalLink>
-                  <small className="block italic text-grey-lighter mt-4">
-                    — {write.node.description}
-                  </small>
-                </div>
-              ))}
+              <div className="grid gap-5 md:grid-cols-2">
+                {data.allWritesJson.edges.map((write, key) => (
+                  <WritingPreview.Root key={key}>
+                    <WritingPreview.Content>
+                      <WritingPreview.Title>{write.node.title}</WritingPreview.Title>
+
+                      <small className="block font-mono text-xs text-grey-lighter mt-4">
+                        — {write.node.description}
+                      </small>
+                    </WritingPreview.Content>
+                    <WritingPreview.Footer>
+                      <ExternalLink.Root link={write.node.link} size={ExternalLink.SIZES.SMALL}>
+                        read more
+                      </ExternalLink.Root>
+                    </WritingPreview.Footer>
+                  </WritingPreview.Root>
+                ))}
+              </div>
             </div>
           </div>
-        </ContentWrapper>
+        </ContentWrapper.Root>
       </section>
       <section className="bg-secondary">
-        <ContentWrapper>
+        <ContentWrapper.Root>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
-              <SectionTitle>about</SectionTitle>
+              <SectionTitle.Root>about</SectionTitle.Root>
             </div>
-            <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-span-1">
+            <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-span-1 leading-loose">
               <p>
-                I'm a creative JavaScript developer with a focus on unique interfaces and
-                interactions. I currently work at{" "}
-                <ExternalLink link="https://artcom.de" appearance="primary">
-                  art+com
-                </ExternalLink>
-                , a studio for media installations and spaces.
+                I'm a experienced JavaScript developer specialized in crafting unique interfaces &
+                interactions. I work on a high level with JavaScript in general and currently use
+                ReactJS daily. Building complex Frontend applications includes for me profound
+                knowledge about state management, data structures and algorithms. I also know how to
+                write semantic and accessible HTML and modern CSS that scales.
               </p>
               <p className="mt-4">
-                In my team located in 50°56"52.8"N 6°54"48.7"E, we are specialized in crafting
-                custom solutions, mostly with fullstack JavaScript, WebGL and MQTT based realtime
-                communication.
+                In the last two years, I extensivly used WebGL, mostly with react-three-fiber, and
+                researched how to blend blending interfaces into spaces with the new WebXR Device
+                API.
               </p>
               <p className="mt-4">
-                Personally, I do everything possible with Javascript. My research focus at the
-                moment is blending interfaces into spaces with the new WebXR Device API.
+                I currently work at&nbsp;
+                <ExternalLink.Root link="https://artcom.de">art+com</ExternalLink.Root>, a studio
+                for media installations and spaces.
               </p>
             </div>
             <div className="col-start-1 md:col-start-2 lg:col-start-3 col-span-1">
               <div className="flex flex-col lg:items-end">
                 <div className="lg:transform lg:-rotate-90 lg:-translate-y-full lg:origin-bottom-right lg:pl-2">
                   <div>
-                    <ExternalLink
+                    <ExternalLink.Root
                       additionalClasses="whitespace-no-wrap"
                       appearance="primary"
                       link="twitter.com/thomasrutzer"
                       size="large"
                     >
                       twitter
-                    </ExternalLink>
+                    </ExternalLink.Root>
                   </div>
                   <div>
-                    <ExternalLink
+                    <ExternalLink.Root
                       additionalClasses="whitespace-no-wrap"
                       appearance="primary"
                       link="mailto:hi@thomasrutzer.dev"
                       size="large"
                     >
                       mail
-                    </ExternalLink>
+                    </ExternalLink.Root>
                   </div>
                   <div>
-                    <ExternalLink
+                    <ExternalLink.Root
                       additionalClasses="whitespace-no-wrap"
                       appearance="primary"
                       link="https://github.com/ThomasRutzer"
                       size="large"
                     >
                       github
-                    </ExternalLink>
+                    </ExternalLink.Root>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </ContentWrapper>
+        </ContentWrapper.Root>
       </section>
       <section className="bg-grey-darkest-pattern">
-        <ContentWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ContentWrapper.Root>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div className="col-start-1 col-span-1">
-              <SectionTitle appearance="primary">credits</SectionTitle>
+              <SectionTitle.Root>credits</SectionTitle.Root>
             </div>
             <div className="col-start-1 md:col-start-2 col-span-1">
-              <p className="mb-2 font-bold">images</p>
-              {data.allWorksJson.edges.map((work, key) => (
-                <div key={key} className={key === 0 ? "mt-0" : "mt-4"}>
-                  <p className="text-sm text-secondary-lighter">
-                    {work.node.title} <i>{work.node.subTitle}</i>
-                  </p>
-                  <ul>
-                    {work.node.images.map((image, imageKey) => (
-                      <li key={imageKey}>
-                        {image.reference.link && (
-                          <ExternalLink link={image.reference.link} size="small">
-                            Fig.{imageKey + 1} by {image.reference.author}
-                          </ExternalLink>
-                        )}
-                        {!image.reference.link && (
-                          <p className="text-sm">
-                            Fig.{imageKey + 1} by {image.reference.author}
-                          </p>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              <Collapsible.Root title="images">
+                {data.allWorksJson.edges.map((work, key) => (
+                  <div key={key} className="mt-2">
+                    <dl>
+                      <dt className="mt-2">
+                        <span className="text-sm text-secondary-lighter">
+                          {work.node.title} <i>{work.node.subTitle}</i>
+                        </span>
+                      </dt>
+                      {work.node.images.map((image, imageKey) => (
+                        <dl className="mt-2" key={imageKey}>
+                          {image.reference.link && (
+                            <ExternalLink.Root
+                              link={image.reference.link}
+                              size={ExternalLink.SIZES.SMALL}
+                            >
+                              Fig.{imageKey + 1} by {image.reference.author}
+                            </ExternalLink.Root>
+                          )}
+                          {!image.reference.link && (
+                            <span className="text-sm">
+                              Fig.{imageKey + 1} by {image.reference.author}
+                            </span>
+                          )}
+                        </dl>
+                      ))}
+                    </dl>
+                  </div>
+                ))}
+              </Collapsible.Root>
             </div>
             <div className="col-start-1 md:col-start-3 col-span-1">
-              <p className="mb-2 font-bold">this site</p>
-              <ul>
-                <li>
-                  <ExternalLink link="https://www.gatsbyjs.org/" size="small">
-                    Gatsby.js
-                  </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink link="https://tailwindcss.com/" size="small">
-                    Tailwind.css
-                  </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink link="https://animejs.com/" size="small">
-                    anime.js
-                  </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink link="https://github.com/features/actions" size="small">
-                    Github actions
-                  </ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink link="https://fonts.google.com/specimen/IBM+Plex+Mono" size="small">
-                    IBM Plex Mono
-                  </ExternalLink>
-                </li>
-              </ul>
+              <Collapsible.Root title="this site">
+                <ul>
+                  <li className="mt-2">
+                    <ExternalLink.Root
+                      link="https://www.gatsbyjs.org/"
+                      size={ExternalLink.SIZES.SMALL}
+                    >
+                      Gatsby.js
+                    </ExternalLink.Root>
+                  </li>
+                  <li className="mt-2">
+                    <ExternalLink.Root
+                      link="https://tailwindcss.com/"
+                      size={ExternalLink.SIZES.SMALL}
+                    >
+                      Tailwind.css
+                    </ExternalLink.Root>
+                  </li>
+                  <li className="mt-2">
+                    <ExternalLink.Root link="https://animejs.com/" size={ExternalLink.SIZES.SMALL}>
+                      anime.js
+                    </ExternalLink.Root>
+                  </li>
+                  <li className="mt-2">
+                    <ExternalLink.Root
+                      link="https://github.com/features/actions"
+                      size={ExternalLink.SIZES.SMALL}
+                    >
+                      Github actions
+                    </ExternalLink.Root>
+                  </li>
+                  <li className="mt-2">
+                    <ExternalLink.Root
+                      link="https://fonts.google.com/specimen/IBM+Plex+Mono"
+                      size={ExternalLink.SIZES.SMALL}
+                    >
+                      IBM Plex Mono
+                    </ExternalLink.Root>
+                  </li>
+                </ul>
+              </Collapsible.Root>
             </div>
           </div>
-        </ContentWrapper>
+        </ContentWrapper.Root>
       </section>
-    </LayoutWrapper>
+    </LayoutWrapper.Root>
   )
 }
 

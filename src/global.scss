@@ -28,19 +28,24 @@ body {
 
 @tailwind components;
 
+@import "./components/collapsible/index.scss";
+@import "./components/externalLink/index.scss";
+@import "./components/featureList/index.scss";
 @import "./components/intro/index.scss";
-@import "./components/imageGrid//index.scss";
-@import "./components/cta/index.scss";
-@import "./components/links/index.scss";
+@import "./components/imageGrid/index.scss";
+@import "./components/internalLink/index.scss";
 @import "./components/markdown/index.scss";
 @import "./components/parallaxCircles/index.scss";
+@import "./components/projectArchiveTeaser/index.scss";
+@import "./components/sectionTitle/index.scss";
+@import "./components/subHero/index.scss";
 @import "./components/tabs/index.scss";
+@import "./components/useCasePreview/index.scss";
+@import "./components/writingPreview/index.scss";
 
-
-@import "./sections/index.scss";
 @import "./utils/cssAnimations.scss";
 
-@responsive {
+@layer components {
   .bg-grey-darkest-pattern {
     background: url("./images/seamless-BG.jpg") repeat;
     background-color: theme("colors.grey.darkest");

@@ -3,12 +3,16 @@ const path = require(`path`)
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    title: "thomas rutzer — creative javascript developer and foo/bar",
-    description: "I'm a creative JavaScript developer with a focus on unique interfaces and interactions.",
+    title:
+      "thomas rutzer — expert in crafting unique interfaces & interactions for the browser platform",
+    description:
+      "I'm a experienced JavaScript developer specialized in crafting unique interfaces & interactions.",
     image: "/seo/seo-default.jpg",
-    url: "https://thomasrutzer.dev"
+    url: "https://thomasrutzer.dev",
   },
   plugins: [
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -25,37 +29,34 @@ module.exports = {
     },
     "gatsby-transformer-json",
     "gatsby-plugin-image",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+
     "gatsby-transformer-remark",
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        postCssPlugins: [
-          require("tailwindcss"),
-          require("./tailwind.config.js"),
-        ],
+        postCssPlugins: [require("tailwindcss"), require("./tailwind.config.js")],
       },
     },
     {
-      resolve: 'gatsby-plugin-html-minifier',
+      resolve: "gatsby-plugin-html-minifier",
       options: {
-        removeComments: true
-      }
+        removeComments: true,
+      },
     },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-html-attributes",
       options: {
         lang: "en",
-        className: "no-js"
-      }
+        className: "no-js",
+      },
     },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "thomas rutzer — creative javascript developer and foo/bar",
-        short_name: "thomas rutzer — creative javascript developer and foo/bar",
+        name:
+          "thomas rutzer — expert in crafting unique interfaces & interactions for the browser platform",
+        short_name: "thomas rutzer — Javascript Developer",
         start_url: "/",
         background_color: "#2e2d2d",
         theme_color: "#2e2d2d",
@@ -63,13 +64,13 @@ module.exports = {
         icon: "src/images/icon.png",
         shortcuts: [
           {
-            "name": "Go to archive",
-            "short_name": "archive",
-            "description": "(Almost all) Design & Code along the road",
-            "url": "/project-archive"
-          }
-        ]
-      }
-    }
-  ]
+            name: "Go to archive",
+            short_name: "archive",
+            description: "(Almost all) Design & Code along the road",
+            url: "/project-archive",
+          },
+        ],
+      },
+    },
+  ],
 }
