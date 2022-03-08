@@ -6,11 +6,6 @@ import resolveConfig from "tailwindcss/resolveConfig"
 import tailwindConfig from "./../../../tailwind.config"
 import * as ExternalLink from "../externalLink"
 
-const cssClassesRoot = "flex items-center flex-col transition-transform duration-1000 ease-out"
-const cssClassesRootSpacingDefault = "lg:mt-0"
-const cssClassesImage = "image-grid__image w-full rounded-xl overflow-hidden"
-const cssClassesCaption = "text-xs text-center mt-2 px-1"
-
 const RenderGatsbyImage = ({ gatsbyImageData, objectFit, alt }) => {
   const fullConfig = resolveConfig(tailwindConfig)
   const images = useMemo(
@@ -29,7 +24,7 @@ const RenderGatsbyImage = ({ gatsbyImageData, objectFit, alt }) => {
 
   return (
     <GatsbyImage
-      className={cssClassesImage}
+      className="image-grid__image w-full rounded-xl overflow-hidden"
       // weird Safari hack: https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
       style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
       imgStyle={{
@@ -51,24 +46,25 @@ const Root = ({
   offsetX = 0,
   offsetY = 0,
 }) => {
-  const cssClassesRootTiles = classnames({
-    [`col-start-${index % 2 === 0 ? "1" : "2"} col-span-5`]: true,
-    [`lg:col-start-${tiles[0][0]}`]: true,
-    [`lg:col-span-${tiles[0][1]}`]: true,
-    [`lg:row-start-${tiles[1][0]}`]: true,
-    [`lg:row-span-${tiles[1][1]}`]: true,
-  })
-  const cssClassesRootSpacingByIndex = classnames(cssClassesRootSpacingDefault, {
-    "mt-0": index === 0,
-    "mt-4": index !== 0,
-  })
+  const classNames = classnames(
+    "flex items-center flex-col transition-transform duration-1000 ease-out lg:mt-0",
+    {
+      [`col-start-${index % 2 === 0 ? "1" : "2"} col-span-5`]: true,
+      [`lg:col-start-${tiles[0][0]}`]: true,
+      [`lg:col-span-${tiles[0][1]}`]: true,
+      [`lg:row-start-${tiles[1][0]}`]: true,
+      [`lg:row-span-${tiles[1][1]}`]: true,
+      "mt-0": index === 0,
+      "mt-4": index !== 0,
+    }
+  )
 
   return (
     <figure
       style={{
         transform: `translate(${offsetX}px, ${offsetY}px)`,
       }}
-      className={`${cssClassesRoot} ${cssClassesRootTiles} ${cssClassesRootSpacingByIndex}`}
+      className={classNames}
     >
       {link && (
         <ExternalLink.Root
@@ -81,7 +77,7 @@ const Root = ({
         </ExternalLink.Root>
       )}
       {!link && <RenderGatsbyImage gatsbyImageData={gatsbyImageData} fit={fit} alt={alt} />}
-      <figcaption className={cssClassesCaption}>
+      <figcaption className="text-xs text-center mt-2 px-1">
         Fig.{index + 1}: {alt}
       </figcaption>
     </figure>

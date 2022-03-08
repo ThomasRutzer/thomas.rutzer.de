@@ -9,12 +9,6 @@ const APPEARANCE = {
   PRIMARY: "primary",
 }
 
-const cssClassesRootDefault = "w-full h-full"
-const cssClassesOuterDefault =
-  "parallax-circles__outer relative w-full h-full bg-gradient-to-b rounded-full overflow-hidden"
-const cssClassesInnerDefault =
-  "parallax-circles__inner absolute top-0 w-full h-full rounded-full bg-gradient-to-r transition-transform duration-700 ease-out"
-
 const Root = ({ mouseMoveTranslations = [10, 20, 10, 20], appearance = APPEARANCE.PRIMARY }) => {
   const prefersReducedMotion = useReducedMotion()
   const translations = useMousemoveTranslation(
@@ -25,24 +19,30 @@ const Root = ({ mouseMoveTranslations = [10, 20, 10, 20], appearance = APPEARANC
     typeof window === "undefined" ? false : isTouchDevice() || prefersReducedMotion
   )
 
-  const cssClassesInnerByAppearance = classnames({
-    "from-grey-darker to-primary": appearance === APPEARANCE.PRIMARY,
-    "from-grey-darker to-grey-darkest": appearance === APPEARANCE.DARK,
-  })
+  const classNamesInnerCircle = classnames(
+    "parallax-circles__inner absolute top-0 w-full h-full rounded-full bg-gradient-to-r transition-transform duration-700 ease-out",
+    {
+      "from-grey-darker to-primary": appearance === APPEARANCE.PRIMARY,
+      "from-grey-darker to-grey-darkest": appearance === APPEARANCE.DARK,
+    }
+  )
 
-  const cssClassesOuterByAppearance = classnames({
-    "from-primary": appearance === APPEARANCE.PRIMARY,
-    "from-secondary-default to-primary": appearance === APPEARANCE.DARK,
-  })
+  const classNamesOuterCircle = classnames(
+    "parallax-circles__outer relative w-full h-full bg-gradient-to-b rounded-full overflow-hidden",
+    {
+      "from-primary": appearance === APPEARANCE.PRIMARY,
+      "from-secondary-default to-primary": appearance === APPEARANCE.DARK,
+    }
+  )
 
   return (
-    <div className={cssClassesRootDefault}>
-      <div className={`${cssClassesOuterDefault} ${cssClassesOuterByAppearance}`}>
+    <div className="w-full h-full">
+      <div className={classNamesOuterCircle}>
         <div
           style={{
             transform: `translate(${translations.tx}px, ${translations.ty}px)`,
           }}
-          className={`${cssClassesInnerDefault} ${cssClassesInnerByAppearance}`}
+          className={classNamesInnerCircle}
         ></div>
       </div>
     </div>

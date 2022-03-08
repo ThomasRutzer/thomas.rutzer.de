@@ -1,12 +1,19 @@
 import React from "react"
+import classnames from "classnames"
 
 import * as ContentWrapper from "../contentWrapper"
 import * as InternalLink from "../internalLink"
 import * as ParallaxCircles from "../parallaxCircles"
 
+const circles = [
+  { mouseMoveTranslations: [1, 3, 1, 3] },
+  { mouseMoveTranslations: [5, 10, 5, 10] },
+  { mouseMoveTranslations: [10, 20, 10, 20] },
+]
+
 const Root = () => {
   return (
-    <div className="sub-hero relative">
+    <div className="relative">
       <ContentWrapper.Root verticalSpacing={false}>
         <ul className="py-2">
           <li>
@@ -40,22 +47,24 @@ const Root = () => {
         </h1>
       </ContentWrapper.Root>
 
-      <div className="sub-hero__bg bg-gradient-to-r from-black" aria-hidden="true">
-        <div className="sub-hero__circle sub-hero__circle--1">
-          <ParallaxCircles.Root
-            appearance={ParallaxCircles.APPEARANCE.DARK}
-            mouseMoveTranslations={[1, 3, 1, 3]}
-          />
-        </div>
-        <div className="sub-hero__circle sub-hero__circle--2">
-          <ParallaxCircles.Root
-            appearance={ParallaxCircles.APPEARANCE.DARK}
-            mouseMoveTranslations={[5, 10, 5, 10]}
-          />
-        </div>
-        <div className="sub-hero__circle sub-hero__circle--3">
-          <ParallaxCircles.Root appearance={ParallaxCircles.APPEARANCE.DARK} />
-        </div>
+      <div
+        className="overflow-hidden md:overflow-visible -z-10 absolute w-full h-full left-0 top-0 bg-gradient-to-r from-black"
+        aria-hidden="true"
+      >
+        {circles.map((circle, key) => {
+          const classNames = classnames("absolute", {
+            [`sub-hero-circle--${key}`]: true,
+          })
+
+          return (
+            <div className={classNames}>
+              <ParallaxCircles.Root
+                appearance={ParallaxCircles.APPEARANCE.DARK}
+                mouseMoveTranslations={circle.mouseMoveTranslations}
+              />
+            </div>
+          )
+        })}
       </div>
     </div>
   )

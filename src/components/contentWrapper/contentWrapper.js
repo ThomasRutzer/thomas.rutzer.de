@@ -1,35 +1,24 @@
 import React from "react"
 import classnames from "classnames"
 
+const SIZES = { SMALL: "small", MID: "mid", LARGE: "large" }
+
 const Root = ({
   children,
   className = "",
-  variant,
+  size = SIZES.MID,
   verticalSpacing = true,
   horizontalSpacing = true,
 }) => {
-  const createClasses = () => {
-    const maxWClass = () => {
-      switch (variant) {
-        case "small":
-          return "max-w-4xl"
-        case "large":
-          return "max-w-full"
-        default:
-          return "max-w-6xl"
-      }
-    }
+  const classNames = classnames("relative container mx-auto", className, {
+    "px-5": horizontalSpacing,
+    "py-6 md:py-7": verticalSpacing,
+    "max-w-4xl": size === SIZES.SMALL,
+    "max-w-6xl": size === SIZES.MID,
+    "max-w-full": size === SIZES.LARGE,
+  })
 
-    return classnames(
-      { "px-5": horizontalSpacing },
-      { "py-6 md:py-7": verticalSpacing },
-      { [`${maxWClass()}`]: true }
-    )
-  }
-
-  return (
-    <div className={`relative container mx-auto ${createClasses()} ${className}`}>{children}</div>
-  )
+  return <div className={classNames}>{children}</div>
 }
 
-export { Root }
+export { Root, SIZES }

@@ -20,7 +20,7 @@ const Root = ({ children, appearance }) => {
 const HeroContent = ({ children }) => {
   return (
     <ContentWrapper.Root
-      variant="large"
+      size={ContentWrapper.SIZES.LARGE}
       className="px-5 pt-6 md:pb-6 md:pt-7"
       verticalSpacing={false}
       horizontalSpacing={false}
@@ -48,8 +48,11 @@ const TitleGroup = ({ category, title, subTitle }) => {
 
 const Content = ({ children }) => {
   return (
-    <ContentWrapper.Root verticalSpacing={false} className="pt-3 pb-6 md:pb-7">
-      <div className="grid grid-cols-6 md:gap-5 leading-7">{children}</div>
+    <ContentWrapper.Root
+      verticalSpacing={false}
+      className="grid grid-cols-6 md:gap-5 leading-7pt-3 pb-6 md:pb-7"
+    >
+      {children}
     </ContentWrapper.Root>
   )
 }

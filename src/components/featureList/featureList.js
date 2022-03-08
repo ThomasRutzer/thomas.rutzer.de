@@ -5,19 +5,17 @@ const Root = ({ children }) => {
   return <div className="feature-list">{children}</div>
 }
 
-const cssClassesTitleDefault = "block font-mono text-xs uppercase text-primary"
-
 const Title = ({ children }) => {
-  return <span className={cssClassesTitleDefault}>{children}</span>
+  return <span className="block font-mono text-xs uppercase text-primary">{children}</span>
 }
 
-const cssClassesListDefault =
-  "feature-list__item text-sm text-grey-lighter block font-mono text-xs mt-1"
-
 const List = ({ items, delimiter }) => {
-  const cssClasses = classnames(cssClassesListDefault, {
-    "feature-list__item--with-delimiter": delimiter,
-  })
+  const cssClasses = classnames(
+    "feature-list__item text-sm text-grey-lighter block font-mono text-xs mt-1",
+    {
+      "feature-list__item--with-delimiter": delimiter,
+    }
+  )
 
   return (
     <ul>

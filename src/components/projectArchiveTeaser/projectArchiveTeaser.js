@@ -11,32 +11,27 @@ const circles = [
   { mouseMoveTranslations: [4, 4, 4, 4] },
 ]
 
-const cssClassesRoot = "bg-primary relative py-6 md:py-7 rounded-xl shadow-xl overflow-hidden"
-
-const cssClassesBackground =
-  "absolute w-full h-full left-0 top-0 overflow-hidden lg:overflow-visible z-0"
-const cssClassesCircle = "absolute"
-const cssClassesContent =
-  "relative z-10 flex flex-col md:flex-row items-center align-center justify-center"
-
 const Root = () => {
   return (
     <ContentWrapper.Root verticalSpacing={false}>
-      <div className={cssClassesRoot}>
-        <div className={cssClassesContent}>
+      <div className="bg-primary relative py-6 md:py-7 rounded-xl shadow-xl overflow-hidden">
+        <div className="relative z-10 flex flex-col md:flex-row items-center align-center justify-center">
           <Title />
           <Cta.Root href="/project-archive" as="a">
             project archive
           </Cta.Root>
         </div>
-        <div className={cssClassesBackground} aria-hidden="true">
+        <div
+          className="absolute w-full h-full left-0 top-0 overflow-hidden lg:overflow-visible z-0"
+          aria-hidden="true"
+        >
           {circles.map((circle, key) => {
-            const cssClassesCircleByIndex = classnames({
+            const classNames = classnames("absolute", {
               [`project-archive-teaser-circle--${key}`]: true,
             })
 
             return (
-              <div className={`${cssClassesCircle} ${cssClassesCircleByIndex}`}>
+              <div className={classNames}>
                 <ParallaxCircles.Root
                   appearance={ParallaxCircles.APPEARANCE.PRIMARY}
                   mouseMoveTranslations={circle.mouseMoveTranslations}
@@ -50,16 +45,13 @@ const Root = () => {
   )
 }
 
-const cssClassesTitle = "mb-4 md:mb-0 md:mr-7 font-mono"
-const cssClassesTitleFirstLine = "text-4xl md:-ml-4"
-const cssClassesTitleLastLine =
-  "block text-5xl md:text-stroke-white italic md:text-stroke ml-4 md:ml-0"
-
 const Title = () => {
   return (
-    <h2 className={cssClassesTitle}>
-      <span className={cssClassesTitleFirstLine}>There</span>
-      <span className={cssClassesTitleLastLine}>is more</span>
+    <h2 className="mb-4 md:mb-0 md:mr-7 font-mono">
+      <span className="text-4xl md:-ml-4">There</span>
+      <span className="block text-5xl md:text-stroke-white italic md:text-stroke ml-4 md:ml-0">
+        is more
+      </span>
     </h2>
   )
 }

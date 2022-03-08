@@ -94,11 +94,8 @@ const PageProjectArchive = ({ data }) => (
                     {group.edges.map((work, key) => (
                       <li key={key + groupKey} className="mb-2 block">
                         {work.node.teaserImage.reference.link && (
-                          <ExternalLink.Root
-                            link={work.node.teaserImage.reference.link}
-                            size="small"
-                          >
-                            {work.node.title + " " + work.node.subTitle} by{" "}
+                          <ExternalLink.Root link={work.node.teaserImage.reference.link}>
+                            {work.node.title}&nbsp;{work.node.subTitle}&nbsp;by&nbsp;
                             {work.node.teaserImage.reference.author}
                           </ExternalLink.Root>
                         )}

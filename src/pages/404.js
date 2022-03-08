@@ -57,7 +57,7 @@ const Page404 = () => {
       <HeadInfos title="404 — Too bad" />
       <LayoutWrapper.Root>
         <section className="bg-gradient-to-r from-black">
-          <ContentWrapper.Root additionalClasses="flex flex-col h-screen">
+          <ContentWrapper.Root className="flex flex-col h-screen">
             <div
               ref={fadeContainerRef}
               style={{
