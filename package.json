@@ -1,7 +1,7 @@
 {
   "name": "github-user-page",
   "private": true,
-  "description": "Hello! I am creative developer Thomas Rutzer and this is my digital home.",
+  "description": "Hello! I am Thomas Rutzer and this is my digital home.",
   "version": "1.1.0",
   "author": "Thomas Rutzer <hi@thomasrutzer.dev>",
   "browserslist": "> 1% or last 2 versions",
