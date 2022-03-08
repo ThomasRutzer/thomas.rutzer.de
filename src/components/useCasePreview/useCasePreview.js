@@ -50,7 +50,7 @@ const Content = ({ children }) => {
   return (
     <ContentWrapper.Root
       verticalSpacing={false}
-      className="grid grid-cols-6 md:gap-5 leading-7pt-3 pb-6 md:pb-7"
+      className="grid grid-cols-6 md:gap-5 leading-7pt-3 py-6 md:pt-0 md:pb-7"
     >
       {children}
     </ContentWrapper.Root>
