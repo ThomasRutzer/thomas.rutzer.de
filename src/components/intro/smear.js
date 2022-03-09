@@ -1,6 +1,8 @@
 import React from "react"
 import * as PIXI from "pixi.js"
+import resolveConfig from "tailwindcss/resolveConfig"
 
+import tailwindConfig from "./../../../tailwind.config"
 import displacementMapPath from "./../../images/displacement.png"
 import imagePath from "./../../images/me.jpg"
 
@@ -22,12 +24,12 @@ class Smear extends React.PureComponent {
   }
 
   componentDidMount() {
+    const { theme } = resolveConfig(tailwindConfig)
     this.app = new PIXI.Application({
       width: window.innerWidth,
       height: window.innerHeight,
       view: this.canvas.current,
-      backgroundColor: 0x7c7c7c,
-      resizeTo: window,
+      backgroundColor: theme.colors.grey.darkest,
     })
 
     this.preload()
@@ -35,6 +37,7 @@ class Smear extends React.PureComponent {
 
   componentWillUnmount() {
     this.app.destroy()
+    window.removeEventListener("resize", this.onResize)
   }
 
   preload() {
@@ -80,6 +83,7 @@ class Smear extends React.PureComponent {
     this.app.stage.interactive = true
 
     this.app.stage.on("pointermove", this.onPointerMove.bind(this))
+    window.addEventListener("resize", this.onResize.bind(this))
 
     this.app.start()
   }
@@ -97,6 +101,20 @@ class Smear extends React.PureComponent {
 
     this.brush.position.copyFrom(event.data.global)
     this.update()
+  }
+
+  onResize() {
+    if (this.app.renderer) {
+      const dimensions = getImageDimensionsWithAspect(
+        this.bgTexture.baseTexture.width,
+        this.bgTexture.baseTexture.height,
+        window.innerWidth,
+        window.innerHeight
+      )
+
+      this.app.renderer.view.style.width = dimensions.width + "px"
+      this.app.renderer.view.style.height = dimensions.height + "px"
+    }
   }
 
   render() {
