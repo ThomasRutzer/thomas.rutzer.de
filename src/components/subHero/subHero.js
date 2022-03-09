@@ -57,7 +57,7 @@ const Root = () => {
           })
 
           return (
-            <div className={classNames}>
+            <div key={key} className={classNames}>
               <ParallaxCircles.Root
                 appearance={ParallaxCircles.APPEARANCE.DARK}
                 mouseMoveTranslations={circle.mouseMoveTranslations}
