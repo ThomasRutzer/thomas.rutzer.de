@@ -52,7 +52,7 @@ const Root = () => {
         aria-hidden="true"
       >
         {circles.map((circle, key) => {
-          const classNames = classnames("absolute", {
+          const classNames = classnames("sub-hero-circle absolute", {
             [`sub-hero-circle--${key}`]: true,
           })
 
