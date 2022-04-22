@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^4.5.2",
     "@fontsource/ibm-plex-sans": "^4.5.2",
+    "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-collapsible": "^0.1.5",
     "animejs": "^3.2.1",
     "classnames": "^2.2.6",

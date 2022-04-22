@@ -31,7 +31,7 @@ const PageProjectArchive = ({ data }) => (
                   <li
                     key={groupKey}
                     className={`project-archive-item__grid-item grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 pb-6 ${
-                      groupKey !== 0 ? "pt-6 border-t-2 border-grey-darker" : ""
+                      groupKey !== 0 ? "pt-6 border-t-2 border-grey-3" : ""
                     }`}
                   >
                     <div className="col-start-1 col-span-1 row-start-1 row-span-2">
@@ -80,7 +80,7 @@ const PageProjectArchive = ({ data }) => (
           ))}
         </Tabs>
       </ContentWrapper.Root>
-      <section className="bg-grey-darkest-pattern">
+      <section className="bg-grey-2-pattern">
         <ContentWrapper.Root>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">

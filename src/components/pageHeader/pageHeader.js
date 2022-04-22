@@ -4,7 +4,7 @@ import * as ContentWrapper from "../contentWrapper"
 import * as InternalLink from "../internalLink"
 
 const Root = ({ title }) => (
-  <header className="bg-grey-darkest-pattern">
+  <header className="bg-grey-2-pattern">
     <ContentWrapper.Root verticalSpacing={false}>
       <ul className="py-2">
         <li>
