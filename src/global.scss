@@ -47,15 +47,25 @@ body {
 
 @layer components {
   .bg-grey-2-pattern {
-    background: url("./images/seamless-BG.jpg") repeat;
     background-color: theme("colors.grey.2");
-    background-blend-mode: multiply;
   }
 
   .bg-primary-pattern {
-    background: url("./images/seamless-BG.jpg") repeat;
     background-color: theme("colors.primary");
-    background-blend-mode: multiply;
+  }
+
+  @supports (background-blend-mode: multiply) {
+    .bg-grey-2-pattern {
+      background: url("./images/seamless-BG.jpg") repeat;
+      background-color: theme("colors.grey.2");
+      background-blend-mode: multiply;
+    }
+  
+    .bg-primary-pattern {
+      background: url("./images/seamless-BG.jpg") repeat;
+      background-color: theme("colors.primary");
+      background-blend-mode: multiply;
+    }
   }
 
   .text-stroke-primary {
