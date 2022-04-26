@@ -6,7 +6,7 @@ const CONTENT_TYPES = { TEXT: "text", IMAGE: "image" }
 
 const Root = ({ children, link, contentType = CONTENT_TYPES.TEXT, size = SIZES.SMALL }) => {
   const classNames = classnames(
-    "external-link relative text-primary rounded-md font-mono no-underline inline-block",
+    "external-link relative text-primary rounded-md font-mono no-underline inline-block whitespace-nowrap",
     "active:opacity-80",
     "focus:outline-primary focus:outline-dashed",
     {
