@@ -1,4 +1,5 @@
-const path = require(`path`)
+const path = require("path")
+const tailwindConfig = require("./tailwind.config")
 
 module.exports = {
   pathPrefix: "/",
@@ -32,7 +33,7 @@ module.exports = {
 
     "gatsby-transformer-remark",
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: "gatsby-plugin-sass",
       options: {
         postCssPlugins: [require("tailwindcss"), require("./tailwind.config.js")],
       },
@@ -58,8 +59,8 @@ module.exports = {
           "thomas rutzer — expert in crafting unique interfaces & interactions for the browser platform",
         short_name: "thomas rutzer — Javascript Developer",
         start_url: "/",
-        background_color: "#2e2d2d",
-        theme_color: "#2e2d2d",
+        background_color: tailwindConfig.theme.colors.primary,
+        theme_color: tailwindConfig.theme.colors.primary,
         display: "standalone",
         icon: "src/images/icon.png",
         shortcuts: [
