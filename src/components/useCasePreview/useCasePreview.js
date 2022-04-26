@@ -10,7 +10,7 @@ const ComponentContext = React.createContext()
 const Root = ({ children, appearance }) => {
   return (
     <ComponentContext.Provider value={{ appearance }}>
-      <section className={appearance === "primary" ? "bg-grey-darkest" : "bg-secondary-default"}>
+      <section className={appearance === "primary" ? "bg-grey-2" : "bg-secondary-default"}>
         {children}
       </section>
     </ComponentContext.Provider>
@@ -59,7 +59,7 @@ const Content = ({ children }) => {
 
 const Infos = ({ facts, features }) => {
   return (
-    <div className="flex md:flex-col justify-between text-sm col-start-1 col-span-6 md:col-span-1 mb-4 md:mb-0 pt-1">
+    <div className="flex md:flex-col justify-between text-sm col-start-1 col-span-6 md:col-span-1 mb-4 md:mb-0 md:py-1">
       {facts && (
         <FeatureList.Root>
           <FeatureList.Title>First release</FeatureList.Title>

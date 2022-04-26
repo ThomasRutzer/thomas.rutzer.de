@@ -22,8 +22,8 @@ const Root = ({ mouseMoveTranslations = [10, 20, 10, 20], appearance = APPEARANC
   const classNamesInnerCircle = classnames(
     "parallax-circles__inner absolute top-0 w-full h-full rounded-full bg-gradient-to-r transition-transform duration-700 ease-out",
     {
-      "from-grey-darker to-primary": appearance === APPEARANCE.PRIMARY,
-      "from-grey-darker to-grey-darkest": appearance === APPEARANCE.DARK,
+      "from-grey-6 to-primary": appearance === APPEARANCE.PRIMARY,
+      "from-grey-3 to-grey-6": appearance === APPEARANCE.DARK,
     }
   )
 

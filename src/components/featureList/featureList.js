@@ -11,7 +11,7 @@ const Title = ({ children }) => {
 
 const List = ({ items, delimiter }) => {
   const cssClasses = classnames(
-    "feature-list__item text-sm text-grey-lighter block font-mono text-xs mt-1",
+    "feature-list__item text-sm block font-mono text-xs mt-1",
     {
       "feature-list__item--with-delimiter": delimiter,
     }

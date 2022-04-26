@@ -1,8 +1,8 @@
 @tailwind base;
 
 body {
-  background-color: theme("colors.grey.darkest");
-  color: theme("colors.white");
+  background-color: theme("colors.grey.2");
+  color: theme("colors.grey.12");
   font-size: 16px;
   @apply leading-relaxed;
   overflow-x: hidden;
@@ -12,12 +12,12 @@ body {
 
 ::-moz-selection {
   color: theme("colors.white");
-  background: theme("colors.grey.darker");
+  background: theme("colors.grey.10");
 }
 
 ::selection {
   color: theme("colors.white");
-  background: theme("colors.grey.darker");
+  background: theme("colors.grey.10");
 }
 
 .no-js .no-js\:hidden {
@@ -46,9 +46,9 @@ body {
 @import "./utils/cssAnimations.scss";
 
 @layer components {
-  .bg-grey-darkest-pattern {
+  .bg-grey-2-pattern {
     background: url("./images/seamless-BG.jpg") repeat;
-    background-color: theme("colors.grey.darkest");
+    background-color: theme("colors.grey.2");
     background-blend-mode: multiply;
   }
 

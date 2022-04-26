@@ -79,11 +79,11 @@ const PageHome = ({ data }) => {
         </UseCasePreview.Root>
       ))}
 
-      <section className="py-5 md:pb-0 md:-mb-7 bg-black bg-gradient-to-b from-grey-darkest">
+      <section className="py-5 md:pb-0 md:-mb-7 bg-black bg-gradient-to-b from-grey-2">
         <ProjectArchiveTeaser.Root />
       </section>
 
-      <section className="bg-grey-darkest-pattern">
+      <section className="bg-grey-2-pattern">
         <ContentWrapper.Root>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:mt-7">
             <div className="col-start-1 col-span-1">
@@ -96,7 +96,7 @@ const PageHome = ({ data }) => {
                     <WritingPreview.Content>
                       <WritingPreview.Title>{write.node.title}</WritingPreview.Title>
 
-                      <small className="block font-mono text-xs text-grey-lighter mt-4">
+                      <small className="block font-mono text-xs text-grey-11 mt-4">
                         — {write.node.description}
                       </small>
                     </WritingPreview.Content>
@@ -176,7 +176,7 @@ const PageHome = ({ data }) => {
           </div>
         </ContentWrapper.Root>
       </section>
-      <section className="bg-grey-darkest-pattern">
+      <section className="bg-grey-2-pattern">
         <ContentWrapper.Root>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div className="col-start-1 col-span-1">
