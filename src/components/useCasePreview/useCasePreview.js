@@ -5,12 +5,16 @@ import * as ContentWrapper from "../contentWrapper"
 import * as ExternalLink from "../externalLink"
 import * as FeatureList from "../featureList"
 
+const APPEARANCES = { SECONDARY: "secondary", GREY: "grey" }
+
 const ComponentContext = React.createContext()
 
 const Root = ({ children, appearance }) => {
   return (
     <ComponentContext.Provider value={{ appearance }}>
-      <section className={appearance === "primary" ? "bg-grey-2" : "bg-secondary-default"}>
+      <section
+        className={appearance === APPEARANCES.SECONDARY ? "bg-secondary-default" : "bg-grey-2"}
+      >
         {children}
       </section>
     </ComponentContext.Provider>
@@ -104,4 +108,4 @@ const Links = ({ links }) => {
   )
 }
 
-export { Root, HeroContent, TitleGroup, Content, Links, Copy, Infos }
+export { Root, HeroContent, TitleGroup, Content, Links, Copy, Infos, APPEARANCES }

@@ -23,7 +23,12 @@ const PageHome = ({ data }) => {
       </ContentWrapper.Root>
 
       {data.allWorksJson.edges.map((work, key) => (
-        <UseCasePreview.Root key={key} appearance={key % 2 === 0 ? "primary" : "secondary"}>
+        <UseCasePreview.Root
+          key={key}
+          appearance={
+            key % 2 === 0 ? UseCasePreview.APPEARANCES.GREY : UseCasePreview.APPEARANCES.SECONDARY
+          }
+        >
           <UseCasePreview.HeroContent>
             <UseCasePreview.TitleGroup
               category="project"
@@ -50,7 +55,7 @@ const PageHome = ({ data }) => {
         </UseCasePreview.Root>
       ))}
       {data.allCollectionsJson.edges.map((collection, key) => (
-        <UseCasePreview.Root key={key} appearance={key % 2 === 0 ? "primary" : "secondary"}>
+        <UseCasePreview.Root key={key} appearance={UseCasePreview.APPEARANCES.GREY}>
           <UseCasePreview.HeroContent>
             <UseCasePreview.TitleGroup
               category="collection"
