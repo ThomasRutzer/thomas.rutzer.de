@@ -87,7 +87,7 @@ const Root = () => {
   }, [contentAnimatedIn, prefersReducedMotion])
 
   return (
-    <div className="intro h-screen relative overflow-hidden" ref={main}>
+    <div className="intro relative overflow-hidden" ref={main}>
       <div className="h-full w-full p-6 md:px-0 md:py-7">
         <ContentWrapper.Root
           horizontalSpacing={false}

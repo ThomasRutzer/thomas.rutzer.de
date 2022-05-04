@@ -1,9 +1,18 @@
 .intro {
+  height: 100vh;
+
   html:not(.no-js) & {
     opacity: 0;
 
     @media (prefers-reduced-motion: reduce) {
       opacity: 1;
     }
+  }
+}
+
+
+@supports(height: 100dvh) {
+  .intro {
+    height: 100dvh;
   }
 }
