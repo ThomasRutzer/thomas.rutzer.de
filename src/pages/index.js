@@ -69,7 +69,7 @@ const PageHome = ({ data }) => {
                   alt: `${title} – ${subTitle} (${year})`,
                   tiles: collection.node.imageGrid.tiles[key],
                   fit: fields.workImageAssets[0].fit,
-                  link: links.filter(link => link.type === "live" || link.type === "github")[0],
+                  link: links[0],
                 })
               )}
             />

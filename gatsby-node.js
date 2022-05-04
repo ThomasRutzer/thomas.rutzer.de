@@ -80,13 +80,18 @@ exports.createResolvers = ({ createResolvers }) => {
         resolve: async (source, args, context) => {
           const { entries } = await context.nodeModel.findAll({
             query: {
-              filter: { workId: { in: source.includes } },
+              filter: {
+                workId: { in: source.includes },
+              },
             },
             type: "WorksJson",
             firstOnly: false,
           })
 
-          return entries
+          return entries.map(entry => ({
+            ...entry,
+            links: entry.links.filter(link => link.type === "live" || link.type === "github"),
+          }))
         },
       },
     },
