@@ -11,7 +11,7 @@ exports.onCreateNode = ({ node, actions }) => {
       name: `workImageAssets`,
       value: node.images.map(image => ({
         default: `${pathPrefix}/${node.workId}/${image.src}`,
-        ...(!!image.smallVariantSrc && {
+        ...(image.smallVariantSrc && {
           smallVariant: `${pathPrefix}/${node.workId}/${image.smallVariantSrc}`,
         }),
       })),
