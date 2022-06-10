@@ -80,7 +80,7 @@ const PageProjectArchive = ({ data }) => (
           ))}
         </Tabs>
       </ContentWrapper.Root>
-      <section className="bg-grey-2-pattern">
+      <section>
         <ContentWrapper.Root>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="col-start-1 col-span-1">
