@@ -125,11 +125,11 @@ const PageHome = ({ data }) => {
             </div>
             <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-span-1 leading-loose">
               <p>
-                I'm a experienced JavaScript developer specialized in crafting unique interfaces &
-                interactions. I work on a high level with JavaScript in general and currently use
-                ReactJS daily. Building complex Frontend applications includes for me profound
-                knowledge about state management, data structures and algorithms. I also know how to
-                write semantic and accessible HTML and modern CSS that scales.
+                I'm a experienced developer specialized in crafting unique interfaces & interactions
+                for the browser platform. I work on a high level with JavaScript in general and
+                currently use ReactJS daily. Building complex Frontend applications includes for me
+                profound knowledge about state management, data structures and algorithms. I also
+                know how to write semantic and accessible HTML and modern CSS that scales.
               </p>
               <p className="mt-4">
                 In the last years, I extensivly used WebGL, mostly with React Three Fiber, and
