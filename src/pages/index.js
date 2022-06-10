@@ -132,14 +132,14 @@ const PageHome = ({ data }) => {
                 write semantic and accessible HTML and modern CSS that scales.
               </p>
               <p className="mt-4">
-                In the last two years, I extensivly used WebGL, mostly with react-three-fiber, and
+                In the last years, I extensivly used WebGL, mostly with React Three Fiber, and
                 researched how to blend blending interfaces into spaces with the new WebXR Device
                 API.
               </p>
               <p className="mt-4">
-                I currently work at&nbsp;
-                <ExternalLink.Root link="https://artcom.de">art+com</ExternalLink.Root>, a studio
-                for media installations and spaces.
+                My day-job is at&nbsp;
+                <ExternalLink.Root link="https://sprinteins.com/">SprintEins</ExternalLink.Root>,
+                where we build enterprise applications.
               </p>
             </div>
             <div className="col-start-1 md:col-start-2 lg:col-start-3 col-span-1">
@@ -181,7 +181,7 @@ const PageHome = ({ data }) => {
           </div>
         </ContentWrapper.Root>
       </section>
-      <section className="bg-grey-2-pattern">
+      <section>
         <ContentWrapper.Root>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div className="col-start-1 col-span-1">
