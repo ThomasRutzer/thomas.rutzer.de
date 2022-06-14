@@ -84,7 +84,7 @@ const PageHome = ({ data }) => {
         </UseCasePreview.Root>
       ))}
 
-      <section className="py-5 md:pb-0 md:-mb-7 bg-black bg-gradient-to-b from-grey-2">
+      <section className="py-5 md:pb-0 md:-mb-7">
         <ProjectArchiveTeaser.Root />
       </section>
 
