@@ -59,8 +59,8 @@ module.exports = {
           "thomas rutzer — expert in crafting unique interfaces & interactions for the browser platform",
         short_name: "thomas rutzer — Javascript Developer",
         start_url: "/",
-        background_color: tailwindConfig.theme.colors.primary,
-        theme_color: tailwindConfig.theme.colors.primary,
+        background_color: tailwindConfig.theme.colors.grey["2"],
+        theme_color: tailwindConfig.theme.colors.grey["2"],
         display: "standalone",
         icon: "src/images/icon.png",
         shortcuts: [
