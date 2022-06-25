@@ -137,7 +137,7 @@ const PageHome = ({ data }) => {
                 API.
               </p>
               <p className="mt-4">
-                My day-job is at&nbsp;
+                My current job is at&nbsp;
                 <ExternalLink.Root link="https://sprinteins.com/">SprintEins</ExternalLink.Root>,
                 where we build enterprise applications.
               </p>
