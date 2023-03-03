@@ -122,8 +122,8 @@ const PageProjectArchive = ({ data }) => (
 
 export const pageQuery = graphql`
   query {
-    allWorksJson(sort: { fields: year, order: ASC }) {
-      group(field: year) {
+    allWorksJson(sort: { year: ASC }) {
+      group(field: { year: SELECT }) {
         edges {
           node {
             title
