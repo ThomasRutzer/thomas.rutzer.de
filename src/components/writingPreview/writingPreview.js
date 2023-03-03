@@ -2,7 +2,7 @@ import React from "react"
 
 const Root = ({ children }) => {
   return (
-    <div className="bg-grey-2 flex justify-between flex-col rounded-md p-2 border-grey-7 border-2 shadow-lg lg:aspect-square hover:shadow-[hsla(242,_100%,_79%,_0.3)_0px_6px_32px] transition-shadow duration-300">
+    <div className="bg-grey-2 flex justify-between flex-col rounded-md p-2 border-grey-7 border-2 shadow-lg lg:aspect-square hover:shadow-grey-1 transition-shadow duration-200">
       {children}
     </div>
   )
