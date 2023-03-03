@@ -7,6 +7,7 @@ import * as ContentWrapper from "../contentWrapper"
 import Title from "./title"
 import * as SectionTitle from "../sectionTitle"
 import Background from "./background"
+import { SIZES } from "../contentWrapper"
 
 const Root = () => {
   const [contentAnimatedIn, setContentAnimatedIn] = useState(false)
@@ -92,14 +93,28 @@ const Root = () => {
         <ContentWrapper.Root
           horizontalSpacing={false}
           verticalSpacing={false}
+          size={SIZES.LARGE}
           className="flex justify-center md:px-5 h-full"
         >
-          <div ref={subline} className="flex justify-between flex-col h-full md:w-4/6">
-            <SectionTitle.Root>Intro</SectionTitle.Root>
-            <Title ref={headline}>hay I’m Thomas</Title>
-            <p ref={copy} className="text-xl md:text-2xl tracking-widest uppercase">
-              specialized in crafting unique interfaces & interactions for the browser platform
-            </p>
+          <div ref={subline} className="flex justify-between items-center flex-col h-full w-full">
+            <div className="flex justify-between w-full font-mono">
+              <span className="md:px-7">
+                <span>T</span> <span className="inline-block ml-4">R</span>
+              </span>
+              <span className="md:w-3/6 md:max-w-screen-md">
+                <SectionTitle.Root fullWidth>Intro</SectionTitle.Root>
+              </span>
+              <span className="block text-right md:px-7">50.949, 6.957</span>
+            </div>
+            <div className="md:w-3/6 md:max-w-screen-md">
+              <Title ref={headline}>hay!</Title>
+              <p ref={copy} className="text-xl md:text-2xl tracking-widest uppercase">
+                <span className="block">I am Thomas</span>
+                <span className="block pl-3">
+                  specialized in crafting unique interfaces & interactions for the browser platform
+                </span>
+              </p>
+            </div>
           </div>
         </ContentWrapper.Root>
       </div>
