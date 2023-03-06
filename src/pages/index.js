@@ -1,24 +1,24 @@
-import React from "react"
 import { graphql } from "gatsby"
+import React from "react"
 
-import * as Intro from "../components/intro"
-import HeadInfos from "../components/headInfos"
 import * as Collapsible from "../components/collapsible"
-import * as ContentWrapper from "./../components/contentWrapper"
 import * as ExternalLink from "../components/externalLink"
+import HeadInfos from "../components/headInfos"
 import * as ImageGrid from "../components/imageGrid"
+import * as Intro from "../components/intro"
 import * as LayoutWrapper from "../components/layoutWrapper"
 import * as ProjectArchiveTeaser from "../components/projectArchiveTeaser"
 import * as SectionTitle from "../components/sectionTitle"
 import * as UseCasePreview from "../components/useCasePreview"
 import * as WritingPreview from "../components/writingPreview"
+import * as ContentWrapper from "./../components/contentWrapper"
 
 const PageHome = ({ data }) => {
   return (
     <LayoutWrapper.Root>
       <HeadInfos />
       <Intro.Root />
-      <ContentWrapper.Root verticalSpacing={false} className="pt-4 md:pt-7">
+      <ContentWrapper.Root className="pt-4 md:pt-7">
         <SectionTitle.Root>work</SectionTitle.Root>
       </ContentWrapper.Root>
 
@@ -89,92 +89,87 @@ const PageHome = ({ data }) => {
       </section>
 
       <section className="bg-grey-2-pattern">
-        <ContentWrapper.Root>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:mt-7">
-            <div className="col-start-1 col-span-1">
-              <SectionTitle.Root>thoughts</SectionTitle.Root>
-            </div>
-            <div className="col-start-1 md:col-start-2 col-span-2">
-              <div className="grid gap-5 md:grid-cols-2">
-                {data.allWritesJson.edges.map((write, key) => (
-                  <WritingPreview.Root key={key}>
-                    <WritingPreview.Content>
-                      <WritingPreview.Title>{write.node.title}</WritingPreview.Title>
+        <ContentWrapper.Root verticalSpacing>
+          <div className="col-start-1 col-span-full md:col-span-2 mb-5 md:mt-7">
+            <SectionTitle.Root>thoughts</SectionTitle.Root>
+          </div>
+          <div className="col-start-1 col-span-full md:col-start-5 md:mt-7">
+            <div className="grid gap-5 md:grid-cols-2">
+              {data.allWritesJson.edges.map((write, key) => (
+                <WritingPreview.Root key={key}>
+                  <WritingPreview.Content>
+                    <WritingPreview.Title>{write.node.title}</WritingPreview.Title>
 
-                      <small className="block font-mono text-xs text-grey-11 mt-4">
-                        — {write.node.description}
-                      </small>
-                    </WritingPreview.Content>
-                    <WritingPreview.Footer>
-                      <ExternalLink.Root link={write.node.link} size={ExternalLink.SIZES.SMALL}>
-                        read more
-                      </ExternalLink.Root>
-                    </WritingPreview.Footer>
-                  </WritingPreview.Root>
-                ))}
-              </div>
+                    <small className="block font-mono text-xs text-grey-11 mt-4">
+                      — {write.node.description}
+                    </small>
+                  </WritingPreview.Content>
+                  <WritingPreview.Footer>
+                    <ExternalLink.Root link={write.node.link} size={ExternalLink.SIZES.SMALL}>
+                      read more
+                    </ExternalLink.Root>
+                  </WritingPreview.Footer>
+                </WritingPreview.Root>
+              ))}
             </div>
           </div>
         </ContentWrapper.Root>
       </section>
       <section className="bg-secondary">
-        <ContentWrapper.Root>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="col-start-1 col-span-1">
-              <SectionTitle.Root>about</SectionTitle.Root>
-            </div>
-            <div className="col-start-1 md:col-start-2 md:col-span-2 lg:col-span-1 leading-loose">
-              <p>
-                I'm a experienced developer specialized in crafting unique interfaces & interactions
-                for the browser platform. I work on a high level with JavaScript in general and
-                currently use ReactJS daily. Building complex Frontend applications includes for me
-                profound knowledge about state management, data structures and algorithms. I also
-                know how to write semantic and accessible HTML and modern CSS that scales.
-              </p>
-              <p className="mt-4">
-                In the last years, I extensivly used WebGL, mostly with React Three Fiber, and
-                researched how to blend blending interfaces into spaces with the new WebXR Device
-                API.
-              </p>
-              <p className="mt-4">
-                My current job is at&nbsp;
-                <ExternalLink.Root link="https://sprinteins.com/">SprintEins</ExternalLink.Root>,
-                where we build enterprise applications.
-              </p>
-            </div>
-            <div className="col-start-1 md:col-start-2 lg:col-start-3 col-span-1">
-              <div className="flex flex-col lg:items-end">
-                <div className="lg:transform lg:-rotate-90 lg:-translate-y-full lg:origin-bottom-right lg:pl-2">
-                  <div>
-                    <ExternalLink.Root
-                      additionalClasses="whitespace-no-wrap"
-                      appearance="primary"
-                      link="twitter.com/thomasrutzer"
-                      size="large"
-                    >
-                      twitter
-                    </ExternalLink.Root>
-                  </div>
-                  <div>
-                    <ExternalLink.Root
-                      additionalClasses="whitespace-no-wrap"
-                      appearance="primary"
-                      link="mailto:hi@thomasrutzer.dev"
-                      size="large"
-                    >
-                      mail
-                    </ExternalLink.Root>
-                  </div>
-                  <div>
-                    <ExternalLink.Root
-                      additionalClasses="whitespace-no-wrap"
-                      appearance="primary"
-                      link="https://github.com/ThomasRutzer"
-                      size="large"
-                    >
-                      github
-                    </ExternalLink.Root>
-                  </div>
+        <ContentWrapper.Root verticalSpacing>
+          <div className="col-start-1 col-span-full md:col-span-2">
+            <SectionTitle.Root>about</SectionTitle.Root>
+          </div>
+          <div className="col-start-1 col-span-full md:col-start-5 md:col-span-8 lg:col-start-5 lg:col-span-4 leading-loose my-5 md:my-0">
+            <p>
+              I'm a experienced developer specialized in crafting unique interfaces & interactions
+              for the browser platform. I work on a high level with JavaScript in general and
+              currently use ReactJS daily. Building complex Frontend applications includes for me
+              profound knowledge about state management, data structures and algorithms. I also know
+              how to write semantic and accessible HTML and modern CSS that scales.
+            </p>
+            <p className="mt-4">
+              In the last years, I extensivly used WebGL, mostly with React Three Fiber, and
+              researched how to blend blending interfaces into spaces with the new WebXR Device API.
+            </p>
+            <p className="mt-4">
+              My current job is at&nbsp;
+              <ExternalLink.Root link="https://sprinteins.com/">SprintEins</ExternalLink.Root>,
+              where we build enterprise applications.
+            </p>
+          </div>
+          <div className="col-start-1 col-span-full md:col-start-5 lg:col-start-10 lg:col-span-3">
+            <div className="flex flex-col lg:items-end">
+              <div className="lg:transform lg:-rotate-90 lg:-translate-y-full lg:origin-bottom-right lg:pl-2">
+                <div>
+                  <ExternalLink.Root
+                    additionalClasses="whitespace-no-wrap"
+                    appearance="primary"
+                    link="twitter.com/thomasrutzer"
+                    size="large"
+                  >
+                    twitter
+                  </ExternalLink.Root>
+                </div>
+                <div>
+                  <ExternalLink.Root
+                    additionalClasses="whitespace-no-wrap"
+                    appearance="primary"
+                    link="mailto:hi@thomasrutzer.dev"
+                    size="large"
+                  >
+                    mail
+                  </ExternalLink.Root>
+                </div>
+                <div>
+                  <ExternalLink.Root
+                    additionalClasses="whitespace-no-wrap"
+                    appearance="primary"
+                    link="https://github.com/ThomasRutzer"
+                    size="large"
+                  >
+                    github
+                  </ExternalLink.Root>
                 </div>
               </div>
             </div>
@@ -182,12 +177,11 @@ const PageHome = ({ data }) => {
         </ContentWrapper.Root>
       </section>
       <section>
-        <ContentWrapper.Root>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="col-start-1 col-span-1">
-              <SectionTitle.Root>credits</SectionTitle.Root>
-            </div>
-            <div className="col-start-1 md:col-start-2 col-span-1">
+        <ContentWrapper.Root verticalSpacing>
+          <div className="col-start-1 col-span-full md:col-span-2 mb-5">
+            <SectionTitle.Root>credits</SectionTitle.Root>
+          </div>
+          <div className="col-start-1 col-span-full md:col-start-5 md:col-span-4 mb-5 md:mb-0">
               <Collapsible.Root title="images">
                 {data.allWorksJson.edges.map((work, key) => (
                   <div key={key} className="mt-2">
@@ -218,50 +212,49 @@ const PageHome = ({ data }) => {
                   </div>
                 ))}
               </Collapsible.Root>
-            </div>
-            <div className="col-start-1 md:col-start-3 col-span-1">
-              <Collapsible.Root title="this site">
-                <ul>
-                  <li className="mt-2">
-                    <ExternalLink.Root
-                      link="https://www.gatsbyjs.org/"
-                      size={ExternalLink.SIZES.SMALL}
-                    >
-                      Gatsby.js
-                    </ExternalLink.Root>
-                  </li>
-                  <li className="mt-2">
-                    <ExternalLink.Root
-                      link="https://tailwindcss.com/"
-                      size={ExternalLink.SIZES.SMALL}
-                    >
-                      Tailwind.css
-                    </ExternalLink.Root>
-                  </li>
-                  <li className="mt-2">
-                    <ExternalLink.Root link="https://animejs.com/" size={ExternalLink.SIZES.SMALL}>
-                      anime.js
-                    </ExternalLink.Root>
-                  </li>
-                  <li className="mt-2">
-                    <ExternalLink.Root
-                      link="https://github.com/features/actions"
-                      size={ExternalLink.SIZES.SMALL}
-                    >
-                      Github actions
-                    </ExternalLink.Root>
-                  </li>
-                  <li className="mt-2">
-                    <ExternalLink.Root
-                      link="https://fonts.google.com/specimen/IBM+Plex+Mono"
-                      size={ExternalLink.SIZES.SMALL}
-                    >
-                      IBM Plex Mono
-                    </ExternalLink.Root>
-                  </li>
-                </ul>
-              </Collapsible.Root>
-            </div>
+          </div>
+          <div className="col-start-1 col-span-full md:col-start-5 md:col-start-9 md:col-span-4">
+            <Collapsible.Root title="this site">
+              <ul>
+                <li className="mt-2">
+                  <ExternalLink.Root
+                    link="https://www.gatsbyjs.org/"
+                    size={ExternalLink.SIZES.SMALL}
+                  >
+                    Gatsby.js
+                  </ExternalLink.Root>
+                </li>
+                <li className="mt-2">
+                  <ExternalLink.Root
+                    link="https://tailwindcss.com/"
+                    size={ExternalLink.SIZES.SMALL}
+                  >
+                    Tailwind.css
+                  </ExternalLink.Root>
+                </li>
+                <li className="mt-2">
+                  <ExternalLink.Root link="https://animejs.com/" size={ExternalLink.SIZES.SMALL}>
+                    anime.js
+                  </ExternalLink.Root>
+                </li>
+                <li className="mt-2">
+                  <ExternalLink.Root
+                    link="https://github.com/features/actions"
+                    size={ExternalLink.SIZES.SMALL}
+                  >
+                    Github actions
+                  </ExternalLink.Root>
+                </li>
+                <li className="mt-2">
+                  <ExternalLink.Root
+                    link="https://fonts.google.com/specimen/IBM+Plex+Mono"
+                    size={ExternalLink.SIZES.SMALL}
+                  >
+                    IBM Plex Mono
+                  </ExternalLink.Root>
+                </li>
+              </ul>
+            </Collapsible.Root>
           </div>
         </ContentWrapper.Root>
       </section>

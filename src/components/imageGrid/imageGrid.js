@@ -20,7 +20,7 @@ const Root = ({ images = [] }) => {
   }, [prefersReducedMotion])
 
   return (
-    <div className="relative" {...mouseEvents}>
+    <div className="relative col-span-full col-start-1" {...mouseEvents}>
       <div className="grid grid-cols-6 xl:grid-rows-3 lg:gap-5">
         {images.map(({ gatsbyImageData, alt, fit, tiles, link }, key) => (
           <Image.Root
