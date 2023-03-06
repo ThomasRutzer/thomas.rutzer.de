@@ -1,13 +1,15 @@
-import React, { useCallback, useRef, useState } from "react"
 import anime from "animejs"
+import React, { useCallback, useRef, useState } from "react"
+import { RandomReveal } from "react-random-reveal"
 import Splitting from "splitting"
 
-import { useReducedMotion } from "./../../hooks"
 import * as ContentWrapper from "../contentWrapper"
-import Title from "./title"
 import * as SectionTitle from "../sectionTitle"
+import { useReducedMotion } from "./../../hooks"
 import Background from "./background"
-import { SIZES } from "../contentWrapper"
+import Title from "./title"
+
+const CHARSET_NUMBERS = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 const Root = () => {
   const [contentAnimatedIn, setContentAnimatedIn] = useState(false)
@@ -44,6 +46,7 @@ const Root = () => {
         duration: 2000,
         easing: "easeInOutExpo",
       })
+
       .add(
         {
           targets: headline.current,
@@ -59,7 +62,7 @@ const Root = () => {
           translateY: ["100%", 0],
           opacity: [0, 1],
           duration: 2700,
-          delay: anime.stagger(20, {}),
+          delay: anime.stagger(100, {}),
           easing: "easeInOutExpo",
         },
         "-=1200"
@@ -68,6 +71,7 @@ const Root = () => {
         {
           targets: subline.current,
           opacity: [0, 1],
+          translateY: [16,0],
           duration: 1000,
           easing: "easeOutQuad",
         },
@@ -83,38 +87,63 @@ const Root = () => {
         },
         "-=1600"
       )
-
+      
     tl.play()
   }, [contentAnimatedIn, prefersReducedMotion])
 
   return (
     <div className="intro relative overflow-hidden" ref={main}>
-      <div className="h-full w-full p-6 md:px-0 md:py-7">
+      <div className="h-full w-full py-6 md:py-7">
         <ContentWrapper.Root
-          horizontalSpacing={false}
+          horizontalSpacing={true}
           verticalSpacing={false}
-          size={SIZES.LARGE}
-          className="flex justify-center md:px-5 h-full"
+          className="h-full grid-rows-[min-content_48px_1fr] items-end"
         >
-          <div ref={subline} className="flex justify-between items-center flex-col h-full w-full">
-            <div className="flex justify-between w-full font-mono">
-              <span className="md:px-7">
-                <span>T</span> <span className="inline-block ml-4">R</span>
-              </span>
-              <span className="md:w-3/6 md:max-w-screen-md">
-                <SectionTitle.Root fullWidth>Intro</SectionTitle.Root>
-              </span>
-              <span className="block text-right md:px-7">50.949, 6.957</span>
+          <div className="md:flex justify-between flex-col col-start-2 col-span-5 row-start-1 md:col-span-2 font-mono">
+            <span className="block">
+              <span>T</span> <span className="inline-block ml-5 md:ml-[6ch]">R</span>
+            </span>
+          </div>
+
+          <div className="flex justify-between flex-col col-start-2 col-span-10 row-start-2 md:col-start-4 md:col-span-6  md:row-start-1">
+            <div ref={subline}>
+              <SectionTitle.Root fullWidth>Intro</SectionTitle.Root>
             </div>
-            <div className="md:w-3/6 md:max-w-screen-md">
-              <Title ref={headline}>hay!</Title>
-              <p ref={copy} className="text-xl md:text-2xl tracking-widest uppercase">
-                <span className="block">I am Thomas</span>
-                <span className="block pl-3">
-                  specialized in crafting unique interfaces & interactions for the browser platform
-                </span>
-              </p>
-            </div>
+          </div>
+
+          <div className="md:flex justify-end col-start-7 col-span-5 row-start-1 md:col-start-11 md:col-span-2 font-mono">
+            <span className="block text-right">
+              {prefersReducedMotion && "50.949, 6.957"}
+              {!prefersReducedMotion && (
+                <>
+                  
+                  <RandomReveal
+                    isPlaying={contentAnimatedIn}
+                    duration={2.6}
+                    characters="50.949,"
+                    characterSet={CHARSET_NUMBERS}
+                  />
+                  
+                  <RandomReveal
+                    isPlaying={contentAnimatedIn}
+                    duration={2.6}
+                    characters=" 6.957"
+                    characterSet={CHARSET_NUMBERS}
+                  />
+                 
+                </>
+              )}
+            </span>
+          </div>
+
+          <div className="col-start-2 col-span-10 row-start-3 md:col-start-4 md:col-span-6">
+            <Title ref={headline}>hay!</Title>
+            <p ref={copy} className="text-xl md:text-2xl tracking-widest uppercase">
+              <span className="block">I am Thomas</span>
+              <span className="block pl-3">
+                specialized in crafting unique interfaces & interactions for the browser platform
+              </span>
+            </p>
           </div>
         </ContentWrapper.Root>
       </div>

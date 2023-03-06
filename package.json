@@ -19,6 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-random-reveal": "^2.0.0",
     "react-scroll-percentage": "^4.3.0",
     "react-slot-machine": "github:thomasrutzer/react-slot-machine#v1.0.3",
     "react-tabs": "^3.2.3",
@@ -50,6 +51,7 @@
     "gh-pages": "^2.2.0",
     "html-minifier": "^4.0.0",
     "node-sass": "^8.0.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "sharp": "^0.31.3"
   }
 }
