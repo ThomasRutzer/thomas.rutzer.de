@@ -24,13 +24,12 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/content/`,
+        path: path.join(__dirname, "content"),
         name: "markdown-pages",
       },
     },
     "gatsby-transformer-json",
     "gatsby-plugin-image",
-
     "gatsby-transformer-remark",
     {
       resolve: "gatsby-plugin-sass",
