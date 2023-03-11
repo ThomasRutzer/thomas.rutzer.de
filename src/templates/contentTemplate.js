@@ -15,8 +15,8 @@ export default function Template({ data }) {
       <HeadInfos title={frontmatter.title} />
       <LayoutWrapper.Root>
         <PageHeader.Root title={frontmatter.title} />
-        <ContentWrapper.Root>
-          <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
+        <ContentWrapper.Root verticalSpacing>
+          <div className="col-span-full markdown" dangerouslySetInnerHTML={{ __html: html }} />
         </ContentWrapper.Root>
       </LayoutWrapper.Root>
     </>

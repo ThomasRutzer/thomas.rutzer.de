@@ -57,12 +57,11 @@ const Page404 = () => {
       <HeadInfos title="404 — Too bad" />
       <LayoutWrapper.Root>
         <section className="bg-gradient-to-r from-black">
-          <ContentWrapper.Root className="flex flex-col h-screen">
+          <ContentWrapper.Root className="h-screen" verticalSpacing>
             <div
+            className="flex flex-col col-span-full md:col-start-2 md:col-span-9 w-full h-full"
               ref={fadeContainerRef}
               style={{
-                height: "100%",
-                width: "100%",
                 opacity: 0,
               }}
             >
@@ -74,8 +73,7 @@ const Page404 = () => {
                 symbolEvaluatedStyleClass="text-white"
                 symbolDefaultStyleClass="text-stroke text-stroke-white transition-colors duration-700"
               />
-            </div>
-            <div className="flex justify-center mt-3 md:mt-6">
+              <div className="flex justify-center mt-3 md:mt-6">
               <Cta.Root disabled={isSpinning} onClick={onStartSpinning}>
                 Spin to Win!
               </Cta.Root>
@@ -86,6 +84,8 @@ const Page404 = () => {
                 <InternalLink.Root link="/">home</InternalLink.Root> or try your luck.
               </p>
             </div>
+            </div>
+            
           </ContentWrapper.Root>
         </section>
       </LayoutWrapper.Root>
