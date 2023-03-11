@@ -1,5 +1,5 @@
 ---
-path: "/legal"
+path: "/legal/"
 title: "Legal notice"
 ---
 
