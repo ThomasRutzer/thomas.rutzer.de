@@ -20,6 +20,8 @@ const Root = () => {
   const copy = useRef()
   const main = useRef()
   const bg = useRef()
+  const meta1 = useRef()
+  const meta2 = useRef()
 
   const startAnimation = useCallback(() => {
     if (prefersReducedMotion || contentAnimatedIn) return
@@ -36,6 +38,7 @@ const Root = () => {
       opacity: [0, 1],
       duration: 0,
     })
+
       .add({
         targets: bg.current,
         opacity: [0, 1],
@@ -67,16 +70,7 @@ const Root = () => {
         },
         "-=1200"
       )
-      .add(
-        {
-          targets: subline.current,
-          opacity: [0, 1],
-          translateY: [16,0],
-          duration: 1000,
-          easing: "easeOutQuad",
-        },
-        "-=1600"
-      )
+
       .add(
         {
           targets: copy.current,
@@ -87,7 +81,14 @@ const Root = () => {
         },
         "-=1600"
       )
-      
+
+    anime({
+      targets: [subline.current, meta1.current, meta2.current],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "easeOutQuad",
+    })
+
     tl.play()
   }, [contentAnimatedIn, prefersReducedMotion])
 
@@ -97,40 +98,37 @@ const Root = () => {
         <ContentWrapper.Root
           horizontalSpacing={true}
           verticalSpacing={false}
-          className="h-full grid-rows-[min-content_48px_1fr] items-end"
+          className="h-full grid-rows-[min-content_48px_1fr_min-content] items-end"
         >
-          <div className="md:flex justify-between flex-col col-start-2 col-span-5 row-start-1 md:col-span-2 font-mono">
-            <span className="block">
+          <div className="flex justify-between flex-col col-start-2 col-span-full md:col-start-1 md:col-span-2">
+            <div ref={subline}>
+              <SectionTitle.Root>Intro</SectionTitle.Root>
+            </div>
+          </div>
+
+          <div className="md:flex justify-between flex-col col-start-2 col-span-3 row-start-2 md:row-start-1 md:col-start-5 font-mono">
+            <span className="block" ref={meta1}>
               <span>T</span> <span className="inline-block ml-5 md:ml-[6ch]">R</span>
             </span>
           </div>
 
-          <div className="flex justify-between flex-col col-start-2 col-span-10 row-start-2 md:col-start-4 md:col-span-6  md:row-start-1">
-            <div ref={subline}>
-              <SectionTitle.Root fullWidth>Intro</SectionTitle.Root>
-            </div>
-          </div>
-
-          <div className="md:flex justify-end col-start-7 col-span-5 row-start-1 md:col-start-11 md:col-span-2 font-mono">
-            <span className="block text-right">
+          <div className="md:flex col-start-7 col-span-5 row-start-2 md:col-start-8 md:col-span-2 md:row-start-1 font-mono">
+            <span className="block text-right" ref={meta2}>
               {prefersReducedMotion && "50.949, 6.957"}
               {!prefersReducedMotion && (
                 <>
-                  
                   <RandomReveal
                     isPlaying={contentAnimatedIn}
                     duration={2.6}
                     characters="50.949,"
                     characterSet={CHARSET_NUMBERS}
                   />
-                  
                   <RandomReveal
                     isPlaying={contentAnimatedIn}
                     duration={2.6}
                     characters=" 6.957"
                     characterSet={CHARSET_NUMBERS}
                   />
-                 
                 </>
               )}
             </span>
@@ -138,9 +136,12 @@ const Root = () => {
 
           <div className="col-start-2 col-span-10 row-start-3 md:col-start-4 md:col-span-6">
             <Title ref={headline}>hay!</Title>
+          </div>
+
+          <div className="col-start-2 col-span-10 row-start-4 md:col-start-5 md:col-span-6">
             <p ref={copy} className="text-xl md:text-2xl tracking-widest uppercase">
-              <span className="block">I am Thomas</span>
-              <span className="block pl-3">
+              <span className="block pl-[10ch]">I am Thomas</span>
+              <span className="block">
                 specialized in crafting unique interfaces & interactions for the browser platform
               </span>
             </p>
