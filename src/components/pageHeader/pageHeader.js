@@ -5,8 +5,8 @@ import * as InternalLink from "../internalLink"
 
 const Root = ({ title }) => (
   <header className="bg-grey-2-pattern">
-    <ContentWrapper.Root verticalSpacing={false}>
-      <ul className="py-2">
+    <ContentWrapper.Root>
+      <ul className="col-span-full py-2">
         <li>
           <InternalLink.Root link="/">
             <svg
@@ -26,8 +26,8 @@ const Root = ({ title }) => (
         </li>
       </ul>
     </ContentWrapper.Root>
-    <ContentWrapper.Root>
-      <h1 className="relative text-4xl md:text-6xl text-primary">{title}</h1>
+    <ContentWrapper.Root verticalSpacing>
+      <h1 className="relative col-span-full text-4xl md:text-6xl text-primary">{title}</h1>
     </ContentWrapper.Root>
   </header>
 )

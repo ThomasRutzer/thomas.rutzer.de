@@ -1,5 +1,5 @@
-import React from "react"
 import classnames from "classnames"
+import React from "react"
 
 import * as ContentWrapper from "../contentWrapper"
 import * as InternalLink from "../internalLink"
@@ -15,7 +15,7 @@ const Root = () => {
   return (
     <div className="relative">
       <ContentWrapper.Root verticalSpacing={false}>
-        <ul className="py-2">
+        <ul className="col-span-full py-2">
           <li>
             <InternalLink.Root link="/">
               <svg
@@ -35,8 +35,8 @@ const Root = () => {
           </li>
         </ul>
       </ContentWrapper.Root>
-      <ContentWrapper.Root>
-        <h1 className="sub-hero__title leading-tight font-mono md:my-4">
+      <ContentWrapper.Root verticalSpacing>
+        <h1 className="col-span-full sub-hero__title leading-tight font-mono md:my-4">
           <span className="text-sm">(Almost all)</span>
           <span className="text-6xl block font-semibold">
             Design <br />& Code
@@ -71,3 +71,4 @@ const Root = () => {
 }
 
 export { Root }
+
