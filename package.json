@@ -21,7 +21,6 @@
     "react-helmet": "^6.1.0",
     "react-random-reveal": "^2.0.0",
     "react-scroll-percentage": "^4.3.0",
-    "react-slot-machine": "github:thomasrutzer/react-slot-machine#v1.0.3",
     "react-tabs": "^3.2.3",
     "splitting": "^1.0.6",
     "tailwindcss": "^3.0.0"
