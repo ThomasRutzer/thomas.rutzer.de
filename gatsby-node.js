@@ -40,12 +40,12 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   }
 }
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
   const contentTemplate = path.resolve(`src/templates/contentTemplate.js`)
 
-  return graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark {
         edges {
@@ -57,17 +57,19 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
+  `)
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: contentTemplate,
-        context: {},
-      })
+  if (result.errors) {
+    return Promise.reject(result.errors)
+  }
+
+  console.log(result.data.allMarkdownRemark.edges[0].node.frontmatter);
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: contentTemplate,
+      context: {},
     })
   })
 }
