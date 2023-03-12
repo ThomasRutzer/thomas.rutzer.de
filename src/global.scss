@@ -47,19 +47,23 @@ body {
 
 @layer components {
   .bg-grey-2-pattern {
-    background: url("./images/seamless-BG.png") repeat;
     background-color: theme("colors.grey.2");
   }
 
   .bg-primary-pattern {
-    background: url("./images/seamless-BG.png") repeat;
     background-color: theme("colors.primary");
   }
-}
 
-@screen lg {
-  .bg-grey-2-pattern {
-    background-size: 15%;
+  @supports (background-blend-mode: multiply) {
+    .bg-grey-2-pattern {
+      background: url("./images/seamless-BG.png") repeat;
+      background-color: theme("colors.grey.2");
+    }
+  
+    .bg-primary-pattern {
+      background: url("./images/seamless-BG.png") repeat;
+      background-color: theme("colors.primary");
+    }
   }
 
   .text-stroke-primary {
