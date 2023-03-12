@@ -1,10 +1,8 @@
 import React, { forwardRef, Suspense, useEffect } from "react"
 import resolveConfig from "tailwindcss/resolveConfig"
-import { useScrollPercentage } from "react-scroll-percentage"
-
-import tailwindConfig from "./../../../tailwind.config"
 import map from "../../utils/map"
-import { useMediaQuery } from "./../../hooks"
+import tailwindConfig from "./../../../tailwind.config"
+import { useMediaQuery, useScrollPercentage } from "./../../hooks"
 import mergeRefs from "./../../utils/mergeRefs"
 
 const Smear = React.lazy(() => import("./smear"))
