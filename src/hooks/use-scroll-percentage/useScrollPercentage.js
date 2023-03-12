@@ -4,7 +4,7 @@ import {
     calculateHorizontalPercentage, calculateVerticalPercentage
 } from './utils'
 
-export default function useScrollPercentage(
+function useScrollPercentage(
   options = {},
 ) {
   const [ref, inView, entry] = useInView(options)
@@ -40,3 +40,5 @@ export default function useScrollPercentage(
 
   return [ref, percentage, entry]
 }
+
+export default useScrollPercentage
