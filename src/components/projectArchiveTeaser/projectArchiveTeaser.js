@@ -14,7 +14,7 @@ const circles = [
 const Root = () => {
   return (
     <ContentWrapper.Root verticalSpacing={false}>
-      <div className="bg-primary relative col-start-1 col-span-full py-6 md:py-7 rounded-xl shadow-xl overflow-hidden">
+      <div className="bg-primary relative col-start-1 col-span-full md:col-start-2 md:col-span-10 py-6 md:py-7 rounded-xl shadow-xl overflow-hidden">
         <div className="relative z-10 flex flex-col md:flex-row items-center align-center justify-center">
           <Title />
           <Cta.Root href="/project-archive" as="a">
