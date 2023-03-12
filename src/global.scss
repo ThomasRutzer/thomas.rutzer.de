@@ -48,6 +48,7 @@ body {
 @layer components {
   .bg-grey-2-pattern {
     background-color: theme("colors.grey.2");
+    background-size: 15%;
   }
 
   .bg-primary-pattern {
@@ -58,6 +59,7 @@ body {
     .bg-grey-2-pattern {
       background: url("./images/seamless-BG.png") repeat;
       background-color: theme("colors.grey.2");
+      background-size: 15%;
     }
   
     .bg-primary-pattern {
