@@ -86,7 +86,7 @@ const PageProjectArchive = ({ data }) => (
       </ContentWrapper.Root>
       <section>
         <ContentWrapper.Root verticalSpacing>
-          <div className="col-start-1 col-span-full md:col-span-2">
+          <div className="col-start-1 col-span-full md:col-span-2 mb-5">
             <SectionTitle.Root>credits</SectionTitle.Root>
           </div>
           <div className="col-start-1 col-span-full md:col-start-5 md:col-span-4">
