@@ -123,7 +123,7 @@ const PageHome = ({ data }) => {
           <div className="col-start-1 col-span-full md:col-start-5 md:col-span-8 lg:col-start-5 lg:col-span-4 leading-loose my-5 md:my-0">
             <p>
               I'm a experienced developer specialized in crafting unique interfaces & interactions
-              for the browser platform. I work on a high level with JavaScript in general and
+              for the browser platform. I work on a high level with JavaScript/TypeScript in general and
               currently use ReactJS daily. Building complex Frontend applications includes for me
               profound knowledge about state management, data structures and algorithms. I also know
               how to write semantic and accessible HTML and modern CSS that scales.
@@ -135,7 +135,7 @@ const PageHome = ({ data }) => {
             <p className="mt-4">
               My current job is at&nbsp;
               <ExternalLink.Root link="https://sprinteins.com/">SprintEins</ExternalLink.Root>,
-              where we build enterprise applications.
+              where we create user-centered enterprise applications.
             </p>
           </div>
           <div className="col-start-1 col-span-full md:col-start-5 lg:col-start-10 lg:col-span-3">
