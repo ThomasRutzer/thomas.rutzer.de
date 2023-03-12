@@ -19,24 +19,9 @@ const Page404 = () => {
   const ctaRef = useRef()
 
   const [isSpinning, setIsSpinning] = useState(true)
-  const [lane1, setLane1] = useState([
-    ...fillWithRandomElements(symbolCount - 3, symbols),
-    getRandomElementFromList(symbols),
-    "4",
-    getRandomElementFromList(symbols),
-  ])
-  const [lane2, setLane2] = useState([
-    ...fillWithRandomElements(symbolCount - 3, symbols),
-    getRandomElementFromList(symbols),
-    "0",
-    getRandomElementFromList(symbols),
-  ])
-  const [lane3, setLane3] = useState([
-    ...fillWithRandomElements(symbolCount - 3, symbols),
-    getRandomElementFromList(symbols),
-    "4",
-    getRandomElementFromList(symbols),
-  ])
+  const [lane1, setLane1] = useState([])
+  const [lane2, setLane2] = useState([])
+  const [lane3, setLane3] = useState([])
 
   const onStartSpinning = useCallback(() => {
     setIsSpinning(true)
@@ -151,6 +136,28 @@ const Page404 = () => {
   }, [lane1, lane2, lane3, onEndSpinning])
 
   useEffect(() => {
+    setLane1([
+        ...fillWithRandomElements(symbolCount - 3, symbols),
+        getRandomElementFromList(symbols),
+        "4",
+        getRandomElementFromList(symbols),
+      ])
+
+      setLane2([
+        ...fillWithRandomElements(symbolCount - 3, symbols),
+        getRandomElementFromList(symbols),
+        "0",
+        getRandomElementFromList(symbols),
+      ])
+
+      setLane3([
+    ...fillWithRandomElements(symbolCount - 3, symbols),
+    getRandomElementFromList(symbols),
+    "4",
+    getRandomElementFromList(symbols),
+  ])
+
+
     anime({
       targets: fadeContainerRef.current,
       duration: 700,
