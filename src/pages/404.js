@@ -1,5 +1,5 @@
 import anime from "animejs"
-import React, { useEffect, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 
 import * as ContentWrapper from "../components/contentWrapper"
 import HeadInfos from "../components/headInfos"
@@ -12,13 +12,13 @@ const symbolCount = 12
 
 const Page404 = () => {
   const fadeContainerRef = useRef()
-  const slotLane1 = useRef()
-  const slotLane2 = useRef()
-  const slotLane3 = useRef()
-  const timeline = useRef()
+  const slotLane1Ref = useRef()
+  const slotLane2Ref = useRef()
+  const slotLane3Ref = useRef()
+  const timelineRef = useRef()
+  const ctaRef = useRef()
 
-  const [isSpinning, setIsSpinning] = useState(false)
-
+  const [isSpinning, setIsSpinning] = useState(true)
   const [lane1, setLane1] = useState([
     ...fillWithRandomElements(symbolCount - 3, symbols),
     getRandomElementFromList(symbols),
@@ -38,55 +38,26 @@ const Page404 = () => {
     getRandomElementFromList(symbols),
   ])
 
-  useEffect(() => {
-    timeline.current = anime.timeline({
-      complete: onEndSpinning,
-      autoplay: false,
+  const onStartSpinning = useCallback(() => {
+    setIsSpinning(true)
+    timelineRef.current.play()
+
+    anime({
+      targets: ctaRef.current,
+      duration: 700,
+      opacity: 0,
+      easing: "easeInOutQuad",
     })
 
-    timeline.current
-      .add({
-        targets: slotLane1.current,
-        translateY: "-300%",
-        duration: 1600,
-        easing: "easeOutSine",
-      })
-      .add(
-        {
-          targets: slotLane2.current,
-          translateY: "-300%",
-          duration: 1600,
-          easing: "easeOutSine",
-        },
-        "-=400"
-      )
-      .add(
-        {
-          targets: slotLane3.current,
-          translateY: "-300%",
-          duration: 1600,
-          easing: "easeOutSine",
-        },
-        "-=200"
-      )
-  }, [lane1, lane2, lane3, onEndSpinning])
-
-  useEffect(() => {
     anime({
       targets: fadeContainerRef.current,
       duration: 700,
       opacity: 1,
       easing: "easeInOutQuad",
-      complete: onStartSpinning,
     })
   }, [])
 
-  function onStartSpinning() {
-    setIsSpinning(true)
-    timeline.current.play()
-  }
-
-  const onEndSpinning = () => {
+  const onEndSpinning = useCallback(() => {
     const lane1EndValue = lane1[symbolCount - 2]
     const lane2EndValue = lane2[symbolCount - 2]
     const lane3EndValue = lane3[symbolCount - 2]
@@ -111,16 +82,84 @@ const Page404 = () => {
     } else {
       onRestart()
     }
-  }
+    /* eslint-disable no-use-before-define */
+  }, [lane1, lane2, lane3, onRestart])
 
-  const onRestart = () => {
-    setIsSpinning(false)
-    timeline.current.seek(0)
+  const onRestart = useCallback(() => {
+    anime({
+      targets: ctaRef.current,
+      duration: 700,
+      opacity: 1,
+      easing: "easeInOutQuad",
+    })
 
-    setLane1([...lane1.splice(symbolCount - 3, symbolCount), ...fillWithRandomElements(9, symbols)])
-    setLane2([...lane2.splice(symbolCount - 3, symbolCount), ...fillWithRandomElements(9, symbols)])
-    setLane3([...lane3.splice(symbolCount - 3, symbolCount), ...fillWithRandomElements(9, symbols)])
-  }
+    anime({
+      targets: fadeContainerRef.current,
+      duration: 700,
+      opacity: 0.05,
+      easing: "easeInOutQuad",
+      complete: () => {
+        setIsSpinning(false)
+        timelineRef.current.seek(0)
+
+        setLane1([
+          ...lane1.splice(symbolCount - 3, symbolCount),
+          ...fillWithRandomElements(9, symbols),
+        ])
+        setLane2([
+          ...lane2.splice(symbolCount - 3, symbolCount),
+          ...fillWithRandomElements(9, symbols),
+        ])
+        setLane3([
+          ...lane3.splice(symbolCount - 3, symbolCount),
+          ...fillWithRandomElements(9, symbols),
+        ])
+      },
+    })
+  }, [lane1, lane2, lane3])
+
+  useEffect(() => {
+    timelineRef.current = anime.timeline({
+      complete: onEndSpinning,
+      autoplay: false,
+    })
+
+    timelineRef.current
+      .add({
+        targets: slotLane1Ref.current,
+        translateY: "-300%",
+        duration: 1200,
+        easing: "easeOutSine",
+      })
+      .add(
+        {
+          targets: slotLane2Ref.current,
+          translateY: "-300%",
+          duration: 1200,
+          easing: "easeOutSine",
+        },
+        "-=400"
+      )
+      .add(
+        {
+          targets: slotLane3Ref.current,
+          translateY: "-300%",
+          duration: 1200,
+          easing: "easeOutSine",
+        },
+        "-=200"
+      )
+  }, [lane1, lane2, lane3, onEndSpinning])
+
+  useEffect(() => {
+    anime({
+      targets: fadeContainerRef.current,
+      duration: 700,
+      opacity: 1,
+      easing: "easeInOutQuad",
+      complete: onStartSpinning,
+    })
+  }, [onStartSpinning])
 
   return (
     <>
@@ -128,14 +167,19 @@ const Page404 = () => {
       <LayoutWrapper.Root>
         <section className="bg-gradient-to-r from-black">
           <ContentWrapper.Root className="h-screen" verticalSpacing>
-            <div
-              className="col-span-full grid grid-rows-[1fr_min-content] gap-3 md:gap-5 md:col-start-2 md:col-span-9 w-full h-full opacity-0 overflow-hidden"
-              ref={fadeContainerRef}
-            >
-              <div className="h-full overflow-hidden">
-                <div className="grid grid-cols-3 h-full">
+            <div className="col-span-full grid grid-rows-[1fr_min-content] gap-3 md:gap-5 md:col-start-2 md:col-span-9 w-full h-full overflow-hidden">
+              <div className="relative h-full overflow-hidden">
+                <div
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0"
+                  ref={ctaRef}
+                >
+                  <Cta.Root disabled={isSpinning} onClick={onStartSpinning}>
+                    Spin to Win!
+                  </Cta.Root>
+                </div>
+                <div className="grid grid-cols-3 h-full  opacity-0" ref={fadeContainerRef}>
                   <div className="slot h-full overflow-hidden">
-                    <div className="slot__lane h-full" ref={slotLane1}>
+                    <div className="slot__lane h-full" ref={slotLane1Ref}>
                       {lane1.map((symbol, index) => (
                         <span
                           key={index}
@@ -150,7 +194,7 @@ const Page404 = () => {
                   </div>
 
                   <div className="slot h-full overflow-hidden">
-                    <div className="slot__lane h-full" ref={slotLane2}>
+                    <div className="slot__lane h-full" ref={slotLane2Ref}>
                       {lane2.map((symbol, index) => (
                         <span
                           key={index}
@@ -165,7 +209,7 @@ const Page404 = () => {
                   </div>
 
                   <div className="slot h-full overflow-hidden">
-                    <div className="slot__lane h-full" ref={slotLane3}>
+                    <div className="slot__lane h-full" ref={slotLane3Ref}>
                       {lane3.map((symbol, index) => (
                         <span
                           key={index}
@@ -181,9 +225,6 @@ const Page404 = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center gap-4">
-                <Cta.Root disabled={isSpinning} onClick={onStartSpinning}>
-                  Spin to Win!
-                </Cta.Root>
                 <p className="text-center">
                   I couldn't find what you were looking for. <br></br>Go&nbsp;
                   <InternalLink.Root link="/">home</InternalLink.Root> or try your luck.
