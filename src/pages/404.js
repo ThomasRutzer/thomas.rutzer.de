@@ -57,34 +57,6 @@ const Page404 = () => {
     })
   }, [])
 
-  const onEndSpinning = useCallback(() => {
-    const lane1EndValue = lane1[symbolCount - 2]
-    const lane2EndValue = lane2[symbolCount - 2]
-    const lane3EndValue = lane3[symbolCount - 2]
-    const isJackpot = lane1EndValue === lane2EndValue && lane1EndValue === lane3EndValue
-
-    if (isJackpot) {
-      anime({
-        targets: document.body,
-        duration: 1200,
-        keyframes: [
-          { filter: "invert(100%)", backgroundColor: "#f8f8f8" },
-          { filter: "invert(0%)", backgroundColor: "#2e2d2d" },
-          { filter: "invert(100%)", backgroundColor: "#f8f8f8" },
-          { filter: "invert(0%)", backgroundColor: "#2e2d2d" },
-        ],
-        easing: "easeInOutQuad",
-        complete() {
-          document.body.removeAttribute("style")
-          onRestart()
-        },
-      })
-    } else {
-      onRestart()
-    }
-    /* eslint-disable no-use-before-define */
-  }, [lane1, lane2, lane3, onRestart])
-
   const onRestart = useCallback(() => {
     anime({
       targets: ctaRef.current,
@@ -117,6 +89,33 @@ const Page404 = () => {
       },
     })
   }, [lane1, lane2, lane3])
+
+  const onEndSpinning = useCallback(() => {
+    const lane1EndValue = lane1[symbolCount - 2]
+    const lane2EndValue = lane2[symbolCount - 2]
+    const lane3EndValue = lane3[symbolCount - 2]
+    const isJackpot = lane1EndValue === lane2EndValue && lane1EndValue === lane3EndValue
+
+    if (isJackpot) {
+      anime({
+        targets: document.body,
+        duration: 1200,
+        keyframes: [
+          { filter: "invert(100%)", backgroundColor: "#f8f8f8" },
+          { filter: "invert(0%)", backgroundColor: "#2e2d2d" },
+          { filter: "invert(100%)", backgroundColor: "#f8f8f8" },
+          { filter: "invert(0%)", backgroundColor: "#2e2d2d" },
+        ],
+        easing: "easeInOutQuad",
+        complete() {
+          document.body.removeAttribute("style")
+          onRestart()
+        },
+      })
+    } else {
+      onRestart()
+    }
+  }, [lane1, lane2, lane3, onRestart])
 
   useEffect(() => {
     timelineRef.current = anime.timeline({
