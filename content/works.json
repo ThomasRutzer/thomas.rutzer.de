@@ -1,4 +1,54 @@
 [
+    {
+        "selected": false,
+        "workId": "lisamarleen",
+        "title": "LisaMarleen.de",
+        "subTitle": "A multidisciplinary designer's portfolio",
+        "year": 2022,
+        "features": ["vanillaJS", "eleventyJS", "motion one"],
+        "teaserDescription": "Portfolio of multidisciplinary designer Lisa Marleen. Based on ElventyJS' static site generator and no other JavaScript framework. Motion One is used as animation engine",
+        "links": [
+          {
+            "link": "https://lisamarleen.de",
+            "label": "view live",
+            "type": "live"
+          }
+        ],
+        "teaserImage": {
+          "src": "lisamarleen-teaser.jpg",
+          "alt": "LisaMarleen.de teaser",
+          "reference": {
+            "author": "Lisa Marleen Mantel",
+            "link": "https://lisamarleen.de"
+          }
+        },
+        "images": []
+      },
+    {
+        "selected": false,
+        "workId": "resource-island",
+        "title": " Resource Island",
+        "subTitle": "An art+com exhibit at Groote Museum Amsterdam",
+        "year": 2022,
+        "features": ["threeJS", "react"],
+        "teaserDescription": "An interactive exhibit consisting of two connected applications. It makes use of Machine Learning algorithms and data from the Global Footprint Network to visualize your personal ecological footprint.",
+        "links": [
+          {
+            "link": "https://www.instagram.com/reel/Ck_DtxMjSZe/?utm_source=ig_web_copy_link",
+            "label": "view on instagram",
+            "type": "live"
+          }
+        ],
+        "teaserImage": {
+          "src": "resource-island-teaser.jpg",
+          "alt": "Resource Island teaser",
+          "reference": {
+            "author": "©ART+COM Studios",
+            "link": ""
+          }
+        },
+        "images": []
+},
   {
     "selected": false,
     "workId": "entomon",
