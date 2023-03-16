@@ -14,6 +14,7 @@ const CHARSET_NUMBERS = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 const Root = () => {
   const [contentAnimatedIn, setContentAnimatedIn] = useState(false)
   const prefersReducedMotion = useReducedMotion()
+  const isClient = useIsClient()
 
   const headline = useRef()
   const subline = useRef()
@@ -24,7 +25,7 @@ const Root = () => {
   const meta2 = useRef()
 
   const startAnimation = useCallback(() => {
-    if (prefersReducedMotion || contentAnimatedIn) return
+    if (prefersReducedMotion || contentAnimatedIn || !isClient) return
 
     setContentAnimatedIn(true)
 
@@ -38,6 +39,7 @@ const Root = () => {
       opacity: [0, 1],
       duration: 0,
     })
+
       .add({
         targets: bg.current,
         opacity: [0, 1],
@@ -89,9 +91,8 @@ const Root = () => {
     })
 
     tl.play()
-  }, [contentAnimatedIn, prefersReducedMotion])
+  }, [contentAnimatedIn, prefersReducedMotion, isClient])
 
-  const isClient = useIsClient()
 
   return (
     <div className="intro relative overflow-hidden" ref={main}>
