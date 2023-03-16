@@ -5,7 +5,7 @@ import Splitting from "splitting"
 
 import * as ContentWrapper from "../contentWrapper"
 import * as SectionTitle from "../sectionTitle"
-import { useReducedMotion } from "./../../hooks"
+import { useIsClient, useReducedMotion } from "./../../hooks"
 import Background from "./background"
 import Title from "./title"
 
@@ -38,7 +38,6 @@ const Root = () => {
       opacity: [0, 1],
       duration: 0,
     })
-
       .add({
         targets: bg.current,
         opacity: [0, 1],
@@ -92,6 +91,8 @@ const Root = () => {
     tl.play()
   }, [contentAnimatedIn, prefersReducedMotion])
 
+  const isClient = useIsClient()
+
   return (
     <div className="intro relative overflow-hidden" ref={main}>
       <div className="h-full w-full py-6 md:py-7">
@@ -113,7 +114,7 @@ const Root = () => {
           </div>
 
           <div className="md:flex col-start-7 col-span-5 row-start-2 md:col-start-8 md:col-span-2 md:row-start-1 font-mono">
-            <span className="block text-right" ref={meta2}>
+            <span className="block text-right" ref={meta2} key={isClient}>
               {prefersReducedMotion && "50.949, 6.957"}
               {!prefersReducedMotion && (
                 <>
