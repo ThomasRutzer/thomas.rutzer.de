@@ -19,7 +19,7 @@ const Trigger = ({ children }) => {
   )
 
   return (
-    <RadixCollapsible.Trigger className={classNames}>
+    <RadixCollapsible.Trigger className={classNames} suppressHydrationWarning={true}>
       <span>{children}</span>
       <svg
         className="collapsible__icon"
@@ -40,7 +40,7 @@ const Trigger = ({ children }) => {
 
 const Content = ({ children }) => {
   return (
-    <RadixCollapsible.Content className="collapsible__content p-2">
+    <RadixCollapsible.Content className="collapsible__content p-2" suppressHydrationWarning={true}>
       {children}
     </RadixCollapsible.Content>
   )
