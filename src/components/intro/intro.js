@@ -1,6 +1,6 @@
 import anime from "animejs"
 import React, { useCallback, useRef, useState } from "react"
-import { RandomReveal } from "react-random-reveal"
+import Counter from "react-number-counter"
 import Splitting from "splitting"
 
 import * as ContentWrapper from "../contentWrapper"
@@ -8,8 +8,6 @@ import * as SectionTitle from "../sectionTitle"
 import { useIsClient, useReducedMotion } from "./../../hooks"
 import Background from "./background"
 import Title from "./title"
-
-const CHARSET_NUMBERS = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 const Root = () => {
   const [contentAnimatedIn, setContentAnimatedIn] = useState(false)
@@ -93,7 +91,6 @@ const Root = () => {
     tl.play()
   }, [contentAnimatedIn, prefersReducedMotion, isClient])
 
-
   return (
     <div className="intro relative overflow-hidden" ref={main}>
       <div className="h-full w-full py-6 md:py-7">
@@ -115,22 +112,13 @@ const Root = () => {
           </div>
 
           <div className="md:flex col-start-7 col-span-5 row-start-2 md:col-start-8 md:col-span-2 md:row-start-1 font-mono">
-            <span className="block text-right" ref={meta2} key={isClient}>
-              {prefersReducedMotion && "50.949, 6.957"}
-              {!prefersReducedMotion && (
+            <span className="block text-right" ref={meta2}>
+              {contentAnimatedIn && (
                 <>
-                  <RandomReveal
-                    isPlaying={contentAnimatedIn}
-                    duration={2.6}
-                    characters="50.949,"
-                    characterSet={CHARSET_NUMBERS}
-                  />
-                  <RandomReveal
-                    isPlaying={contentAnimatedIn}
-                    duration={2.6}
-                    characters=" 6.957"
-                    characterSet={CHARSET_NUMBERS}
-                  />
+                  <Counter start={0} end={50} delay={0} />.
+                  <Counter start={900} end={949} delay={0} />,
+                  <Counter start={0} end={6} delay={0} />.
+                  <Counter start={900} end={957} delay={0} />
                 </>
               )}
             </span>
@@ -156,3 +144,4 @@ const Root = () => {
 }
 
 export { Root }
+
