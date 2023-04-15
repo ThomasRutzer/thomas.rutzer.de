@@ -11,6 +11,7 @@ import Title from "./title"
 
 const Root = () => {
   const [contentAnimatedIn, setContentAnimatedIn] = useState(false)
+  const [startCounter, setStartCounter] = useState(false)
   const prefersReducedMotion = useReducedMotion()
   const isClient = useIsClient()
 
@@ -54,6 +55,9 @@ const Root = () => {
           targets: headline.current,
           opacity: [0, 1],
           duration: 0,
+          complete: () => {
+            setStartCounter(true)
+          },
         },
         "-=300"
       )
@@ -113,7 +117,7 @@ const Root = () => {
 
           <div className="md:flex col-start-7 col-span-5 row-start-2 md:col-start-8 md:col-span-2 md:row-start-1 font-mono">
             <span className="block text-right" ref={meta2}>
-              {contentAnimatedIn && (
+              {startCounter && (
                 <>
                   <Counter start={0} end={50} delay={0} />.
                   <Counter start={900} end={949} delay={0} />,
@@ -144,4 +148,3 @@ const Root = () => {
 }
 
 export { Root }
-
