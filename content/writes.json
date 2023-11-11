@@ -1,5 +1,10 @@
 [
   {
+    "title": "Use a React Portal to design an API for a global layout component",
+    "link": "https://thomasrutzer.medium.com/use-a-react-portal-to-design-an-api-for-a-global-layout-component-85469da1771b",
+    "description": "Published 11.2023"
+  },
+  {
     "title": "State of React uncontrolled forms in 2022",
     "link": "https://medium.com/@thomasrutzer/state-of-react-uncontrolled-forms-in-2022-6ec0217a43fb",
     "description": "Published 02.2022"

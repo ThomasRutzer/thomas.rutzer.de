@@ -1,6 +1,30 @@
 [
     {
         "selected": false,
+        "workId": "dmp",
+        "title": "Dinosauria Museum Prague",
+        "subTitle": "An art+com exhibit around Real dinosaur skeletons",
+        "year": 2021,
+        "features": ["react", "react-three-arnft", "react three fiber"],
+        "teaserDescription": "Among numerous other exhibits, we also used our in-house developed library react-three-arnft for several exciting AR representations of dinosaurs in their very own environment.",
+        "links": [
+          {
+            "link": "https://artcom.de/en/?project=dinosauria-museum-prague-2",
+            "label": "art+com case"
+          }
+        ],
+        "teaserImage": {
+          "src": "dmp-teaser.jpg",
+          "alt": "Dinosauria Museum Prague teaser",
+          "reference": {
+            "author": "©ART+COM Studios",
+            "link": ""
+          }
+        },
+        "images": []
+},
+    {
+        "selected": false,
         "workId": "lisamarleen",
         "title": "LisaMarleen.de",
         "subTitle": "A multidisciplinary designer's portfolio",
@@ -241,7 +265,7 @@
     "links": [
       {
         "link": "https://github.com/ThomasRutzer/joefix-ar-radio",
-        "label": "view live",
+        "label": "view on Github",
         "type": "github"
       }
     ],
